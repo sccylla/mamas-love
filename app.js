@@ -79,3 +79,79 @@ $('#newsletterForm').addEventListener('submit',e=>{e.preventDefault();const inpu
 const preg=getStored('pregnancy');if(preg){$('#lmpDate').value=preg.raw;$('#pregCycle').value=preg.cycle;$('#pregnancyForm').requestSubmit()}
 const per=getStored('period');if(per){$('#periodDate').value=per.raw;$('#cycleLength').value=per.cycle;$('#periodLength').value=per.plen}
 const nb=getStored('newborn');if(nb){$('#babyDob').value=nb.raw;$('#birthGestation').value=nb.gest||''}
+
+const lullabyTracks=[
+  {title:'Moonlight Hush',description:'A slow, warm bedtime melody.',step:.62,notes:[261.63,329.63,392,329.63,293.66,349.23,440,349.23,261.63,329.63,392,493.88,440,392,329.63,293.66]},
+  {title:'Little Cloud',description:'A light melody that gently floats.',step:.54,notes:[329.63,392,440,392,349.23,329.63,293.66,329.63,392,493.88,440,392,349.23,293.66,261.63,293.66]},
+  {title:"Mama’s Arms",description:'A slower, comforting cuddle-time tune.',step:.7,notes:[220,261.63,329.63,261.63,246.94,293.66,349.23,293.66,220,261.63,329.63,392,349.23,329.63,261.63,246.94]}
+];
+let lullabyCtx=null,lullabyMaster=null,lullabyPlaying=false,lullabyIndex=0,lullabyTimer=null,lullabyNodes=[],lullabySession=0,autoplayPending=true;
+const player=$('.lullaby-player'),lullabyToggle=$('#lullabyToggle'),floatingToggle=$('#floatingLullabyToggle'),lullabyIcon=$('#lullabyIcon'),autoplayNote=$('#autoplayNote');
+
+function setupLullabyAudio(){
+  if(lullabyCtx)return;
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC){autoplayNote.textContent='Audio is not supported in this browser.';return;}
+  lullabyCtx=new AC();
+  lullabyMaster=lullabyCtx.createGain();
+  lullabyMaster.gain.value=Number($('#lullabyVolume').value)/100*.18;
+  lullabyMaster.connect(lullabyCtx.destination);
+}
+function clearLullabyNodes(){lullabyNodes.forEach(n=>{try{n.stop()}catch(e){}});lullabyNodes=[];}
+function scheduleLullabyLoop(session){
+  if(!lullabyPlaying||session!==lullabySession||!lullabyCtx)return;
+  const track=lullabyTracks[lullabyIndex],start=lullabyCtx.currentTime+.06,step=track.step;
+  track.notes.forEach((freq,i)=>{
+    const t=start+i*step,dur=step*.9;
+    const gain=lullabyCtx.createGain();
+    gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.62,t+.08);gain.gain.exponentialRampToValueAtTime(.0001,t+dur);gain.connect(lullabyMaster);
+    const osc=lullabyCtx.createOscillator();osc.type='sine';osc.frequency.setValueAtTime(freq,t);osc.connect(gain);osc.start(t);osc.stop(t+dur+.03);lullabyNodes.push(osc);
+    const soft=lullabyCtx.createOscillator(),softGain=lullabyCtx.createGain();
+    soft.type='triangle';soft.frequency.setValueAtTime(freq/2,t);softGain.gain.setValueAtTime(.0001,t);softGain.gain.exponentialRampToValueAtTime(.12,t+.12);softGain.gain.exponentialRampToValueAtTime(.0001,t+dur);soft.connect(softGain);softGain.connect(lullabyMaster);soft.start(t);soft.stop(t+dur+.03);lullabyNodes.push(soft);
+  });
+  const patternMs=track.notes.length*step*1000;
+  lullabyTimer=setTimeout(()=>scheduleLullabyLoop(session),Math.max(500,patternMs-100));
+}
+function updateLullabyUI(){
+  const t=lullabyTracks[lullabyIndex];
+  $('#lullabyTitle').textContent=t.title;$('#lullabyDescription').textContent=t.description;$('#floatingTrackTitle').textContent=t.title;
+  $$('.lullaby-track').forEach((b,i)=>b.classList.toggle('active',i===lullabyIndex));
+  if(player)player.classList.toggle('playing',lullabyPlaying);
+  if(lullabyIcon)lullabyIcon.textContent=lullabyPlaying?'Ⅱ':'▶';
+  if(floatingToggle)floatingToggle.textContent=lullabyPlaying?'Ⅱ':'▶';
+  if(lullabyToggle)lullabyToggle.setAttribute('aria-label',lullabyPlaying?'Pause lullaby':'Play lullaby');
+  if(floatingToggle)floatingToggle.setAttribute('aria-label',lullabyPlaying?'Pause lullaby':'Play lullaby');
+}
+async function startLullaby(fromUser=false){
+  setupLullabyAudio();if(!lullabyCtx)return false;
+  try{await lullabyCtx.resume()}catch(e){}
+  if(lullabyCtx.state!=='running'){
+    autoplayPending=true;autoplayNote.textContent='Your browser paused autoplay — tap Play or interact with the page to begin.';return false;
+  }
+  clearTimeout(lullabyTimer);clearLullabyNodes();lullabyPlaying=true;autoplayPending=false;lullabySession++;
+  scheduleLullabyLoop(lullabySession);updateLullabyUI();autoplayNote.textContent=fromUser?'Playing softly ♫':'Autoplay started softly ♫';return true;
+}
+function stopLullaby(){autoplayPending=false;lullabyPlaying=false;lullabySession++;clearTimeout(lullabyTimer);clearLullabyNodes();updateLullabyUI();autoplayNote.textContent='Paused — press play whenever you want a softer moment.';}
+function toggleLullaby(){lullabyPlaying?stopLullaby():startLullaby(true)}
+function chooseLullaby(i){
+  const was=lullabyPlaying;lullabyIndex=(i+lullabyTracks.length)%lullabyTracks.length;
+  if(was){lullabySession++;clearTimeout(lullabyTimer);clearLullabyNodes();scheduleLullabyLoop(lullabySession)}
+  updateLullabyUI();
+}
+if(lullabyToggle)lullabyToggle.addEventListener('click',toggleLullaby);
+if(floatingToggle)floatingToggle.addEventListener('click',toggleLullaby);
+$('#prevLullaby')?.addEventListener('click',()=>chooseLullaby(lullabyIndex-1));
+$('#nextLullaby')?.addEventListener('click',()=>chooseLullaby(lullabyIndex+1));
+$$('.lullaby-track').forEach((b,i)=>b.addEventListener('click',()=>chooseLullaby(i)));
+$('#lullabyVolume')?.addEventListener('input',e=>{if(lullabyMaster)lullabyMaster.gain.setTargetAtTime(Number(e.target.value)/100*.18,lullabyCtx.currentTime,.04)});
+updateLullabyUI();
+setTimeout(()=>$('#floatingLullaby')?.classList.add('show'),1800);
+
+window.addEventListener('load',()=>{
+  startLullaby(false).then(started=>{
+    if(!started){
+      const unlock=()=>{if(autoplayPending&&!lullabyPlaying)startLullaby(false);document.removeEventListener('pointerdown',unlock,true);document.removeEventListener('keydown',unlock,true)};
+      document.addEventListener('pointerdown',unlock,true);document.addEventListener('keydown',unlock,true);
+    }
+  });
+});
