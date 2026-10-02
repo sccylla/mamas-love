@@ -8,6 +8,9 @@
   <title>Mama's Love — Women's & Baby Care</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,7 +24,7 @@
     </a>
     <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav class="nav" aria-label="Primary navigation">
-      <a href="#learn">Learn</a><a href="#trackers">Trackers</a><a href="#baby">Baby Timeline</a><a href="#care">Care Library</a>
+      <a href="#learn">Learn</a><a href="#trackers">Trackers</a><a href="#lullaby">Lullaby</a><a href="#baby">Baby Timeline</a><a href="#care">Care Library</a>
       <a class="nav-cta" href="#trackers">Start tracking</a>
     </nav>
   </header>
@@ -29,11 +32,11 @@
   <main id="top">
     <section class="hero section-shell">
       <div class="hero-copy reveal">
-        <span class="eyebrow">Care that grows with you</span>
-        <h1>Understand your body.<br><em>Nurture every beginning.</em></h1>
+        <span class="eyebrow">✦ Care that grows with you ✦</span>
+        <h1>Understand your body.<br><em>Nurture every beginning.</em></h1><span class="hero-script">with a little more love ♡</span>
         <p>Mama's Love brings women's health, pregnancy, postpartum recovery and baby development into one calm, beautiful space — with practical trackers you can actually use.</p>
         <div class="hero-actions"><a class="btn primary" href="#trackers">Explore trackers</a><a class="btn ghost" href="#learn">Browse care topics</a></div>
-        <div class="trust-row"><span>♡ No account needed</span><span>◌ Saved on your device</span><span>✦ Educational guidance</span></div>
+        <div class="trust-row"><span>♡ No account needed</span><span>☁ Saved on your device</span><span>✦ Educational guidance</span><span>♫ Gentle lullabies</span></div>
       </div>
       <div class="hero-visual reveal" aria-hidden="true">
         <div class="orb orb-one"></div><div class="orb orb-two"></div>
@@ -112,6 +115,34 @@
       </div>
     </section>
 
+    <section id="lullaby" class="lullaby-section">
+      <div class="section-shell lullaby-shell">
+        <div class="lullaby-copy reveal">
+          <span class="eyebrow light-pink">♫ Mama’s Love lullabies</span>
+          <h2>Soft little sounds for sleepy moments.</h2>
+          <p>Original, calming melodies created for winding down, feeding, rocking and quiet cuddle time. The first track tries to begin automatically when the page opens.</p>
+          <div class="lullaby-notes"><span>☾ low volume</span><span>♡ gentle tempo</span><span>✦ loops softly</span></div>
+        </div>
+        <div class="lullaby-player reveal" aria-label="Lullaby player">
+          <div class="lullaby-art" aria-hidden="true"><span class="moon">☾</span><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">⋆</span><span class="cloud">☁</span></div>
+          <div class="lullaby-meta"><span class="now-playing-label">NOW PLAYING</span><h3 id="lullabyTitle">Moonlight Hush</h3><p id="lullabyDescription">A slow, warm bedtime melody.</p></div>
+          <div class="lullaby-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="lullaby-controls">
+            <button id="prevLullaby" class="round-control" type="button" aria-label="Previous lullaby">‹</button>
+            <button id="lullabyToggle" class="play-control" type="button" aria-label="Play lullaby"><span id="lullabyIcon">▶</span></button>
+            <button id="nextLullaby" class="round-control" type="button" aria-label="Next lullaby">›</button>
+          </div>
+          <div class="volume-row"><span>quiet</span><input id="lullabyVolume" type="range" min="0" max="100" value="28" aria-label="Lullaby volume"><span>soft</span></div>
+          <div class="lullaby-tracks" role="list" aria-label="Lullaby selection">
+            <button class="lullaby-track active" data-track="0" type="button"><span>01</span><b>Moonlight Hush</b><small>dreamy & warm</small></button>
+            <button class="lullaby-track" data-track="1" type="button"><span>02</span><b>Little Cloud</b><small>light & floating</small></button>
+            <button class="lullaby-track" data-track="2" type="button"><span>03</span><b>Mama’s Arms</b><small>slow & comforting</small></button>
+          </div>
+          <p class="autoplay-note" id="autoplayNote">Trying to start softly…</p>
+        </div>
+      </div>
+    </section>
+
     <section id="baby" class="section-shell section-block baby-section">
       <div class="section-heading reveal"><span class="eyebrow">0–12 months</span><h2>A gentle first-year development timeline</h2><p>Use milestones as a conversation guide, not a pass/fail test. Children develop at different rates.</p></div>
       <div class="timeline" id="milestoneTimeline">
@@ -144,6 +175,12 @@
   </main>
 
   <footer><div class="section-shell footer-inner"><div class="brand footer-brand"><span class="brand-mark">♥</span><span><strong>Mama's Love</strong><small>Care that grows with you.</small></span></div><p>Educational information only — not a diagnosis or substitute for care from a qualified clinician.</p><span>© <b id="year"></b> Mama's Love</span></div></footer>
+
+  <div class="floating-lullaby" id="floatingLullaby" aria-live="polite">
+    <span class="floating-note-icon">♫</span>
+    <div><small>Mama’s Love lullaby</small><b id="floatingTrackTitle">Moonlight Hush</b></div>
+    <button id="floatingLullabyToggle" type="button" aria-label="Play or pause lullaby">▶</button>
+  </div>
 
   <div class="modal" id="guideModal" aria-hidden="true"><div class="modal-backdrop" data-close-modal></div><article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" data-close-modal aria-label="Close">×</button><span class="eyebrow" id="modalLabel"></span><h2 id="modalTitle"></h2><div id="modalBody"></div></article></div>
 
