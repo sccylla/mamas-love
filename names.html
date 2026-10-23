@@ -47,6 +47,7 @@
   footer{padding:26px 0;border-top:1px solid var(--line);background:#fff}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot p{font-size:.78rem;color:var(--muted);max-width:600px;text-align:right}
   @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.name-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:640px){.hero{padding-top:30px}.hero h1{font-size:3.2rem}.hero-art{min-height:390px}.baby-card{width:86%;padding:20px}.controls{grid-template-columns:1fr}.gender-toggle button{flex:1}.name-grid{grid-template-columns:1fr}.results-head{align-items:start;flex-direction:column}.cat-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.cat-tabs button{white-space:nowrap}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}}
+.load-more-wrap{text-align:center;margin-top:24px}.load-more{border:0;background:var(--plum);color:#fff;padding:13px 20px;border-radius:999px;font:inherit;font-weight:850;cursor:pointer;box-shadow:0 10px 25px rgba(78,49,73,.14)}.load-more[hidden]{display:none}.library-stat{display:inline-flex;margin-top:14px;padding:9px 12px;border-radius:999px;background:#fff0f4;color:#9c4168;font-size:.78rem;font-weight:850}
 </style>
 </head>
 <body>
@@ -57,7 +58,7 @@
     <div>
       <span class="eyebrow">More names, better cards</span>
       <h1>Find a name that <em>feels right.</em></h1>
-      <p>This expanded version has many more baby names across English, Hebrew, Islamic, Yorùbá and Yorùbá Oríkì. Click any name card to instantly download a beautiful shareable card with the <strong>mamaslove.ng</strong> watermark.</p>
+      <p>Browse a library of nearly 4,000 baby names across English, Hebrew, Islamic, Yorùbá and Yorùbá Oríkì. Click any name card to instantly download a beautiful shareable card with the <strong>mamaslove.ng</strong> watermark.</p>
     </div>
     <div class="hero-art">
       <div class="blob b1"></div><div class="blob b2"></div>
@@ -79,7 +80,7 @@
       </div>
       <div class="cat-tabs" id="catTabs"></div>
       <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2><p id="resultsCount"></p></div><p>♡ Save favourites • Tap any card to download</p></div>
-      <div class="name-grid" id="nameGrid"></div>
+      <div class="name-grid" id="nameGrid"></div><div class="load-more-wrap"><button class="load-more" id="loadMore">Load 48 more names</button></div>
       <div class="hint" id="originNote"></div>
     </div>
   </div>
@@ -100,42 +101,24 @@
   </div>
 </footer>
 <div class="download-toast" id="toast">Name card downloaded</div>
+<script src="assets/names-data.js"></script>
 <script>
-const names = [
-// English girls
-['Grace','girl','English','Grace, favour and elegance.'],['Rose','girl','English','The rose flower; love and beauty.'],['Lily','girl','English','The lily flower; purity and gentleness.'],['Clara','girl','English','Bright or clear.'],['Lucy','girl','English','Light.'],['Sophia','girl','English','Wisdom.'],['Victoria','girl','English','Victory.'],['Stella','girl','English','Star.'],['Violet','girl','English','Purple flower.'],['Hazel','girl','English','Hazel tree.'],['Ruby','girl','English','Red gemstone.'],['Alice','girl','English','Noble.'],['Eva','girl','English','Life.'],['Ivy','girl','English','Faithfulness; climbing evergreen plant.'],['Daisy','girl','English','The daisy flower.'],['Faith','girl','English','Trust and belief.'],
-// English boys
-['Oliver','boy','English','Associated with the olive tree and peace.'],['Leo','boy','English','Lion.'],['Felix','boy','English','Happy, fortunate or successful.'],['Theodore','boy','English','Gift of God.'],['Henry','boy','English','Home ruler.'],['George','boy','English','Farmer or earth-worker.'],['Victor','boy','English','Conqueror; one who is victorious.'],['Jasper','boy','English','Traditionally interpreted as treasurer.'],['Arthur','boy','English','Bear-like; noble strength.'],['Miles','boy','English','Soldier or gracious.'],['Oscar','boy','English','God spear / champion warrior.'],['Caleb','boy','English','Wholehearted or faithful.'],['Ethan','boy','English','Firm, enduring, strong.'],['Luke','boy','English','Light-giving.'],['Eli','boy','English','Ascended or uplifted.'],['Finn','boy','English','Fair or white.'],
-// Hebrew girls
-['Shira','girl','Hebrew','Song.'],['Talia','girl','Hebrew','Dew of God.'],['Liora','girl','Hebrew','My light.'],['Tamar','girl','Hebrew','Date palm.'],['Adina','girl','Hebrew','Gentle or delicate.'],['Hannah','girl','Hebrew','Grace or favour.'],['Naomi','girl','Hebrew','Pleasantness.'],['Sarah','girl','Hebrew','Princess.'],['Eliana','girl','Hebrew','My God has answered.'],['Miriam','girl','Hebrew','Beloved or wished-for child.'],['Leah','girl','Hebrew','Weary or delicate.'],['Abigail','girl','Hebrew','My father is joy.'],['Yael','girl','Hebrew','Ibex / mountain goat; strength.'],['Aviva','girl','Hebrew','Springtime, fresh.'],['Noa','girl','Hebrew','Movement or motion.'],['Dinah','girl','Hebrew','Judged / vindicated.'],
-// Hebrew boys
-['Ari','boy','Hebrew','Lion.'],['Asher','boy','Hebrew','Happy or blessed.'],['Ezra','boy','Hebrew','Help.'],['Levi','boy','Hebrew','Joined or attached.'],['Noah','boy','Hebrew','Rest or comfort.'],['Daniel','boy','Hebrew','God is my judge.'],['Gabriel','boy','Hebrew','God is my strength.'],['Nathan','boy','Hebrew','He gave.'],['Micah','boy','Hebrew','Who is like God?'],['Elior','boy','Hebrew','God is my light.'],['Jonah','boy','Hebrew','Dove.'],['Samuel','boy','Hebrew','Heard by God.'],['Isaac','boy','Hebrew','He will laugh.'],['David','boy','Hebrew','Beloved.'],['Joseph','boy','Hebrew','May He add.'],['Reuben','boy','Hebrew','Behold, a son.'],
-// Islamic girls
-['Noor','girl','Islamic','Light.'],['Iman','girl','Islamic','Faith.'],['Rahma','girl','Islamic','Mercy or compassion.'],['Huda','girl','Islamic','Guidance.'],['Amina','girl','Islamic','Trustworthy or faithful.'],['Safiya','girl','Islamic','Pure, chosen or sincere friend.'],['Zahra','girl','Islamic','Radiant, bright or flower.'],['Amal','girl','Islamic','Hope.'],['Maryam','girl','Islamic','The Arabic form of Mary; revered and pure.'],['Aaliyah','girl','Islamic','Exalted, high-ranking.'],['Khadija','girl','Islamic','Early baby / name of the Prophet’s wife.'],['Sumayyah','girl','Islamic','High above / distinguished.'],['Fatimah','girl','Islamic','Captivating; name of the Prophet’s daughter.'],['Layla','girl','Islamic','Night.'],['Zainab','girl','Islamic','Fragrant flower / beauty.'],['Nadia','girl','Islamic','Tender, delicate, caller.'],
-// Islamic boys
-['Kareem','boy','Islamic','Generous or noble.'],['Ameen','boy','Islamic','Trustworthy or faithful.'],['Zayd','boy','Islamic','Growth or increase.'],['Rayyan','boy','Islamic','Lush or well-watered; also linked with a gate of Paradise in Islamic tradition.'],['Faris','boy','Islamic','Knight or horseman.'],['Sami','boy','Islamic','Elevated or exalted.'],['Nasir','boy','Islamic','Helper or supporter.'],['Malik','boy','Islamic','King or owner.'],['Omar','boy','Islamic','Long-lived or flourishing.'],['Bilal','boy','Islamic','Moistening / refreshing.'],['Hamza','boy','Islamic','Lion, steadfast, strong.'],['Ibrahim','boy','Islamic','Father of many.'],['Yusuf','boy','Islamic','God increases.'],['Ilyas','boy','Islamic','The Arabic form of Elijah.'],['Adam','boy','Islamic','Man / earth; prophetic name.'],['Musa','boy','Islamic','Prophetic name of Moses.'],
-// Yoruba girls
-['Adesewa','girl','Yoruba','The crown makes beauty / crown of beauty.'],['Yetunde','girl','Yoruba','Mother has returned.'],['Morenike','girl','Yoruba','I have found someone to care for and cherish.'],['Anuoluwapo','girl','Yoruba','God’s mercy is abundant.'],['Ayooluwa','girl','Yoruba','Joy of God.'],['Toluwani','girl','Yoruba','Belongs to God.'],['Temilade','girl','Yoruba','The crown is mine.'],['Simisola','girl','Yoruba','Rest in wealth / prosperity.'],['Oreofe','girl','Yoruba','Grace / kindness of God.'],['Ireoluwa','girl','Yoruba','Goodness of God.'],['Anjolaoluwa','girl','Yoruba','Enjoy the wealth of God.'],['Aderonke','girl','Yoruba','The crown has something to care for.'],['Adetola','girl','Yoruba','The crown is enough for honour.'],['Titilayo','girl','Yoruba','Everlasting joy.'],['Abisola','girl','Yoruba','Born into wealth.'],['Modupeola','girl','Yoruba','I thank God for wealth / honour.'],
-// Yoruba boys
-['Ayomide','boy','Yoruba','My joy has arrived.'],['Oluwatobi','boy','Yoruba','God is great.'],['Ifeoluwa','boy','Yoruba','Love of God.'],['Adewale','boy','Yoruba','The crown has come home.'],['Babatunde','boy','Yoruba','Father has returned.'],['Temitope','boy','Yoruba','Mine is worthy of gratitude.'],['Oluwaseun','boy','Yoruba','God be thanked.'],['Adedayo','boy','Yoruba','The crown becomes joy.'],['Akinwale','boy','Yoruba','Valor has come home.'],['Olamide','boy','Yoruba','My wealth has arrived.'],['Ayobami','boy','Yoruba','Joy meets me.'],['Adebayo','boy','Yoruba','The crown meets joy.'],['Ademola','boy','Yoruba','The crown adds to wealth.'],['Olumide','boy','Yoruba','My Lord has come.'],['Akinyemi','boy','Yoruba','Valor befits me.'],['Oluwadamilare','boy','Yoruba','God has vindicated me.'],
-// Oriki girls
-['Àjọkẹ́','girl','Oriki','Jointly cherished; jointly beloved.'],['Àríkẹ́','girl','Oriki','One who is cared for on sight.'],['Àdùkẹ́','girl','Oriki','A highly beloved one whom people eagerly care for.'],['Àníkẹ́','girl','Oriki','Born to be pampered.'],['Àbẹ̀kẹ́','girl','Oriki','One begged to be cared for.'],['Àwẹ̀ní','girl','Oriki','A child to be bathed and possessed.'],['Àyọ̀ní','girl','Oriki','One we are happy to have.'],['Ariyíkẹ́','girl','Oriki','We have this one to cherish.'],['Àmọ̀kẹ́','girl','Oriki','One cared for tenderly.'],['Àyọ̀ká','girl','Oriki','One surrounded by joy.'],['Àṣàkẹ́','girl','Oriki','A precious child to treasure.'],['Ìyábọ̀','girl','Oriki','Mother has returned.'],['Dúrójayé','girl','Oriki','Stay and enjoy life.'],['Dúróoríkẹ́','girl','Oriki','Stay and be cherished.'],['Ayinke','girl','Oriki','One to praise and pet.'],['Anikeoluwa','girl','Oriki','A cherished child of God.'],
-// Oriki boys
-['Àkànní','boy','Oriki','One who is special to have.'],['Àkànbí','boy','Oriki','One consciously and deliberately born.'],['Àjàní','boy','Oriki','One we fought to have.'],['Àjìní','boy','Oriki','First-born child.'],['Àyìnlá','boy','Oriki','A child meant to be praised, celebrated and disciplined.'],['Àlàbí','boy','Oriki','One born to the white cloth of Ọbàtálá.'],['Akọni','boy','Oriki','The brave one.'],['Àlào','boy','Oriki','One destined to divide and conquer enemies.'],['Àbídèmí','boy','Oriki','Born before me / one who came first for me.'],['Ajibola','boy','Oriki','Woke up to wealth.'],['Ajadi','boy','Oriki','One who wakes to fight/strive.'],['Akintunde','boy','Oriki','Valor has returned.'],['Akinjide','boy','Oriki','Valor has awakened.'],['Aremu','boy','Oriki','A first son with special status in some Yoruba traditions.'],['Akinola','boy','Oriki','Valor with wealth.'],['Anjorin','boy','Oriki','One who walks with lineage prestige.']
-].map(([n,g,c,m])=>({n,g,c,m}));
+const names=window.MAMAS_NAMES||[];
+let visible=48;
+
 
 const categories=['All','English','Hebrew','Islamic','Yoruba','Oriki'];
 let gender='girl',category='All',query='';
 const grid=document.getElementById('nameGrid'), title=document.getElementById('resultsTitle'), count=document.getElementById('resultsCount'), tabs=document.getElementById('catTabs'), search=document.getElementById('search');
 let favs=JSON.parse(localStorage.getItem('mamasNameFavs')||'[]');
 
-categories.forEach((c,i)=>{const b=document.createElement('button');b.textContent=c==='Oriki'?'Yorùbá Oríkì':c;b.className=i===0?'active':'';b.onclick=()=>{category=c;[...tabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};tabs.appendChild(b)});
-document.querySelectorAll('.gender-toggle button').forEach(b=>b.onclick=()=>{gender=b.dataset.gender;document.querySelectorAll('.gender-toggle button').forEach(x=>x.classList.toggle('active',x===b));render()});
-search.addEventListener('input',e=>{query=e.target.value.toLowerCase();render()});
+categories.forEach((c,i)=>{const b=document.createElement('button');const n=c==='All'?names.length:names.filter(x=>x.c===c).length;b.textContent=(c==='Oriki'?'Yorùbá Oríkì':c)+' ('+n.toLocaleString()+')';b.className=i===0?'active':'';b.onclick=()=>{category=c;visible=48;[...tabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};tabs.appendChild(b)});
+document.querySelectorAll('.gender-toggle button').forEach(b=>b.onclick=()=>{gender=b.dataset.gender;visible=48;document.querySelectorAll('.gender-toggle button').forEach(x=>x.classList.toggle('active',x===b));render()});
+search.addEventListener('input',e=>{query=e.target.value.toLowerCase();visible=48;render()});
 function key(x){return x.n+'|'+x.g+'|'+x.c}
 function toggleFav(k){favs=favs.includes(k)?favs.filter(x=>x!==k):[...favs,k];localStorage.setItem('mamasNameFavs',JSON.stringify(favs));render();renderFavs()}
 function card(x){const k=key(x),saved=favs.includes(k);return `<article class="name-card" onclick='downloadCard(${JSON.stringify(JSON.stringify(x))})'><button class="fav ${saved?'active':''}" onclick='event.stopPropagation();toggleFav(${JSON.stringify(k)})' aria-label="Save ${x.n}">♥</button><span class="type">${x.c==='Oriki'?'Yorùbá Oríkì':x.c}</span><h3>${x.n}</h3><p>${x.m}</p></article>`}
-function render(){const list=names.filter(x=>x.g===gender&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));grid.innerHTML=list.map(card).join('')||'<div class="empty">No names match that search yet.</div>';title.textContent=(gender==='girl'?'Girl':'Boy')+' name ideas';count.textContent=list.length+' ideas shown';document.getElementById('originNote').innerHTML=category==='Oriki'?'<b>About Oríkì:</b> These are praise-names or cognomens. Their meaning can be deeper than a one-line gloss because family, lineage and circumstance can add more layers.':'Tap any card to download a beautifully designed name card with a <b>mamaslove.ng</b> watermark.'}
+function render(){const list=names.filter(x=>(x.g===gender||x.g==='unisex')&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));const shown=list.slice(0,visible);grid.innerHTML=shown.map(card).join('')||'<div class="empty">No names match that search yet.</div>';title.textContent=(gender==='girl'?'Girl':'Boy')+' name ideas';count.textContent=shown.length.toLocaleString()+' shown of '+list.length.toLocaleString()+' matching names';const lm=document.getElementById('loadMore');lm.hidden=shown.length>=list.length;lm.textContent='Load 48 more names';document.getElementById('originNote').innerHTML=category==='Oriki'?'<b>About Oríkì:</b> These are praise-names or cognomens. Their meaning can be deeper than a one-line gloss because family, lineage and circumstance can add more layers.':'This library now contains <b>'+names.length.toLocaleString()+'</b> names. Tap any card to download a designed card with a <b>mamaslove.ng</b> watermark.'}
 function renderFavs(){const list=names.filter(x=>favs.includes(key(x)));document.getElementById('favoritesGrid').innerHTML=list.length?list.map(card).join(''):'<div class="empty">Your saved names will appear here.</div>'}
 
 function downloadCard(json){const x=JSON.parse(json); const svg = makeCardSVG(x); const blob = new Blob([svg], {type:'image/svg+xml;charset=utf-8'}); const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=`${x.n.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}-mamaslove-card.svg`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1000); toast('Downloaded: '+x.n);}
@@ -191,6 +174,7 @@ function makeCardSVG(x){
 function wrapText(text,max){const words=text.split(' '); const lines=[]; let line=''; for(const w of words){ if((line+' '+w).trim().length>max){ if(line) lines.push(line.trim()); line=w; } else { line += ' '+w; }} if(line.trim()) lines.push(line.trim()); return lines.slice(0,5); }
 function escapeXML(str){return String(str).replace(/[<>&"']/g,s=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[s]));}
 function toast(msg){const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
+document.getElementById('loadMore').addEventListener('click',()=>{visible+=48;render()});
 render(); renderFavs();
 </script>
 </body>
