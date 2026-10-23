@@ -1,91 +1,197 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fff9f6">
-<meta name="description" content="Baby name ideas for boys and girls: English, Hebrew, Islamic, Yoruba and Yoruba Oriki names.">
-<title>Baby Names & Oríkì | Mama's Love</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#fff8f6" />
+<title>Mama's Love — Baby Names & Oriki</title>
 <style>
-@font-face{font-family:DM Sans;src:url('assets/fonts/dm-sans-latin-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:Cormorant Garamond;src:url('assets/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
-:root{--ink:#402c3b;--muted:#7b6a76;--rose:#f06b9c;--rose2:#d74b82;--peach:#ffc9a9;--plum:#4b2d46;--paper:#fffaf7;--line:#eadeda;--card:#fff;--soft:#fff1f5;--gold:#b48b52;--shadow:0 20px 60px rgba(88,47,71,.10)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif}.shell{width:min(1180px,calc(100% - 28px));margin:auto}a{text-decoration:none;color:inherit}
-.topline{background:var(--plum);color:#fff;text-align:center;padding:9px 16px;font-size:.78rem;letter-spacing:.08em}
-header{position:sticky;top:0;z-index:40;background:rgba(255,250,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(75,45,70,.08)}.head{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand img{width:210px}.back{padding:10px 15px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:800;font-size:.86rem}
-.hero{padding:56px 0 30px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.eyebrow{font-size:.76rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--rose2)}h1,h2,h3{font-family:'Cormorant Garamond',serif}.hero h1{font-size:clamp(3.3rem,6vw,6.4rem);line-height:.9;letter-spacing:-.04em;margin:12px 0 18px}.hero h1 em{font-style:normal;color:var(--rose2)}.hero p{font-size:1.06rem;color:var(--muted);max-width:650px}.hero-art{min-height:470px;border-radius:38px;background:linear-gradient(145deg,#ffe9ef 0%,#fff7f0 55%,#f8e7ef 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}.blob{position:absolute;border-radius:50%;filter:blur(.1px)}.b1{width:260px;height:260px;background:#ffd8e5;right:-20px;top:-25px}.b2{width:190px;height:190px;background:#ffd7b9;left:15px;bottom:-25px}.baby-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72%;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);border-radius:30px;padding:26px;box-shadow:0 26px 70px rgba(76,42,63,.13)}.baby-card .mini-logo{width:72px;height:82px;margin-bottom:14px}.baby-card h3{font-size:2.5rem;line-height:1;margin:0 0 8px}.baby-card p{margin:0;color:var(--muted)}.script-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.script-row span{padding:8px 11px;border-radius:999px;background:#fff1f6;color:#8c3d62;font-size:.75rem;font-weight:800}
-.finder{padding:24px 0 72px}.finder-card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:22px;box-shadow:var(--shadow)}.controls{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}.search{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fffafc;border-radius:16px;padding:0 14px}.search input{border:0;outline:0;background:transparent;width:100%;padding:14px 0;font:inherit;color:var(--ink)}.gender-toggle{display:flex;padding:5px;background:#f7eef2;border-radius:15px}.gender-toggle button,.cat-tabs button{border:0;cursor:pointer;font:inherit;font-weight:800}.gender-toggle button{padding:10px 18px;border-radius:11px;background:transparent;color:#755e6d}.gender-toggle button.active{background:var(--plum);color:#fff}
-.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.cat-tabs button{padding:10px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#755e6d}.cat-tabs button.active{background:#ffe9f0;color:var(--rose2);border-color:#f1b8cc}.results-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:30px 0 14px}.results-head h2{font-size:2.5rem;margin:0}.results-head p{margin:0;color:var(--muted);font-size:.86rem}
-.name-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.name-card{position:relative;padding:20px;border-radius:22px;background:#fff;border:1px solid var(--line);min-height:174px;transition:.2s ease}.name-card:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(85,50,69,.09)}.name-card .type{font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--rose2)}.name-card h3{font-size:2rem;line-height:1;margin:8px 0 7px}.name-card p{margin:0;color:var(--muted);font-size:.86rem}.fav{position:absolute;right:14px;top:14px;border:0;background:#fff3f7;color:#c84e7c;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem}.fav.active{background:var(--rose);color:white}.origin-note{margin-top:24px;padding:18px 20px;border-radius:20px;background:#fff6ed;border:1px solid #f2deca;color:#745c4f;font-size:.85rem}
-.oriki-banner{margin-top:70px;background:linear-gradient(135deg,#4b2d46,#70415f);color:#fff;border-radius:32px;padding:30px;display:grid;grid-template-columns:1fr .65fr;gap:24px;align-items:center;overflow:hidden;position:relative}.oriki-banner:after{content:'ORÍKÌ';position:absolute;right:-20px;bottom:-30px;font:700 7rem/1 'Cormorant Garamond';color:rgba(255,255,255,.06)}.oriki-banner h2{font-size:3rem;line-height:.95;margin:8px 0 12px}.oriki-banner p{color:#e8dce4;margin:0;max-width:690px}.oriki-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}.oriki-pills span{padding:9px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);font-size:.78rem}
-.favorites{padding:70px 0;background:#fff3f6}.favorites h2{font-size:3rem;margin:0 0 8px}.favorites p{color:var(--muted);margin:0 0 20px}.empty{padding:22px;border:1px dashed #dfcbd4;border-radius:20px;color:var(--muted);background:#fff}
-footer{padding:28px 0;border-top:1px solid var(--line);background:#fff}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px}.foot img{width:180px}.foot p{font-size:.78rem;color:var(--muted);max-width:580px;text-align:right}
-@media(max-width:980px){.hero-grid,.oriki-banner{grid-template-columns:1fr}.name-grid{grid-template-columns:repeat(2,1fr)}.oriki-pills{justify-content:flex-start}}
-@media(max-width:640px){.brand img{width:175px}.hero{padding-top:32px}.hero h1{font-size:3.35rem}.hero-art{min-height:390px}.baby-card{width:86%;padding:20px}.controls{grid-template-columns:1fr}.gender-toggle button{flex:1}.name-grid{grid-template-columns:1fr}.results-head{align-items:start;flex-direction:column}.cat-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.cat-tabs button{white-space:nowrap}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}}
+  :root{
+    --bg:#fff8f6; --card:#ffffff; --ink:#3f2d3a; --muted:#7f6b78; --line:#ecdde2;
+    --rose:#f26f9f; --rose2:#d64f83; --peach:#ffd0b1; --plum:#4e3149; --cream:#fff1ea;
+    --shadow:0 18px 46px rgba(88, 47, 71, .10); --radius:26px;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#fff9f7 0%,#fff3f5 100%);color:var(--ink)}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+  a{text-decoration:none;color:inherit}
+  .shell{width:min(1200px,calc(100% - 28px));margin:auto}
+  .topline{background:var(--plum);color:#fff;text-align:center;padding:9px 16px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+  .hero{padding:56px 0 28px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+  .eyebrow{display:inline-block;font-size:.76rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--rose2)}
+  .hero h1{font-size:clamp(3rem,5.5vw,5.6rem);line-height:.92;letter-spacing:-.04em;margin:12px 0 16px}
+  .hero h1 em{font-style:normal;color:var(--rose2)}
+  .hero p{font-size:1.06rem;color:var(--muted);max-width:680px}
+  .hero-art{min-height:430px;border-radius:38px;background:linear-gradient(145deg,#ffe9ef 0%,#fff7f0 55%,#f8e7ef 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .blob{position:absolute;border-radius:50%}.b1{width:260px;height:260px;background:#ffd8e5;right:-18px;top:-20px}.b2{width:180px;height:180px;background:#ffd7b9;left:10px;bottom:-26px}
+  .baby-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74%;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.7);border-radius:30px;padding:26px;box-shadow:0 28px 70px rgba(76,42,63,.13)}
+  .mark{width:78px;height:90px;display:block;margin:0 auto 14px;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 180"><circle cx="56" cy="28" r="22" fill="%23f26f9f"/><circle cx="118" cy="66" r="18" fill="%23f5c7a8"/><path d="M48 56C17 47-8 72 5 107c8 23 34 44 59 67 10 9 18 17 22 22 8-21 2-37-16-53L40 117C18 98 12 80 25 68c14-13 33-8 49 9 14 15 28 13 45-1-21 5-32-8-42-24-8-13-15-22-29-28Z" fill="%23f26f9f"/><path d="M119 85c28-5 49 16 48 42-2 29-30 50-53 68l-28 23c-3-21 6-39 26-57 22-19 42-35 39-56-2-17-20-19-33-8l-13 11c10-18 17-31 14-23Z" fill="%23f5c7a8"/></svg>') center/contain no-repeat}
+  .baby-card h3{font-size:2.45rem;line-height:1;margin:0 0 8px;text-align:center}.baby-card p{margin:0;text-align:center;color:var(--muted)}
+  .script-row{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:18px}.script-row span{padding:8px 11px;border-radius:999px;background:#fff1f6;color:#8c3d62;font-size:.75rem;font-weight:800}
+  .finder{padding:20px 0 64px}
+  .finder-card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:22px;box-shadow:var(--shadow)}
+  .controls{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+  .search{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fffafc;border-radius:16px;padding:0 14px}.search input{border:0;outline:0;background:transparent;width:100%;padding:15px 0;font:inherit;color:var(--ink)}
+  .gender-toggle{display:flex;padding:5px;background:#f7eef2;border-radius:15px}.gender-toggle button,.cat-tabs button{border:0;cursor:pointer;font:inherit;font-weight:800}.gender-toggle button{padding:10px 18px;border-radius:11px;background:transparent;color:#755e6d}.gender-toggle button.active{background:var(--plum);color:#fff}
+  .cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.cat-tabs button{padding:10px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#755e6d}.cat-tabs button.active{background:#ffe9f0;color:var(--rose2);border-color:#f1b8cc}
+  .results-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 14px}.results-head h2{font-size:2.4rem;margin:0}.results-head p{margin:0;color:var(--muted);font-size:.86rem}
+  .name-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .name-card{position:relative;padding:20px 18px;border-radius:22px;background:#fff;border:1px solid var(--line);min-height:182px;transition:.2s ease;cursor:pointer}
+  .name-card:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(85,50,69,.09)}
+  .name-card .type{font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--rose2)}
+  .name-card h3{font-size:2rem;line-height:1;margin:8px 0 7px;padding-right:38px}.name-card p{margin:0;color:var(--muted);font-size:.87rem}
+  .fav{position:absolute;right:14px;top:14px;border:0;background:#fff3f7;color:#c84e7c;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem}.fav.active{background:var(--rose);color:white}
+  .hint{margin-top:16px;padding:16px 18px;border-radius:18px;background:#fff6ed;border:1px solid #f2deca;color:#745c4f;font-size:.85rem}
+  .favorites{padding:64px 0;background:#fff3f6}.favorites h2{font-size:2.8rem;margin:0 0 8px}.favorites p{color:var(--muted);margin:0 0 20px}.empty{padding:22px;border:1px dashed #dfcbd4;border-radius:20px;color:var(--muted);background:#fff}
+  .download-toast{position:fixed;right:18px;bottom:18px;padding:12px 14px;border-radius:16px;background:var(--plum);color:#fff;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s ease;z-index:50}.download-toast.show{opacity:1;transform:none}
+  footer{padding:26px 0;border-top:1px solid var(--line);background:#fff}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot p{font-size:.78rem;color:var(--muted);max-width:600px;text-align:right}
+  @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.name-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.hero{padding-top:30px}.hero h1{font-size:3.2rem}.hero-art{min-height:390px}.baby-card{width:86%;padding:20px}.controls{grid-template-columns:1fr}.gender-toggle button{flex:1}.name-grid{grid-template-columns:1fr}.results-head{align-items:start;flex-direction:column}.cat-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.cat-tabs button{white-space:nowrap}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}}
 </style>
 </head>
 <body>
-<div class="topline">Baby-name ideas with meaning, culture and a little personality</div>
-<header><div class="shell head"><a class="brand" href="./"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"></a><a class="back" href="./">← Back to Mama's Love</a></div></header>
+<div class="topline">Baby-name ideas with download-ready cards</div>
 <main>
-<section class="hero"><div class="shell hero-grid">
-  <div><span class="eyebrow">Names with meaning</span><h1>Find a name that <em>feels like them.</em></h1><p>Browse boy and girl names across English classics, Hebrew names, Islamic & Arabic names, Yorùbá names and traditional Yorùbá Oríkì. Search by name or meaning, save favourites, and compare ideas without the clutter.</p></div>
-  <div class="hero-art"><div class="blob b1"></div><div class="blob b2"></div><div class="baby-card"><img class="mini-logo" src="assets/brand/mamas-love-mark.svg" alt=""><h3>What will you call me?</h3><p>A beautiful name can carry faith, family, hope, memory and identity.</p><div class="script-row"><span>English</span><span>Hebrew</span><span>Islamic</span><span>Yorùbá</span><span>Oríkì</span></div></div></div>
-</div></section>
-
-<section class="finder"><div class="shell">
-  <div class="finder-card">
-    <div class="controls">
-      <label class="search">⌕ <input id="search" placeholder="Search a name or meaning…"></label>
-      <div class="gender-toggle"><button class="active" data-gender="girl">Girls</button><button data-gender="boy">Boys</button></div>
+<section class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <span class="eyebrow">More names, better cards</span>
+      <h1>Find a name that <em>feels right.</em></h1>
+      <p>This expanded version has many more baby names across English, Hebrew, Islamic, Yorùbá and Yorùbá Oríkì. Click any name card to instantly download a beautiful shareable card with the <strong>mamaslove.ng</strong> watermark.</p>
     </div>
-    <div class="cat-tabs" id="catTabs"></div>
-    <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2><p id="resultsCount"></p></div><p>♡ Tap the heart to save a favourite</p></div>
-    <div class="name-grid" id="nameGrid"></div>
-    <div class="origin-note" id="originNote"></div>
+    <div class="hero-art">
+      <div class="blob b1"></div><div class="blob b2"></div>
+      <div class="baby-card">
+        <span class="mark"></span>
+        <h3>Tap a card to download</h3>
+        <p>Every name card generates a clean branded design for sharing or saving.</p>
+        <div class="script-row"><span>English</span><span>Hebrew</span><span>Islamic</span><span>Yorùbá</span><span>Oríkì</span></div>
+      </div>
+    </div>
   </div>
-
-  <div class="oriki-banner">
-    <div><span class="eyebrow" style="color:#ffc8dc">Yorùbá eulogy / praise names</span><h2>Oríkì is more than a “cute meaning.”</h2><p>Oríkì names are praise-names or cognomens. Some are tied to family, lineage, place, circumstance of birth or inherited praise traditions, so a short English gloss can never capture the whole cultural story.</p></div>
-    <div class="oriki-pills"><span>Àkànní</span><span>Àyìnlá</span><span>Àjàní</span><span>Àjọkẹ́</span><span>Àríkẹ́</span><span>Àdùkẹ́</span></div>
+</section>
+<section class="finder">
+  <div class="shell">
+    <div class="finder-card">
+      <div class="controls">
+        <label class="search">⌕ <input id="search" placeholder="Search a name or meaning…" /></label>
+        <div class="gender-toggle"><button class="active" data-gender="girl">Girls</button><button data-gender="boy">Boys</button></div>
+      </div>
+      <div class="cat-tabs" id="catTabs"></div>
+      <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2><p id="resultsCount"></p></div><p>♡ Save favourites • Tap any card to download</p></div>
+      <div class="name-grid" id="nameGrid"></div>
+      <div class="hint" id="originNote"></div>
+    </div>
   </div>
-</div></section>
-
-<section class="favorites"><div class="shell"><span class="eyebrow">Your shortlist</span><h2>Names you loved</h2><p>Saved only in this browser on this device.</p><div id="favoritesGrid" class="name-grid"></div></div></section>
+</section>
+<section class="favorites">
+  <div class="shell">
+    <span class="eyebrow">Your shortlist</span>
+    <h2>Saved names</h2>
+    <p>Saved only on this device in this browser.</p>
+    <div id="favoritesGrid" class="name-grid"></div>
+  </div>
+</section>
 </main>
-<footer><div class="shell foot"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"><p>Name meanings can have more than one interpretation across languages, spellings and traditions. For Yorùbá Oríkì, family and lineage context may add meanings beyond the short gloss shown here.</p></div></footer>
-
+<footer>
+  <div class="shell foot">
+    <div><strong>Mama's Love</strong><br><small>mamaslove.ng</small></div>
+    <p>Name meanings can vary by spelling, language and family tradition. Yorùbá Oríkì can also carry deeper lineage meaning beyond a short gloss.</p>
+  </div>
+</footer>
+<div class="download-toast" id="toast">Name card downloaded</div>
 <script>
-const names=[
-{n:'Grace',g:'girl',c:'English',m:'Grace, favour and elegance.'},{n:'Rose',g:'girl',c:'English',m:'The rose flower; love and beauty.'},{n:'Lily',g:'girl',c:'English',m:'The lily flower; purity and gentleness.'},{n:'Clara',g:'girl',c:'English',m:'Bright or clear.'},{n:'Lucy',g:'girl',c:'English',m:'Light.'},{n:'Sophia',g:'girl',c:'English',m:'Wisdom.'},{n:'Victoria',g:'girl',c:'English',m:'Victory.'},{n:'Stella',g:'girl',c:'English',m:'Star.'},
-{n:'Oliver',g:'boy',c:'English',m:'Associated with the olive tree and peace.'},{n:'Leo',g:'boy',c:'English',m:'Lion.'},{n:'Felix',g:'boy',c:'English',m:'Happy, fortunate or successful.'},{n:'Theodore',g:'boy',c:'English',m:'Gift of God.'},{n:'Henry',g:'boy',c:'English',m:'Home ruler.'},{n:'George',g:'boy',c:'English',m:'Farmer or earth-worker.'},{n:'Victor',g:'boy',c:'English',m:'Conqueror; one who is victorious.'},{n:'Jasper',g:'boy',c:'English',m:'Traditionally interpreted as treasurer.'},
+const names = [
+// English girls
+['Grace','girl','English','Grace, favour and elegance.'],['Rose','girl','English','The rose flower; love and beauty.'],['Lily','girl','English','The lily flower; purity and gentleness.'],['Clara','girl','English','Bright or clear.'],['Lucy','girl','English','Light.'],['Sophia','girl','English','Wisdom.'],['Victoria','girl','English','Victory.'],['Stella','girl','English','Star.'],['Violet','girl','English','Purple flower.'],['Hazel','girl','English','Hazel tree.'],['Ruby','girl','English','Red gemstone.'],['Alice','girl','English','Noble.'],['Eva','girl','English','Life.'],['Ivy','girl','English','Faithfulness; climbing evergreen plant.'],['Daisy','girl','English','The daisy flower.'],['Faith','girl','English','Trust and belief.'],
+// English boys
+['Oliver','boy','English','Associated with the olive tree and peace.'],['Leo','boy','English','Lion.'],['Felix','boy','English','Happy, fortunate or successful.'],['Theodore','boy','English','Gift of God.'],['Henry','boy','English','Home ruler.'],['George','boy','English','Farmer or earth-worker.'],['Victor','boy','English','Conqueror; one who is victorious.'],['Jasper','boy','English','Traditionally interpreted as treasurer.'],['Arthur','boy','English','Bear-like; noble strength.'],['Miles','boy','English','Soldier or gracious.'],['Oscar','boy','English','God spear / champion warrior.'],['Caleb','boy','English','Wholehearted or faithful.'],['Ethan','boy','English','Firm, enduring, strong.'],['Luke','boy','English','Light-giving.'],['Eli','boy','English','Ascended or uplifted.'],['Finn','boy','English','Fair or white.'],
+// Hebrew girls
+['Shira','girl','Hebrew','Song.'],['Talia','girl','Hebrew','Dew of God.'],['Liora','girl','Hebrew','My light.'],['Tamar','girl','Hebrew','Date palm.'],['Adina','girl','Hebrew','Gentle or delicate.'],['Hannah','girl','Hebrew','Grace or favour.'],['Naomi','girl','Hebrew','Pleasantness.'],['Sarah','girl','Hebrew','Princess.'],['Eliana','girl','Hebrew','My God has answered.'],['Miriam','girl','Hebrew','Beloved or wished-for child.'],['Leah','girl','Hebrew','Weary or delicate.'],['Abigail','girl','Hebrew','My father is joy.'],['Yael','girl','Hebrew','Ibex / mountain goat; strength.'],['Aviva','girl','Hebrew','Springtime, fresh.'],['Noa','girl','Hebrew','Movement or motion.'],['Dinah','girl','Hebrew','Judged / vindicated.'],
+// Hebrew boys
+['Ari','boy','Hebrew','Lion.'],['Asher','boy','Hebrew','Happy or blessed.'],['Ezra','boy','Hebrew','Help.'],['Levi','boy','Hebrew','Joined or attached.'],['Noah','boy','Hebrew','Rest or comfort.'],['Daniel','boy','Hebrew','God is my judge.'],['Gabriel','boy','Hebrew','God is my strength.'],['Nathan','boy','Hebrew','He gave.'],['Micah','boy','Hebrew','Who is like God?'],['Elior','boy','Hebrew','God is my light.'],['Jonah','boy','Hebrew','Dove.'],['Samuel','boy','Hebrew','Heard by God.'],['Isaac','boy','Hebrew','He will laugh.'],['David','boy','Hebrew','Beloved.'],['Joseph','boy','Hebrew','May He add.'],['Reuben','boy','Hebrew','Behold, a son.'],
+// Islamic girls
+['Noor','girl','Islamic','Light.'],['Iman','girl','Islamic','Faith.'],['Rahma','girl','Islamic','Mercy or compassion.'],['Huda','girl','Islamic','Guidance.'],['Amina','girl','Islamic','Trustworthy or faithful.'],['Safiya','girl','Islamic','Pure, chosen or sincere friend.'],['Zahra','girl','Islamic','Radiant, bright or flower.'],['Amal','girl','Islamic','Hope.'],['Maryam','girl','Islamic','The Arabic form of Mary; revered and pure.'],['Aaliyah','girl','Islamic','Exalted, high-ranking.'],['Khadija','girl','Islamic','Early baby / name of the Prophet’s wife.'],['Sumayyah','girl','Islamic','High above / distinguished.'],['Fatimah','girl','Islamic','Captivating; name of the Prophet’s daughter.'],['Layla','girl','Islamic','Night.'],['Zainab','girl','Islamic','Fragrant flower / beauty.'],['Nadia','girl','Islamic','Tender, delicate, caller.'],
+// Islamic boys
+['Kareem','boy','Islamic','Generous or noble.'],['Ameen','boy','Islamic','Trustworthy or faithful.'],['Zayd','boy','Islamic','Growth or increase.'],['Rayyan','boy','Islamic','Lush or well-watered; also linked with a gate of Paradise in Islamic tradition.'],['Faris','boy','Islamic','Knight or horseman.'],['Sami','boy','Islamic','Elevated or exalted.'],['Nasir','boy','Islamic','Helper or supporter.'],['Malik','boy','Islamic','King or owner.'],['Omar','boy','Islamic','Long-lived or flourishing.'],['Bilal','boy','Islamic','Moistening / refreshing.'],['Hamza','boy','Islamic','Lion, steadfast, strong.'],['Ibrahim','boy','Islamic','Father of many.'],['Yusuf','boy','Islamic','God increases.'],['Ilyas','boy','Islamic','The Arabic form of Elijah.'],['Adam','boy','Islamic','Man / earth; prophetic name.'],['Musa','boy','Islamic','Prophetic name of Moses.'],
+// Yoruba girls
+['Adesewa','girl','Yoruba','The crown makes beauty / crown of beauty.'],['Yetunde','girl','Yoruba','Mother has returned.'],['Morenike','girl','Yoruba','I have found someone to care for and cherish.'],['Anuoluwapo','girl','Yoruba','God’s mercy is abundant.'],['Ayooluwa','girl','Yoruba','Joy of God.'],['Toluwani','girl','Yoruba','Belongs to God.'],['Temilade','girl','Yoruba','The crown is mine.'],['Simisola','girl','Yoruba','Rest in wealth / prosperity.'],['Oreofe','girl','Yoruba','Grace / kindness of God.'],['Ireoluwa','girl','Yoruba','Goodness of God.'],['Anjolaoluwa','girl','Yoruba','Enjoy the wealth of God.'],['Aderonke','girl','Yoruba','The crown has something to care for.'],['Adetola','girl','Yoruba','The crown is enough for honour.'],['Titilayo','girl','Yoruba','Everlasting joy.'],['Abisola','girl','Yoruba','Born into wealth.'],['Modupeola','girl','Yoruba','I thank God for wealth / honour.'],
+// Yoruba boys
+['Ayomide','boy','Yoruba','My joy has arrived.'],['Oluwatobi','boy','Yoruba','God is great.'],['Ifeoluwa','boy','Yoruba','Love of God.'],['Adewale','boy','Yoruba','The crown has come home.'],['Babatunde','boy','Yoruba','Father has returned.'],['Temitope','boy','Yoruba','Mine is worthy of gratitude.'],['Oluwaseun','boy','Yoruba','God be thanked.'],['Adedayo','boy','Yoruba','The crown becomes joy.'],['Akinwale','boy','Yoruba','Valor has come home.'],['Olamide','boy','Yoruba','My wealth has arrived.'],['Ayobami','boy','Yoruba','Joy meets me.'],['Adebayo','boy','Yoruba','The crown meets joy.'],['Ademola','boy','Yoruba','The crown adds to wealth.'],['Olumide','boy','Yoruba','My Lord has come.'],['Akinyemi','boy','Yoruba','Valor befits me.'],['Oluwadamilare','boy','Yoruba','God has vindicated me.'],
+// Oriki girls
+['Àjọkẹ́','girl','Oriki','Jointly cherished; jointly beloved.'],['Àríkẹ́','girl','Oriki','One who is cared for on sight.'],['Àdùkẹ́','girl','Oriki','A highly beloved one whom people eagerly care for.'],['Àníkẹ́','girl','Oriki','Born to be pampered.'],['Àbẹ̀kẹ́','girl','Oriki','One begged to be cared for.'],['Àwẹ̀ní','girl','Oriki','A child to be bathed and possessed.'],['Àyọ̀ní','girl','Oriki','One we are happy to have.'],['Ariyíkẹ́','girl','Oriki','We have this one to cherish.'],['Àmọ̀kẹ́','girl','Oriki','One cared for tenderly.'],['Àyọ̀ká','girl','Oriki','One surrounded by joy.'],['Àṣàkẹ́','girl','Oriki','A precious child to treasure.'],['Ìyábọ̀','girl','Oriki','Mother has returned.'],['Dúrójayé','girl','Oriki','Stay and enjoy life.'],['Dúróoríkẹ́','girl','Oriki','Stay and be cherished.'],['Ayinke','girl','Oriki','One to praise and pet.'],['Anikeoluwa','girl','Oriki','A cherished child of God.'],
+// Oriki boys
+['Àkànní','boy','Oriki','One who is special to have.'],['Àkànbí','boy','Oriki','One consciously and deliberately born.'],['Àjàní','boy','Oriki','One we fought to have.'],['Àjìní','boy','Oriki','First-born child.'],['Àyìnlá','boy','Oriki','A child meant to be praised, celebrated and disciplined.'],['Àlàbí','boy','Oriki','One born to the white cloth of Ọbàtálá.'],['Akọni','boy','Oriki','The brave one.'],['Àlào','boy','Oriki','One destined to divide and conquer enemies.'],['Àbídèmí','boy','Oriki','Born before me / one who came first for me.'],['Ajibola','boy','Oriki','Woke up to wealth.'],['Ajadi','boy','Oriki','One who wakes to fight/strive.'],['Akintunde','boy','Oriki','Valor has returned.'],['Akinjide','boy','Oriki','Valor has awakened.'],['Aremu','boy','Oriki','A first son with special status in some Yoruba traditions.'],['Akinola','boy','Oriki','Valor with wealth.'],['Anjorin','boy','Oriki','One who walks with lineage prestige.']
+].map(([n,g,c,m])=>({n,g,c,m}));
 
-{n:'Shira',g:'girl',c:'Hebrew',m:'Song.'},{n:'Talia',g:'girl',c:'Hebrew',m:'Dew of God.'},{n:'Liora',g:'girl',c:'Hebrew',m:'My light.'},{n:'Tamar',g:'girl',c:'Hebrew',m:'Date palm.'},{n:'Adina',g:'girl',c:'Hebrew',m:'Gentle or delicate.'},{n:'Hannah',g:'girl',c:'Hebrew',m:'Grace or favour.'},{n:'Naomi',g:'girl',c:'Hebrew',m:'Pleasantness.'},{n:'Sarah',g:'girl',c:'Hebrew',m:'Princess.'},
-{n:'Ari',g:'boy',c:'Hebrew',m:'Lion.'},{n:'Asher',g:'boy',c:'Hebrew',m:'Happy or blessed.'},{n:'Ezra',g:'boy',c:'Hebrew',m:'Help.'},{n:'Levi',g:'boy',c:'Hebrew',m:'Joined or attached.'},{n:'Noah',g:'boy',c:'Hebrew',m:'Rest or comfort.'},{n:'Daniel',g:'boy',c:'Hebrew',m:'God is my judge.'},{n:'Gabriel',g:'boy',c:'Hebrew',m:'God is my strength.'},{n:'Nathan',g:'boy',c:'Hebrew',m:'He gave.'},
-
-{n:'Noor',g:'girl',c:'Islamic',m:'Light.'},{n:'Iman',g:'girl',c:'Islamic',m:'Faith.'},{n:'Rahma',g:'girl',c:'Islamic',m:'Mercy or compassion.'},{n:'Huda',g:'girl',c:'Islamic',m:'Guidance.'},{n:'Amina',g:'girl',c:'Islamic',m:'Trustworthy or faithful.'},{n:'Safiya',g:'girl',c:'Islamic',m:'Pure, chosen or sincere friend.'},{n:'Zahra',g:'girl',c:'Islamic',m:'Radiant, bright or flower.'},{n:'Amal',g:'girl',c:'Islamic',m:'Hope.'},
-{n:'Kareem',g:'boy',c:'Islamic',m:'Generous or noble.'},{n:'Ameen',g:'boy',c:'Islamic',m:'Trustworthy or faithful.'},{n:'Zayd',g:'boy',c:'Islamic',m:'Growth or increase.'},{n:'Rayyan',g:'boy',c:'Islamic',m:'Lush or well-watered; also associated with a gate of Paradise in Islamic tradition.'},{n:'Faris',g:'boy',c:'Islamic',m:'Knight or horseman.'},{n:'Sami',g:'boy',c:'Islamic',m:'Elevated or exalted.'},{n:'Nasir',g:'boy',c:'Islamic',m:'Helper or supporter.'},{n:'Malik',g:'boy',c:'Islamic',m:'King or owner.'},
-
-{n:'Adesewa',g:'girl',c:'Yoruba',m:'The crown makes beauty / crown of beauty.'},{n:'Yetunde',g:'girl',c:'Yoruba',m:'Mother has returned.'},{n:'Morenike',g:'girl',c:'Yoruba',m:'I have found someone to care for and cherish.'},{n:'Anuoluwapo',g:'girl',c:'Yoruba',m:'God’s mercy is abundant.'},{n:'Ayooluwa',g:'girl',c:'Yoruba',m:'Joy of God.'},{n:'Toluwani',g:'girl',c:'Yoruba',m:'Belongs to God.'},{n:'Temilade',g:'girl',c:'Yoruba',m:'The crown is mine.'},{n:'Simisola',g:'girl',c:'Yoruba',m:'Rest in wealth / prosperity.'},
-{n:'Ayomide',g:'boy',c:'Yoruba',m:'My joy has arrived.'},{n:'Oluwatobi',g:'boy',c:'Yoruba',m:'God is great.'},{n:'Ifeoluwa',g:'boy',c:'Yoruba',m:'Love of God.'},{n:'Adewale',g:'boy',c:'Yoruba',m:'The crown has come home.'},{n:'Babatunde',g:'boy',c:'Yoruba',m:'Father has returned.'},{n:'Temitope',g:'boy',c:'Yoruba',m:'Mine is worthy of gratitude.'},{n:'Oluwaseun',g:'boy',c:'Yoruba',m:'God be thanked.'},{n:'Adedayo',g:'boy',c:'Yoruba',m:'The crown becomes joy.'},
-
-{n:'Àjọkẹ́',g:'girl',c:'Oriki',m:'Jointly cherished; jointly beloved.'},{n:'Àríkẹ́',g:'girl',c:'Oriki',m:'One who is cared for on sight.'},{n:'Àdùkẹ́',g:'girl',c:'Oriki',m:'A highly beloved one whom people eagerly care for.'},{n:'Àníkẹ́',g:'girl',c:'Oriki',m:'Born to be pampered.'},{n:'Àbẹ̀kẹ́',g:'girl',c:'Oriki',m:'One begged to be cared for.'},{n:'Àwẹ̀ní',g:'girl',c:'Oriki',m:'A child to be bathed and possessed.'},{n:'Àyọ̀ní',g:'girl',c:'Oriki',m:'One we are happy to have.'},{n:'Ariyíkẹ́',g:'girl',c:'Oriki',m:'We have this one to cherish.'},
-{n:'Àkànní',g:'boy',c:'Oriki',m:'One who is special to have.'},{n:'Àkànbí',g:'boy',c:'Oriki',m:'One consciously and deliberately born.'},{n:'Àjàní',g:'boy',c:'Oriki',m:'One we fought to have.'},{n:'Àjìní',g:'boy',c:'Oriki',m:'First-born child.'},{n:'Àyìnlá',g:'boy',c:'Oriki',m:'A child meant to be praised, celebrated and disciplined.'},{n:'Àlàbí',g:'boy',c:'Oriki',m:'One born to the white cloth of Ọbàtálá.'},{n:'Akọni',g:'boy',c:'Oriki',m:'The brave one.'},{n:'Àlào',g:'boy',c:'Oriki',m:'One destined to divide and conquer enemies.'}
-];
 const categories=['All','English','Hebrew','Islamic','Yoruba','Oriki'];
 let gender='girl',category='All',query='';
-const grid=document.getElementById('nameGrid'),title=document.getElementById('resultsTitle'),count=document.getElementById('resultsCount'),tabs=document.getElementById('catTabs'),search=document.getElementById('search');
+const grid=document.getElementById('nameGrid'), title=document.getElementById('resultsTitle'), count=document.getElementById('resultsCount'), tabs=document.getElementById('catTabs'), search=document.getElementById('search');
 let favs=JSON.parse(localStorage.getItem('mamasNameFavs')||'[]');
+
 categories.forEach((c,i)=>{const b=document.createElement('button');b.textContent=c==='Oriki'?'Yorùbá Oríkì':c;b.className=i===0?'active':'';b.onclick=()=>{category=c;[...tabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};tabs.appendChild(b)});
 document.querySelectorAll('.gender-toggle button').forEach(b=>b.onclick=()=>{gender=b.dataset.gender;document.querySelectorAll('.gender-toggle button').forEach(x=>x.classList.toggle('active',x===b));render()});
 search.addEventListener('input',e=>{query=e.target.value.toLowerCase();render()});
 function key(x){return x.n+'|'+x.g+'|'+x.c}
 function toggleFav(k){favs=favs.includes(k)?favs.filter(x=>x!==k):[...favs,k];localStorage.setItem('mamasNameFavs',JSON.stringify(favs));render();renderFavs()}
-function card(x){const k=key(x),saved=favs.includes(k);return `<article class="name-card"><button class="fav ${saved?'active':''}" onclick="toggleFav(${JSON.stringify(k)})" aria-label="Save ${x.n}">♥</button><span class="type">${x.c==='Oriki'?'Yorùbá Oríkì':x.c}</span><h3>${x.n}</h3><p>${x.m}</p></article>`}
-function render(){const list=names.filter(x=>x.g===gender&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));grid.innerHTML=list.map(card).join('')||'<div class="empty">No names match that search yet.</div>';title.textContent=(gender==='girl'?'Girl':'Boy')+' name ideas';count.textContent=list.length+' ideas shown';document.getElementById('originNote').innerHTML=category==='Oriki'?'<b>About Oríkì:</b> These are praise-names/cognomens. Meanings and usage can carry extra family or lineage context beyond a short translation.':'Choose a culture above or search by the feeling you want — for example “light”, “joy”, “faith” or “strength”.'}
+function card(x){const k=key(x),saved=favs.includes(k);return `<article class="name-card" onclick='downloadCard(${JSON.stringify(JSON.stringify(x))})'><button class="fav ${saved?'active':''}" onclick='event.stopPropagation();toggleFav(${JSON.stringify(k)})' aria-label="Save ${x.n}">♥</button><span class="type">${x.c==='Oriki'?'Yorùbá Oríkì':x.c}</span><h3>${x.n}</h3><p>${x.m}</p></article>`}
+function render(){const list=names.filter(x=>x.g===gender&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));grid.innerHTML=list.map(card).join('')||'<div class="empty">No names match that search yet.</div>';title.textContent=(gender==='girl'?'Girl':'Boy')+' name ideas';count.textContent=list.length+' ideas shown';document.getElementById('originNote').innerHTML=category==='Oriki'?'<b>About Oríkì:</b> These are praise-names or cognomens. Their meaning can be deeper than a one-line gloss because family, lineage and circumstance can add more layers.':'Tap any card to download a beautifully designed name card with a <b>mamaslove.ng</b> watermark.'}
 function renderFavs(){const list=names.filter(x=>favs.includes(key(x)));document.getElementById('favoritesGrid').innerHTML=list.length?list.map(card).join(''):'<div class="empty">Your saved names will appear here.</div>'}
-render();renderFavs();
+
+function downloadCard(json){const x=JSON.parse(json); const svg = makeCardSVG(x); const blob = new Blob([svg], {type:'image/svg+xml;charset=utf-8'}); const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=`${x.n.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}-mamaslove-card.svg`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1000); toast('Downloaded: '+x.n);}
+function makeCardSVG(x){
+  const name=escapeXML(x.n), origin=escapeXML(x.c==='Oriki'?'Yorùbá Oríkì':x.c), meaning=wrapText(x.m, 35), tag=escapeXML(x.g==='girl'?'Girl Name':'Boy Name');
+  const pillColor = x.c==='English' ? '#f8e9ef' : x.c==='Hebrew' ? '#efeaf9' : x.c==='Islamic' ? '#e7f5f1' : x.c==='Yoruba' ? '#fff1e7' : '#fbeee6';
+  const pillText = x.c==='English' ? '#b04673' : x.c==='Hebrew' ? '#6c52a3' : x.c==='Islamic' ? '#32776b' : x.c==='Yoruba' ? '#bc6b2f' : '#8f5a3d';
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f6"/><stop offset="100%" stop-color="#ffeef4"/></linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f26f9f"/><stop offset="100%" stop-color="#d64f83"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="22" flood-color="#7a4761" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <g opacity="0.06" font-family="Arial, sans-serif" font-size="54" fill="#9d7890">
+    <text x="70" y="180" transform="rotate(-24 70 180)">mamaslove.ng</text>
+    <text x="410" y="330" transform="rotate(-24 410 330)">mamaslove.ng</text>
+    <text x="110" y="560" transform="rotate(-24 110 560)">mamaslove.ng</text>
+    <text x="540" y="710" transform="rotate(-24 540 710)">mamaslove.ng</text>
+    <text x="180" y="930" transform="rotate(-24 180 930)">mamaslove.ng</text>
+  </g>
+  <circle cx="900" cy="140" r="120" fill="#ffd7e4"/>
+  <circle cx="155" cy="905" r="95" fill="#ffd8bb"/>
+  <g filter="url(#shadow)">
+    <rect x="88" y="88" width="904" height="904" rx="44" fill="#ffffff"/>
+  </g>
+  <g>
+    <rect x="130" y="130" width="820" height="250" rx="34" fill="url(#hero)"/>
+    <circle cx="225" cy="188" r="26" fill="#ff79a5"/>
+    <circle cx="298" cy="234" r="20" fill="#ffcba7"/>
+    <path d="M215 223c-36-10-65 19-58 53 7 34 43 57 73 85 10 9 21 20 28 27 9-24 4-41-17-58l-31-25c-20-17-25-36-14-49 12-14 31-12 47 7 15 18 29 15 48 1-24 5-37-11-48-28-10-15-14-20-28-13z" fill="#ff79a5"/>
+    <path d="M300 270c33-6 61 15 62 45 0 28-28 49-51 68l-38 30c-3-28 8-46 31-65 22-19 35-31 34-50-1-16-17-22-32-9l-16 14c8-15 16-25 10-33z" fill="#ffcba7"/>
+    <text x="380" y="205" fill="#fff8fb" font-family="Georgia, serif" font-size="48">Mama's Love</text>
+    <text x="380" y="265" fill="#ffe5ee" font-family="Arial, sans-serif" font-size="26" letter-spacing="2">BABY NAME CARD</text>
+    <rect x="380" y="300" rx="18" ry="18" width="146" height="38" fill="rgba(255,255,255,.18)"/>
+    <text x="453" y="325" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18">${tag}</text>
+  </g>
+  <g>
+    <rect x="130" y="420" rx="22" ry="22" width="170" height="44" fill="${pillColor}"/>
+    <text x="215" y="448" text-anchor="middle" fill="${pillText}" font-family="Arial, sans-serif" font-size="22">${origin}</text>
+    <text x="130" y="570" fill="#3f2d3a" font-family="Georgia, serif" font-size="96">${name}</text>
+    <text x="130" y="640" fill="#a64a73" font-family="Arial, sans-serif" font-size="24" letter-spacing="3">MEANING</text>
+    ${meaning.map((line,i)=>`<text x="130" y="${705 + i*42}" fill="#6f6170" font-family="Arial, sans-serif" font-size="34">${escapeXML(line)}</text>`).join('')}
+  </g>
+  <g>
+    <line x1="130" y1="860" x2="950" y2="860" stroke="#f0dce4" stroke-width="2"/>
+    <text x="130" y="910" fill="#8d7281" font-family="Arial, sans-serif" font-size="24">Chosen with love • mamaslove.ng</text>
+    <text x="950" y="910" text-anchor="end" fill="#c08ca6" font-family="Arial, sans-serif" font-size="20">Tap, save, share</text>
+  </g>
+</svg>`;
+}
+function wrapText(text,max){const words=text.split(' '); const lines=[]; let line=''; for(const w of words){ if((line+' '+w).trim().length>max){ if(line) lines.push(line.trim()); line=w; } else { line += ' '+w; }} if(line.trim()) lines.push(line.trim()); return lines.slice(0,5); }
+function escapeXML(str){return String(str).replace(/[<>&"']/g,s=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[s]));}
+function toast(msg){const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
+render(); renderFavs();
 </script>
 </body>
 </html>
