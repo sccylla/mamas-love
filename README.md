@@ -27,3 +27,5 @@ This is a static site and can be deployed directly to Vercel, Netlify, Cloudflar
 All current page shells use `assets/app.js` and `assets/style.css`. `health.html` remains an alias for the women's wellbeing page.
 
 The homepage includes working quick calculators, tracker tabs and topic filters. Health guides support search, category filtering, article views and source links. Frequently asked questions expand without a page reload.
+
+Display headings use self-hosted Lilita One. The background includes pointer-responsive ribbons and moving shapes; the ticker, photo and decorative badges animate too. The pause control stops background and decorative motion, and reduced-motion preferences disable these effects.

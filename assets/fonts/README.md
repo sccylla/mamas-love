@@ -25,3 +25,7 @@ sha512-weuGsCirGVWBWqpt6YUp0yLThTe4G8YO45noq8wxeJCRvEpq5lFrxNMFSTxcyOyV5k5otzJ8g
 ```
 
 Only the selected font files and license documents were copied into the website. No package manager or network font service is required at runtime.
+
+## Funky display type
+
+Lilita One regular Latin is self-hosted as `lilita-one-latin-400-normal.woff2`. Source: `@fontsource/lilita-one@5.3.0`, https://registry.npmjs.org/@fontsource/lilita-one/-/lilita-one-5.3.0.tgz. Original license: `OFL-Lilita-One.txt`. TLS and the registry SHA-512 integrity were verified before copying the font.

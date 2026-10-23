@@ -36,7 +36,7 @@
     }
 
     function ribbon(index, time, colour) {
-      const phase = time * 0.12 + index * 1.71;
+      const phase = time * 0.2 + index * 1.71;
       const drift = Math.sin(phase) * height * 0.09;
       const shiftX = (pointer.x - 0.5) * width * 0.055;
       const shiftY = (pointer.y - 0.5) * height * 0.075;
@@ -79,6 +79,23 @@
       }
     }
 
+    function doodles(time) {
+      const anchors = [[.06,.16],[.48,.22],[.94,.14],[.13,.81],[.61,.87],[.94,.73]];
+      const colours = ['#fa77af','#a088ef','#c9e963','#ffb572','#ba8cda','#ef71a4'];
+      anchors.forEach((anchor,index) => {
+        const size = Math.min(width,height) * (.036 + index % 3 * .007);
+        const x = width * anchor[0] + Math.sin(time * .34 + index) * width * .025 + (pointer.x-.5)*25;
+        const y = height * anchor[1] + Math.cos(time * .28 + index*1.4) * height * .035;
+        context.save();context.translate(x,y);context.rotate(time*.16*(index%2 ? -1 : 1)+index);
+        context.globalAlpha=.26;context.fillStyle=colours[index];context.strokeStyle='#653170';context.lineWidth=1.5;
+        context.beginPath();
+        if(index%3===0){for(let n=0;n<=80;n++){const angle=n/80*Math.PI*2,r=size*(.74+.23*Math.cos(angle*6));const px=Math.cos(angle)*r,py=Math.sin(angle)*r;n?context.lineTo(px,py):context.moveTo(px,py);}}
+        else if(index%3===1){for(let n=0;n<16;n++){const angle=n/16*Math.PI*2,r=size*(n%2?.48:1);n?context.lineTo(Math.cos(angle)*r,Math.sin(angle)*r):context.moveTo(Math.cos(angle)*r,Math.sin(angle)*r);}}
+        else{context.ellipse(0,0,size,size*.62,0,0,Math.PI*2);}
+        context.closePath();context.fill();context.stroke();context.restore();
+      });
+    }
+
     function draw(time) {
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
       context.clearRect(0, 0, width, height);
@@ -94,6 +111,7 @@
       ribbon(1, time + 5, '170,146,217');
       ribbon(2, time + 11, '244,176,142');
       ribbon(3, time + 7, '214,147,192');
+      doodles(time);
       frames++;
     }
 
