@@ -1,0 +1,8 @@
+/* Outlined wordmark and embracing-heart symbol: the same identity at every size. */
+.brand.brand-lockup{display:inline-flex;align-items:center;flex:none;width:236px;max-width:100%;line-height:1;border-radius:5px}
+.brand-logo{display:block;width:100%;height:auto;object-fit:contain}
+.site-header .brand-lockup{padding-block:6px}
+.footer .brand-lockup{width:300px}
+@media(max-width:1200px){.site-header .brand-lockup{width:218px}}
+@media(max-width:600px){.site-header .brand-lockup{width:218px}.footer .brand-lockup{width:280px}}
+@media(max-width:360px){.site-header .brand-lockup{width:205px}}

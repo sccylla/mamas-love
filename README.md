@@ -24,8 +24,10 @@ Then open http://localhost:8080.
 
 This is a static site and can be deployed directly to Vercel, Netlify, Cloudflare Pages or another static host. Publish the repository root; no build command or dependency installation is required. `vercel.json` enables clean URLs on Vercel. Local navigation also uses explicit `.html` paths so it works with Python's server.
 
-All current page shells use `assets/app.js` and `assets/style.css`. `health.html` remains an alias for the women's wellbeing page.
+All current page shells use `assets/app.js`, `assets/style.css`, `assets/brand.css` and `assets/footer.css`. `health.html` remains an alias for the women's wellbeing page.
 
 The homepage includes working quick calculators, tracker tabs and topic filters. Health guides support search, category filtering, article views and source links. Frequently asked questions expand without a page reload.
 
 Display headings use self-hosted Lilita One. The background includes pointer-responsive ribbons and moving shapes; the ticker, photo and decorative badges animate too. The pause control stops background and decorative motion, and reduced-motion preferences disable these effects.
+
+The shared header and footer use the embracing-heart Mama’s Love vector identity. Reusable light/dark logo files and home-screen icons are in `assets/brand/`; usage and colours are documented there. The SVG favicon is mirrored at the site root, and each page includes the matching Apple icon and manifest. The footer provides tracker access, grouped navigation, device-storage information and a concise care note.
