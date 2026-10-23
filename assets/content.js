@@ -33,6 +33,14 @@ window.MAMAS_CONTENT = {
       category: 'Pregnancy'
     },
     {
+      id: 'names',
+      title: 'Baby names & Oríkì',
+      description: 'Browse meaningful boy and girl names across English, Hebrew, Islamic, Yorùbá and traditional Yorùbá Oríkì.',
+      href: 'names.html',
+      image: 'mamas-love-3.jpg',
+      category: 'Baby names'
+    },
+    {
       id: 'postpartum',
       title: 'After birth',
       description: 'Read about physical recovery, feeding, mood changes and when to ask for help.',
