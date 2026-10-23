@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff8f7">
+<meta name="description" content="Mama's Love Test Scanner: understand pregnancy tests and hospital/lab reports with privacy-first, browser-based assistance.">
+<title>Test Scanner | Mama's Love</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:DM Sans;src:url('assets/fonts/dm-sans-latin-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:Cormorant Garamond;src:url('assets/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+:root{--ink:#3c2937;--muted:#7b6a75;--rose:#ed6b99;--rose2:#cc4b79;--plum:#4b2d46;--peach:#ffd1b7;--paper:#fffaf7;--soft:#fff1f5;--line:#eadde2;--green:#2f7a5d;--green-soft:#eaf6f0;--amber:#93652a;--amber-soft:#fff4df;--red:#a33d56;--red-soft:#fff0f2;--blue:#436a86;--blue-soft:#eef6fb;--shadow:0 22px 70px rgba(80,45,66,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#fffaf8,#fff4f6);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}img,canvas{max-width:100%;display:block}.shell{width:min(1180px,calc(100% - 28px));margin:auto}h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.topbar{background:var(--plum);color:#fff;text-align:center;padding:9px 16px;font-size:.78rem;letter-spacing:.07em}.site-head{position:sticky;top:0;z-index:30;background:rgba(255,250,247,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(75,45,70,.08)}.head{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand img{width:205px}.home{padding:10px 15px;border:1px solid var(--line);background:#fff;border-radius:999px;font-weight:800;font-size:.84rem}
+.hero{padding:52px 0 30px}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:34px;align-items:center}.kicker{font-size:.76rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--rose2)}.hero h1{font-size:clamp(3.2rem,6vw,6.2rem);line-height:.92;letter-spacing:-.04em;margin:12px 0 16px}.hero h1 em{font-style:normal;color:var(--rose2)}.hero p{color:var(--muted);font-size:1.05rem;max-width:650px}.privacy{display:flex;gap:10px;align-items:flex-start;margin-top:20px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:18px;font-size:.84rem;color:#655762}.privacy b{color:var(--plum)}
+.hero-card{position:relative;min-height:450px;border-radius:38px;overflow:hidden;background:linear-gradient(145deg,#f9e7ee,#fff6f1 55%,#efe8f8);box-shadow:var(--shadow)}.orb{position:absolute;border-radius:50%}.o1{width:250px;height:250px;right:-30px;top:-20px;background:#ffd7e3}.o2{width:180px;height:180px;left:10px;bottom:-35px;background:#ffd9bd}.device{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:74%;background:rgba(255,255,255,.91);border:1px solid rgba(255,255,255,.72);border-radius:30px;padding:26px;box-shadow:0 28px 70px rgba(75,42,62,.14)}.device-badge{display:inline-flex;padding:7px 10px;border-radius:999px;background:#fff0f5;color:var(--rose2);font-size:.72rem;font-weight:900;letter-spacing:.08em}.device h3{font-size:2.35rem;line-height:1;margin:12px 0 9px}.device p{margin:0;color:var(--muted);font-size:.9rem}.device-lines{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}.device-lines div{padding:12px;border-radius:15px;background:#fff;border:1px solid var(--line);font-size:.78rem;color:#655762}.device-lines b{display:block;color:var(--ink);margin-bottom:3px}
+.tabs-wrap{padding:16px 0 76px}.tabs{display:flex;gap:9px;background:#f5eaef;padding:6px;border-radius:18px;width:max-content;margin-bottom:18px}.tabs button{border:0;background:transparent;color:#755f6c;font-weight:850;padding:11px 17px;border-radius:13px}.tabs button.active{background:var(--plum);color:#fff}.panel{display:none}.panel.active{display:block}.scan-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}.card h2{font-size:2.35rem;line-height:1;margin:0 0 9px}.card h3{font-size:1.55rem;margin:0 0 8px}.card>p{color:var(--muted);margin-top:0}.step{display:flex;gap:12px;margin:16px 0}.step-num{flex:0 0 34px;height:34px;border-radius:12px;background:#fff0f5;color:var(--rose2);display:grid;place-items:center;font-weight:900}.step p{margin:0;color:var(--muted);font-size:.87rem}.step b{color:var(--ink)}
+.drop{border:1.5px dashed #dcbfcb;border-radius:22px;padding:22px;text-align:center;background:#fff9fb;transition:.2s}.drop.drag{border-color:var(--rose);background:#fff0f5}.drop strong{display:block;margin-bottom:4px}.drop p{margin:0 0 12px;color:var(--muted);font-size:.84rem}.file-btn{display:inline-flex;padding:11px 15px;border:0;border-radius:999px;background:var(--plum);color:#fff;font-weight:850}.file-btn input{display:none}.preview{margin-top:16px;border-radius:20px;overflow:hidden;background:#f5eef1;min-height:120px;display:grid;place-items:center}.preview img,.preview canvas{width:100%;height:auto}.preview-empty{color:#97838f;font-size:.84rem;padding:26px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.field label{display:block;font-size:.76rem;font-weight:900;margin-bottom:6px}.field select,.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:13px;padding:11px 12px;background:#fff;color:var(--ink);outline:0}.field textarea{min-height:160px;resize:vertical}.action-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.btn{border:0;border-radius:999px;padding:12px 17px;font-weight:850}.btn.primary{background:var(--plum);color:#fff}.btn.secondary{background:#fff;border:1px solid var(--line);color:var(--plum)}.btn:disabled{opacity:.55;cursor:not-allowed}.status{margin-top:15px;padding:15px;border-radius:18px;background:var(--blue-soft);color:#41627a;font-size:.85rem;display:none}.status.show{display:block}.status.good{background:var(--green-soft);color:var(--green)}.status.warn{background:var(--amber-soft);color:var(--amber)}.status.danger{background:var(--red-soft);color:var(--red)}
+.result-card{margin-top:16px;border:1px solid var(--line);border-radius:22px;padding:19px;background:#fff;display:none}.result-card.show{display:block}.result-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.result-badge{padding:7px 10px;border-radius:999px;font-size:.72rem;font-weight:900}.result-badge.good{background:var(--green-soft);color:var(--green)}.result-badge.warn{background:var(--amber-soft);color:var(--amber)}.result-badge.danger{background:var(--red-soft);color:var(--red)}.result-badge.info{background:var(--blue-soft);color:var(--blue)}.result-card h3{font-size:1.8rem;margin:4px 0 6px}.result-card p{margin:0;color:var(--muted);font-size:.88rem}.micro{font-size:.76rem;color:#8c7b86;margin-top:10px}.control-check{display:none;margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:18px;background:#fffafc}.control-check.show{display:block}.choice-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.choice-row button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;font-weight:800;color:#695664}.choice-row button.active{background:var(--plum);color:#fff;border-color:var(--plum)}
+.lab-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:18px}.ocr-progress{height:8px;background:#f1e6eb;border-radius:99px;overflow:hidden;margin-top:12px;display:none}.ocr-progress.show{display:block}.ocr-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),#f0a17e);transition:.25s}.lab-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.table-wrap{overflow:auto;margin-top:15px;border:1px solid var(--line);border-radius:18px}.lab-table{width:100%;border-collapse:collapse;min-width:660px}.lab-table th,.lab-table td{padding:11px 12px;border-bottom:1px solid #f0e6ea;text-align:left;font-size:.81rem;vertical-align:top}.lab-table th{background:#fff7fa;color:#6a5562;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}.flag{display:inline-flex;padding:4px 7px;border-radius:999px;font-size:.66rem;font-weight:900}.flag.ok{background:var(--green-soft);color:var(--green)}.flag.high,.flag.low{background:var(--amber-soft);color:var(--amber)}.flag.text{background:var(--blue-soft);color:var(--blue)}.explain-grid{display:grid;gap:10px;margin-top:14px}.explain{padding:14px;border-radius:16px;background:#fff9fb;border:1px solid #f1e3e8}.explain b{display:block;font-size:.86rem}.explain span{font-size:.8rem;color:var(--muted)}
+.safety{margin-top:18px;padding:17px;border-radius:20px;background:#4b2d46;color:#fff}.safety b{color:#ffd5e4}.safety p{margin:6px 0 0;color:#eadce5;font-size:.83rem}.sources{padding:58px 0;background:#fff}.sources h2{font-size:2.5rem;margin:0 0 8px}.sources p{color:var(--muted)}.source-links{display:flex;gap:8px;flex-wrap:wrap}.source-links a{padding:9px 12px;border-radius:999px;background:#f8eef2;color:#735b69;font-size:.78rem}.footer{padding:26px 0 38px;border-top:1px solid var(--line);background:#fff}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px}.foot img{width:180px}.foot p{max-width:600px;text-align:right;color:var(--muted);font-size:.76rem}
+@media(max-width:920px){.hero-grid,.scan-layout,.lab-grid{grid-template-columns:1fr}.name-grid{grid-template-columns:1fr}.hero-card{min-height:400px}}
+@media(max-width:620px){.brand img{width:175px}.hero{padding-top:32px}.hero h1{font-size:3.35rem}.device{width:86%;padding:20px}.tabs{width:100%;overflow:auto}.tabs button{white-space:nowrap}.form-row{grid-template-columns:1fr}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}.result-top{flex-direction:column}.device-lines{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">Private, browser-based assistance for home pregnancy tests and hospital/lab reports</div>
+<header class="site-head"><div class="shell head"><a class="brand" href="./"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"></a><a class="home" href="./">← Mama's Love home</a></div></header>
+<main>
+<section class="hero"><div class="shell hero-grid">
+  <div>
+    <span class="kicker">Scan & understand your test</span>
+    <h1>Less guessing. <em>Clearer next steps.</em></h1>
+    <p>Use your phone camera or upload a photo to get help reading a home pregnancy test, or scan a hospital/lab report and turn the medical language into plain English.</p>
+    <div class="privacy"><span>🔒</span><div><b>Privacy first.</b> Your test image is processed in your browser. Mama's Love does not upload or store the report on our server. OCR can misread numbers, decimal points and units, so always compare the extracted text with the original report.</div></div>
+  </div>
+  <div class="hero-card"><div class="orb o1"></div><div class="orb o2"></div><div class="device"><span class="device-badge">TEST READER</span><h3>Photo in. Plain language out.</h3><p>Designed to explain what a result appears to show — not to make a diagnosis from a photo.</p><div class="device-lines"><div><b>Pregnancy test</b>Line/digital reading assistance</div><div><b>Hospital report</b>OCR + report-range comparison</div></div></div></div>
+</div></section>
+
+<section class="tabs-wrap"><div class="shell">
+  <div class="tabs"><button class="active" data-panel="pregnancyPanel">Pregnancy test scanner</button><button data-panel="labPanel">Hospital / lab report scanner</button></div>
+
+  <section class="panel active" id="pregnancyPanel">
+    <div class="scan-layout">
+      <article class="card">
+        <span class="kicker">Home pregnancy test</span><h2>Scan the result window</h2><p>For the clearest result, photograph the test straight-on in good light, within the reading time stated in the test instructions.</p>
+        <div class="step"><span class="step-num">1</span><p><b>Use the correct reading window.</b> Results read too early or too late can be misleading.</p></div>
+        <div class="step"><span class="step-num">2</span><p><b>Keep the control area visible.</b> A missing control line/symbol usually means the test is invalid.</p></div>
+        <div class="step"><span class="step-num">3</span><p><b>Confirm what the scanner sees.</b> Photo analysis is only an aid; brand instructions take priority.</p></div>
+        <div class="safety"><b>Important:</b><p>A positive home test is usually reliable when used correctly. A negative result can be false if you tested too early. If the result is negative but your period is still late, repeat according to the test instructions or contact a clinician.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="drop" id="pregDrop"><strong>Take a photo or upload your pregnancy test</strong><p>JPG, PNG or phone camera image</p><label class="file-btn">Choose image<input id="pregFile" type="file" accept="image/*" capture="environment"></label></div>
+        <div class="preview" id="pregPreview"><div class="preview-empty">Your test photo will appear here.</div></div>
+        <div class="form-row"><div class="field"><label>Test style</label><select id="pregStyle"><option value="line">C / T line test</option><option value="digital">Digital pregnancy test</option></select></div><div class="field"><label>Was this photo taken within the brand's reading window?</label><select id="pregTiming"><option value="yes">Yes</option><option value="unsure">I'm not sure</option><option value="no">No</option></select></div></div>
+        <div class="action-row"><button class="btn primary" id="scanPreg" disabled>Scan test</button><button class="btn secondary" id="clearPreg">Clear</button></div>
+        <div class="status" id="pregStatus"></div>
+        <div class="control-check" id="controlCheck"><b>One quick confirmation</b><div class="micro">Can you see the control line/symbol where the instructions say it should be?</div><div class="choice-row" id="controlChoices"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div></div>
+        <div class="result-card" id="pregResult"><div class="result-top"><div><h3 id="pregResultTitle"></h3><p id="pregResultText"></p></div><span class="result-badge info" id="pregResultBadge">ASSISTED READ</span></div><div class="micro" id="pregDetail"></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="labPanel">
+    <div class="lab-grid">
+      <article class="card">
+        <span class="kicker">Hospital / laboratory report</span><h2>Scan a report into plain English</h2><p>Upload a clear photo or PDF. The reader extracts text, looks for test names, values, units and the reference range printed by the laboratory, then explains what those tests usually measure.</p>
+        <div class="drop" id="labDrop"><strong>Upload report</strong><p>Photo or PDF. Up to the first 3 PDF pages are read.</p><label class="file-btn">Choose report<input id="labFile" type="file" accept="image/*,application/pdf" capture="environment"></label></div>
+        <div class="preview" id="labPreview"><div class="preview-empty">A preview of your report will appear here.</div></div>
+        <div class="ocr-progress" id="ocrProgress"><span id="ocrBar"></span></div>
+        <div class="status" id="labStatus"></div>
+        <div class="lab-actions"><button class="btn primary" id="scanLab" disabled>Scan report</button><button class="btn secondary" id="clearLab">Clear</button></div>
+        <div class="field" style="margin-top:16px"><label>Extracted text — check this against your report before interpreting</label><textarea id="ocrText" placeholder="OCR text will appear here. You can also paste your lab report text manually."></textarea></div>
+        <div class="lab-actions"><button class="btn primary" id="interpretLab">Interpret checked text</button></div>
+        <div class="safety"><b>Why the report's own range matters:</b><p>Reference ranges vary between laboratories, test methods, ages and other factors. A value outside the printed range does not automatically mean disease, and a value inside the range does not rule one out.</p></div>
+      </article>
+
+      <article class="card">
+        <span class="kicker">Your report summary</span><h2 id="labTitle">Nothing scanned yet</h2><p id="labIntro">After OCR, review the extracted text and tap “Interpret checked text.”</p>
+        <div id="labTableWrap"></div>
+        <div class="explain-grid" id="labExplain"></div>
+        <div class="result-card" id="labCaution"><div class="result-top"><div><h3>Check the original report</h3><p>OCR can confuse 1 with 7, 0 with O, decimal points, symbols and units. Any result that changes what you plan to do medically should be verified on the original report and discussed with a qualified clinician.</p></div><span class="result-badge warn">VERIFY</span></div></div>
+      </article>
+    </div>
+  </section>
+</div></section>
+
+<section class="sources"><div class="shell"><span class="kicker">How this page is designed</span><h2>Built around established test-reading principles.</h2><p>Home pregnancy tests differ by brand, so instructions and timing matter. Lab results should be compared with the reference range on the actual report and interpreted in the context of symptoms, history and other tests.</p><div class="source-links"><a href="https://www.fda.gov/medical-devices/home-use-tests/pregnancy" target="_blank" rel="noopener">FDA: Pregnancy tests</a><a href="https://www.fda.gov/medical-devices/home-use-tests/how-you-can-get-best-results-home-use-tests" target="_blank" rel="noopener">FDA: Home-test accuracy</a><a href="https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/" target="_blank" rel="noopener">MedlinePlus: Understanding lab results</a><a href="https://www.nhs.uk/pregnancy/trying-for-a-baby/doing-a-pregnancy-test/" target="_blank" rel="noopener">NHS: Pregnancy tests</a></div></div></section>
+</main>
+<footer class="footer"><div class="shell foot"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"><p>This tool provides educational assistance and cannot diagnose pregnancy complications, infections, anemia, thyroid disease or other medical conditions. Seek urgent medical care for severe symptoms such as fainting, severe one-sided abdominal pain, very heavy bleeding, trouble breathing, confusion or collapse.</p></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+if(window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'}
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+$$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.toggle('active',x===b));$$('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.panel))});
+function setStatus(el,msg,kind){el.className='status show'+(kind?' '+kind:'');el.textContent=msg}
+function clearStatus(el){el.className='status';el.textContent=''}
+function showImage(file,target,cb){const r=new FileReader();r.onload=e=>{const img=new Image();img.onload=()=>{target.innerHTML='';target.appendChild(img);if(cb)cb(img)};img.src=e.target.result};r.readAsDataURL(file)}
+
+// Pregnancy test scanner
+let pregFile=null,pregImg=null,pregScan=null,controlAnswer='';
+$('#pregFile').addEventListener('change',e=>loadPreg(e.target.files[0]));
+function loadPreg(file){if(!file)return;pregFile=file;pregScan=null;controlAnswer='';$('#controlCheck').classList.remove('show');$('#pregResult').classList.remove('show');clearStatus($('#pregStatus'));showImage(file,$('#pregPreview'),img=>{pregImg=img;$('#scanPreg').disabled=false})}
+$('#clearPreg').onclick=()=>{pregFile=null;pregImg=null;pregScan=null;controlAnswer='';$('#pregFile').value='';$('#pregPreview').innerHTML='<div class="preview-empty">Your test photo will appear here.</div>';$('#scanPreg').disabled=true;$('#controlCheck').classList.remove('show');$('#pregResult').classList.remove('show');clearStatus($('#pregStatus'))};
+$('#pregDrop').addEventListener('dragover',e=>{e.preventDefault();e.currentTarget.classList.add('drag')});$('#pregDrop').addEventListener('dragleave',e=>e.currentTarget.classList.remove('drag'));$('#pregDrop').addEventListener('drop',e=>{e.preventDefault();e.currentTarget.classList.remove('drag');loadPreg(e.dataTransfer.files[0])});
+function scanLineBands(img){
+  const max=700, scale=Math.min(1,max/img.naturalWidth), w=Math.max(100,Math.round(img.naturalWidth*scale)), h=Math.max(70,Math.round(img.naturalHeight*scale));
+  const c=document.createElement('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d');ctx.drawImage(img,0,0,w,h);const data=ctx.getImageData(0,0,w,h).data;
+  const x0=Math.floor(w*.12),x1=Math.floor(w*.88),y0=Math.floor(h*.16),y1=Math.floor(h*.84),scores=[];
+  for(let x=x0;x<x1;x++){let s=0,n=0;for(let y=y0;y<y1;y+=2){const i=(y*w+x)*4,r=data[i],g=data[i+1],b=data[i+2];const chroma=Math.max(r,g,b)-Math.min(r,g,b);const dark=255-(r+g+b)/3;const pink=Math.max(0,r-(g+b)/2);s+=dark*.38+chroma*.42+pink*.7;n++}scores.push(s/n)}
+  const smooth=scores.map((_,i)=>{let a=0,n=0;for(let j=Math.max(0,i-4);j<=Math.min(scores.length-1,i+4);j++){a+=scores[j];n++}return a/n});
+  const mean=smooth.reduce((a,b)=>a+b,0)/smooth.length;const variance=smooth.reduce((a,b)=>a+(b-mean)*(b-mean),0)/smooth.length;const sd=Math.sqrt(variance);const threshold=mean+Math.max(5,sd*.95);let peaks=[];
+  for(let i=2;i<smooth.length-2;i++){if(smooth[i]>threshold&&smooth[i]>=smooth[i-1]&&smooth[i]>=smooth[i+1]){if(!peaks.length||i-peaks[peaks.length-1]>Math.max(10,w*.018))peaks.push(i);else if(smooth[i]>smooth[peaks[peaks.length-1]])peaks[peaks.length-1]=i}}
+  return {bands:Math.min(3,peaks.length),strength:sd,threshold};
+}
+async function scanDigital(img){
+  if(!window.Tesseract)return {text:'',result:'unclear'};
+  const out=await Tesseract.recognize(img,'eng',{logger:m=>{if(m.status==='recognizing text')setStatus($('#pregStatus'),'Reading digital display… '+Math.round((m.progress||0)*100)+'%','')}});
+  const text=(out.data.text||'').toLowerCase().replace(/\s+/g,' ');
+  if(/not\s+pregnant|no\s+pregnan/.test(text))return {text,result:'negative'};
+  if(/pregnant|yes\+?|positive/.test(text))return {text,result:'positive'};
+  return {text,result:'unclear'};
+}
+$('#scanPreg').onclick=async()=>{
+  if(!pregImg)return;
+  const timing=$('#pregTiming').value,style=$('#pregStyle').value;
+  if(timing==='no'){setStatus($('#pregStatus'),'This photo was taken outside the stated reading window. Do not rely on the image; repeat the test according to the brand instructions.','warn');return}
+  setStatus($('#pregStatus'),style==='digital'?'Reading the digital display…':'Looking for line-like bands in the result area…','');
+  try{
+    if(style==='digital'){
+      const d=await scanDigital(pregImg);pregScan=d;
+      if(d.result==='positive')showPregResult('Likely positive display','The photo text appears to say pregnant/positive. Confirm it directly on the device and follow the brand instructions.','good','Digital OCR text: '+(d.text||'No readable text'));
+      else if(d.result==='negative')showPregResult('Likely negative display','The photo text appears to say not pregnant/negative. If your period is late or pregnancy is still possible, repeat according to the instructions.','info','Digital OCR text: '+(d.text||'No readable text'));
+      else showPregResult('Could not read the display','The scanner could not confidently read the digital result. Check the device directly or repeat the test.','warn','OCR could not identify a clear pregnant / not pregnant result.');
+    } else {
+      pregScan=scanLineBands(pregImg);setStatus($('#pregStatus'),'Photo scan complete. Please confirm the control line before using the result.','good');$('#controlCheck').classList.add('show');updatePregResult();
+    }
+  }catch(e){setStatus($('#pregStatus'),'The scanner could not read this image. Try a sharper, straight-on photo in brighter light.','warn')}
+};
+$('#controlChoices').addEventListener('click',e=>{if(!e.target.dataset.v)return;controlAnswer=e.target.dataset.v;$$('#controlChoices button').forEach(b=>b.classList.toggle('active',b===e.target));updatePregResult()});
+function updatePregResult(){if(!pregScan||$('#pregStyle').value!=='line')return;const timing=$('#pregTiming').value;if(controlAnswer==='no'){showPregResult('Invalid test','The control line/symbol is not visible. The test should not be interpreted; repeat with a new test and follow the instructions.','danger','The scanner detected '+pregScan.bands+' line-like band(s), but a missing control makes the test invalid.');return}if(controlAnswer==='unsure'||!controlAnswer){showPregResult('Control line needs confirmation','The photo scan found '+pregScan.bands+' line-like band(s), but the result cannot be classified until the control line is confirmed.','warn','Make sure the control line/symbol appears in the place shown in the test instructions.');return}if(pregScan.bands>=2)showPregResult('Likely positive','The image appears to contain two line-like bands and you confirmed the control line. A faint test line can still count on many brands when read within the correct time window.','good','Photo analysis detected '+pregScan.bands+' line-like bands. Brand instructions take priority.');else if(pregScan.bands===1)showPregResult('Likely negative','The image appears to contain one line-like band and you confirmed that it is the control line. A negative home test can be false if taken too early.','info','If your period is late or pregnancy is still possible, repeat the test according to the brand instructions.');else showPregResult('Unclear photo','The scanner could not confidently find a line. Check the test directly, improve lighting, or repeat with a new test.','warn','The photograph may be too dark, blurred, angled or low-contrast.');if(timing==='unsure')$('#pregDetail').textContent+=' The photo timing is uncertain, which lowers reliability.'}
+function showPregResult(title,text,kind,detail){$('#pregResultTitle').textContent=title;$('#pregResultText').textContent=text;$('#pregDetail').textContent=detail;const badge=$('#pregResultBadge');badge.className='result-badge '+kind;badge.textContent=kind==='good'?'LIKELY RESULT':kind==='danger'?'INVALID':'CHECK';$('#pregResult').classList.add('show')}
+
+// Lab scanner
+let labFile=null;
+$('#labFile').addEventListener('change',e=>loadLab(e.target.files[0]));
+function loadLab(file){if(!file)return;labFile=file;$('#scanLab').disabled=false;$('#ocrText').value='';$('#labTableWrap').innerHTML='';$('#labExplain').innerHTML='';$('#labTitle').textContent='Ready to scan';$('#labIntro').textContent='OCR will extract text from this file. Review it before interpreting.';$('#labCaution').classList.remove('show');clearStatus($('#labStatus'));if(file.type==='application/pdf'){$('#labPreview').innerHTML='<div class="preview-empty">PDF selected: '+escapeHtml(file.name)+'</div>'}else showImage(file,$('#labPreview'))}
+$('#labDrop').addEventListener('dragover',e=>{e.preventDefault();e.currentTarget.classList.add('drag')});$('#labDrop').addEventListener('dragleave',e=>e.currentTarget.classList.remove('drag'));$('#labDrop').addEventListener('drop',e=>{e.preventDefault();e.currentTarget.classList.remove('drag');loadLab(e.dataTransfer.files[0])});
+$('#clearLab').onclick=()=>{labFile=null;$('#labFile').value='';$('#scanLab').disabled=true;$('#ocrText').value='';$('#labPreview').innerHTML='<div class="preview-empty">A preview of your report will appear here.</div>';$('#labTableWrap').innerHTML='';$('#labExplain').innerHTML='';$('#labTitle').textContent='Nothing scanned yet';$('#labIntro').textContent='After OCR, review the extracted text and tap “Interpret checked text.”';$('#labCaution').classList.remove('show');clearStatus($('#labStatus'));$('#ocrProgress').classList.remove('show')};
+function ocrLogger(m){if(m.status==='recognizing text'){const p=Math.round((m.progress||0)*100);$('#ocrProgress').classList.add('show');$('#ocrBar').style.width=p+'%';setStatus($('#labStatus'),'Reading report text… '+p+'%','')}}
+async function ocrImageSource(src){if(!window.Tesseract)throw new Error('OCR library not available');const out=await Tesseract.recognize(src,'eng',{logger:ocrLogger});return out.data.text||''}
+async function ocrPdf(file){if(!window.pdfjsLib)throw new Error('PDF reader not available');const buf=await file.arrayBuffer();const pdf=await pdfjsLib.getDocument({data:buf}).promise;const pages=Math.min(3,pdf.numPages);let text='';for(let n=1;n<=pages;n++){setStatus($('#labStatus'),'Preparing PDF page '+n+' of '+pages+'…','');const page=await pdf.getPage(n),vp=page.getViewport({scale:1.65});const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;text+='\n'+await ocrImageSource(c)}return text}
+$('#scanLab').onclick=async()=>{if(!labFile)return;try{$('#ocrProgress').classList.add('show');$('#ocrBar').style.width='2%';let text='';if(labFile.type==='application/pdf')text=await ocrPdf(labFile);else text=await ocrImageSource(labFile);$('#ocrText').value=text.trim();$('#ocrBar').style.width='100%';setStatus($('#labStatus'),'OCR finished. Carefully compare the extracted text with the original report, correct any errors, then tap “Interpret checked text.”','good')}catch(e){setStatus($('#labStatus'),'OCR could not read this report. Try a clearer image, a different PDF, or paste the report text manually.','warn')}};
+const explainers=[
+  [/\b(hb|hgb|hemoglobin|haemoglobin)\b/i,'Hemoglobin','Carries oxygen in red blood cells. A low result can have several causes, including iron deficiency; pregnancy also changes blood values.'],
+  [/\b(wbc|white blood cell|leucocyte|leukocyte)\b/i,'White blood cells','Part of the immune system. Levels can change with infection, inflammation, medicines, stress and pregnancy.'],
+  [/\b(platelet|plt)\b/i,'Platelets','Help blood clot. Low or high values need context, especially during pregnancy or when bleeding/bruising is present.'],
+  [/\b(glucose|blood sugar|fasting sugar|fbs)\b/i,'Glucose','Measures blood sugar. Interpretation depends on whether the sample was fasting, random or part of a glucose tolerance test.'],
+  [/\b(creatinine|egfr|urea)\b/i,'Kidney markers','Help assess kidney function. Pregnancy, hydration, muscle mass and other factors can affect interpretation.'],
+  [/\b(alt|ast|sgpt|sgot|bilirubin)\b/i,'Liver tests','Give information about liver cells and bile processing. Abnormal values have many possible causes and should be interpreted with symptoms and other tests.'],
+  [/\b(tsh|free t4|ft4|thyroid)\b/i,'Thyroid tests','Help assess thyroid function. Pregnancy-specific targets may differ from non-pregnant reference ranges.'],
+  [/\b(hcg|beta.?hcg|β.?hcg)\b/i,'hCG','A pregnancy hormone. A single quantitative hCG value cannot by itself confirm pregnancy location, viability or exact gestational age; trends and clinical assessment may be needed.'],
+  [/\b(protein.*urine|urine.*protein|proteinuria)\b/i,'Urine protein','Protein in urine can occur for several reasons. In pregnancy, it is interpreted together with blood pressure, symptoms and other findings.'],
+  [/\b(hiv|hbsag|hepatitis b|syphilis|vdrl|rpr)\b/i,'Infection screening','Screening tests may require confirmation depending on the test and result. A scanned report should never be used as the only basis for diagnosis.'],
+  [/\b(malaria|plasmodium)\b/i,'Malaria test','Looks for evidence of malaria parasites or antigens. If positive or if you have significant symptoms, clinical treatment decisions should be made by a healthcare professional.'],
+  [/\b(blood group|abo|rhesus|rh factor)\b/i,'Blood group / Rh','Identifies blood type and Rh status. Rh status can be important in pregnancy care.'],
+  [/\b(leukocyte esterase|nitrite|urinalysis|urine microscopy)\b/i,'Urine test','Urine findings can suggest infection or other issues, but symptoms, collection quality and sometimes culture are important.']
+];
+function parseLabText(text){const rows=[];const lines=text.split(/\n+/).map(s=>s.replace(/\s+/g,' ').trim()).filter(Boolean);for(const line of lines){let m=line.match(/^(.{2,45}?)\s+([<>]?\s*-?\d+(?:\.\d+)?)\s*([a-zA-Zµμ%\/\^0-9.*-]+)?\s+([<>]?\s*-?\d+(?:\.\d+)?)\s*[-–]\s*([<>]?\s*-?\d+(?:\.\d+)?)(?:\s|$)/);if(m){const name=m[1].trim(),value=parseFloat(m[2].replace(/[<>\s]/g,'')),unit=m[3]||'',low=parseFloat(m[4].replace(/[<>\s]/g,'')),high=parseFloat(m[5].replace(/[<>\s]/g,''));let flag='ok';if(Number.isFinite(value)&&Number.isFinite(low)&&value<low)flag='low';else if(Number.isFinite(value)&&Number.isFinite(high)&&value>high)flag='high';rows.push({name,value:m[2].trim(),unit,range:m[4]+'–'+m[5],flag,raw:line});continue}m=line.match(/^(.{2,50}?)\s+(positive|negative|reactive|non.?reactive|detected|not detected|normal|abnormal)(?:\s|$)/i);if(m)rows.push({name:m[1].trim(),value:m[2],unit:'',range:'',flag:'text',raw:line})}return rows.slice(0,50)}
+function interpretRows(text,rows){const matches=[];for(const [re,title,desc] of explainers){if(re.test(text)&&!matches.some(x=>x.title===title))matches.push({title,desc})}return matches}
+$('#interpretLab').onclick=()=>{const text=$('#ocrText').value.trim();if(!text){setStatus($('#labStatus'),'Paste or scan some report text first.','warn');return}const rows=parseLabText(text);const ex=interpretRows(text,rows);$('#labTitle').textContent=rows.length?'Report values found':'Plain-language report notes';$('#labIntro').textContent=rows.length?'These comparisons use only the reference ranges that the scanner could detect in your report.':'The scanner did not confidently detect numeric value/range rows, but it can still explain recognized test names below.';if(rows.length){let h='<div class="table-wrap"><table class="lab-table"><thead><tr><th>Test</th><th>Result</th><th>Unit</th><th>Report range</th><th>Flag</th></tr></thead><tbody>';for(const r of rows){const label=r.flag==='ok'?'Within detected range':r.flag==='low'?'Below detected range':r.flag==='high'?'Above detected range':'Text result';h+='<tr><td>'+escapeHtml(r.name)+'</td><td>'+escapeHtml(r.value)+'</td><td>'+escapeHtml(r.unit)+'</td><td>'+escapeHtml(r.range||'—')+'</td><td><span class="flag '+r.flag+'">'+label+'</span></td></tr>'}h+='</tbody></table></div>';$('#labTableWrap').innerHTML=h}else $('#labTableWrap').innerHTML='';$('#labExplain').innerHTML=ex.length?ex.map(x=>'<div class="explain"><b>'+escapeHtml(x.title)+'</b><span>'+escapeHtml(x.desc)+'</span></div>').join(''):'<div class="explain"><b>No familiar test names recognized</b><span>Check the OCR text for errors, or ask a clinician/laboratory to explain the report.</span></div>';$('#labCaution').classList.add('show')};
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]))}
+</script>
+<script src="assets/social.js?v=social-1" defer></script>
+</body>
+</html>

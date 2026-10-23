@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff8f7">
+<meta name="description" content="Original lullabies, baby songs and calming sleep sounds you can play and download from Mama's Love.">
+<title>Lullabies & Baby Sounds | Mama's Love</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:DM Sans;src:url('assets/fonts/dm-sans-latin-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:Cormorant Garamond;src:url('assets/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+:root{--ink:#3d2b38;--muted:#7a6875;--rose:#ef729f;--rose2:#ca4e7b;--plum:#4a2d45;--peach:#ffd0b6;--paper:#fffaf8;--soft:#fff1f5;--line:#eadce2;--shadow:0 22px 70px rgba(78,42,63,.10);--green:#2f775e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#fffaf8,#fff2f5);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}.shell{width:min(1180px,calc(100% - 28px));margin:auto}
+.topbar{background:var(--plum);color:#fff;text-align:center;padding:9px 16px;font-size:.77rem;letter-spacing:.08em}.site-head{position:sticky;top:0;z-index:30;background:rgba(255,250,248,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(75,45,70,.08)}.head{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand img{width:205px}.home{padding:10px 15px;border:1px solid var(--line);background:#fff;border-radius:999px;font-weight:850;font-size:.83rem}
+.hero{padding:54px 0 34px}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:34px;align-items:center}.kicker{font-size:.75rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--rose2)}.hero h1{font-size:clamp(3.1rem,6vw,6.1rem);line-height:.92;letter-spacing:-.04em;margin:12px 0 17px}.hero h1 em{font-style:normal;color:var(--rose2)}.hero p{font-size:1.04rem;color:var(--muted);max-width:650px}.hero-note{margin-top:18px;padding:14px 16px;border-radius:18px;background:#fff;border:1px solid var(--line);font-size:.83rem;color:#675762}.hero-note b{color:var(--plum)}
+.hero-art{position:relative;min-height:450px;border-radius:38px;overflow:hidden;background:linear-gradient(145deg,#f8e7ef,#fff7f1 55%,#eee8f8);box-shadow:var(--shadow)}.orb{position:absolute;border-radius:50%}.o1{width:250px;height:250px;right:-25px;top:-20px;background:#ffd5e3}.o2{width:185px;height:185px;left:8px;bottom:-35px;background:#ffd9bd}.player-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76%;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.75);border-radius:30px;padding:26px;box-shadow:0 28px 70px rgba(75,42,62,.14)}.cover{height:155px;border-radius:22px;background:linear-gradient(135deg,#4a2d45,#8f4e6f);position:relative;overflow:hidden;display:grid;place-items:center}.moon{width:76px;height:76px;border-radius:50%;background:#fff3cf;box-shadow:0 0 44px rgba(255,236,177,.45);position:relative}.moon:after{content:'';position:absolute;width:76px;height:76px;border-radius:50%;background:#6c3b59;left:24px;top:-8px}.stars{position:absolute;inset:0;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:34px 34px;opacity:.55}.player-card h3{font-size:2rem;margin:18px 0 4px}.player-card p{margin:0;color:var(--muted);font-size:.84rem}.wave{height:45px;display:flex;align-items:center;gap:4px;margin-top:14px}.wave span{display:block;width:5px;border-radius:10px;background:linear-gradient(#f177a2,#f4bc91);animation:wave 1.2s ease-in-out infinite}.wave span:nth-child(2n){animation-delay:.2s}.wave span:nth-child(3n){animation-delay:.4s}@keyframes wave{0%,100%{height:12px}50%{height:36px}}
+.library{padding:18px 0 76px}.library-shell{background:#fff;border:1px solid var(--line);border-radius:30px;padding:22px;box-shadow:var(--shadow)}.toolbar{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}.search{display:flex;gap:10px;align-items:center;border:1px solid var(--line);background:#fffafc;border-radius:16px;padding:0 14px}.search input{border:0;outline:0;background:transparent;width:100%;padding:14px 0;color:var(--ink)}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.filters button{border:1px solid var(--line);background:#fff;color:#725d69;padding:10px 13px;border-radius:999px;font-weight:850}.filters button.active{background:var(--plum);color:#fff;border-color:var(--plum)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 14px}.section-head h2{font-size:2.5rem;margin:0}.section-head p{margin:0;color:var(--muted);font-size:.84rem}
+.track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.track{position:relative;border:1px solid var(--line);background:#fff;border-radius:24px;padding:18px;min-height:220px;overflow:hidden;transition:.2s}.track:hover{transform:translateY(-3px);box-shadow:0 15px 36px rgba(78,42,63,.08)}.track:before{content:'';position:absolute;width:110px;height:110px;border-radius:50%;right:-28px;top:-30px;background:var(--trackGlow,#ffe3ec)}.track-top{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative}.tag{font-size:.66rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--rose2)}.fav{border:0;width:34px;height:34px;border-radius:50%;background:#fff1f5;color:#c44d7a;font-size:1rem}.fav.active{background:var(--rose);color:#fff}.track h3{font-size:1.8rem;line-height:1;margin:13px 0 7px;position:relative}.track p{margin:0;color:var(--muted);font-size:.82rem;min-height:42px;position:relative}.meta{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;position:relative}.meta span{padding:6px 8px;border-radius:999px;background:#fff7fa;border:1px solid #f1e4e9;font-size:.68rem;color:#765f6c}.track-actions{display:flex;gap:8px;position:relative}.track-actions button{border:0;border-radius:999px;padding:10px 12px;font-weight:850}.play{background:var(--plum);color:#fff;flex:1}.download{background:#fff;border:1px solid var(--line)!important;color:var(--plum);flex:1}.download:disabled{opacity:.5}.track.playing{border-color:#efadc5;background:#fff9fb}.progress{height:5px;background:#f1e7eb;border-radius:99px;overflow:hidden;margin-top:13px;display:none}.track.playing .progress{display:block}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),#efaf89);transition:width .2s linear}
+.now{position:fixed;left:18px;right:18px;bottom:16px;z-index:50;max-width:920px;margin:auto;background:rgba(74,45,69,.96);color:#fff;border-radius:22px;padding:13px 15px;display:none;align-items:center;gap:13px;box-shadow:0 18px 60px rgba(45,24,39,.3);backdrop-filter:blur(12px)}.now.show{display:flex}.now-info{min-width:0;flex:1}.now-info b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.now-info span{font-size:.74rem;color:#e5d6df}.now button{border:0;background:#fff;color:var(--plum);border-radius:999px;padding:8px 12px;font-weight:900}.toast{position:fixed;right:18px;top:96px;padding:11px 14px;border-radius:16px;background:var(--plum);color:#fff;box-shadow:var(--shadow);opacity:0;transform:translateY(-10px);transition:.25s;pointer-events:none;z-index:70}.toast.show{opacity:1;transform:none}.download-status{padding:13px 15px;background:#fff5e8;border:1px solid #f3dfc7;color:#7f5f36;border-radius:18px;font-size:.8rem;margin-top:18px;display:none}.download-status.show{display:block}
+.favs-section{padding:58px 0;background:#fff3f6}.favs-section h2{font-size:2.8rem;margin:0 0 8px}.favs-section p{color:var(--muted);margin:0 0 20px}.empty{padding:22px;border:1px dashed #ddc8d2;border-radius:20px;color:var(--muted);background:#fff}.footer{padding:28px 0 100px;background:#fff;border-top:1px solid var(--line)}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px}.foot img{width:180px}.foot p{font-size:.76rem;color:var(--muted);max-width:610px;text-align:right}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}.track-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.brand img{width:175px}.hero{padding-top:32px}.hero h1{font-size:3.35rem}.hero-art{min-height:400px}.player-card{width:86%;padding:20px}.toolbar{grid-template-columns:1fr}.track-grid{grid-template-columns:1fr}.filters{overflow:auto;flex-wrap:nowrap;padding-bottom:3px}.filters button{white-space:nowrap}.section-head{align-items:start;flex-direction:column}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}.now{left:10px;right:10px}}
+</style>
+</head>
+<body>
+<div class="topbar">Original lullabies, baby songs and calming sounds — play online or download as WAV</div>
+<header class="site-head"><div class="shell head"><a class="brand" href="./"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"></a><a class="home" href="./">← Mama's Love home</a></div></header>
+<main>
+<section class="hero"><div class="shell hero-grid">
+  <div><span class="kicker">Lullabies & baby sounds</span><h1>A softer little <em>sound world.</em></h1><p>Browse a comprehensive library of more than 200 original lullabies, baby melodies, womb sounds, shushing, household hums, fan sounds, transport ambience, water, nature and sleep mixes. Play them instantly, save favourites and download any track as a WAV file for offline use.</p><div class="hero-note"><b>Gentle listening:</b> keep playback at a comfortable low volume and place speakers or phones away from a baby's ears. These sounds are for comfort and routine, not a substitute for safe-sleep practices or medical care.</div></div>
+  <div class="hero-art"><div class="orb o1"></div><div class="orb o2"></div><div class="player-card"><div class="cover"><div class="stars"></div><div class="moon"></div></div><h3>Moonlight Hush</h3><p>Soft music-box tones with a slow bedtime pulse.</p><div class="wave">${'<span></span>'.repeat(18)}</div></div></div>
+</div></section>
+<section class="library"><div class="shell library-shell">
+  <div class="toolbar"><label class="search">⌕ <input id="search" placeholder="Search lullabies, songs or sounds…"></label><select id="duration"><option value="60">Download 1 minute</option><option value="120" selected>Download 2 minutes</option><option value="300">Download 5 minutes</option></select></div>
+  <div class="filters" id="filters"></div>
+  <div class="section-head"><div><span class="kicker">Audio library</span><h2>Choose something gentle.</h2></div><p>All tracks are generated from original melodies or synthetic ambient sound.</p></div>
+  <div class="track-grid" id="trackGrid"></div>
+  <div class="download-status" id="downloadStatus"></div>
+</div></section>
+<section class="favs-section"><div class="shell"><span class="kicker">Your favourites</span><h2>Saved sounds</h2><p>Saved on this device only.</p><div class="track-grid" id="favGrid"></div></div></section>
+</main>
+<footer class="footer"><div class="shell foot"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"><p>The audio on this page is generated in your browser from Mama's Love original patterns and synthetic sound recipes. Downloads are WAV files and may take a few seconds to render, especially for longer tracks.</p></div></footer>
+<div class="now" id="now"><div class="now-info"><b id="nowTitle"></b><span id="nowMeta"></span></div><button id="nowStop">Stop</button></div>
+<div class="toast" id="toast"></div>
+<script>
+const scale=[261.63,293.66,329.63,392.00,440.00,523.25];
+const tracks=[];
+const add=(title,cat,type,desc,mood,seed,extra={})=>tracks.push({id:'t'+tracks.length,title,cat,type,desc,mood,seed:seed||tracks.length+1,...extra});
+const addNames=(names,cat,type,desc,mood,seedBase=1,extra={})=>names.forEach((name,i)=>add(name,cat,type,desc,mood,seedBase+i,extra));
+
+// Original lullabies
+addNames([
+'Blooming Moon','Moonlight Hush','Little Cloud','Mama’s Arms','Tiny Star Path','Dream Boat','Sleepy Garden','Softly Home','Peach Moon','Quiet Window',
+'Velvet Night','Dandelion Dream','Warm Blanket','Little Lantern','Cloud Pillow','Goodnight Meadow','Hummingbird Sleep','Tender Tide','Rose Petal Night','Silver Cradle',
+'Sleepy Sparrow','Golden Yawn','Night Garden','Gentle Steps','Dreaming River','Starry Cot','Soft Sunrise','Calm Little Heart','Bedtime Bloom','Quiet Nest',
+'Cotton Sky','Little Firefly','Blue Moon Baby','Whispering Willow','Milk & Moonlight','Sleepy Daisy','Dreamy Toes','Twilight Cradle','Soft Star Waltz','Little Moon Boat',
+'Warm Night Light','Dreamy Meadow','Moonbeam Pillow','Quiet Butterfly','Sleepy Petals','Tender Goodnight','Baby’s Evening Star','Cloudy Lullaby','Sweet Night Bloom','Cradle of Stars'
+],'Lullabies','melody','A slow original bedtime melody with gentle repeating notes.','Music box',10);
+
+addNames([
+'Hello Little One','Tiny Toes Tune','Good Morning Baby','Cuddle Song','Little Smile Song','Peekaboo Melody','Happy Baby Bounce','Clap Little Hands','Sunshine Baby',
+'Little Giggle Tune','Mama Loves You','Daddy Loves You','Twinkle Tummy Time','Sweet Bath Song','Little Steps Song','Baby Stretch Tune','Tiny Dance','Cuddle Bug',
+'Little Star Hello','Soft Playtime','Smile & Sway','Baby’s Little Day','Gentle Bounce','Little Hands & Feet','Love You More'
+],'Baby songs','melody','A light original baby melody for cuddles, playtime or a calm routine.','Gentle melody',80);
+
+// Noise colours
+[
+['Soft White Noise','white','Steady broadband hush.'],
+['Deep White Noise','white','Full steady broadband sound with a deeper feel.'],
+['Airy White Noise','white','Light, airy broadband hush.'],
+['Soft Pink Noise','pink','Softer, lower-weighted noise.'],
+['Deep Pink Noise','pink','Warm, low pink-noise wash.'],
+['Velvet Pink Noise','pink','Smooth pink-noise texture.'],
+['Soft Brown Noise','brown','Deep low-frequency wash.'],
+['Deep Brown Noise','brown','Extra-low, warm noise bed.'],
+['Gentle Brown Noise','brown','Soft rounded low-frequency ambience.'],
+['Soft Gray Noise','pink','Balanced soft noise texture.'],
+['Low Blue-Style Noise','white','Brighter high-frequency hush, softened for comfort.'],
+['Soft Violet-Style Noise','white','Very airy synthetic hiss at a gentle level.']
+].forEach((d,i)=>add(d[0],'Noise colours',d[1],d[2],'Steady noise',130+i));
+
+// Womb & heartbeat
+[
+['Womb-Like Hush','womb','Low filtered noise with a gentle pulse.'],
+['Deep Womb Hush','womb','Deeper low womb-like ambience.'],
+['Soft Placental Hush','womb','Warm filtered rushing sound.'],
+['Gentle Womb Flow','womb','Low flowing ambience with a slow pulse.'],
+['Heartbeat Calm','heartbeat','Soft slow double-pulse rhythm.'],
+['Slow Heartbeat','heartbeat','A slower heartbeat-style pulse.'],
+['Warm Heartbeat','heartbeat','A rounded heartbeat under quiet ambience.'],
+['Heartbeat + Hush','heartshush','Heartbeat under a soft noise bed.'],
+['Heartbeat + Pink Noise','heartshush','Soft heartbeat with gentle pink noise.'],
+['Heartbeat + Brown Noise','heartwomb','Heartbeat over deep low-frequency noise.'],
+['Womb + Heartbeat','heartwomb','Womb-like hush with a soft heartbeat.'],
+['Womb + Slow Pulse','heartwomb','Warm low ambience with slower pulses.'],
+['Womb + Soft Rumble','womb','Low synthetic rumble inspired by enclosed ambience.'],
+['Womb + Gentle Flow','womb','Low filtered flowing sound.'],
+['Womb Night Mix','heartwomb','Deep hush and slow heartbeat-style pulse.']
+].forEach((d,i)=>add(d[0],'Womb & heartbeat',d[1],d[2],'Womb-style ambience',160+i));
+
+// Shushing and soothing voice-like noise
+[
+['Soft Shushing','shush','Slow synthetic shushing pattern.'],
+['Slow Shush','shush','Longer spaced shushing sweeps.'],
+['Gentle Repeating Shush','shush','Even, quiet shush rhythm.'],
+['Deep Shushing','shush','Lower, softer shushing texture.'],
+['Breathy Shush','shush','Airy synthetic shush pattern.'],
+['Double Shush','shush','Two soft shush sweeps in each cycle.'],
+['Shush + Pink Noise','shushmix','Shushing over soft pink noise.'],
+['Shush + Brown Noise','shushmix','Shushing over deeper noise.'],
+['Shush + Heartbeat','shushheart','Shushing with a soft heartbeat pulse.'],
+['Shush + Womb Hush','shushwomb','Shushing layered over low womb-like ambience.'],
+['Shush + Rain','shushrain','Soft shushing blended with rainfall.'],
+['Shush + Fan','shushfan','Shushing over steady fan-like noise.']
+].forEach((d,i)=>add(d[0],'Shushing',d[1],d[2],'Shushing',190+i));
+
+// Fans and airflow
+[
+['Soft Fan',72,'pink'],['Box Fan Low',66,'pink'],['Box Fan Medium',76,'pink'],['Box Fan High',88,'white'],
+['Ceiling Fan Low',58,'pink'],['Ceiling Fan Medium',68,'pink'],['Ceiling Fan High',78,'pink'],
+['Desk Fan Low',82,'pink'],['Desk Fan Medium',94,'pink'],['Desk Fan High',108,'white'],
+['Tower Fan',74,'pink'],['Oscillating Fan',70,'pink'],['Air Purifier Low',64,'pink'],['Air Purifier Medium',76,'pink'],
+['Air Conditioner Low',82,'pink'],['Air Conditioner Deep',68,'brown'],['Gentle Ventilation',62,'pink'],['Bedroom Airflow',70,'pink'],
+['Cool Breeze',96,'pink'],['Soft Wind',105,'pink']
+].forEach((d,i)=>add(d[0],'Fans & airflow','machine','Steady airflow or fan-like ambience.','Fan / airflow',220+i,{tone:d[1],color:d[2],noiseGain:.05}));
+
+// Household hums
+[
+['Vacuum Hum',118,'pink'],['Soft Vacuum Low',92,'brown'],['Hair Dryer Low',128,'pink'],['Hair Dryer Soft',145,'white'],
+['Tumble Dryer',74,'brown'],['Washing Machine Hum',62,'brown'],['Dishwasher Hum',68,'pink'],['Refrigerator Hum',56,'brown'],
+['Dehumidifier Hum',72,'pink'],['Humidifier Ambience',84,'pink'],['Bathroom Extractor Fan',92,'pink'],['Kitchen Extractor Low',98,'pink'],
+['Electric Heater Hum',60,'brown'],['Radiator Room Hum',54,'brown'],['Laundry Room Hum',66,'brown'],['Quiet Appliance Hum',78,'pink'],
+['Soft Electric Motor',88,'pink'],['Low Room Rumble',48,'brown'],['Gentle Dryer Rumble',64,'brown'],['Steady Home Hum',58,'brown']
+].forEach((d,i)=>add(d[0],'Household hums','machine','Softened household-machine ambience.','Household hum',260+i,{tone:d[1],color:d[2],noiseGain:.045}));
+
+// Transport
+[
+['Car Ride Hum',68,'brown',.06],['Car Ride on Smooth Road',62,'brown',.05],['Car Ride in Light Rain',72,'pink',.055],
+['Train Carriage Hum',56,'brown',.055],['Train on Tracks',66,'brown',.06],['Distant Train Rumble',48,'brown',.05],
+['Airplane Cabin Hum',82,'pink',.055],['Airplane Cruise Ambience',76,'pink',.05],['Bus Ride Hum',64,'brown',.055],
+['Coach Ride Rumble',58,'brown',.055],['Boat Engine Hum',54,'brown',.05],['Ferry Cabin Ambience',62,'pink',.05],
+['Stroller Roll',76,'pink',.04],['Road Trip Low Hum',60,'brown',.06],['City Drive at Night',70,'brown',.05],
+['Highway Rumble',52,'brown',.06],['Quiet Engine Idle',48,'brown',.045],['Soft Motorway Noise',64,'pink',.055]
+].forEach((d,i)=>add(d[0],'Transport','machine','Low continuous travel ambience.','Travel sound',300+i,{tone:d[1],color:d[2],noiseGain:d[3]}));
+
+// Rain and water
+[
+['Light Rain','rain'],['Rain on Window','rainwindow'],['Rain on Roof','rain'],['Rain on Tent','rainwindow'],['Rain on Leaves','rain'],
+['Gentle Drizzle','rain'],['Steady Rain','rain'],['Distant Rain','rainwindow'],['Night Rain','rainwindow'],['Soft Storm Rain','rain'],
+['Ocean Breathing','ocean'],['Distant Waves','waves'],['Gentle Shore','ocean'],['Slow Sea Swell','waves'],['Quiet Beach','ocean'],
+['Soft Stream','water'],['Little Brook','water'],['Gentle River','water'],['Shower Hush','water'],['Bath Water Ambience','water'],
+['Waterfall Far Away','water'],['Soft Fountain','water'],['Rain + Stream','watermix'],['Rain + Ocean','watermix'],['Rain + Window Hum','watermix']
+].forEach((d,i)=>add(d[0],'Rain & water',d[1],'Soft natural water ambience.','Water ambience',340+i));
+
+// Nature and night
+[
+['Summer Crickets','crickets'],['Night Crickets','crickets'],['Soft Meadow Night','crickets'],['Distant Cicadas','crickets'],
+['Forest Breeze','breeze'],['Night Breeze','breeze'],['Tree Leaves in Wind','breeze'],['Gentle Garden Wind','breeze'],
+['Distant Birds Morning','birds'],['Soft Dawn Birds','birds'],['Quiet Woodland Birds','birds'],['Garden Morning','birds'],
+['Night Meadow','naturemix'],['Forest Night','naturemix'],['Quiet Garden','naturemix'],['Countryside Evening','naturemix'],
+['Soft Thunder Far Away','thunder'],['Distant Rumble','thunder'],['Gentle Rainforest','naturemix'],['Bamboo Breeze','breeze'],
+['Palm Leaves','breeze'],['Soft Camp Night','naturemix'],['Window Open at Night','naturemix'],['Early Morning Garden','birds']
+].forEach((d,i)=>add(d[0],'Nature & night',d[1],'Gentle outdoor ambience.','Nature ambience',390+i));
+
+// Sleep mixes
+[
+['Rain + Brown Noise','rainbrown'],['Rain + Pink Noise','rainpink'],['Rain + White Noise','rainwhite'],
+['Ocean + Pink Noise','oceanpink'],['Ocean + Brown Noise','oceanbrown'],['Waves + Pink Noise','oceanpink'],
+['Heartbeat + Womb Hush','heartwomb'],['Heartbeat + Brown Noise','heartwomb'],['Heartbeat + Shush','shushheart'],
+['Shush + Pink Noise','shushmix'],['Shush + Fan','shushfan'],['Shush + Rain','shushrain'],
+['Rain + Music Box','rainmelody'],['Brown Noise + Lullaby','brownmelody'],['Pink Noise + Lullaby','pinkmelody'],
+['Night Breeze + Lullaby','breezemelody'],['Ocean + Lullaby','oceanmelody'],['Womb Hush + Lullaby','wombmelody'],
+['Fan + Lullaby','fanmelody'],['Car Ride + Lullaby','carmelody'],['Rain + Heartbeat','rainheart'],
+['Ocean + Heartbeat','oceanheart'],['Brown Noise + Heartbeat','heartwomb'],['Pink Noise + Heartbeat','heartshush'],
+['Rain + Fan','rainfan'],['Brown Noise + Fan','brownfan'],['Pink Noise + Fan','pinkfan'],
+['Womb + Shush + Heartbeat','triplewomb'],['Rain + Shush + Lullaby','triplerain'],['Ocean + Pink + Lullaby','tripleocean']
+].forEach((d,i)=>add(d[0],'Sleep mixes',d[1],'Layered calming soundscape.','Sleep mix',430+i));
+
+const cats=['All','Lullabies','Baby songs','Noise colours','Womb & heartbeat','Shushing','Fans & airflow','Household hums','Transport','Rain & water','Nature & night','Sleep mixes'];
+let category='All',query='',active=null,favs=JSON.parse(localStorage.getItem('mamasAudioFavs')||'[]');
+const grid=document.getElementById('trackGrid'),favGrid=document.getElementById('favGrid'),filters=document.getElementById('filters');
+cats.forEach((c,i)=>{const b=document.createElement('button');b.textContent=c;b.className=i===0?'active':'';b.onclick=()=>{category=c;[...filters.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};filters.appendChild(b)});
+document.getElementById('search').addEventListener('input',e=>{query=e.target.value.toLowerCase();render()});
+function key(t){return t.id}
+function toggleFav(id){favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];localStorage.setItem('mamasAudioFavs',JSON.stringify(favs));render();renderFavs()}
+function trackCard(t){const saved=favs.includes(t.id),playing=active&&active.id===t.id;return `<article class="track ${playing?'playing':''}" style="--trackGlow:${t.cat==='Nature & night'?'#e5f3eb':t.cat==='Noise colours'?'#e9eef7':t.cat==='Rain & water'?'#e5f3f4':t.cat==='Transport'?'#eeeaf4':t.cat==='Sleep mixes'?'#eee6f8':'#ffe4ec'}"><div class="track-top"><span class="tag">${t.cat}</span><button class="fav ${saved?'active':''}" onclick="event.stopPropagation();toggleFav('${t.id}')">♥</button></div><h3>${t.title}</h3><p>${t.desc}</p><div class="meta"><span>${t.mood}</span><span>Original</span><span>WAV download</span></div><div class="track-actions"><button class="play" onclick="playTrack('${t.id}')">${playing?'Restart':'Play'}</button><button class="download" onclick="downloadTrack('${t.id}',this)">Download</button></div><div class="progress"><span id="p-${t.id}"></span></div></article>`}
+function render(){const list=tracks.filter(t=>(category==='All'||t.cat===category)&&(!query||(t.title+' '+t.cat+' '+t.desc).toLowerCase().includes(query)));grid.innerHTML=list.length?list.map(trackCard).join(''):'<div class="empty">No sounds match that search.</div>'}
+function renderFavs(){const list=tracks.filter(t=>favs.includes(t.id));favGrid.innerHTML=list.length?list.map(trackCard).join(''):'<div class="empty">Tap the heart on any track to save it here.</div>'}
+let ctx=null,nodes=[],timer=null,started=0,previewLen=30;
+function stopAll(){nodes.forEach(n=>{try{n.stop&&n.stop()}catch(e){}try{n.disconnect&&n.disconnect()}catch(e){}});nodes=[];if(timer)cancelAnimationFrame(timer);timer=null;active=null;document.getElementById('now').classList.remove('show');render();renderFavs()}
+document.getElementById('nowStop').onclick=stopAll;
+function makeNoiseBuffer(audio,duration,color,seed=1){const sr=audio.sampleRate,len=Math.floor(duration*sr),buf=audio.createBuffer(1,len,sr),d=buf.getChannelData(0);let last=0,b0=0,b1=0,b2=0,b3=0,b4=0,b5=0,b6=0,rand=seed*99991;const rnd=()=>{rand=(rand*1664525+1013904223)%4294967296;return rand/4294967296*2-1};for(let i=0;i<len;i++){const w=rnd();let v=w;if(color==='pink'){b0=.99886*b0+w*.0555179;b1=.99332*b1+w*.0750759;b2=.969*b2+w*.153852;b3=.8665*b3+w*.3104856;b4=.55*b4+w*.5329522;b5=-.7616*b5-w*.016898;v=b0+b1+b2+b3+b4+b5+b6+w*.5362;b6=w*.115926;v*=.11}else if(color==='brown'){last=(last+.02*w)/1.02;v=last*3.5}d[i]=Math.max(-1,Math.min(1,v))}return buf}
+function addGain(audio,dest,val){const g=audio.createGain();g.gain.value=val;g.connect(dest);return g}
+function scheduleMelody(audio,dest,t,seconds,seed=1,startAt=0){const notes=[0,2,4,3,1,4,2,0,5,4,2,1,0,2,3,1];const bpm=54+(seed%10),beat=60/bpm;for(let tm=startAt,idx=0;tm<startAt+seconds;tm+=beat,idx++){const degree=notes[(idx+seed)%notes.length];const freq=scale[degree]*(seed%4===0?0.5:1);const osc=audio.createOscillator(),g=audio.createGain();osc.type=seed%2?'sine':'triangle';osc.frequency.setValueAtTime(freq,tm);g.gain.setValueAtTime(0.0001,tm);g.gain.exponentialRampToValueAtTime(.055,tm+.06);g.gain.exponentialRampToValueAtTime(.0001,Math.min(tm+beat*.78,startAt+seconds));osc.connect(g);g.connect(dest);osc.start(tm);osc.stop(Math.min(tm+beat,startAt+seconds+.1));nodes.push(osc,g)}}
+function addNoise(audio,dest,color,seconds,gain=.045,seed=1){const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,color,seed);const g=audio.createGain();g.gain.value=gain;src.connect(g);g.connect(dest);src.start();nodes.push(src,g);return src}
+function addPulse(audio,dest,seconds,rate=.82,gain=.08,start=0){for(let t=start;t<seconds;t+=rate){[0,.18].forEach((off,j)=>{const osc=audio.createOscillator(),g=audio.createGain();osc.type='sine';osc.frequency.value=j?58:64;g.gain.setValueAtTime(.0001,t+off);g.gain.exponentialRampToValueAtTime(gain*(j?.7:1),t+off+.025);g.gain.exponentialRampToValueAtTime(.0001,t+off+.12);osc.connect(g);g.connect(dest);osc.start(t+off);osc.stop(t+off+.16);nodes.push(osc,g)})}}
+function buildTrack(audio,t,dest,seconds,offline=false){const master=audio.createGain();master.gain.value=.5;master.connect(dest);const addN=(color,g=.05)=>{const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,color,t.seed);const gn=audio.createGain();gn.gain.value=g;src.connect(gn);gn.connect(master);src.start(0);if(!offline)nodes.push(src,gn)};
+  if(t.type==='melody'){scheduleMelody(audio,master,t,seconds,t.seed,0)}
+  else if(t.type==='white')addN('white',.035);else if(t.type==='pink')addN('pink',.08);else if(t.type==='brown')addN('brown',.07);
+  else if(['rain','rainwindow'].includes(t.type)){addN('pink',.05);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'white',t.seed+9);const f=audio.createBiquadFilter();f.type='highpass';f.frequency.value=t.type==='rain'?1800:1100;const g=audio.createGain();g.gain.value=.018;src.connect(f);f.connect(g);g.connect(master);src.start(0);if(!offline)nodes.push(src,f,g)}
+  else if(['ocean','waves'].includes(t.type)){addN('pink',.08);const lfo=audio.createOscillator(),lg=audio.createGain(),g=audio.createGain();lfo.frequency.value=t.type==='ocean'?.08:.12;lg.gain.value=.055;g.gain.value=.08;lfo.connect(lg);lg.connect(g.gain);g.connect(master);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'brown',t.seed+4);src.connect(g);src.start(0);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(src,lfo,lg,g)}
+  else if(t.type==='crickets'){addN('pink',.02);for(let tm=.2;tm<seconds;tm+=.9+(tm%1.4)){const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=3500+(tm%1)*900;o.type='sine';g.gain.setValueAtTime(.0001,tm);g.gain.linearRampToValueAtTime(.012,tm+.02);g.gain.linearRampToValueAtTime(.0001,tm+.09);o.connect(g);g.connect(master);o.start(tm);o.stop(tm+.11);if(!offline)nodes.push(o,g)}}
+  else if(t.type==='machine'){addN(t.color||'pink',t.noiseGain||.05);const o=audio.createOscillator(),g=audio.createGain(),lfo=audio.createOscillator(),lg=audio.createGain();o.frequency.value=t.tone||70;o.type='sine';g.gain.value=.024;lfo.frequency.value=.07+((t.seed%5)*.02);lg.gain.value=.006;lfo.connect(lg);lg.connect(g.gain);o.connect(g);g.connect(master);o.start(0);o.stop(seconds);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(o,g,lfo,lg)}
+  else if(t.type==='water'){addN('pink',.045);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'white',t.seed+13);const f=audio.createBiquadFilter();f.type='bandpass';f.frequency.value=900+(t.seed%5)*180;f.Q.value=.5;const g=audio.createGain();g.gain.value=.022;src.connect(f);f.connect(g);g.connect(master);src.start(0);if(!offline)nodes.push(src,f,g)}
+  else if(t.type==='watermix'){addN('pink',.05);addN('white',.012)}
+  else if(t.type==='birds'){addN('pink',.012);for(let tm=.5;tm<seconds;tm+=1.6+(tm%1.7)){const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.setValueAtTime(1700+(t.seed%7)*120,tm);o.frequency.exponentialRampToValueAtTime(2600+(t.seed%5)*160,tm+.12);g.gain.setValueAtTime(.0001,tm);g.gain.linearRampToValueAtTime(.01,tm+.025);g.gain.linearRampToValueAtTime(.0001,tm+.18);o.connect(g);g.connect(master);o.start(tm);o.stop(tm+.2);if(!offline)nodes.push(o,g)}}
+  else if(t.type==='naturemix'){addN('pink',.025);for(let tm=1;tm<seconds;tm+=3.2){const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=2400+(t.seed%6)*120;o.type='sine';g.gain.setValueAtTime(.0001,tm);g.gain.linearRampToValueAtTime(.006,tm+.03);g.gain.linearRampToValueAtTime(.0001,tm+.15);o.connect(g);g.connect(master);o.start(tm);o.stop(tm+.18);if(!offline)nodes.push(o,g)}}
+  else if(t.type==='thunder'){addN('brown',.055);const lfo=audio.createOscillator(),lg=audio.createGain();lfo.frequency.value=.035;lg.gain.value=.018;lfo.connect(lg);const g=audio.createGain();g.gain.value=.045;lg.connect(g.gain);g.connect(master);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'brown',t.seed+22);src.connect(g);src.start(0);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(src,lfo,lg,g)}
+  else if(['breeze','fan','hum','ac','vacuum','car','womb'].includes(t.type)){addN(t.type==='womb'||t.type==='car'?'brown':'pink',t.type==='womb'?.08:.055);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value={breeze:95,fan:72,hum:60,ac:82,vacuum:115,car:68,womb:54}[t.type]||70;o.type='sine';g.gain.value=t.type==='womb'?.055:.025;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g);if(t.type==='womb')addPulse(audio,master,seconds,.88,.035)}
+  else if(t.type==='shush'){addN('pink',.04);const lfo=audio.createOscillator(),lg=audio.createGain(),g=audio.createGain();lfo.frequency.value=.22;lg.gain.value=.09;g.gain.value=.05;lfo.connect(lg);lg.connect(g.gain);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'white',t.seed+2);const f=audio.createBiquadFilter();f.type='bandpass';f.frequency.value=1800;src.connect(f);f.connect(g);g.connect(master);src.start(0);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(src,lfo,lg,g,f)}
+  else if(t.type==='heartbeat'){addPulse(audio,master,seconds,.88,.09)}
+  else if(t.type==='heartshush'){addN('pink',.045);addPulse(audio,master,seconds,.9,.075)}
+  else if(t.type==='shushmix'){addN('pink',.045);addN('white',.01)}
+  else if(t.type==='shushheart'){addN('pink',.035);addPulse(audio,master,seconds,.9,.06)}
+  else if(t.type==='shushwomb'){addN('brown',.055);addN('pink',.025)}
+  else if(t.type==='shushrain'){addN('pink',.05);addN('white',.012)}
+  else if(t.type==='shushfan'){addN('pink',.05);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=72;g.gain.value=.02;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
+  else if(t.type==='rainpink'){addN('pink',.07);addN('white',.012)}
+  else if(t.type==='rainwhite'){addN('white',.035);addN('pink',.025)}
+  else if(t.type==='oceanbrown'){addN('brown',.06);addN('pink',.025)}
+  else if(t.type==='pinkmelody'){addN('pink',.05);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='oceanmelody'){addN('pink',.045);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='wombmelody'){addN('brown',.055);addPulse(audio,master,seconds,.9,.025);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='fanmelody'){addN('pink',.045);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='carmelody'){addN('brown',.045);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='rainheart'){addN('pink',.045);addPulse(audio,master,seconds,.9,.055)}
+  else if(t.type==='oceanheart'){addN('pink',.05);addPulse(audio,master,seconds,.95,.045)}
+  else if(t.type==='rainfan'){addN('pink',.055);addN('white',.008)}
+  else if(t.type==='brownfan'){addN('brown',.055);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=68;g.gain.value=.018;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
+  else if(t.type==='pinkfan'){addN('pink',.06);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=74;g.gain.value=.016;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
+  else if(t.type==='triplewomb'){addN('brown',.055);addN('pink',.02);addPulse(audio,master,seconds,.9,.05)}
+  else if(t.type==='triplerain'){addN('pink',.05);addN('white',.008);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='tripleocean'){addN('pink',.065);addN('brown',.02);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='rainbrown'){addN('brown',.06);addN('white',.015)}
+  else if(t.type==='oceanpink'){addN('pink',.07);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=.1;g.gain.value=.025;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
+  else if(t.type==='heartwomb'){addN('brown',.065);addPulse(audio,master,seconds,.88,.06)}
+  else if(t.type==='rainmelody'){addN('pink',.045);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='brownmelody'){addN('brown',.05);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='breezemelody'){addN('pink',.035);scheduleMelody(audio,master,t,seconds,t.seed)}
+  return master}
+function playTrack(id){stopAll();const t=tracks.find(x=>x.id===id);ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();active=t;started=performance.now();buildTrack(ctx,t,ctx.destination,previewLen,false);document.getElementById('nowTitle').textContent=t.title;document.getElementById('nowMeta').textContent=t.cat+' • 30-second preview';document.getElementById('now').classList.add('show');render();renderFavs();const tick=()=>{if(!active)return;const p=Math.min(100,(performance.now()-started)/(previewLen*10));const bar=document.getElementById('p-'+id);if(bar)bar.style.width=p+'%';if(p>=100){stopAll();return}timer=requestAnimationFrame(tick)};timer=requestAnimationFrame(tick)}
+function audioBufferToWav(buffer){const num=buffer.numberOfChannels,rate=buffer.sampleRate,len=buffer.length*num*2+44,ab=new ArrayBuffer(len),view=new DataView(ab);let o=0;const str=s=>{for(let i=0;i<s.length;i++)view.setUint8(o++,s.charCodeAt(i))};str('RIFF');view.setUint32(o,36+buffer.length*num*2,true);o+=4;str('WAVE');str('fmt ');view.setUint32(o,16,true);o+=4;view.setUint16(o,1,true);o+=2;view.setUint16(o,num,true);o+=2;view.setUint32(o,rate,true);o+=4;view.setUint32(o,rate*num*2,true);o+=4;view.setUint16(o,num*2,true);o+=2;view.setUint16(o,16,true);o+=2;str('data');view.setUint32(o,buffer.length*num*2,true);o+=4;for(let i=0;i<buffer.length;i++)for(let ch=0;ch<num;ch++){let s=Math.max(-1,Math.min(1,buffer.getChannelData(ch)[i]));view.setInt16(o,s<0?s*0x8000:s*0x7fff,true);o+=2}return new Blob([ab],{type:'audio/wav'})}
+async function downloadTrack(id,btn){const t=tracks.find(x=>x.id===id),seconds=+document.getElementById('duration').value,status=document.getElementById('downloadStatus');btn.disabled=true;btn.textContent='Rendering…';status.className='download-status show';status.textContent=`Creating ${seconds/60} minute WAV: ${t.title}. This stays in your browser.`;try{const sr=22050,off=new OfflineAudioContext(1,sr*seconds,sr);const oldNodes=nodes;nodes=[];buildTrack(off,t,off.destination,seconds,true);const buffer=await off.startRendering();nodes=oldNodes;const blob=audioBufferToWav(buffer),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=t.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'-mamaslove.wav';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('Downloaded: '+t.title);status.textContent='Download ready. You can create another track whenever you like.'}catch(e){status.textContent='This browser could not render the audio. Try a shorter duration or a newer browser.'}finally{btn.disabled=false;btn.textContent='Download'}}
+function toast(msg){const e=document.getElementById('toast');e.textContent=msg;e.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>e.classList.remove('show'),1800)}
+render();renderFavs();
+</script>
+<script src="assets/social.js?v=social-1" defer></script>
+</body>
+</html>
