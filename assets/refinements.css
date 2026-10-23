@@ -72,7 +72,7 @@ body:not([data-page="growth"]) .inside{border-top:1px solid #b694c64d}
 .footer-navigation{gap:48px}
 .footer-nav-column .footer-link{display:flex;align-items:center;min-height:42px;padding-block:8px}
 .footer .footer-care-note p{line-height:1.85}
-.motion-toggle{border-color:#91a663;box-shadow:0 5px 20px #26182f14}
+
 @media(hover:hover){
  .btn:hover{transform:translateY(-2px);box-shadow:0 7px 18px #71304d22}
  .topic-card:hover,.guide-card:hover{transform:translateY(-4px);box-shadow:3px 6px 0 #795487}

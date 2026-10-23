@@ -5,11 +5,9 @@
   const read=(store,key)=>{try{return store.getItem(key)}catch{return null}};
   const write=(store,key,value)=>{try{store.setItem(key,String(value))}catch{}};
   const tracks=[
-    {id:'moonlight-hush',title:'Moonlight Hush'},
-    {id:'little-cloud',title:'Little Cloud'},
-    {id:'twilight-cradle',title:'Twilight Cradle'},
-    {id:'starry-dreams',title:'Starry Dreams'},
-    {id:'softly-home',title:'Softly Home'}
+    {id:'brahms-lullaby',title:'Brahms’ Lullaby'},
+    {id:'twinkle-lullaby',title:'Twinkle, Twinkle, Little Star'},
+    {id:'softly-home-piano',title:'Softly Home'}
   ];
   const trackKey='ml-lullaby-last-track';
   const previous=read(localStorage,trackKey)||read(sessionStorage,trackKey);
@@ -20,7 +18,7 @@
   let enabled=true;
   let interrupted=false,unavailable=false,armed=false,resumeWhenVisible=false;
   const audio=document.createElement('audio');
-  audio.id='siteLullaby';audio.src=`assets/audio/${track.id}.mp3`;audio.dataset.track=track.id;audio.loop=true;audio.preload='auto';audio.volume=.65;audio.autoplay=true;audio.setAttribute('playsinline','');audio.hidden=true;
+  audio.id='siteLullaby';audio.src=`assets/audio/${track.id}.mp3`;audio.dataset.track=track.id;audio.loop=true;audio.preload='auto';audio.volume=.45;audio.autoplay=true;audio.setAttribute('playsinline','');audio.hidden=true;
   const button=document.createElement('button');
   button.type='button';button.id='lullabyToggle';button.className='lullaby-control';button.setAttribute('aria-controls',audio.id);button.setAttribute('aria-pressed','false');
   const paths={play:'<path d="m9 5 10 7-10 7V5Z"/>',pause:'<path d="M9 5v14M15 5v14"/>'};
