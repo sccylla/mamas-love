@@ -172,4 +172,4 @@ body:not([data-page="growth"]) .inside{border-top:1px solid #b694c64d}
 .topic-womb-art{width:170px;height:184px;margin-inline:auto;background:url('illustrations/womb-development-stages.png') no-repeat 100% 100%;background-size:400% 184.7916667%}
 
 /* Keep the scan prints and baby clothes visible in the personal maternity hero. */
-#heroPhoto[data-custom-hero="true"]{object-position:50% 25%}
+#heroPhoto[data-custom-hero="true"]{object-position:43% 25%}
