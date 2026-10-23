@@ -27,7 +27,7 @@
 <header class="site-head"><div class="shell head"><a class="brand" href="./"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"></a><a class="home" href="./">← Mama's Love home</a></div></header>
 <main>
 <section class="hero"><div class="shell hero-grid">
-  <div><span class="kicker">Lullabies & baby sounds</span><h1>A softer little <em>sound world.</em></h1><p>Browse dozens of original lullabies, gentle baby songs and calming background sounds. Play them instantly, save favourites and download any track as a WAV file for offline use.</p><div class="hero-note"><b>Gentle listening:</b> keep playback at a comfortable low volume and place speakers or phones away from a baby's ears. These sounds are for comfort and routine, not a substitute for safe-sleep practices or medical care.</div></div>
+  <div><span class="kicker">Lullabies & baby sounds</span><h1>A softer little <em>sound world.</em></h1><p>Browse a comprehensive library of more than 200 original lullabies, baby melodies, womb sounds, shushing, household hums, fan sounds, transport ambience, water, nature and sleep mixes. Play them instantly, save favourites and download any track as a WAV file for offline use.</p><div class="hero-note"><b>Gentle listening:</b> keep playback at a comfortable low volume and place speakers or phones away from a baby's ears. These sounds are for comfort and routine, not a substitute for safe-sleep practices or medical care.</div></div>
   <div class="hero-art"><div class="orb o1"></div><div class="orb o2"></div><div class="player-card"><div class="cover"><div class="stars"></div><div class="moon"></div></div><h3>Moonlight Hush</h3><p>Soft music-box tones with a slow bedtime pulse.</p><div class="wave">${'<span></span>'.repeat(18)}</div></div></div>
 </div></section>
 <section class="library"><div class="shell library-shell">
@@ -45,20 +45,145 @@
 <script>
 const scale=[261.63,293.66,329.63,392.00,440.00,523.25];
 const tracks=[];
-const melodyNames=['Moonlight Hush','Little Cloud','Mama’s Arms','Tiny Star Path','Dream Boat','Sleepy Garden','Softly Home','Peach Moon','Quiet Window','Velvet Night','Dandelion Dream','Warm Blanket','Little Lantern','Cloud Pillow','Goodnight Meadow','Hummingbird Sleep','Tender Tide','Rose Petal Night','Silver Cradle','Sleepy Sparrow','Golden Yawn','Night Garden','Gentle Steps','Dreaming River','Starry Cot','Soft Sunrise','Calm Little Heart','Bedtime Bloom','Quiet Nest','Cotton Sky','Little Firefly','Blue Moon Baby','Whispering Willow','Milk & Moonlight','Sleepy Daisy','Dreamy Toes'];
-melodyNames.forEach((name,i)=>tracks.push({id:'m'+i,title:name,cat:i%3===0?'Baby songs':'Lullabies',type:'melody',mood:i%2?'Music box':'Soft piano',seed:i+3,desc:i%2?'A delicate, repeating bedtime melody.':'Slow, warm tones designed for a quiet routine.'}));
-const soundDefs=[
-['Soft White Noise','White noise','white','Steady broadband hush.'],['Gentle Pink Noise','White noise','pink','Softer, lower-weighted noise.'],['Deep Brown Noise','White noise','brown','A deeper low-frequency wash.'],['Light Rain','Nature','rain','A soft rainfall texture.'],['Rain on Window','Nature','rainwindow','Gentle drops with a muted room tone.'],['Ocean Breathing','Nature','ocean','Slow surf-like rises and falls.'],['Distant Waves','Nature','waves','Soft rolling water texture.'],['Summer Crickets','Nature','crickets','A very gentle night-garden ambience.'],['Forest Breeze','Nature','breeze','Low wind with airy movement.'],['Soft Fan','Sleep sounds','fan','A steady fan-like hum.'],['Room Hum','Sleep sounds','hum','Low, even room ambience.'],['Womb-Like Hush','Sleep sounds','womb','Low filtered noise with a gentle pulse.'],['Soft Shushing','Sleep sounds','shush','Slow synthetic shushing pattern.'],['Heartbeat Calm','Sleep sounds','heartbeat','A soft, slow double-pulse rhythm.'],['Heartbeat + Hush','Sleep sounds','heartshush','Heartbeat under a quiet noise bed.'],['Car Ride Hum','Sleep sounds','car','Low rolling road-like ambience.'],['Air Conditioner','Sleep sounds','ac','Steady low mechanical hush.'],['Gentle Vacuum Hum','Sleep sounds','vacuum','Softened appliance-like drone.'],['Rain + Brown Noise','Sleep mixes','rainbrown','Deep noise mixed with rainfall.'],['Ocean + Pink Noise','Sleep mixes','oceanpink','Slow surf over soft pink noise.'],['Heartbeat + Womb Hush','Sleep mixes','heartwomb','Warm low ambience with gentle pulses.'],['Rain + Music Box','Sleep mixes','rainmelody','Light rain under a simple melody.'],['Brown Noise + Lullaby','Sleep mixes','brownmelody','Deep hush under soft bedtime notes.'],['Night Breeze + Lullaby','Sleep mixes','breezemelody','Airy ambience with sparse notes.']
-];
-soundDefs.forEach((d,i)=>tracks.push({id:'s'+i,title:d[0],cat:d[1],type:d[2],mood:d[1],seed:i+40,desc:d[3]}));
-const cats=['All','Lullabies','Baby songs','White noise','Nature','Sleep sounds','Sleep mixes'];
+const add=(title,cat,type,desc,mood,seed,extra={})=>tracks.push({id:'t'+tracks.length,title,cat,type,desc,mood,seed:seed||tracks.length+1,...extra});
+const addNames=(names,cat,type,desc,mood,seedBase=1,extra={})=>names.forEach((name,i)=>add(name,cat,type,desc,mood,seedBase+i,extra));
+
+// Original lullabies
+addNames([
+'Blooming Moon','Moonlight Hush','Little Cloud','Mama’s Arms','Tiny Star Path','Dream Boat','Sleepy Garden','Softly Home','Peach Moon','Quiet Window',
+'Velvet Night','Dandelion Dream','Warm Blanket','Little Lantern','Cloud Pillow','Goodnight Meadow','Hummingbird Sleep','Tender Tide','Rose Petal Night','Silver Cradle',
+'Sleepy Sparrow','Golden Yawn','Night Garden','Gentle Steps','Dreaming River','Starry Cot','Soft Sunrise','Calm Little Heart','Bedtime Bloom','Quiet Nest',
+'Cotton Sky','Little Firefly','Blue Moon Baby','Whispering Willow','Milk & Moonlight','Sleepy Daisy','Dreamy Toes','Twilight Cradle','Soft Star Waltz','Little Moon Boat',
+'Warm Night Light','Dreamy Meadow','Moonbeam Pillow','Quiet Butterfly','Sleepy Petals','Tender Goodnight','Baby’s Evening Star','Cloudy Lullaby','Sweet Night Bloom','Cradle of Stars'
+],'Lullabies','melody','A slow original bedtime melody with gentle repeating notes.','Music box',10);
+
+addNames([
+'Hello Little One','Tiny Toes Tune','Good Morning Baby','Cuddle Song','Little Smile Song','Peekaboo Melody','Happy Baby Bounce','Clap Little Hands','Sunshine Baby',
+'Little Giggle Tune','Mama Loves You','Daddy Loves You','Twinkle Tummy Time','Sweet Bath Song','Little Steps Song','Baby Stretch Tune','Tiny Dance','Cuddle Bug',
+'Little Star Hello','Soft Playtime','Smile & Sway','Baby’s Little Day','Gentle Bounce','Little Hands & Feet','Love You More'
+],'Baby songs','melody','A light original baby melody for cuddles, playtime or a calm routine.','Gentle melody',80);
+
+// Noise colours
+[
+['Soft White Noise','white','Steady broadband hush.'],
+['Deep White Noise','white','Full steady broadband sound with a deeper feel.'],
+['Airy White Noise','white','Light, airy broadband hush.'],
+['Soft Pink Noise','pink','Softer, lower-weighted noise.'],
+['Deep Pink Noise','pink','Warm, low pink-noise wash.'],
+['Velvet Pink Noise','pink','Smooth pink-noise texture.'],
+['Soft Brown Noise','brown','Deep low-frequency wash.'],
+['Deep Brown Noise','brown','Extra-low, warm noise bed.'],
+['Gentle Brown Noise','brown','Soft rounded low-frequency ambience.'],
+['Soft Gray Noise','pink','Balanced soft noise texture.'],
+['Low Blue-Style Noise','white','Brighter high-frequency hush, softened for comfort.'],
+['Soft Violet-Style Noise','white','Very airy synthetic hiss at a gentle level.']
+].forEach((d,i)=>add(d[0],'Noise colours',d[1],d[2],'Steady noise',130+i));
+
+// Womb & heartbeat
+[
+['Womb-Like Hush','womb','Low filtered noise with a gentle pulse.'],
+['Deep Womb Hush','womb','Deeper low womb-like ambience.'],
+['Soft Placental Hush','womb','Warm filtered rushing sound.'],
+['Gentle Womb Flow','womb','Low flowing ambience with a slow pulse.'],
+['Heartbeat Calm','heartbeat','Soft slow double-pulse rhythm.'],
+['Slow Heartbeat','heartbeat','A slower heartbeat-style pulse.'],
+['Warm Heartbeat','heartbeat','A rounded heartbeat under quiet ambience.'],
+['Heartbeat + Hush','heartshush','Heartbeat under a soft noise bed.'],
+['Heartbeat + Pink Noise','heartshush','Soft heartbeat with gentle pink noise.'],
+['Heartbeat + Brown Noise','heartwomb','Heartbeat over deep low-frequency noise.'],
+['Womb + Heartbeat','heartwomb','Womb-like hush with a soft heartbeat.'],
+['Womb + Slow Pulse','heartwomb','Warm low ambience with slower pulses.'],
+['Womb + Soft Rumble','womb','Low synthetic rumble inspired by enclosed ambience.'],
+['Womb + Gentle Flow','womb','Low filtered flowing sound.'],
+['Womb Night Mix','heartwomb','Deep hush and slow heartbeat-style pulse.']
+].forEach((d,i)=>add(d[0],'Womb & heartbeat',d[1],d[2],'Womb-style ambience',160+i));
+
+// Shushing and soothing voice-like noise
+[
+['Soft Shushing','shush','Slow synthetic shushing pattern.'],
+['Slow Shush','shush','Longer spaced shushing sweeps.'],
+['Gentle Repeating Shush','shush','Even, quiet shush rhythm.'],
+['Deep Shushing','shush','Lower, softer shushing texture.'],
+['Breathy Shush','shush','Airy synthetic shush pattern.'],
+['Double Shush','shush','Two soft shush sweeps in each cycle.'],
+['Shush + Pink Noise','shushmix','Shushing over soft pink noise.'],
+['Shush + Brown Noise','shushmix','Shushing over deeper noise.'],
+['Shush + Heartbeat','shushheart','Shushing with a soft heartbeat pulse.'],
+['Shush + Womb Hush','shushwomb','Shushing layered over low womb-like ambience.'],
+['Shush + Rain','shushrain','Soft shushing blended with rainfall.'],
+['Shush + Fan','shushfan','Shushing over steady fan-like noise.']
+].forEach((d,i)=>add(d[0],'Shushing',d[1],d[2],'Shushing',190+i));
+
+// Fans and airflow
+[
+['Soft Fan',72,'pink'],['Box Fan Low',66,'pink'],['Box Fan Medium',76,'pink'],['Box Fan High',88,'white'],
+['Ceiling Fan Low',58,'pink'],['Ceiling Fan Medium',68,'pink'],['Ceiling Fan High',78,'pink'],
+['Desk Fan Low',82,'pink'],['Desk Fan Medium',94,'pink'],['Desk Fan High',108,'white'],
+['Tower Fan',74,'pink'],['Oscillating Fan',70,'pink'],['Air Purifier Low',64,'pink'],['Air Purifier Medium',76,'pink'],
+['Air Conditioner Low',82,'pink'],['Air Conditioner Deep',68,'brown'],['Gentle Ventilation',62,'pink'],['Bedroom Airflow',70,'pink'],
+['Cool Breeze',96,'pink'],['Soft Wind',105,'pink']
+].forEach((d,i)=>add(d[0],'Fans & airflow','machine','Steady airflow or fan-like ambience.','Fan / airflow',220+i,{tone:d[1],color:d[2],noiseGain:.05}));
+
+// Household hums
+[
+['Vacuum Hum',118,'pink'],['Soft Vacuum Low',92,'brown'],['Hair Dryer Low',128,'pink'],['Hair Dryer Soft',145,'white'],
+['Tumble Dryer',74,'brown'],['Washing Machine Hum',62,'brown'],['Dishwasher Hum',68,'pink'],['Refrigerator Hum',56,'brown'],
+['Dehumidifier Hum',72,'pink'],['Humidifier Ambience',84,'pink'],['Bathroom Extractor Fan',92,'pink'],['Kitchen Extractor Low',98,'pink'],
+['Electric Heater Hum',60,'brown'],['Radiator Room Hum',54,'brown'],['Laundry Room Hum',66,'brown'],['Quiet Appliance Hum',78,'pink'],
+['Soft Electric Motor',88,'pink'],['Low Room Rumble',48,'brown'],['Gentle Dryer Rumble',64,'brown'],['Steady Home Hum',58,'brown']
+].forEach((d,i)=>add(d[0],'Household hums','machine','Softened household-machine ambience.','Household hum',260+i,{tone:d[1],color:d[2],noiseGain:.045}));
+
+// Transport
+[
+['Car Ride Hum',68,'brown',.06],['Car Ride on Smooth Road',62,'brown',.05],['Car Ride in Light Rain',72,'pink',.055],
+['Train Carriage Hum',56,'brown',.055],['Train on Tracks',66,'brown',.06],['Distant Train Rumble',48,'brown',.05],
+['Airplane Cabin Hum',82,'pink',.055],['Airplane Cruise Ambience',76,'pink',.05],['Bus Ride Hum',64,'brown',.055],
+['Coach Ride Rumble',58,'brown',.055],['Boat Engine Hum',54,'brown',.05],['Ferry Cabin Ambience',62,'pink',.05],
+['Stroller Roll',76,'pink',.04],['Road Trip Low Hum',60,'brown',.06],['City Drive at Night',70,'brown',.05],
+['Highway Rumble',52,'brown',.06],['Quiet Engine Idle',48,'brown',.045],['Soft Motorway Noise',64,'pink',.055]
+].forEach((d,i)=>add(d[0],'Transport','machine','Low continuous travel ambience.','Travel sound',300+i,{tone:d[1],color:d[2],noiseGain:d[3]}));
+
+// Rain and water
+[
+['Light Rain','rain'],['Rain on Window','rainwindow'],['Rain on Roof','rain'],['Rain on Tent','rainwindow'],['Rain on Leaves','rain'],
+['Gentle Drizzle','rain'],['Steady Rain','rain'],['Distant Rain','rainwindow'],['Night Rain','rainwindow'],['Soft Storm Rain','rain'],
+['Ocean Breathing','ocean'],['Distant Waves','waves'],['Gentle Shore','ocean'],['Slow Sea Swell','waves'],['Quiet Beach','ocean'],
+['Soft Stream','water'],['Little Brook','water'],['Gentle River','water'],['Shower Hush','water'],['Bath Water Ambience','water'],
+['Waterfall Far Away','water'],['Soft Fountain','water'],['Rain + Stream','watermix'],['Rain + Ocean','watermix'],['Rain + Window Hum','watermix']
+].forEach((d,i)=>add(d[0],'Rain & water',d[1],'Soft natural water ambience.','Water ambience',340+i));
+
+// Nature and night
+[
+['Summer Crickets','crickets'],['Night Crickets','crickets'],['Soft Meadow Night','crickets'],['Distant Cicadas','crickets'],
+['Forest Breeze','breeze'],['Night Breeze','breeze'],['Tree Leaves in Wind','breeze'],['Gentle Garden Wind','breeze'],
+['Distant Birds Morning','birds'],['Soft Dawn Birds','birds'],['Quiet Woodland Birds','birds'],['Garden Morning','birds'],
+['Night Meadow','naturemix'],['Forest Night','naturemix'],['Quiet Garden','naturemix'],['Countryside Evening','naturemix'],
+['Soft Thunder Far Away','thunder'],['Distant Rumble','thunder'],['Gentle Rainforest','naturemix'],['Bamboo Breeze','breeze'],
+['Palm Leaves','breeze'],['Soft Camp Night','naturemix'],['Window Open at Night','naturemix'],['Early Morning Garden','birds']
+].forEach((d,i)=>add(d[0],'Nature & night',d[1],'Gentle outdoor ambience.','Nature ambience',390+i));
+
+// Sleep mixes
+[
+['Rain + Brown Noise','rainbrown'],['Rain + Pink Noise','rainpink'],['Rain + White Noise','rainwhite'],
+['Ocean + Pink Noise','oceanpink'],['Ocean + Brown Noise','oceanbrown'],['Waves + Pink Noise','oceanpink'],
+['Heartbeat + Womb Hush','heartwomb'],['Heartbeat + Brown Noise','heartwomb'],['Heartbeat + Shush','shushheart'],
+['Shush + Pink Noise','shushmix'],['Shush + Fan','shushfan'],['Shush + Rain','shushrain'],
+['Rain + Music Box','rainmelody'],['Brown Noise + Lullaby','brownmelody'],['Pink Noise + Lullaby','pinkmelody'],
+['Night Breeze + Lullaby','breezemelody'],['Ocean + Lullaby','oceanmelody'],['Womb Hush + Lullaby','wombmelody'],
+['Fan + Lullaby','fanmelody'],['Car Ride + Lullaby','carmelody'],['Rain + Heartbeat','rainheart'],
+['Ocean + Heartbeat','oceanheart'],['Brown Noise + Heartbeat','heartwomb'],['Pink Noise + Heartbeat','heartshush'],
+['Rain + Fan','rainfan'],['Brown Noise + Fan','brownfan'],['Pink Noise + Fan','pinkfan'],
+['Womb + Shush + Heartbeat','triplewomb'],['Rain + Shush + Lullaby','triplerain'],['Ocean + Pink + Lullaby','tripleocean']
+].forEach((d,i)=>add(d[0],'Sleep mixes',d[1],'Layered calming soundscape.','Sleep mix',430+i));
+
+const cats=['All','Lullabies','Baby songs','Noise colours','Womb & heartbeat','Shushing','Fans & airflow','Household hums','Transport','Rain & water','Nature & night','Sleep mixes'];
 let category='All',query='',active=null,favs=JSON.parse(localStorage.getItem('mamasAudioFavs')||'[]');
 const grid=document.getElementById('trackGrid'),favGrid=document.getElementById('favGrid'),filters=document.getElementById('filters');
 cats.forEach((c,i)=>{const b=document.createElement('button');b.textContent=c;b.className=i===0?'active':'';b.onclick=()=>{category=c;[...filters.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};filters.appendChild(b)});
 document.getElementById('search').addEventListener('input',e=>{query=e.target.value.toLowerCase();render()});
 function key(t){return t.id}
 function toggleFav(id){favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];localStorage.setItem('mamasAudioFavs',JSON.stringify(favs));render();renderFavs()}
-function trackCard(t){const saved=favs.includes(t.id),playing=active&&active.id===t.id;return `<article class="track ${playing?'playing':''}" style="--trackGlow:${t.cat==='Nature'?'#e5f3eb':t.cat==='White noise'?'#e9eef7':t.cat==='Sleep mixes'?'#eee6f8':'#ffe4ec'}"><div class="track-top"><span class="tag">${t.cat}</span><button class="fav ${saved?'active':''}" onclick="event.stopPropagation();toggleFav('${t.id}')">♥</button></div><h3>${t.title}</h3><p>${t.desc}</p><div class="meta"><span>${t.mood}</span><span>Original</span><span>WAV download</span></div><div class="track-actions"><button class="play" onclick="playTrack('${t.id}')">${playing?'Restart':'Play'}</button><button class="download" onclick="downloadTrack('${t.id}',this)">Download</button></div><div class="progress"><span id="p-${t.id}"></span></div></article>`}
+function trackCard(t){const saved=favs.includes(t.id),playing=active&&active.id===t.id;return `<article class="track ${playing?'playing':''}" style="--trackGlow:${t.cat==='Nature & night'?'#e5f3eb':t.cat==='Noise colours'?'#e9eef7':t.cat==='Rain & water'?'#e5f3f4':t.cat==='Transport'?'#eeeaf4':t.cat==='Sleep mixes'?'#eee6f8':'#ffe4ec'}"><div class="track-top"><span class="tag">${t.cat}</span><button class="fav ${saved?'active':''}" onclick="event.stopPropagation();toggleFav('${t.id}')">♥</button></div><h3>${t.title}</h3><p>${t.desc}</p><div class="meta"><span>${t.mood}</span><span>Original</span><span>WAV download</span></div><div class="track-actions"><button class="play" onclick="playTrack('${t.id}')">${playing?'Restart':'Play'}</button><button class="download" onclick="downloadTrack('${t.id}',this)">Download</button></div><div class="progress"><span id="p-${t.id}"></span></div></article>`}
 function render(){const list=tracks.filter(t=>(category==='All'||t.cat===category)&&(!query||(t.title+' '+t.cat+' '+t.desc).toLowerCase().includes(query)));grid.innerHTML=list.length?list.map(trackCard).join(''):'<div class="empty">No sounds match that search.</div>'}
 function renderFavs(){const list=tracks.filter(t=>favs.includes(t.id));favGrid.innerHTML=list.length?list.map(trackCard).join(''):'<div class="empty">Tap the heart on any track to save it here.</div>'}
 let ctx=null,nodes=[],timer=null,started=0,previewLen=30;
@@ -75,10 +200,37 @@ function buildTrack(audio,t,dest,seconds,offline=false){const master=audio.creat
   else if(['rain','rainwindow'].includes(t.type)){addN('pink',.05);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'white',t.seed+9);const f=audio.createBiquadFilter();f.type='highpass';f.frequency.value=t.type==='rain'?1800:1100;const g=audio.createGain();g.gain.value=.018;src.connect(f);f.connect(g);g.connect(master);src.start(0);if(!offline)nodes.push(src,f,g)}
   else if(['ocean','waves'].includes(t.type)){addN('pink',.08);const lfo=audio.createOscillator(),lg=audio.createGain(),g=audio.createGain();lfo.frequency.value=t.type==='ocean'?.08:.12;lg.gain.value=.055;g.gain.value=.08;lfo.connect(lg);lg.connect(g.gain);g.connect(master);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'brown',t.seed+4);src.connect(g);src.start(0);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(src,lfo,lg,g)}
   else if(t.type==='crickets'){addN('pink',.02);for(let tm=.2;tm<seconds;tm+=.9+(tm%1.4)){const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=3500+(tm%1)*900;o.type='sine';g.gain.setValueAtTime(.0001,tm);g.gain.linearRampToValueAtTime(.012,tm+.02);g.gain.linearRampToValueAtTime(.0001,tm+.09);o.connect(g);g.connect(master);o.start(tm);o.stop(tm+.11);if(!offline)nodes.push(o,g)}}
+  else if(t.type==='machine'){addN(t.color||'pink',t.noiseGain||.05);const o=audio.createOscillator(),g=audio.createGain(),lfo=audio.createOscillator(),lg=audio.createGain();o.frequency.value=t.tone||70;o.type='sine';g.gain.value=.024;lfo.frequency.value=.07+((t.seed%5)*.02);lg.gain.value=.006;lfo.connect(lg);lg.connect(g.gain);o.connect(g);g.connect(master);o.start(0);o.stop(seconds);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(o,g,lfo,lg)}
+  else if(t.type==='water'){addN('pink',.045);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'white',t.seed+13);const f=audio.createBiquadFilter();f.type='bandpass';f.frequency.value=900+(t.seed%5)*180;f.Q.value=.5;const g=audio.createGain();g.gain.value=.022;src.connect(f);f.connect(g);g.connect(master);src.start(0);if(!offline)nodes.push(src,f,g)}
+  else if(t.type==='watermix'){addN('pink',.05);addN('white',.012)}
+  else if(t.type==='birds'){addN('pink',.012);for(let tm=.5;tm<seconds;tm+=1.6+(tm%1.7)){const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.setValueAtTime(1700+(t.seed%7)*120,tm);o.frequency.exponentialRampToValueAtTime(2600+(t.seed%5)*160,tm+.12);g.gain.setValueAtTime(.0001,tm);g.gain.linearRampToValueAtTime(.01,tm+.025);g.gain.linearRampToValueAtTime(.0001,tm+.18);o.connect(g);g.connect(master);o.start(tm);o.stop(tm+.2);if(!offline)nodes.push(o,g)}}
+  else if(t.type==='naturemix'){addN('pink',.025);for(let tm=1;tm<seconds;tm+=3.2){const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=2400+(t.seed%6)*120;o.type='sine';g.gain.setValueAtTime(.0001,tm);g.gain.linearRampToValueAtTime(.006,tm+.03);g.gain.linearRampToValueAtTime(.0001,tm+.15);o.connect(g);g.connect(master);o.start(tm);o.stop(tm+.18);if(!offline)nodes.push(o,g)}}
+  else if(t.type==='thunder'){addN('brown',.055);const lfo=audio.createOscillator(),lg=audio.createGain();lfo.frequency.value=.035;lg.gain.value=.018;lfo.connect(lg);const g=audio.createGain();g.gain.value=.045;lg.connect(g.gain);g.connect(master);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'brown',t.seed+22);src.connect(g);src.start(0);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(src,lfo,lg,g)}
   else if(['breeze','fan','hum','ac','vacuum','car','womb'].includes(t.type)){addN(t.type==='womb'||t.type==='car'?'brown':'pink',t.type==='womb'?.08:.055);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value={breeze:95,fan:72,hum:60,ac:82,vacuum:115,car:68,womb:54}[t.type]||70;o.type='sine';g.gain.value=t.type==='womb'?.055:.025;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g);if(t.type==='womb')addPulse(audio,master,seconds,.88,.035)}
   else if(t.type==='shush'){addN('pink',.04);const lfo=audio.createOscillator(),lg=audio.createGain(),g=audio.createGain();lfo.frequency.value=.22;lg.gain.value=.09;g.gain.value=.05;lfo.connect(lg);lg.connect(g.gain);const src=audio.createBufferSource();src.buffer=makeNoiseBuffer(audio,seconds,'white',t.seed+2);const f=audio.createBiquadFilter();f.type='bandpass';f.frequency.value=1800;src.connect(f);f.connect(g);g.connect(master);src.start(0);lfo.start(0);lfo.stop(seconds);if(!offline)nodes.push(src,lfo,lg,g,f)}
   else if(t.type==='heartbeat'){addPulse(audio,master,seconds,.88,.09)}
   else if(t.type==='heartshush'){addN('pink',.045);addPulse(audio,master,seconds,.9,.075)}
+  else if(t.type==='shushmix'){addN('pink',.045);addN('white',.01)}
+  else if(t.type==='shushheart'){addN('pink',.035);addPulse(audio,master,seconds,.9,.06)}
+  else if(t.type==='shushwomb'){addN('brown',.055);addN('pink',.025)}
+  else if(t.type==='shushrain'){addN('pink',.05);addN('white',.012)}
+  else if(t.type==='shushfan'){addN('pink',.05);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=72;g.gain.value=.02;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
+  else if(t.type==='rainpink'){addN('pink',.07);addN('white',.012)}
+  else if(t.type==='rainwhite'){addN('white',.035);addN('pink',.025)}
+  else if(t.type==='oceanbrown'){addN('brown',.06);addN('pink',.025)}
+  else if(t.type==='pinkmelody'){addN('pink',.05);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='oceanmelody'){addN('pink',.045);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='wombmelody'){addN('brown',.055);addPulse(audio,master,seconds,.9,.025);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='fanmelody'){addN('pink',.045);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='carmelody'){addN('brown',.045);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='rainheart'){addN('pink',.045);addPulse(audio,master,seconds,.9,.055)}
+  else if(t.type==='oceanheart'){addN('pink',.05);addPulse(audio,master,seconds,.95,.045)}
+  else if(t.type==='rainfan'){addN('pink',.055);addN('white',.008)}
+  else if(t.type==='brownfan'){addN('brown',.055);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=68;g.gain.value=.018;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
+  else if(t.type==='pinkfan'){addN('pink',.06);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=74;g.gain.value=.016;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
+  else if(t.type==='triplewomb'){addN('brown',.055);addN('pink',.02);addPulse(audio,master,seconds,.9,.05)}
+  else if(t.type==='triplerain'){addN('pink',.05);addN('white',.008);scheduleMelody(audio,master,t,seconds,t.seed)}
+  else if(t.type==='tripleocean'){addN('pink',.065);addN('brown',.02);scheduleMelody(audio,master,t,seconds,t.seed)}
   else if(t.type==='rainbrown'){addN('brown',.06);addN('white',.015)}
   else if(t.type==='oceanpink'){addN('pink',.07);const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=.1;g.gain.value=.025;o.connect(g);g.connect(master);o.start(0);o.stop(seconds);if(!offline)nodes.push(o,g)}
   else if(t.type==='heartwomb'){addN('brown',.065);addPulse(audio,master,seconds,.88,.06)}
