@@ -25,6 +25,14 @@ window.MAMAS_CONTENT = {
       category: 'Baby'
     },
     {
+      id: 'growth',
+      title: "Baby's first year",
+      description: 'Follow baby growth from day one through all 52 weeks with simple explanations, visuals and milestone checkpoints.',
+      href: 'growth.html',
+      image: 'mamas-love-5.jpg',
+      category: 'Baby'
+    },
+    {
       id: 'postpartum',
       title: 'After birth',
       description: 'Read about physical recovery, feeding, mood changes and when to ask for help.',
