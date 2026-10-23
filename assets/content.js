@@ -49,6 +49,14 @@ window.MAMAS_CONTENT = {
       category: 'Postpartum'
     },
     {
+      id: 'sounds',
+      title: 'Lullabies & baby sounds',
+      description: 'Play and download original lullabies, gentle baby songs, white noise, rain, ocean, heartbeat, womb-like hush and sleep mixes.',
+      href: 'sounds.html',
+      image: 'mamas-love-4.jpg',
+      category: 'Baby'
+    },
+    {
       id: 'scanner',
       title: 'Test scanner',
       description: 'Scan a home pregnancy test or hospital/lab report and get a plain-language assisted reading with privacy-first browser processing.',
