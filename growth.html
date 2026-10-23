@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff8f5" />
+  <meta name="description" content="Mama's Love — a clear, week-by-week guide to baby's first year." />
+  <title>Baby's First Year — Mama's Love</title>
+  <style>
+    @font-face{font-family:DM Sans;src:url('assets/fonts/dm-sans-latin-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+    @font-face{font-family:Cormorant Garamond;src:url('assets/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+    @font-face{font-family:Cormorant Garamond;src:url('assets/fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2');font-weight:500;font-style:italic;font-display:swap}
+    :root{
+      --ink:#3b2635;--muted:#786a74;--paper:#fffaf7;--paper-2:#fff4f5;--rose:#f46e9d;--rose-deep:#d9487d;--peach:#ffc6a0;--peach-deep:#e99463;--plum:#4b2d46;--cream:#fff0e4;--sage:#e7f0e8;--sky:#e9f1f8;--line:#eaded9;--card:#ffffff;--shadow:0 24px 80px rgba(85,48,69,.10);--radius:30px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input{font:inherit}img{display:block;max-width:100%}
+    .shell{width:min(1180px,calc(100% - 34px));margin:auto}.topbar{font-size:.82rem;padding:9px 16px;text-align:center;background:#4b2d46;color:white;letter-spacing:.06em}.site-head{position:sticky;top:0;z-index:50;background:rgba(255,250,247,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(75,45,70,.08)}.head-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand img{width:210px;height:auto}.nav{display:flex;align-items:center;gap:24px;font-size:.93rem;font-weight:650}.nav a:hover{color:var(--rose-deep)}.nav .home{padding:10px 16px;background:var(--plum);color:#fff;border-radius:999px}.menu-btn{display:none;border:0;background:none;font-size:1.6rem;color:var(--plum)}
+    .hero{padding:54px 0 28px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}.kicker{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep)}.kicker:before{content:'';width:28px;height:2px;background:var(--rose)}h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}.hero h1{font-size:clamp(3.3rem,6.2vw,6.2rem);line-height:.92;letter-spacing:-.04em;margin:14px 0 20px}.hero h1 em{font-weight:500;color:var(--rose-deep)}.hero p{font-size:1.08rem;color:var(--muted);max-width:650px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:999px;padding:14px 20px;font-weight:800;cursor:pointer}.btn.primary{background:var(--plum);color:white}.btn.soft{background:#fff;border:1px solid var(--line);color:var(--plum)}.hero-note{margin-top:22px;display:flex;gap:10px;align-items:flex-start;color:#665a62;font-size:.88rem}.hero-note b{color:var(--plum)}
+    .hero-photo{position:relative;border-radius:42px;overflow:hidden;min-height:610px;background:#edd8d6;box-shadow:var(--shadow)}.hero-photo img{width:100%;height:100%;min-height:610px;object-fit:cover;object-position:center}.photo-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(44,28,40,.7))}.photo-caption{position:absolute;left:26px;right:26px;bottom:24px;color:white;display:flex;align-items:end;justify-content:space-between;gap:16px}.photo-caption strong{font-family:'Cormorant Garamond';font-size:2rem;line-height:1}.photo-caption span{font-size:.82rem;opacity:.9}.week-chip{background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(12px);padding:10px 14px;border-radius:999px;white-space:nowrap;font-weight:800}
+    .trust-row{padding:22px 0 62px}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.trust{border:1px solid var(--line);background:white;border-radius:20px;padding:18px}.trust b{display:block;font-size:.9rem;margin-bottom:5px}.trust span{font-size:.79rem;color:var(--muted)}
+    .section{padding:78px 0}.section.alt{background:#fff4f5}.section.dark{background:var(--plum);color:white}.section-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:34px}.section-head .copy{max-width:720px}.section-head h2{font-size:clamp(2.6rem,4.8vw,4.6rem);line-height:.98;letter-spacing:-.03em;margin:8px 0 10px}.section-head p{margin:0;color:var(--muted)}.dark .section-head p{color:#ddcfd9}.dark .kicker{color:#ffc9dc}.dark .kicker:before{background:#ffc9dc}
+    .big-picture{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}.age-card{grid-column:span 4;background:white;border:1px solid var(--line);border-radius:26px;padding:23px;position:relative;overflow:hidden;min-height:220px}.age-card:nth-child(1),.age-card:nth-child(5),.age-card:nth-child(9){background:#fff0e7}.age-card:nth-child(3),.age-card:nth-child(7),.age-card:nth-child(11){background:#f7eef3}.age-card .age{font-weight:850;color:var(--rose-deep);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.age-card h3{font-size:1.72rem;line-height:1;margin:10px 0 9px}.age-card p{margin:0;color:var(--muted);font-size:.91rem}.age-card .icon{position:absolute;right:18px;bottom:12px;font-size:2.8rem;opacity:.18}.age-card.wide{grid-column:span 6}.age-card.feature{background:var(--plum);color:white}.age-card.feature p{color:#eadde5}.age-card.feature .age{color:#ffc0d7}
+    .week-explorer{display:grid;grid-template-columns:320px 1fr;gap:20px}.week-nav{background:white;border-radius:28px;padding:20px;box-shadow:var(--shadow);position:sticky;top:104px;align-self:start}.week-nav h3{font-size:1.7rem;margin:0 0 5px}.week-nav p{margin:0 0 16px;color:var(--muted);font-size:.86rem}.month-tabs{display:flex;flex-wrap:wrap;gap:7px}.month-tabs button{border:1px solid var(--line);background:#fff;padding:8px 10px;border-radius:12px;cursor:pointer;font-weight:750;font-size:.78rem;color:#6f5c69}.month-tabs button.active{background:var(--plum);color:white;border-color:var(--plum)}.week-buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:14px;max-height:355px;overflow:auto;padding-right:4px}.week-buttons button{border:0;border-radius:11px;background:#fff4f6;color:var(--plum);padding:8px 4px;cursor:pointer;font-weight:800;font-size:.76rem}.week-buttons button:hover,.week-buttons button.active{background:var(--rose);color:#fff}.week-panel{background:white;border-radius:30px;box-shadow:var(--shadow);overflow:hidden}.week-visual{height:270px;position:relative;overflow:hidden;background:#e9d6d6}.week-visual img{width:100%;height:100%;object-fit:cover}.week-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(64,38,58,.62))}.week-visual-copy{position:absolute;z-index:2;left:26px;right:26px;bottom:22px;color:#fff}.week-visual-copy span{display:inline-flex;padding:7px 10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);border-radius:999px;font-size:.74rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}.week-visual-copy h3{font-size:3.1rem;line-height:.95;margin:8px 0 0}.week-body{padding:26px}.week-summary{font-size:1.08rem;color:#5e4e59;margin:0 0 22px}.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.detail-card{padding:18px;border-radius:20px;background:#fff8f5;border:1px solid #f0e2dc}.detail-card:nth-child(2){background:#f8f1f7}.detail-card:nth-child(3){background:#f2f7f3}.detail-card:nth-child(4){background:#f4f7fa}.detail-card b{display:block;margin-bottom:6px;font-size:.85rem}.detail-card p{font-size:.85rem;margin:0;color:var(--muted)}.benchmark{margin-top:16px;padding:17px;border-radius:19px;background:#4b2d46;color:#fff;display:none}.benchmark.show{display:block}.benchmark b{display:block;color:#ffc8db;margin-bottom:4px}.benchmark span{font-size:.88rem;color:#eadde5}.week-footer{margin-top:18px;font-size:.78rem;color:#8b7c85}
+    .growth-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}.growth-card{background:white;border-radius:30px;padding:28px;border:1px solid var(--line);box-shadow:var(--shadow)}.growth-card h3{font-size:2.1rem;margin:0 0 12px}.growth-card p{color:var(--muted)}.measure-list{display:grid;gap:12px;margin-top:20px}.measure{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line)}.measure:first-child{border-top:0}.measure i{width:42px;height:42px;border-radius:14px;background:#fff1f5;display:grid;place-items:center;font-style:normal}.measure b{display:block}.measure span{font-size:.84rem;color:var(--muted)}.growth-photo{border-radius:30px;overflow:hidden;min-height:520px;position:relative}.growth-photo img{width:100%;height:100%;min-height:520px;object-fit:cover}.growth-photo .caption{position:absolute;bottom:0;left:0;right:0;padding:28px;color:#fff;background:linear-gradient(180deg,transparent,rgba(44,28,40,.78))}.growth-photo .caption h3{font-size:2.2rem;margin:0 0 4px}.growth-photo .caption p{margin:0;color:#f1e6ec}
+    .safe-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.safe-card{padding:24px;border-radius:26px;background:white;color:var(--ink)}.safe-card h3{font-size:1.8rem;margin:0 0 10px}.safe-card p,.safe-card li{color:var(--muted);font-size:.9rem}.safe-card ul{margin:12px 0 0;padding-left:19px}.safe-card li+li{margin-top:7px}.urgent{border:1px solid #f6b8c7}.safe{border:1px solid #d7e6d9}
+    .sources{padding:44px 0;background:#fff}.sources h3{font-size:1.5rem;margin:0 0 10px}.source-links{display:flex;flex-wrap:wrap;gap:8px}.source-links a{font-size:.78rem;padding:8px 11px;background:#f7f1f4;border-radius:999px;color:#6a5664}.footer{padding:28px 0 42px;border-top:1px solid var(--line)}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer img{width:185px}.footer p{max-width:580px;font-size:.78rem;color:var(--muted);text-align:right}
+    @media(max-width:900px){.nav{display:none}.menu-btn{display:block}.hero-grid,.growth-grid,.week-explorer{grid-template-columns:1fr}.hero-photo,.hero-photo img{min-height:480px}.trust-grid{grid-template-columns:1fr 1fr}.age-card,.age-card.wide{grid-column:span 6}.week-nav{position:static}.week-buttons{max-height:none}.section-head{align-items:start;flex-direction:column}.safe-grid{grid-template-columns:1fr}}
+    @media(max-width:620px){.shell{width:min(100% - 22px,1180px)}.brand img{width:175px}.hero{padding-top:30px}.hero h1{font-size:3.35rem}.hero-photo,.hero-photo img{min-height:420px}.trust-grid{grid-template-columns:1fr}.age-card,.age-card.wide{grid-column:span 12}.section{padding:58px 0}.week-buttons{grid-template-columns:repeat(5,1fr)}.detail-grid{grid-template-columns:1fr}.week-visual{height:230px}.week-visual-copy h3{font-size:2.5rem}.safe-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:flex-start}.footer p{text-align:left}.photo-caption{flex-direction:column;align-items:flex-start}.month-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.month-tabs button{white-space:nowrap}}
+  </style>
+</head>
+<body>
+  <div class="topbar">A calm guide to the first 365 days — from day one to week 52</div>
+  <header class="site-head">
+    <div class="shell head-inner">
+      <a class="brand" href="./"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"></a>
+      <nav class="nav"><a href="#day-one">Day one → one year</a><a href="#week-by-week">Week by week</a><a href="#growth">Physical growth</a><a href="#when-to-call">When to call</a><a class="home" href="./">Mama's Love home</a></nav>
+      <button class="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <span class="kicker">Baby's first year</span>
+          <h1>365 days of becoming <em>more themselves.</em></h1>
+          <p>From the first sleepy newborn days to smiles, sitting, babbling and standing — this page explains what may happen in your baby's first year in plain, everyday language.</p>
+          <div class="hero-actions"><a class="btn primary" href="#week-by-week">Explore all 52 weeks</a><a class="btn soft" href="#day-one">Start from day one</a></div>
+          <div class="hero-note"><span>♡</span><div><b>Not a race.</b> Babies do not grow to a timetable. Use this as a guide to what you may notice, not a checklist your baby must pass every week.</div></div>
+        </div>
+        <div class="hero-photo">
+          <img src="assets/hero-family.webp" alt="Mother holding baby">
+          <div class="photo-shade"></div>
+          <div class="photo-caption"><div><span>THE FIRST YEAR</span><strong>Small changes. Big growth.</strong></div><div class="week-chip">Day 1 → Week 52</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-row"><div class="shell trust-grid">
+      <div class="trust"><b>Development is a range</b><span>Some babies do things earlier, some later. The pattern over time matters more.</span></div>
+      <div class="trust"><b>Milestones are age checkpoints</b><span>Official CDC milestone ages are 2, 4, 6, 9 and 12 months in the first year.</span></div>
+      <div class="trust"><b>Growth means more than weight</b><span>Doctors look at weight, length and head circumference together over time.</span></div>
+      <div class="trust"><b>Born early?</b><span>CDC milestone checklists advise using corrected age when a baby was born more than 3 weeks early.</span></div>
+    </div></section>
+
+    <section id="day-one" class="section alt">
+      <div class="shell">
+        <div class="section-head"><div class="copy"><span class="kicker">Day one to one year</span><h2>The big picture, without the medical jargon.</h2><p>These are common changes families notice. A baby can be healthy and still take a different route through them.</p></div></div>
+        <div class="big-picture">
+          <article class="age-card feature"><span class="age">Day 1</span><h3>Hello, world.</h3><p>Most newborns are curled up, sleepy and driven by reflexes. They already know familiar voices and smells, and feeding and skin-to-skin are the main events.</p><span class="icon">☼</span></article>
+          <article class="age-card"><span class="age">Days 2–3</span><h3>Settling in.</h3><p>A little early weight loss is common. Baby is learning to feed, stay warm and adjust to life outside the womb.</p><span class="icon">◌</span></article>
+          <article class="age-card"><span class="age">Days 4–7</span><h3>Finding a rhythm.</h3><p>Feeds and wake-ups still feel unpredictable. Wet nappies and feeding patterns become useful clues that baby is taking in enough.</p><span class="icon">≈</span></article>
+          <article class="age-card"><span class="age">Week 2</span><h3>Back toward birth weight.</h3><p>Many babies are moving back toward their birth weight. They may stare at your face for a few seconds and calm to your voice.</p><span class="icon">♡</span></article>
+          <article class="age-card"><span class="age">Weeks 3–4</span><h3>More awake moments.</h3><p>Baby may briefly lift the head during tummy time, look at faces and have slightly longer quiet-alert periods.</p><span class="icon">◎</span></article>
+          <article class="age-card wide"><span class="age">2 months • CDC checkpoint</span><h3>Smiles begin to mean something.</h3><p>Many babies look at faces, react to sound, smile when you engage them and hold the head up for short periods during tummy time.</p><span class="icon">☺</span></article>
+          <article class="age-card"><span class="age">3 months</span><h3>More conversation.</h3><p>Cooing, hand-to-mouth play and longer eye contact become more obvious. Head control is getting steadier.</p><span class="icon">♪</span></article>
+          <article class="age-card wide"><span class="age">4 months • CDC checkpoint</span><h3>“Look at me!”</h3><p>Baby may make sounds or movements to keep your attention, hold the head steady, bring hands to mouth and push up on the forearms.</p><span class="icon">✦</span></article>
+          <article class="age-card"><span class="age">5 months</span><h3>Grabbing everything.</h3><p>Hands get busier. Baby may reach for toys, grab feet, laugh more and roll in one or both directions.</p><span class="icon">✋</span></article>
+          <article class="age-card wide feature"><span class="age">6 months • CDC checkpoint</span><h3>A more social little person.</h3><p>Many babies know familiar people, laugh, reach for wanted toys and roll. Around this age, solids may begin when baby shows readiness while milk remains important.</p><span class="icon">●</span></article>
+          <article class="age-card"><span class="age">7–8 months</span><h3>Sitting changes the view.</h3><p>Many babies sit more steadily, transfer objects between hands and explore everything with hands and mouth. Some begin scooting or rocking.</p><span class="icon">△</span></article>
+          <article class="age-card wide"><span class="age">9 months • CDC checkpoint</span><h3>Baby knows who is who.</h3><p>Many babies look when their name is called, sit without support and show clear preferences for familiar people. Stranger wariness can be normal.</p><span class="icon">◇</span></article>
+          <article class="age-card"><span class="age">10 months</span><h3>Busy hands, busy brain.</h3><p>Picking up small things gets more precise. Baby may copy sounds, gesture, crawl or find another way to move around.</p><span class="icon">⋆</span></article>
+          <article class="age-card"><span class="age">11 months</span><h3>Practising independence.</h3><p>Baby may pull up, cruise along furniture, wave, clap and understand familiar routines. Not every baby crawls before walking.</p><span class="icon">↗</span></article>
+          <article class="age-card wide feature"><span class="age">12 months • CDC checkpoint</span><h3>One whole year.</h3><p>Many one-year-olds play simple games, use “mama” or “dada” as a name, put objects into containers and pull to stand. Some take steps; many do not yet.</p><span class="icon">1</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="week-by-week" class="section">
+      <div class="shell">
+        <div class="section-head"><div class="copy"><span class="kicker">All 52 weeks</span><h2>Choose a week. See what may be changing.</h2><p>The weekly notes are deliberately gentle: infant development does not change neatly every seven days, so each entry describes common progress around that age rather than a deadline.</p></div></div>
+        <div class="week-explorer">
+          <aside class="week-nav">
+            <h3>Jump to an age</h3><p>Tap a month, then choose any week.</p>
+            <div class="month-tabs" id="monthTabs"></div>
+            <div class="week-buttons" id="weekButtons"></div>
+          </aside>
+          <article class="week-panel">
+            <div class="week-visual"><img id="weekImage" src="assets/baby.webp" alt="Baby development"><div class="week-visual-copy"><span id="weekStage">Newborn</span><h3 id="weekTitle">Week 1</h3></div></div>
+            <div class="week-body">
+              <p class="week-summary" id="weekSummary"></p>
+              <div class="detail-grid">
+                <div class="detail-card"><b>Body & movement</b><p id="weekMove"></p></div>
+                <div class="detail-card"><b>Connection & senses</b><p id="weekConnect"></p></div>
+                <div class="detail-card"><b>Feeding & daily rhythm</b><p id="weekFeed"></p></div>
+                <div class="detail-card"><b>A simple thing to do</b><p id="weekTry"></p></div>
+              </div>
+              <div class="benchmark" id="benchmark"><b id="benchmarkTitle"></b><span id="benchmarkText"></span></div>
+              <div class="week-footer">This is a guide, not a diagnosis. If your baby loses a skill they had before, or something about their development worries you, talk with a child-health professional.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="growth" class="section alt">
+      <div class="shell">
+        <div class="section-head"><div class="copy"><span class="kicker">Physical growth</span><h2>Growth is a curve, not a single “perfect” number.</h2><p>One measurement tells you very little by itself. The useful information is whether your baby's measurements are following a steady pattern over time.</p></div></div>
+        <div class="growth-grid">
+          <article class="growth-card">
+            <h3>What gets measured?</h3>
+            <p>WHO growth standards include separate charts for boys and girls. Health workers usually follow several measurements together rather than judging a baby by weight alone.</p>
+            <div class="measure-list">
+              <div class="measure"><i>⚖</i><div><b>Weight</b><span>Newborns commonly lose some weight in the first days. Many regain birth weight by about 2 weeks; almost all by about 3 weeks.</span></div></div>
+              <div class="measure"><i>↕</i><div><b>Length</b><span>Measured lying down in infancy. The trend is compared with age and sex on a growth chart.</span></div></div>
+              <div class="measure"><i>◯</i><div><b>Head circumference</b><span>This helps clinicians follow skull and brain growth, especially during the rapid early months.</span></div></div>
+              <div class="measure"><i>↗</i><div><b>The pattern over time</b><span>A healthy child may be naturally small or large. What matters is the overall growth pattern and the child's health, feeding and development.</span></div></div>
+            </div>
+          </article>
+          <div class="growth-photo"><img src="./assets/mamas-love-4.jpg" alt="Parent and baby"><div class="caption"><h3>Keep the chart, lose the comparison.</h3><p>Your baby's growth should be compared with their own pattern, not with another baby's size.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="when-to-call" class="section dark">
+      <div class="shell">
+        <div class="section-head"><div class="copy"><span class="kicker">Care notes</span><h2>What matters more than hitting a milestone “on time.”</h2><p>How baby looks, feeds, breathes, responds and changes over time matters. Trust a concern that something is not right.</p></div></div>
+        <div class="safe-grid">
+          <article class="safe-card safe"><h3>Everyday safety</h3><p>For sleep, place baby on the back on a firm, flat sleep surface with a fitted sheet and keep soft bedding and toys out of the sleep space.</p><ul><li>Use tummy time only while baby is awake and supervised.</li><li>Introduce complementary foods around 6 months when developmentally ready.</li><li>Keep routine well-child visits so growth and development can be followed over time.</li></ul></article>
+          <article class="safe-card urgent"><h3>Get medical help promptly if…</h3><p>Seek urgent care for trouble breathing, blue/grey colour, extreme sleepiness or difficulty waking, repeated vomiting with poor fluid intake, or if your baby seems seriously unwell.</p><ul><li>A baby younger than 3 months with a temperature of 38°C (100.4°F) or higher needs prompt medical evaluation.</li><li>Talk to a clinician if your baby loses a skill they previously had or you are worried about development.</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources"><div class="shell"><h3>Built from trusted child-development guidance</h3><div class="source-links"><a href="https://www.cdc.gov/act-early/milestones/index.html" target="_blank" rel="noopener">CDC developmental milestones</a><a href="https://www.who.int/tools/child-growth-standards/standards/p" target="_blank" rel="noopener">WHO child growth standards</a><a href="https://www.healthychildren.org/English/ages-stages/baby/Pages/First-Month-Physical-Appearance-and-Growth.aspx" target="_blank" rel="noopener">AAP / HealthyChildren — first month growth</a><a href="https://www.who.int/news-room/fact-sheets/detail/infant-and-young-child-feeding" target="_blank" rel="noopener">WHO infant feeding</a></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="shell footer-inner"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"><p>Educational information only. Development varies widely from baby to baby. This page does not replace individual advice from your doctor, nurse, midwife or other qualified child-health professional.</p></div></footer>
+
+<script>
+const weeklyNotes = [
+"Your newborn is mainly learning to feed, stay warm and feel safe. Movements are jerky and reflex-led, and sleep comes in many short stretches.",
+"Many babies are moving back toward birth weight and may briefly settle when they hear a familiar voice or smell a familiar caregiver.",
+"Quiet-alert moments can last a little longer. Baby may stare at a face at close range and lift the head for a second during tummy time.",
+"The first month closes with a little more wakefulness. You may notice baby tracking your face briefly and becoming easier to read.",
+"Head lifting may look stronger for a few seconds. Baby can turn toward interesting sounds and spend more time studying faces.",
+"Some early social smiles begin to appear around now. They may still be inconsistent, but the back-and-forth connection is growing.",
+"Movements can look slightly smoother and hands may open more often. Baby may calm when picked up or spoken to.",
+"Around two months, many babies look at faces, react to sound, smile when engaged and hold the head up briefly on the tummy.",
+"Head control is slowly improving. Baby may hold the head more in line with the body when carried upright.",
+"Cooing and little vowel-like sounds can become more obvious, especially when you talk face-to-face.",
+"Baby may follow a moving face or toy with the eyes for longer and show more interest in lights, patterns and voices.",
+"Hands are often more open. Baby may bring hands toward the mouth and start swiping at nearby objects.",
+"You may see more purposeful arm movements and excited kicks when baby sees a familiar person.",
+"The head is steadier when held upright. During tummy time, baby may push up higher through the arms.",
+"Smiles and little chuckles may become more social. Baby is learning that sounds and expressions can keep you engaged.",
+"Hands are becoming favourite toys. Baby may hold them together, bring them to the mouth and reach more accurately.",
+"Around four months, many babies hold the head steady, look at you to keep your attention, bring hands to mouth and push up on forearms.",
+"Rolling from tummy to back may appear, though plenty of healthy babies do it later. Reaching for toys becomes more deliberate.",
+"Grip is stronger. Baby may grab a toy with both hands and inspect it closely before bringing it to the mouth.",
+"Feet become fascinating. Baby may grab knees or toes and twist the body from side to side while lying down.",
+"Baby may turn quickly toward voices and sounds. Laughing can become louder and easier to trigger.",
+"Supported sitting may feel more stable. Baby can often hold the upper body straighter when propped safely.",
+"Rolling may become a favourite way to move. On the tummy, baby may push up strongly through straightened arms.",
+"Babbling becomes richer — more squeals, growls and repeated sounds. Baby is experimenting with the voice.",
+"Reaching gets accurate enough to grab a wanted toy. Baby may switch it between hands or bang it on a surface.",
+"Around six months, many babies know familiar people, laugh, reach for wanted toys and roll. Sitting skills are starting to build.",
+"Sitting with support — or briefly without it — can open a whole new view. Baby may lean forward and use hands for balance.",
+"Passing a toy from one hand to the other becomes easier. Baby studies objects by turning, tapping and mouthing them.",
+"Familiar people stand out more clearly. Baby may light up for caregivers and become more cautious around strangers.",
+"Everything still goes to the mouth. This is one of the ways babies learn about shape, texture and size.",
+"Babbling may include repeated consonant sounds such as ba-ba or ma-ma without a clear meaning yet.",
+"Sitting is often steadier. Baby may use both hands freely to play instead of needing them for balance all the time.",
+"Stranger wariness or separation protest may show up. It is often a sign that baby's memory for familiar people is getting stronger.",
+"Some babies begin rocking on hands and knees, pivoting on the tummy or finding their own unusual way to move around.",
+"Baby may bang two objects together and repeat actions just to see what happens. Cause-and-effect play is taking off.",
+"Reaching outside the base of support while sitting is improving. Baby may twist, lean and recover without toppling as often.",
+"Baby is increasingly likely to turn when their name is called and to watch where you point or look.",
+"Finger control is improving. Raking food or small safe objects toward the palm may start changing into a more precise finger-and-thumb grasp.",
+"Around nine months, many babies sit without support, look when their name is called and show clear reactions to familiar and unfamiliar people.",
+"Getting into or out of sitting may become possible. Some babies crawl; others shuffle, roll or skip crawling entirely.",
+"Pulling up on low furniture may begin. If it does, baby will also need lots of practice learning how to get back down.",
+"Copying is becoming powerful. Baby may imitate sounds, claps, facial expressions and simple gestures.",
+"Everyday routines make more sense. Baby may anticipate bath time, a feeding chair, bedtime steps or a favourite game.",
+"The pincer grasp is getting more refined, helping baby pick up small pieces of soft finger food with thumb and finger.",
+"Reaching and pointing can become a way to ask for things. Baby is communicating long before speaking clearly.",
+"Some babies cruise sideways while holding furniture. Others are still working on crawling or standing — both can be normal.",
+"Waving, clapping or lifting arms to be picked up may become part of baby's regular communication toolkit.",
+"Putting objects into a cup or container — and dumping them back out — can become endlessly interesting.",
+"Standing while holding furniture may look stronger. Baby may briefly let go with one hand to reach for something.",
+"Sounds may start to resemble real words. Baby may use a consistent sound for a favourite person or object.",
+"Simple games such as pat-a-cake, peekaboo and turn-taking become more fun because baby remembers what comes next.",
+"At one year, many babies play simple games, use mama/dada as a name, put objects in containers and pull to stand. Walking is not required at 12 months."
+];
+const tryNotes = [
+"Hold baby skin-to-skin, talk softly and respond when they stir or look toward you.","Let baby study your face during feeds and calm awake time.","Try a minute or two of supervised tummy time several times a day when baby is awake.","Copy baby's tiny expressions and sounds — it teaches turn-taking.","Move your face slowly side to side and let baby follow you with the eyes.","Smile back when baby smiles. Pause and give them time to answer with another expression.","Offer a simple high-contrast picture or your face during a calm awake moment.","Talk, sing and place an interesting safe object within sight during tummy time.","Carry baby upright against your chest and let them practise holding the head steady.","Have a tiny 'conversation': make a sound, pause, then answer baby's sound.","Move a safe toy slowly across baby's field of vision and let the eyes do the work.","Place a lightweight toy near the hands so baby can accidentally touch and discover it.","Give baby room on a safe floor mat to kick, stretch and wave the arms.","Use tummy time to place a toy just ahead so baby has a reason to lift and look.","Make funny faces and gentle sounds, then pause for baby's reaction.","Offer one easy-to-grasp toy at a time and let baby bring it to the mouth safely.","Read a short board book and let baby study your face and voice.","Give safe floor time for rolling rather than spending long periods in seats or containers.","Offer different safe textures to hold — soft cloth, smooth teether, textured toy.","Let baby play with bare feet and reach for toes during floor time.","Name everyday sounds: 'door', 'water', 'mama' — baby is listening to patterns.","Practise supported sitting on the floor between your legs with hands nearby.","Place a toy slightly to one side during floor time so baby can turn or roll toward it.","Repeat baby's babble back like a conversation.","Put two safe toys within reach and let baby choose which one to grab.","If baby is ready for solids, keep the experience slow, upright and responsive to hunger/fullness cues.","Sit on the floor with baby and place a soft toy at chest height for reaching practice.","Offer a toy to one hand, then another toy to encourage passing objects across the body.","Play peekaboo with a cloth to practise remembering that people still exist when hidden.","Offer safe objects with different shapes and textures for supervised exploration.","Repeat simple syllables and songs with a strong rhythm.","Place toys a little to the side while baby sits so they practise turning and balancing.","Use a calm goodbye-and-return routine when you briefly leave the room.","Put an interesting toy just beyond easy reach and let baby decide how to move toward it.","Show what happens when you tap, shake or drop a safe toy, then let baby try.","Place a toy slightly outside the sitting base and stay close while baby reaches.","Say baby's name before speaking so they learn the sound belongs to them.","Offer soft finger foods only when baby is developmentally ready and seated upright.","Play simple back-and-forth games and celebrate baby's attempts to copy you.","Put toys on both sides so baby practises turning, shifting weight and moving between positions.","Use sturdy, low furniture for supervised pulling-up practice if baby starts trying.","Clap, wave or tap a table and wait for baby to imitate the action.","Use the same short phrases during routines: 'bath time', 'all done', 'night-night'.", "Offer soft, safe finger foods in manageable pieces and let baby practise self-feeding.","Point to familiar things and name them: 'cup', 'light', 'ball', 'daddy'.","Create safe floor space and let baby choose crawling, shuffling or another movement pattern.","Wave hello and goodbye every day so the gesture gains meaning.","Give baby a few blocks and a wide cup to practise putting in and taking out.","Let baby stand at a sturdy sofa with you close by and place a toy within easy reach.","Name the same familiar objects repeatedly and celebrate any sound baby uses consistently.","Take turns in a favourite game — your turn, baby's turn — to build memory and social play.","Celebrate the first year with play, reading and lots of face-to-face talking; there is no need to rush walking."
+];
+const stages=[
+ {max:4,name:'Newborn',move:'Reflexes dominate. Movements are small and jerky, with brief head lifting during supervised tummy time.',connect:'Baby is drawn to familiar voices, smells and faces at close range.',feed:'Milk feeds and sleep take up most of the day. Feed responsively and follow wet nappies and weight checks.'},
+ {max:8,name:'1–2 months',move:'Head control is slowly strengthening and movements are starting to look less jerky.',connect:'Faces, voices and early social smiles become more important.',feed:'Milk remains the only food. Daily rhythms are still variable and frequent waking is normal.'},
+ {max:17,name:'2–4 months',move:'Hands open more, reaching begins and tummy-time strength builds.',connect:'Cooing, smiling and longer back-and-forth interaction become easier to see.',feed:'Milk remains the main nutrition. Awake periods are usually more organised than in the newborn weeks.'},
+ {max:26,name:'4–6 months',move:'Rolling, reaching, stronger push-ups and supported sitting often develop across this stage.',connect:'Baby laughs, experiments with sounds and becomes very interested in people and objects.',feed:'Milk is still central. Around 6 months, solids may begin when baby shows readiness.'},
+ {max:39,name:'6–9 months',move:'Sitting, transferring objects and early ways of moving around become big themes.',connect:'Baby knows familiar people, responds to more language and may show stranger wariness.',feed:'Complementary foods can gradually expand from about 6 months while milk feeding continues.'},
+ {max:52,name:'9–12 months',move:'Fine finger control, pulling to stand, cruising and many different mobility styles may appear.',connect:'Gestures, copying, name recognition and first meaningful sounds become more useful for communication.',feed:'Texture and variety can increase as skills improve, while breast milk or formula remains important through the first year.'}
+];
+const benchmarks={8:['2-month milestone checkpoint','CDC lists skills such as looking at your face, reacting to loud sounds, smiling when you engage them and holding the head up on the tummy.'],17:['4-month milestone checkpoint','CDC looks for growing social attention, sounds to get your attention, steady head control and stronger upper-body support.'],26:['6-month milestone checkpoint','CDC highlights familiar-person recognition, laughing, reaching for wanted toys and rolling from tummy to back.'],39:['9-month milestone checkpoint','CDC highlights looking when called by name, sitting without support and stronger social reactions to familiar and unfamiliar people.'],52:['12-month milestone checkpoint','CDC includes simple social games, mama/dada as a name, putting objects in a container and pulling up to stand.']};
+const monthRanges=[['0–1 mo',1,4],['2 mo',5,8],['3 mo',9,13],['4 mo',14,17],['5 mo',18,21],['6 mo',22,26],['7 mo',27,30],['8 mo',31,34],['9 mo',35,39],['10 mo',40,43],['11 mo',44,47],['12 mo',48,52]];
+const images=['assets/baby.webp','assets/mamas-love-2.jpg','assets/mamas-love-3.jpg','assets/mamas-love-5.jpg'];
+const monthTabs=document.getElementById('monthTabs'), weekButtons=document.getElementById('weekButtons');
+monthRanges.forEach((m,idx)=>{const b=document.createElement('button');b.textContent=m[0];b.onclick=()=>{document.querySelectorAll('.month-tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderWeek(m[1]);};if(idx===0)b.classList.add('active');monthTabs.appendChild(b)});
+for(let w=1;w<=52;w++){const b=document.createElement('button');b.textContent=w;b.dataset.week=w;b.onclick=()=>renderWeek(w);weekButtons.appendChild(b)}
+function stageFor(w){return stages.find(s=>w<=s.max)}
+function renderWeek(w){document.querySelectorAll('.week-buttons button').forEach(x=>x.classList.toggle('active',Number(x.dataset.week)===w));const s=stageFor(w);document.getElementById('weekStage').textContent=s.name;document.getElementById('weekTitle').textContent='Week '+w;document.getElementById('weekSummary').textContent=weeklyNotes[w-1];document.getElementById('weekMove').textContent=s.move;document.getElementById('weekConnect').textContent=s.connect;document.getElementById('weekFeed').textContent=s.feed;document.getElementById('weekTry').textContent=tryNotes[w-1];document.getElementById('weekImage').src=images[Math.floor((w-1)/13)%images.length];const bm=document.getElementById('benchmark');if(benchmarks[w]){bm.classList.add('show');document.getElementById('benchmarkTitle').textContent=benchmarks[w][0];document.getElementById('benchmarkText').textContent=benchmarks[w][1]}else bm.classList.remove('show');const mi=monthRanges.findIndex(m=>w>=m[1]&&w<=m[2]);document.querySelectorAll('.month-tabs button').forEach((x,i)=>x.classList.toggle('active',i===mi));}
+renderWeek(1);
+</script>
+</body>
+</html>
