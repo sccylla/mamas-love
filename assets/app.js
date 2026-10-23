@@ -12,6 +12,8 @@ const iconPaths = {
   calendar: '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 11h18M8 15h2M14 15h2M8 18h2"/>',
   flower: '<path d="M12 8c-8-11-14 2-4 4-11 8 2 14 4 4 8 11 14-2 4-4 11-8-2-14-4-4Z"/><circle cx="12" cy="12" r="2"/>',
   baby: '<path d="M5 9a8 8 0 0 1 14 0 3 3 0 0 1 0 6 8 8 0 0 1-14 0 3 3 0 0 1 0-6Z"/><path d="M10 3c4 0 4 4 1 4M8 11h.01M16 11h.01M9 15c2 2 4 2 6 0"/>',
+  pause: '<path d="M9 5v14M15 5v14" stroke-width="2.5"/>',
+  play: '<path d="m8 5 11 7-11 7V5Z"/>',
 };
 function icon(name, className = '') {
   return `<svg class="icon ${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${iconPaths[name] || iconPaths.heart}</svg>`;
@@ -29,13 +31,22 @@ function navLink(key, label = PAGES[key]) {
   const href = key === 'home' ? 'index.html' : `${key}.html`;
   return `<a href="${href}"${page === key ? ' class="active" aria-current="page"' : ''}>${label}</a>`;
 }
+function ambientBackground() {
+  return `<div class="ambient-background" id="ambientBackground" aria-hidden="true">
+    <span class="ambient-orb ambient-rose"></span><span class="ambient-orb ambient-lilac"></span>
+    <span class="ambient-orb ambient-peach"></span><span class="ambient-orb ambient-light"></span>
+    <svg class="ambient-ribbon" viewBox="0 0 1200 800" fill="none" preserveAspectRatio="none"><path d="M-150 580C80 20 510 70 670 390s550 320 730-60"/><path d="M-140 640C130 100 470 110 660 430s520 300 710-30"/></svg>
+  </div>`;
+}
+function motionControl() {
+  return `<button class="motion-toggle" id="motionToggle" type="button" aria-label="Background animation" aria-controls="ambientBackground" aria-pressed="true" title="Pause animated background"><span class="motion-toggle-icon" id="motionIcon">${icon('pause')}</span><span class="motion-toggle-label" id="motionLabel">Pause background</span></button>`;
+}
 function header() {
   return `<a href="#main" class="skip-link">Skip to content</a>
-    <div class="announcement"><span>A little care, for every chapter.</span><span>YOUR BODY. YOUR STORY. YOUR SPACE.</span></div>
     <header class="site-header">
       <div class="nav container">
         ${brand()}
-        <nav class="nav-links" aria-label="Main navigation">${['home','wellbeing','pregnancy','period','baby','learn'].map(key => navLink(key)).join('')}</nav>
+        <nav class="nav-links" aria-label="Main navigation">${['wellbeing','pregnancy','period','baby','learn'].map(key => navLink(key)).join('')}</nav>
         <div class="nav-cta">${btn('index.html#chapters', 'Find your chapter')}</div>
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel" id="menuToggle"><span class="menu-icon"><span></span><span></span><span></span></span></button>
       </div>
@@ -64,8 +75,8 @@ function journalCard(id, image, category, title, alt) {
 }
 function home() {
   return `<main id="main" tabindex="-1"><section class="hero container" aria-labelledby="home-title">
-    <div class="hero-copy"><div class="eyebrow">EVERY AGE. EVERY STAGE. EVERY YOU.</div><h1 id="home-title">Every chapter.<br><em>More you.</em></h1><p class="hero-lead">Your body, your baby, your wonderfully changing life. Get to know it all with thoughtful guidance and simple tools that put you first.</p><div class="hero-actions">${btn('#chapters', 'Find your chapter')}${btn('#tools', 'Explore your tools', 'btn-outline')}</div><p class="hero-note">${icon('heart')}Your journey. Your pace. Zero pressure.</p></div>
-    <div class="hero-visual"><img src="assets/hero-family.webp" alt="A mother and her toddler sharing a happy embrace" width="900" height="1100" fetchpriority="high"><div class="hero-sticker" aria-hidden="true">${icon('heart')}<span>A LITTLE<br>MORE YOU.</span></div><svg class="hero-orbit" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M40 3v74M3 40h74M14 14l52 52M14 66l52-52"/><circle cx="40" cy="40" r="12" fill="currentColor"/></svg><div class="hero-float-card">${icon('flower')}<div><strong>Always in your corner.</strong><span>Real life. Gentle guidance.</span></div></div><div class="hero-photo-caption">For the moments that make us.</div></div>
+    <div class="hero-copy"><div class="eyebrow hero-kicker">${icon('flower')}A LITTLE LOVE, AT EVERY STAGE</div><h1 id="home-title">A little care.<br>For your <em>whole world.</em></h1><p class="hero-lead">Thoughtful guidance for your changing body, your growing family, and everything that makes you, you.</p><div class="hero-actions">${btn('#chapters', 'Find your chapter')}${btn('#tools', 'Explore your tools', 'btn-outline')}</div><p class="hero-note">${icon('lock')}Private trackers. No accounts. Just you.</p></div>
+    <div class="hero-visual"><img class="hero-photo-main" src="assets/hero-family.webp" alt="A mother and her toddler sharing a happy embrace" width="900" height="1100" fetchpriority="high"><img class="hero-photo-secondary" src="assets/pregnancy-alt.webp" alt="An expectant mother resting her hands on her bump" width="360" height="440"><div class="hero-float-card">${icon('heart')}<div><strong>A little more supported.</strong><span>A little more like you.</span></div></div><span class="hero-image-label">For the little moments.<br><em>And the life-changing ones.</em></span></div>
   </section>
   <div class="reassurance"><div class="container reassurance-inner"><span>${icon('flower')}Your journey, your pace</span><span>${icon('lock')}Your dates stay with you</span><span>${icon('heart')}A little support at every stage</span></div></div>
   <section class="discover section-pad" id="chapters"><div class="container"><div class="section-head"><div><div class="eyebrow accent">FIND YOUR CORNER OF CARE</div><h2 class="heading">Whatever your chapter,<br><em>there’s a place for you.</em></h2></div><p class="bodycopy">The questions, the changes, the tiny milestones. You deserve to feel informed and supported through all of them.</p></div><div class="chapter-grid">
@@ -99,7 +110,7 @@ function wellbeing(){return `<main id="main" tabindex="-1">${subHero('wellbeing'
 const articles=[{id:'cycle',title:'Understanding your menstrual cycle',sub:'Your cycle has phases. Learn the basics.',body:['A menstrual cycle is counted from the first day of one period to the first day of the next. Cycle lengths vary, and changes over time can be normal.','Period trackers estimate dates using previous patterns. They cannot reliably confirm ovulation or prevent pregnancy.'],link:'period.html'},{id:'pregnancy',title:'A gentler guide to the first trimester',sub:'Making sense of early pregnancy.',body:['Early pregnancy often brings tiredness, nausea and body changes. Every pregnancy is different, and not everyone experiences the same symptoms.','If you think you may be pregnant, a qualified healthcare professional can help you confirm the pregnancy and discuss antenatal care.'],link:'pregnancy.html'},{id:'newborn',title:'The first year of baby development',sub:'Celebrate growth without comparison.',body:['Development is a journey rather than a strict timetable. Babies develop skills across movement, communication and social connection at different rates.','Use milestones as conversation starters with your child’s healthcare professional, particularly if you notice loss of previously acquired skills.'],link:'baby.html'},{id:'postpartum',title:'Postpartum care is care for you',sub:'Recovery deserves attention and kindness.',body:['Rest, physical recovery and emotional support all matter after childbirth. You do not need to manage every part alone.','Contact a healthcare professional about symptoms that worry you. Seek urgent attention for severe bleeding, chest pain, breathlessness or thoughts of harming yourself.'],link:'postpartum.html'},{id:'body',title:'Every body changes. All of them deserve care.',sub:'Body literacy without judgment.',body:['Across life, bodies change during puberty, menstrual years, pregnancy, postpartum and menopause. Access to balanced information can help you ask better questions and make informed decisions.','For persistent or severe symptoms, do not rely on general online guidance alone.'],link:'wellbeing.html'}];
 function learn(){return `<main id="main" tabindex="-1">${subHero('learn','The Mama’s Love journal','A little more<br><em>knowing, a lot less guessing.</em>','Thoughtful, plain-language articles for bodies, beginnings and everything in between.','pregnancy-alt.webp')}<section class="inside"><div class="container"><div class="eyebrow accent">Read • Learn • Grow</div><h2 class="heading">Stories for <em>real life.</em></h2><div class="library-grid">${articles.map((article,i)=>`<a href="#${article.id}" class="library-card" data-article="${article.id}"><span class="chapter-id">THE JOURNAL / ${String(i+1).padStart(2,'0')}</span><div><h3>${article.title}</h3><p>${article.sub}</p></div><span class="circle-arrow">${icon('arrowUp')}</span></a>`).join('')}</div><article class="article-content" id="articleReader" hidden aria-live="polite"><a class="back" href="learn.html">Back to all stories</a><h2 id="articleHeading"></h2><div id="articleParagraphs"></div><a class="btn btn-plum" id="articleToolLink" href="wellbeing.html">Explore this topic ↗</a></article></div></section></main>`}
 function community(){return `<main id="main" tabindex="-1">${subHero('community','No one should have to figure it all out alone','In good company.<br><em>Always.</em>','A future space for honest conversations, lived experiences, and encouragement—without judgment.','hero-family.webp')}<section class="inside"><div class="container"><div class="coming-soon"><div class="eyebrow">Coming in a future release</div><h2>Real women. <em>Real stories.</em></h2><p>The community forum isn't live yet. We're preparing a respectful, privacy-conscious place for conversations and connection.</p>${btn('learn.html','Explore our journal','btn-lime')}</div></div></section></main>`}
-const routes={home,pregnancy,period,baby,postpartum,wellbeing,learn,community};document.getElementById('app').innerHTML=header()+(routes[page]||home)()+footer();
+const routes={home,pregnancy,period,baby,postpartum,wellbeing,learn,community};document.getElementById('app').innerHTML=ambientBackground()+header()+motionControl()+(routes[page]||home)()+footer();
 const menu = document.getElementById('menuToggle');
 const panel = document.getElementById('mobilePanel');
 function closeMenu() {
@@ -138,3 +149,34 @@ function initPeriod(){let form=document.getElementById('periodForm');if(!form)re
 function initBaby(){let form=document.getElementById('babyForm');if(!form)return;const old=stored('baby');if(old?.dob){document.getElementById('babyDob').value=old.dob;update(old.dob)}form.addEventListener('submit',e=>{e.preventDefault();const v=document.getElementById('babyDob').value;save('baby',{dob:v});update(v)});function update(value){const birth=utcDate(value);if(!birth)return;const days=dayDiff(new Date(),birth);if(days<0||days>365*7){put('babyTitle','Please check the birth date.');return}let months=Math.max(0,Math.floor(days/30.4375));put('babyAge',months+' mo.');put('babyTitle',days<31?'Welcome to the world, little one.':'Growing every single day.');put('babyDesc',`Approximately ${months} completed months (${days} days) since birth. Every child has their own pace.`);put('babyMonths',months);put('babyDays',days)}const checks=[...document.querySelectorAll('.milestone-check')];const prior=stored('milestones')||[];checks.forEach((x,i)=>{x.checked=!!prior[i];x.addEventListener('change',()=>{save('milestones',checks.map(c=>c.checked));count()})});function count(){const n=checks.filter(c=>c.checked).length;put('babyTicks',`${n}/${checks.length}`);document.getElementById('milestoneProgress').style.width=(100*n/checks.length)+'%'}count()}
 function initLearn(){const reader=document.getElementById('articleReader');if(!reader)return;function show(){const id=location.hash.slice(1);const item=articles.find(x=>x.id===id);if(!item){reader.hidden=true;return}reader.hidden=false;put('articleHeading',item.title);document.getElementById('articleParagraphs').innerHTML=item.body.map(t=>`<p>${t}</p>`).join('')+'<p><strong>Note:</strong> This is a short educational introduction, not a substitute for personal advice from a clinician.</p>';document.getElementById('articleToolLink').href=item.link;setTimeout(()=>reader.scrollIntoView({behavior:'smooth',block:'start'}),10)}window.addEventListener('hashchange',show);show()}
 initPregnancy();initPeriod();initBaby();initLearn();
+
+function initAmbientMotion() {
+  const button = document.getElementById('motionToggle');
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let manuallyPaused = stored('motion') === true;
+
+  function applyPreference() {
+    const paused = preference.matches || manuallyPaused;
+    document.documentElement.dataset.backgroundPaused = String(paused);
+    button.hidden = preference.matches;
+    button.setAttribute('aria-pressed', String(!paused));
+    button.title = paused ? 'Play animated background' : 'Pause animated background';
+    document.getElementById('motionLabel').textContent = paused ? 'Play background' : 'Pause background';
+    document.getElementById('motionIcon').innerHTML = icon(paused ? 'play' : 'pause');
+  }
+
+  button.addEventListener('click', () => {
+    manuallyPaused = !manuallyPaused;
+    save('motion', manuallyPaused);
+    applyPreference();
+  });
+  preference.addEventListener('change', applyPreference);
+  function applyVisibility() {
+    document.documentElement.dataset.backgroundSuspended = String(document.hidden);
+  }
+  document.addEventListener('visibilitychange', applyVisibility);
+  applyPreference();
+  applyVisibility();
+}
+
+initAmbientMotion();

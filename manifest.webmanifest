@@ -3,8 +3,8 @@
   "short_name": "Mama's Love",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#fffaf1",
-  "theme_color": "#2b1745",
+  "background_color": "#fffaf7",
+  "theme_color": "#683b68",
   "description": "A little care for every chapter: women's wellbeing, pregnancy, postpartum and baby development.",
   "icons": [
     {
