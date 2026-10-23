@@ -49,6 +49,14 @@ window.MAMAS_CONTENT = {
       category: 'Postpartum'
     },
     {
+      id: 'scanner',
+      title: 'Test scanner',
+      description: 'Scan a home pregnancy test or hospital/lab report and get a plain-language assisted reading with privacy-first browser processing.',
+      href: 'scanner.html',
+      image: 'pregnancy-alt.webp',
+      category: 'Health tools'
+    },
+    {
       id: 'health',
       title: "Women's health",
       description: 'Understand common period changes and prepare for conversations with a clinician.',
