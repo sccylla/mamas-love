@@ -60,7 +60,7 @@
     round(ctx,215,762,1370,140,32,theme.strip,theme.gold,2);
     ctx.font='800 29px NameCardSans,Arial,sans-serif';ctx.fillStyle=theme.ink;ctx.fillText('SAY IT',255,843);
     ctx.beginPath();ctx.moveTo(399,792);ctx.lineTo(399,869);ctx.lineWidth=1.5;ctx.strokeStyle=theme.gold;ctx.stroke();
-    const pronunciation=String(options.pronunciation??name.p??window.MamasPronunciation?.suggest(name)??'').trim()||'Your pronunciation';
+    const pronunciation=String(options.pronunciation??name.p??window.MamasPronunciation?.suggest(name)??'').trim()||displayName;
     let pronunciationSize=80,spoken;do{ctx.font=`650 ${pronunciationSize}px NameCardSans,Arial,sans-serif`;spoken=wrap(ctx,pronunciation,1095);if(spoken.length<=2||pronunciationSize<=30)break;pronunciationSize-=2}while(true);
     if(spoken.length>1&&pronunciationSize>54){pronunciationSize=54;ctx.font=`650 ${pronunciationSize}px NameCardSans,Arial,sans-serif`;spoken=wrap(ctx,pronunciation,1095);}
     ctx.fillStyle=theme.ink;const step=pronunciationSize*1.16,first=830-(spoken.length-1)*step/2+pronunciationSize*.34;
