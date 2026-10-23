@@ -1,0 +1,62 @@
+/* Week-by-week banners with a consistent visual rhythm. */
+.growth-hero{display:grid;grid-template-columns:1.15fr .85fr;overflow:hidden;margin-block:42px 56px;border:1px solid #5e3b6c;border-radius:30px;background:#352044;color:#fff0f4;box-shadow:0 15px 50px #35204418}
+.growth-hero-copy{padding:43px 48px 39px}
+.growth-back{display:block;width:fit-content;margin-bottom:31px;color:#f0c5df;font-size:12px;text-decoration:underline;text-underline-offset:4px}
+.growth-kicker{display:block;color:#ffb9d1;font-size:10px;font-weight:750;letter-spacing:.13em}
+.growth-hero h1{margin:18px 0 22px;font:400 clamp(44px,4.7vw,66px)/1.04 var(--display);letter-spacing:-.01em}
+.growth-hero h1 em{color:#e4ee9c;font-style:normal}
+.growth-hero-copy>p{max-width:440px;margin:0 0 27px;color:#f0d7ed;font-size:16px;line-height:1.85}
+.growth-hero-link{display:inline-flex;align-items:center;gap:24px;min-height:48px;padding:11px 19px;border:1px solid #ffbad5;border-radius:30px;background:#ffbad5;color:#352044;font-size:13px;font-weight:700;transition:background-color .2s,transform .2s}
+.growth-hero-facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:29px;padding-top:22px;border-top:1px solid #d4b1dc40;color:#eed4e8;font-size:10px}
+.growth-hero-facts span{display:inline-flex;align-items:center;gap:7px}
+.growth-hero-facts span:before{content:"";width:4px;height:4px;border-radius:50%;background:#e4ee9c}
+.growth-hero-image{position:relative;min-height:430px;background:#a57c98}
+.growth-hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#352044b3)}
+.growth-hero-image img{width:100%;height:100%;object-position:center 35%}
+.growth-image-note{position:absolute;z-index:1;bottom:28px;left:29px;color:#fff0f4;font-size:12px;line-height:1.8}
+.growth-section{padding-bottom:75px;scroll-margin-top:112px}
+.growth-section-head{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.growth-section-head .heading{margin-bottom:10px}
+.growth-current-link{display:inline-flex;align-items:center;gap:13px;min-height:44px;padding:9px 17px;border:1px solid #96719f;border-radius:25px;background:#e7f3b0;color:#352044;font-size:12px;font-weight:650}
+.growth-current-link .icon{width:17px;height:17px}
+.growth-dating-note{max-width:690px;margin:7px 0 26px;color:#4b3156;font-size:14px;line-height:1.8}
+.growth-controls{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:18px 20px;border:1px solid #b28bbf;border-radius:19px;background:#d9c0ed}
+.growth-filters{display:flex;flex-wrap:wrap;gap:8px}
+.growth-filters button{min-height:44px;padding:10px 17px;border:1px solid #a987b6;border-radius:26px;background:#ebd1f1;color:#4b3156;font-size:12px;font-weight:650;transition:background-color .2s,color .2s}
+.growth-filters button[aria-pressed=true]{background:#352044;border-color:#352044;color:#fff0f4}
+.growth-jump{display:flex;align-items:center;gap:12px;flex:none;color:#4b3156;font-size:11px;font-weight:650}
+.growth-jump select{min-height:44px;width:170px;max-width:170px;padding:9px 28px 9px 13px;border:1px solid #a383b0;border-radius:12px;background:#f2d6ea;color:#352044;font-size:14px}
+.growth-count{margin:22px 0 20px;color:#593a65;font-size:12px}
+.growth-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.growth-card{--week-paper:#ffccd5;--week-accent:#f3b3c8;--week-number:#ffd1df;position:relative;display:flex;flex-direction:column;overflow:hidden;scroll-margin-top:112px;border:1px solid #b17f9c;border-radius:21px;background:var(--week-paper);box-shadow:0 5px 16px #46214e08;transition:box-shadow .2s,transform .2s}
+.growth-card.growth-trimester-2{--week-paper:#d9cef3;--week-accent:#c9b8e8;--week-number:#e8d8ff;border-color:#a58abb}
+.growth-card.growth-trimester-3{--week-paper:#dce6bb;--week-accent:#c8d69c;--week-number:#e7f2b0;border-color:#9cab78}
+.growth-card.is-current{border:2px solid #692d60;box-shadow:0 0 0 3px #ffb7d66e}
+.growth-card-top{display:grid;grid-template-columns:80px 1fr;gap:21px;align-items:center;padding:25px 25px 19px}
+.growth-week-number{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:89px;padding:10px 6px;border-radius:17px;background:#352044;color:var(--week-number)}
+.growth-week-number>span{font-size:9px;font-weight:700;letter-spacing:.17em}
+.growth-week-number strong{font:400 47px/1.05 var(--display);letter-spacing:-.02em}
+.growth-card-title{min-width:0}
+.growth-trimester-label{display:block;margin-bottom:7px;color:#623c60;font-size:9px;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
+.growth-card h3{margin:0;color:#352044;font:400 27px/1.15 var(--display);text-wrap:pretty}
+.growth-card h3 a{display:block;text-decoration-thickness:1px;text-underline-offset:4px}
+.growth-current-badge{display:inline-flex;margin-top:8px;padding:4px 8px;border-radius:12px;background:#352044;color:#fff0f4;font-size:9px;font-weight:600}
+.growth-development{margin:0;padding:0 25px 23px;color:#4b3156;font-size:14px;line-height:1.85}
+.growth-care{margin-top:auto;padding:17px 25px 20px;border-top:1px solid #6a3b6326;background:var(--week-accent)}
+.growth-care-label{display:block;margin-bottom:6px;color:#60385c;font-size:9px;font-weight:750;letter-spacing:.1em}
+.growth-care p{margin:0;color:#4b3156;font-size:12px;line-height:1.85}
+.growth-sources{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-top:43px;padding:31px 34px;border:1px solid #b995c7;border-radius:21px;background:#e5c6ed}
+.growth-sources h2{margin:11px 0 16px;font:400 29px/1.15 var(--display);color:#352044}
+.growth-sources p{margin:0;color:#4b3156;font-size:13px;line-height:1.9}
+.growth-sources h3{margin:1px 0 14px;color:#60385c;font-size:12px;font-weight:700}
+.growth-sources a{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:42px;margin:7px 0;color:#6e2959;font-size:12px;text-decoration:underline;text-underline-offset:4px}
+.growth-sources .icon{width:15px;height:15px}
+.growth-teaser{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:38px;padding:29px 32px;border:1px solid #b38ac4;border-radius:20px;background:#dcc6f2}
+.growth-teaser h2{margin:7px 0 10px;font:400 30px/1.15 var(--display)}
+.growth-teaser p{max-width:590px;margin:0;color:#4b3156;font-size:14px;line-height:1.8}
+.growth-teaser .btn{flex:none}
+@media(hover:hover){.growth-hero-link:hover{transform:translateY(-2px);background:#ffd0e2}.growth-filters button:hover{background:#eddef4;color:#352044}.growth-filters button[aria-pressed=true]:hover{background:#523363;color:#fff0f4}.growth-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #46214e13}.growth-card h3 a:hover{text-decoration:underline}.growth-current-link:hover{background:#d9eb98}}
+@media(max-width:1024px){.growth-hero-copy{padding:33px}.growth-hero h1{font-size:53px}.growth-hero-image{min-height:420px}.growth-controls{align-items:start;flex-direction:column;gap:16px}.growth-jump{align-self:flex-end}.growth-card-top{grid-template-columns:66px 1fr;gap:17px;padding:22px 21px 17px}.growth-week-number{min-height:80px}.growth-week-number strong{font-size:42px}.growth-card h3{font-size:25px}.growth-development{padding-inline:21px}.growth-care{padding-inline:21px}.growth-sources{gap:30px}}
+@media(max-width:700px){.growth-hero{grid-template-columns:1fr;margin-block:27px 38px;border-radius:23px}.growth-hero-image{min-height:0;height:260px}.growth-hero-copy{padding:29px}.growth-back{margin-bottom:25px}.growth-hero h1{font-size:53px}.growth-hero-copy>p{font-size:15px}.growth-hero-facts{gap:9px 16px}.growth-image-note{bottom:22px;left:26px}.growth-grid{grid-template-columns:1fr;gap:18px}.growth-section-head{align-items:start;flex-direction:column;gap:10px}.growth-dating-note{margin-top:19px;font-size:13px}.growth-controls{padding:15px;gap:18px}.growth-filters{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:8px}.growth-filters button{padding:10px 12px;font-size:11px}.growth-jump{width:100%;justify-content:space-between;font-size:12px}.growth-jump select{flex:1;max-width:175px;font-size:16px}.growth-count{margin-block:19px 17px}.growth-card-top{grid-template-columns:69px 1fr;padding:22px 22px 18px}.growth-week-number{min-height:82px}.growth-card h3{font-size:27px}.growth-development{padding:0 22px 23px}.growth-care{padding:16px 22px 19px}.growth-sources{grid-template-columns:1fr;gap:24px;padding:25px 23px;margin-top:30px}.growth-sources h2{font-size:28px}.growth-section{padding-bottom:50px}.growth-teaser{align-items:start;flex-direction:column;gap:20px;padding:25px 23px}.growth-teaser h2{font-size:28px}.growth-teaser p{font-size:13px}}
+@media(max-width:360px){.growth-hero-copy{padding:25px}.growth-hero h1{font-size:46px}.growth-card-top{grid-template-columns:61px 1fr;gap:15px;padding-inline:19px}.growth-week-number strong{font-size:39px}.growth-card h3{font-size:25px}.growth-development,.growth-care{padding-inline:19px}.growth-hero-facts{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.growth-card,.growth-hero-link,.growth-filters button{transition:none}}

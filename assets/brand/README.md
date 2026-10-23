@@ -8,6 +8,8 @@ The embracing-heart symbol combines two figures in warm rose and apricot. The wo
 - `apple-touch-icon.png`: 180px Apple home-screen icon.
 - `icon-192.png` and `icon-512.png`: web-manifest icons.
 - `../favicon.svg`: matching symbol on a plum tile, also mirrored at `/favicon.svg`.
+- `favicon-32.png`: 32px PNG fallback used on every page.
+- `/favicon.ico`: matching 16px, 32px and 48px icons for browser compatibility.
 
 Colours: plum `#352044`, rose `#ff79a5`, apricot `#ffcba7`, and light wordmark `#fff0f4`. Preserve the proportions and leave at least one head diameter of space around the logo. The source font’s license is included at `../fonts/OFL-DM-Sans.txt`.
 

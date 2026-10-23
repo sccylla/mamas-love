@@ -24,7 +24,7 @@ Then open http://localhost:8080.
 
 This is a static site and can be deployed directly to Vercel, Netlify, Cloudflare Pages or another static host. Publish the repository root; no build command or dependency installation is required. `vercel.json` enables clean URLs on Vercel. Local navigation also uses explicit `.html` paths so it works with Python's server.
 
-All current page shells use `assets/app.js`, `assets/style.css`, `assets/brand.css` and `assets/footer.css`. `health.html` remains an alias for the women's wellbeing page.
+All current page shells use `assets/app.js`, `assets/style.css`, `assets/brand.css`, `assets/footer.css`, `assets/blog.css` and the final shared `assets/refinements.css` layer. `health.html` remains an alias for the women's wellbeing page.
 
 The homepage includes working quick calculators, tracker tabs and topic filters. Health guides support search, category filtering, article views and source links. Frequently asked questions expand without a page reload.
 
@@ -53,3 +53,11 @@ Without that connection, the comment section explicitly reports that comments ar
 The API validates article IDs and text lengths, rejects cross-origin requests, renders comments as text, and rate-limits submissions to five per visitor in ten minutes. It shows the newest 50 comments per post, and retains older comments in Redis. The database owner can inspect or remove stored comments through the Upstash console under `mamas:comments:v1:post:<post-id>`. When adding a new post in `assets/content.js`, add its ID to the `POSTS` set in `api/comments.js`.
 
 Run the backend checks with `node tests/comments-api.test.cjs`. They use a mocked Redis REST transport and cover independent visitors, validation, rate limits, and storage failures; they do not claim to verify a live database connection.
+
+## Weekly growth guide
+
+`growth.html` provides 42 pregnancy development banners, covering weeks 1–42. Trimester filters group weeks 1–13, 14–27 and 28–42; the week selector and `#week-N` links open individual cards. Saved pregnancy dates can highlight the estimated current week without sending those dates to a server. The guide is linked from the main navigation, footer, pregnancy tracker and baby-development page.
+
+Each card contains a distinct development summary and care note. Weeks 1 and 2 explain pre-conception dating; later weeks include care planning beyond the estimated due date. The page links to NHS information and explains that typical development summaries do not assess an individual pregnancy. Content lives in `assets/growth-content.js`; the browser and styles are in `assets/growth.js` and `assets/growth.css`.
+
+All ten page shells include the same versioned SVG favicon, 32px PNG fallback, multi-size ICO fallback, Apple home-screen icon and web manifest. `favicon.ico` at the site root also supports browser requests that ignore page-level icon links.
