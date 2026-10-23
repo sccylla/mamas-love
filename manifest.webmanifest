@@ -1,1 +1,17 @@
-{"name":"Mama's Love","short_name":"Mama's Love","start_url":"./","display":"standalone","background_color":"#fffaf6","theme_color":"#7a2f55","description":"Women's health, pregnancy, postpartum and baby care education with private in-browser trackers."}
+{
+  "name": "Mama's Love",
+  "short_name": "Mama's Love",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf8f3",
+  "theme_color": "#4c2e41",
+  "description": "A little care for every chapter: women's wellbeing, pregnancy, postpartum and baby development.",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
