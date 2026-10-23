@@ -68,3 +68,45 @@
 .growth-page-nav{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:-24px;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid #79548755}
 .growth-page-nav a{display:inline-flex;align-items:center;min-height:44px;color:#5f315b;font-size:12px;font-weight:650;text-decoration:underline;text-underline-offset:5px}
 @media(max-width:700px){.growth-page-nav{gap:5px 24px;margin-top:-12px;margin-bottom:29px}.growth-page-nav a{font-size:11px}.growth-filters button:last-child:nth-child(odd){grid-column:1/-1}.growth-checkpoint{padding-inline:22px}}
+/* Pregnancy is the first stage; the first year follows after birth. */
+.growth-phase-nav{display:flex;gap:12px;margin-top:30px;margin-bottom:-15px}
+.growth-phase-nav a{display:flex;align-items:center;gap:12px;min-height:54px;padding:12px 21px;border:1px solid #9b76aa;border-radius:14px;background:#e4c9ee;color:#593461;font-size:13px;font-weight:650;transition:background-color .2s}
+.growth-phase-nav a span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#b99bc9;color:#352044;font-size:10px}
+.growth-phase-nav a[aria-current]{border-color:#352044;background:#352044;color:#fff0f4}
+.growth-phase-nav a[aria-current] span{background:#e4ee9c;color:#352044}
+.womb-banner{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;position:relative;overflow:hidden;margin:0;background:#352044;color:#fff0f4;border-bottom:1px solid #704367}
+.womb-stage{width:100%;aspect-ratio:1;background-color:#352044;background-image:url('illustrations/womb-development-stages.png');background-repeat:no-repeat;background-size:400% 200%;background-position:var(--womb-x) var(--womb-y)}
+.womb-stage-early{background-image:url('illustrations/before-conception-stages.png');background-size:200% 100%}
+.womb-banner figcaption{display:flex;flex-direction:column;align-items:start;gap:13px;min-width:0;padding:24px 22px 24px 10px}
+.womb-week-label{display:inline-block;padding:6px 10px;border:1px solid #c38ba35e;border-radius:20px;color:#ffbad3;font-size:9px;font-weight:750;letter-spacing:.1em;line-height:1.6}
+.womb-banner figcaption strong{font:400 27px/1.12 var(--display);color:#f5d4e2;text-wrap:balance}
+.womb-banner figcaption small{color:#d9b7ce;font-size:9px;line-height:1.7}
+.pregnancy-hero-illustration{display:flex;flex-direction:column;justify-content:center;min-width:0;overflow:hidden;background:#352044;border-left:1px solid #95638240}
+.womb-banner-hero{display:block;width:100%;border:0}
+.womb-banner-hero .womb-stage{aspect-ratio:1.1}
+.womb-banner-hero figcaption{position:absolute;inset:auto 0 0;padding:50px 28px 15px;background:linear-gradient(transparent,#352044);gap:7px}
+.womb-banner-hero figcaption strong{font-size:31px}
+.pregnancy-hero-caption{display:block;padding:15px 28px 22px;color:#d9b7ce;font-size:11px;line-height:1.7}
+.growth-hero-prenatal .growth-hero-copy{padding-bottom:37px}
+.growth-card:has(>.womb-banner) .growth-card-top{grid-template-columns:1fr;padding-top:23px}
+.growth-card:has(>.womb-banner) .growth-week-number{display:none}
+.growth-after-birth{display:flex;justify-content:space-between;align-items:center;gap:35px;margin-top:37px;padding:32px 34px;border:1px solid #b99887;border-radius:22px;background:#ffd0ad}
+.growth-after-birth h2{margin:12px 0;font:400 34px/1.15 var(--display);color:#352044}
+.growth-after-birth p{max-width:590px;margin:0;color:#4b3156;font-size:14px;line-height:1.8}
+.growth-after-birth .btn{flex:none;font-size:12px}
+@media(hover:hover){.growth-phase-nav a:hover{background:#f3d9ed;color:#352044}.growth-phase-nav a[aria-current]:hover{background:#4c2e5c;color:#fff0f4}}
+@media(max-width:1024px){.womb-banner figcaption{padding-right:17px;gap:10px}.womb-banner figcaption strong{font-size:23px}.womb-week-label{font-size:8px}.growth-after-birth{align-items:start;flex-direction:column;gap:22px}.womb-banner-hero figcaption strong{font-size:28px}}
+@media(max-width:700px){.growth-phase-nav{margin-top:20px;margin-bottom:-10px;gap:9px}.growth-phase-nav a{flex:1;align-items:start;gap:8px;padding:12px 13px;font-size:11px;line-height:1.7}.growth-phase-nav a span{flex:none;width:21px;height:21px;font-size:9px}.pregnancy-hero-illustration{border-left:0;border-top:1px solid #95638240}.womb-banner-hero{max-width:440px;align-self:center}.womb-banner-hero .womb-stage{aspect-ratio:1.2}.womb-banner-hero figcaption{padding-bottom:9px}.pregnancy-hero-caption{padding:12px 26px 20px}.womb-banner figcaption strong{font-size:27px}.womb-banner figcaption{padding-right:21px}.womb-week-label{font-size:8px}.womb-banner figcaption small{font-size:8px}.growth-after-birth{padding:26px 24px}.growth-after-birth h2{font-size:30px}.growth-after-birth p{font-size:13px}}
+@media(max-width:360px){.growth-phase-nav a{font-size:10px;padding:11px;gap:6px}.womb-banner figcaption{padding-right:15px;gap:9px}.womb-banner figcaption strong{font-size:24px}.womb-week-label{font-size:7px}}
+/* Each sprite row retains its own proportions and is clipped at the cell boundary. */
+.womb-stage{aspect-ratio:var(--womb-ratio,1);background-size:400% var(--womb-height,200%)}
+.womb-stage-early{background-size:200% 100%}
+.womb-banner-hero .womb-stage{aspect-ratio:var(--womb-ratio,1)}
+.growth-birth-link{display:inline-flex;align-items:center;min-height:44px;margin-left:19px;color:#f4c6db;font-size:12px;text-decoration:underline;text-underline-offset:5px}
+.birth-banner{display:grid;grid-template-columns:.8fr 1.2fr;overflow:hidden;margin-top:34px;border:1px solid #b58a9f;border-radius:23px;background:#f2bfd4;scroll-margin-top:112px}
+.birth-banner .womb-banner{align-self:stretch}
+.birth-banner-copy{align-self:center;padding:34px 39px}
+.birth-banner-copy h2{margin:15px 0 21px;font:400 39px/1.1 var(--display);color:#352044}
+.birth-banner-copy p{margin:0 0 17px;color:#4b3156;font-size:14px;line-height:1.85}
+.birth-banner-copy>a{display:inline-flex;align-items:center;gap:15px;min-height:44px;margin-top:3px;color:#7e2855;font-size:13px;font-weight:700}
+@media(max-width:700px){.womb-banner-hero .womb-stage{aspect-ratio:var(--womb-ratio,1)}.birth-banner{grid-template-columns:1fr}.birth-banner>.womb-banner{max-width:none}.birth-banner .womb-stage{max-height:none}.birth-banner-copy{padding:29px 26px}.birth-banner-copy h2{font-size:34px}.growth-birth-link{margin-left:16px;font-size:11px}}

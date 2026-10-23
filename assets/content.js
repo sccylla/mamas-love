@@ -26,11 +26,11 @@ window.MAMAS_CONTENT = {
     },
     {
       id: 'growth',
-      title: "Baby's first year",
-      description: 'Follow baby growth from day one through all 52 weeks with simple explanations, visuals and milestone checkpoints.',
+      title: "Growth in the womb",
+      description: 'See pregnancy development from week 1 to birth with illustrated womb stages and weekly care notes.',
       href: 'growth.html',
-      image: 'mamas-love-5.jpg',
-      category: 'Baby'
+      image: 'pregnancy-alt.webp',
+      category: 'Pregnancy'
     },
     {
       id: 'postpartum',

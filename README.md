@@ -54,12 +54,12 @@ The API validates article IDs and text lengths, rejects cross-origin requests, r
 
 Run the backend checks with `node tests/comments-api.test.cjs`. They use a mocked Redis REST transport and cover independent visitors, validation, rate limits, and storage failures; they do not claim to verify a live database connection.
 
-## Weekly growth guides
+## Pregnancy first, then development after birth
 
-`growth.html` preserves the baby's first-year guide and now presents all 52 weeks as individual development banners. Age-range filters, a week selector, direct `#week-N` links, five age-based CDC checkpoint notes, and a saved-birth-date shortcut help visitors find their place. Weekly development is described as a guide, not a timetable. The existing milestone overview, physical-growth information, safety advice, corrected-age context and source links remain on the page.
+`growth.html` is the primary growth page: pregnancy from dating week 1 through birth, with 42 weekly information cards. Every card includes a graphic of a representative womb stage. Weeks 1–2 show the womb before conception, week 3 shows early cell division, and subsequent stages show implantation, embryo and fetal development. The drawings are schematic stage illustrations, not exact weekly measurements, scans, or representations of an individual pregnancy. `pregnancy-growth.html` remains an alias for the same prenatal guide.
 
-`pregnancy-growth.html` is a separate 42-week pregnancy guide. Trimester filters group weeks 1–13, 14–27 and 28–42. Saved pregnancy dates can highlight the estimated current week without sending those dates to a server. The pregnancy and baby trackers link to the appropriate growth guide.
+`baby-growth.html` preserves all 52 first-year development cards and the existing milestone, physical-growth and care information. The development navigation presents pregnancy first and development after birth second. The pregnancy page links to the womb guide; the baby page links to the after-birth guide.
 
-Baby content lives in `assets/baby-growth-content.js` and `assets/first-year-notes.js`; pregnancy content is in `assets/growth-content.js`. The guides share `assets/growth.js` and `assets/growth.css`. The first-year overview and safety sections also use `assets/first-year-notes.css`.
+The two illustration sheets in `assets/illustrations/` are displayed as individual stage panels using CSS; they are downloaded once and reused across the weekly cards. Descriptive alternatives and captions identify illustrative stages. Weekly information and NHS source links remain in `assets/growth-content.js`.
 
-All eleven page shells include the same versioned SVG favicon, 32px PNG fallback, multi-size ICO fallback, Apple home-screen icon and web manifest. `favicon.ico` at the site root also supports browser requests that ignore page-level icon links.
+All twelve page shells use the same SVG, PNG and ICO favicon set, Apple icon and manifest, with versioned asset URLs.
