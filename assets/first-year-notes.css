@@ -1,0 +1,57 @@
+/* Context, measurements and care notes for the baby's first-year guide. */
+.first-year-overview,.first-year-guidance,.first-year-safety{padding:76px 0;scroll-margin-top:108px}
+.first-year-overview{background:#e3c8ef;border-top:1px solid #bc97cb}
+.first-year-guidance{background:#f5bcd3;border-top:1px solid #d697b4}
+.first-year-safety{background:#352044;color:#fae9f3}
+.first-year-section-heading{max-width:820px;margin-bottom:30px}
+.first-year-kicker{display:block;color:#84224c;font-size:10px;line-height:1.7;font-weight:750;letter-spacing:.11em}
+.first-year-section-heading h2{margin:12px 0 18px;font:400 clamp(33px,3.5vw,45px)/1.12 var(--display);letter-spacing:-.015em}
+.first-year-section-heading p{max-width:730px;margin:0;color:#4b3156;font-size:15px;line-height:1.85}
+.first-year-context{margin:0 0 32px;padding:23px 25px;border:1px solid #b39e69;border-radius:18px;background:#e9efa8;color:#403448}
+.first-year-context ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none}
+.first-year-context strong{display:block;margin-bottom:6px;font-size:12px;line-height:1.6;color:#352044}
+.first-year-context span{display:block;font-size:11px;line-height:1.8}
+.first-year-age-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.first-year-age-card{padding:25px;border:1px solid #a87eb8;border-radius:19px;background:#ffc7ae;box-shadow:2px 3px 0 #79548733}
+.first-year-age-card:nth-child(4n+2){background:#d2e5c4}
+.first-year-age-card:nth-child(4n+3){background:#f9b9d0}
+.first-year-age-card:nth-child(4n){background:#d7bdf1}
+.first-year-age{display:block;color:#71274f;font-size:10px;font-weight:750;line-height:1.7;letter-spacing:.07em;text-transform:uppercase}
+.first-year-age-card h3{margin:13px 0 14px;color:#352044;font:400 27px/1.14 var(--display);letter-spacing:0;text-wrap:pretty}
+.first-year-age-card p{margin:0;color:#4b3156;font-size:13px;line-height:1.85}
+.first-year-measure-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:stretch}
+.first-year-measure-card{padding:32px;border:1px solid #b47f9f;border-radius:22px;background:#f9cee1}
+.first-year-measure-card h3{margin:0 0 17px;color:#352044;font:400 31px/1.15 var(--display)}
+.first-year-measure-card>p{margin:0 0 23px;color:#4b3156;font-size:14px;line-height:1.85}
+.first-year-measure-list{margin:0}
+.first-year-measure-list>div{padding:17px 0;border-top:1px solid #c799b7}
+.first-year-measure-list>div:last-child{padding-bottom:0}
+.first-year-measure-list dt{margin-bottom:6px;color:#4c2544;font-size:13px;font-weight:750;line-height:1.5}
+.first-year-measure-list dd{margin:0;color:#4b3156;font-size:12px;line-height:1.85}
+.first-year-photo{position:relative;min-height:100%;margin:0;overflow:hidden;border:1px solid #b47f9f;border-radius:22px;background:#d7bddf}
+.first-year-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.first-year-photo figcaption{position:absolute;inset:auto 0 0;padding:65px 29px 29px;color:#fff0f6;background:linear-gradient(transparent,#352044e8)}
+.first-year-photo figcaption strong{display:block;max-width:320px;margin-bottom:10px;font:400 31px/1.13 var(--display)}
+.first-year-photo figcaption span{display:block;max-width:330px;font-size:12px;line-height:1.8}
+.first-year-safety .first-year-kicker{color:#ffb9d4}
+.first-year-safety .first-year-section-heading p{color:#e8d0e4}
+.first-year-safety-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.first-year-safety-card{padding:30px;border:1px solid #b8bd93;border-radius:21px;background:#dce9c2;color:#352044}
+.first-year-safety-card.first-year-prompt-care{border-color:#d39aae;background:#f5c1d3}
+.first-year-card-label{display:block;color:#63374e;font-size:9px;font-weight:750;line-height:1.7;letter-spacing:.1em}
+.first-year-safety-card h3{max-width:470px;margin:12px 0 17px;font:400 30px/1.13 var(--display)}
+.first-year-safety-card p,.first-year-safety-card li{color:#4b3156;font-size:13px;line-height:1.85}
+.first-year-safety-card p{margin:0 0 18px}
+.first-year-safety-card ul{margin:0;padding-left:18px}
+.first-year-safety-card li+li{margin-top:10px}
+.first-year-sources{margin-top:36px;padding-top:29px;border-top:1px solid #795483}
+.first-year-sources h3{margin:0 0 18px;font:400 25px/1.2 var(--display)}
+.first-year-sources ul{display:flex;flex-wrap:wrap;gap:10px 25px;margin:0 0 22px;padding:0;list-style:none}
+.first-year-sources a{display:inline-block;min-height:40px;padding-block:8px;color:#f8c1d7;font-size:12px;line-height:1.7;text-decoration:underline;text-underline-offset:4px}
+.first-year-sources p{max-width:800px;margin:0;color:#d4b5dc;font-size:11px;line-height:1.8}
+.first-year-sources a:focus-visible{outline-color:#e9efa8}
+@media(hover:hover){.first-year-sources a:hover{color:#e9efa8}}
+@media(max-width:1024px){.first-year-context ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 25px}.first-year-age-grid{gap:17px}.first-year-age-card{padding:23px}.first-year-age-card h3{font-size:25px}.first-year-measure-layout{grid-template-columns:1fr 1fr;gap:20px}.first-year-measure-card{padding:27px}.first-year-photo figcaption{padding-inline:24px}.first-year-photo figcaption strong{font-size:28px}}
+@media(max-width:820px){.first-year-overview,.first-year-guidance,.first-year-safety{padding-block:60px}.first-year-age-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.first-year-measure-layout{grid-template-columns:1fr}.first-year-photo{height:380px;min-height:0}.first-year-safety-grid{gap:18px}.first-year-safety-card{padding:25px}.first-year-safety-card h3{font-size:28px}}
+@media(max-width:600px){.first-year-overview,.first-year-guidance,.first-year-safety{padding-block:48px;scroll-margin-top:90px}.first-year-section-heading{margin-bottom:25px}.first-year-section-heading h2{font-size:34px;line-height:1.12}.first-year-section-heading p{font-size:14px}.first-year-context{padding:23px 21px;margin-bottom:25px}.first-year-context ul{grid-template-columns:1fr;gap:17px}.first-year-context strong{font-size:12px;margin-bottom:4px}.first-year-context span{font-size:12px}.first-year-age-grid{grid-template-columns:1fr;gap:17px}.first-year-age-card{padding:25px}.first-year-age-card h3{font-size:28px}.first-year-age-card p{font-size:14px}.first-year-age{font-size:10px}.first-year-measure-card{padding:25px 22px}.first-year-measure-card h3{font-size:29px}.first-year-measure-list dd{font-size:13px}.first-year-photo{height:340px}.first-year-photo figcaption{padding:65px 24px 25px}.first-year-safety-grid{grid-template-columns:1fr;gap:19px}.first-year-safety-card{padding:26px 23px}.first-year-safety-card h3{font-size:29px}.first-year-safety-card p,.first-year-safety-card li{font-size:14px}.first-year-sources{margin-top:30px}.first-year-sources ul{display:block;margin-bottom:20px}.first-year-sources a{font-size:12px}.first-year-sources p{font-size:11px}}
+@media(max-width:360px){.first-year-section-heading h2{font-size:31px}.first-year-age-card{padding:23px}.first-year-age-card h3{font-size:26px}.first-year-photo{height:315px}.first-year-photo figcaption strong{font-size:27px}}

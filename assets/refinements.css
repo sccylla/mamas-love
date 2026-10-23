@@ -164,3 +164,6 @@ body:not([data-page="growth"]) .inside{border-top:1px solid #b694c64d}
  .stats-row span{font-size:9px}
  .footer-nav-column .footer-link{font-size:11px}
 }
+
+/* The blog topic closes the seven-card topic grid as a full-width editorial row. */
+@media(min-width:601px){.topic-card[data-topic="guides"]{grid-column:1/-1;display:grid;grid-template-columns:1fr 2fr}.topic-card[data-topic="guides"] .topic-media{height:100%;min-height:220px}.topic-card[data-topic="guides"] .topic-copy{justify-content:center}.topic-card[data-topic="guides"] .card-link{margin-top:0}}

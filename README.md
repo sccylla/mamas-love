@@ -54,10 +54,12 @@ The API validates article IDs and text lengths, rejects cross-origin requests, r
 
 Run the backend checks with `node tests/comments-api.test.cjs`. They use a mocked Redis REST transport and cover independent visitors, validation, rate limits, and storage failures; they do not claim to verify a live database connection.
 
-## Weekly growth guide
+## Weekly growth guides
 
-`growth.html` provides 42 pregnancy development banners, covering weeks 1–42. Trimester filters group weeks 1–13, 14–27 and 28–42; the week selector and `#week-N` links open individual cards. Saved pregnancy dates can highlight the estimated current week without sending those dates to a server. The guide is linked from the main navigation, footer, pregnancy tracker and baby-development page.
+`growth.html` preserves the baby's first-year guide and now presents all 52 weeks as individual development banners. Age-range filters, a week selector, direct `#week-N` links, five age-based CDC checkpoint notes, and a saved-birth-date shortcut help visitors find their place. Weekly development is described as a guide, not a timetable. The existing milestone overview, physical-growth information, safety advice, corrected-age context and source links remain on the page.
 
-Each card contains a distinct development summary and care note. Weeks 1 and 2 explain pre-conception dating; later weeks include care planning beyond the estimated due date. The page links to NHS information and explains that typical development summaries do not assess an individual pregnancy. Content lives in `assets/growth-content.js`; the browser and styles are in `assets/growth.js` and `assets/growth.css`.
+`pregnancy-growth.html` is a separate 42-week pregnancy guide. Trimester filters group weeks 1–13, 14–27 and 28–42. Saved pregnancy dates can highlight the estimated current week without sending those dates to a server. The pregnancy and baby trackers link to the appropriate growth guide.
 
-All ten page shells include the same versioned SVG favicon, 32px PNG fallback, multi-size ICO fallback, Apple home-screen icon and web manifest. `favicon.ico` at the site root also supports browser requests that ignore page-level icon links.
+Baby content lives in `assets/baby-growth-content.js` and `assets/first-year-notes.js`; pregnancy content is in `assets/growth-content.js`. The guides share `assets/growth.js` and `assets/growth.css`. The first-year overview and safety sections also use `assets/first-year-notes.css`.
+
+All eleven page shells include the same versioned SVG favicon, 32px PNG fallback, multi-size ICO fallback, Apple home-screen icon and web manifest. `favicon.ico` at the site root also supports browser requests that ignore page-level icon links.
