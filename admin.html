@@ -18,12 +18,12 @@
     <p id="status" class="status" role="status" aria-live="polite">Opening your workspace…</p>
     <p id="error" class="error" role="alert" hidden></p>
     <section id="loginPanel" class="login-panel" hidden aria-labelledby="loginHeading">
-      <span class="eyebrow">MAMA’S LOVE ADMIN</span><h1 id="loginHeading">A little space<br>for your stories.</h1><p>Sign in to write, add pictures, and manage your blog.</p>
+      <span class="eyebrow">MAMA’S LOVE ADMIN</span><h1 id="loginHeading">Sign in to<br>your blog.</h1><p>Sign in to write, add pictures, and manage your blog.</p>
       <form id="loginForm"><label>Username<input name="username" autocomplete="username" value="admin" required maxlength="100"></label><label>Password<input name="password" type="password" autocomplete="current-password" required maxlength="256"></label><button class="primary" type="submit">Sign in</button></form>
     </section>
     <section id="workspace" class="workspace" hidden aria-label="Blog manager">
       <aside class="post-sidebar"><div class="sidebar-title"><div><span class="eyebrow">YOUR COLLECTION</span><h1>Blog posts</h1></div><button id="newPost" type="button" class="primary">+ New post</button></div><label class="search-label">Find a post<input id="postSearch" type="search" placeholder="Search your posts…"></label><p id="postCount" class="muted"></p><div id="postList" class="post-list"></div></aside>
-      <div class="editor-panel"><div class="editor-heading"><div><span class="eyebrow">MAKE IT YOURS</span><h2 id="editorHeading">Write a new post</h2><p id="savedAt" class="muted">Start with a title and a story.</p></div><a id="viewPost" href="learn.html" target="_blank" rel="noopener" hidden>View published post ↗</a></div>
+      <div class="editor-panel"><div class="editor-heading"><div><span class="eyebrow">POST EDITOR</span><h2 id="editorHeading">Write a new post</h2><p id="savedAt" class="muted">Start with a title and a story.</p></div><a id="viewPost" href="learn.html" target="_blank" rel="noopener" hidden>View published post ↗</a></div>
         <form id="postForm"><fieldset id="editorFields"><legend class="sr-only">Post editor</legend>
           <label>Post title<input id="postTitle" maxlength="180" minlength="3" required placeholder="What would you like to share?"></label>
           <label>Short introduction<textarea id="postSummary" rows="3" minlength="5" maxlength="500" required placeholder="A few lines to introduce the post on the blog page."></textarea></label>

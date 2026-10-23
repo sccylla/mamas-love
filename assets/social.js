@@ -19,14 +19,8 @@
     @media(max-width:760px){
       body{padding-bottom:82px!important}
       .hero{grid-template-columns:1fr!important}
-      .hero>.hero-visual{order:-1!important}
-      .hero>.hero-copy{order:0!important}
       .subhero{grid-template-columns:1fr!important}
-      .subhero>.subhero-img{order:-1!important}
-      .subhero>.subhero-copy{order:0!important}
       .hero-grid{grid-template-columns:1fr!important}
-      .hero-grid>.hero-art,.hero-grid>.hero-card{order:-1!important}
-      .hero-grid>div:not(.hero-art):not(.hero-card){order:0!important}
       .ml-social-dock{left:10px;right:10px;top:auto;bottom:10px;transform:none;flex-direction:row;gap:8px;background:rgba(255,250,248,.96);border:1px solid rgba(75,45,70,.10);border-radius:20px;padding:8px;box-shadow:0 16px 45px rgba(75,45,70,.22);backdrop-filter:blur(14px)}
       .ml-social-title{display:none}.ml-social-btn{min-width:0;flex:1;justify-content:center;padding:12px 8px;border-radius:14px;font-size:11px;box-shadow:none}.ml-social-btn:hover{transform:none}.ml-social-btn svg{width:19px;height:19px;flex-basis:19px}
     }
@@ -36,9 +30,9 @@
   dock.id='mamas-social-dock'; dock.className='ml-social-dock'; dock.setAttribute('aria-label',"Mama's Love social links");
   dock.innerHTML=`
     <div class="ml-social-title">Connect with us</div>
-    <a class="ml-social-btn ml-social-facebook" href="https://facebook.com/mamaslove" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.5-3h-3.5V8.1c0-.9.3-1.6 1.7-1.6H17V3.8c-.3 0-1.4-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v9h3.2z"/></svg><span class="ml-social-label">Facebook</span></a>
-    <a class="ml-social-btn ml-social-tiktok" href="https://tiktok.com/@.mamaslove" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M15.6 3c.4 2.2 1.7 3.5 3.9 3.7v3.1c-1.5 0-2.8-.4-3.9-1.2v6.1c0 4-2.8 6.3-6.1 6.3A6 6 0 0 1 3.5 15c0-3.5 2.7-6 6.5-6v3.2c-.4-.1-.7-.1-1-.1-1.6 0-2.5 1.1-2.5 2.8 0 1.8 1.2 3 2.9 3 2 0 3-1.2 3-3.7V3h3.2z"/></svg><span class="ml-social-label">TikTok</span></a>
-    <a class="ml-social-btn ml-social-email" href="mailto:mamaslovelies@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7.1L20.7 7H3.3L12 12.1zm0 2.3L3 9.1V17h18V9.1l-9 5.3z"/></svg><span class="ml-social-label">Email</span></a>
+    <a class="ml-social-btn ml-social-facebook" aria-label="Facebook" title="Facebook" href="https://facebook.com/mamaslove" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.5-3h-3.5V8.1c0-.9.3-1.6 1.7-1.6H17V3.8c-.3 0-1.4-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v9h3.2z"/></svg><span class="ml-social-label">Facebook</span></a>
+    <a class="ml-social-btn ml-social-tiktok" aria-label="TikTok" title="TikTok" href="https://tiktok.com/@.mamaslove" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M15.6 3c.4 2.2 1.7 3.5 3.9 3.7v3.1c-1.5 0-2.8-.4-3.9-1.2v6.1c0 4-2.8 6.3-6.1 6.3A6 6 0 0 1 3.5 15c0-3.5 2.7-6 6.5-6v3.2c-.4-.1-.7-.1-1-.1-1.6 0-2.5 1.1-2.5 2.8 0 1.8 1.2 3 2.9 3 2 0 3-1.2 3-3.7V3h3.2z"/></svg><span class="ml-social-label">TikTok</span></a>
+    <a class="ml-social-btn ml-social-email" aria-label="Email" title="Email" href="mailto:mamaslovelies@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7.1L20.7 7H3.3L12 12.1zm0 2.3L3 9.1V17h18V9.1l-9 5.3z"/></svg><span class="ml-social-label">Email</span></a>
   `;
   document.body.appendChild(dock);
   const footer=document.createElement('nav'); footer.className='ml-social-footer';footer.setAttribute('aria-label','Follow Mama’s Love');

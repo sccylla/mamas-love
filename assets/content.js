@@ -58,8 +58,8 @@ window.MAMAS_CONTENT = {
     },
     {
       id: 'scanner',
-      title: 'Test scanner',
-      description: 'Scan a home pregnancy test or hospital/lab report and get a plain-language assisted reading with privacy-first browser processing.',
+      title: 'Test reader',
+      description: 'Review a home test photo or read the text and reference ranges on a lab report.',
       href: 'scanner.html',
       image: 'pregnancy-alt.webp',
       category: 'Health tools'

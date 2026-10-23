@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#fff8f7">
-<meta name="description" content="Mama's Love Test Scanner: understand pregnancy tests and hospital/lab reports with privacy-first, browser-based assistance.">
+<meta name="description" content="Read a home pregnancy test or check the text and reference ranges on a lab report. Photos stay in your browser.">
 <title>Test Scanner | Mama's Love</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico?v=polish-1" sizes="any">
+<link rel="icon" href="assets/favicon.svg?v=polish-1" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png?v=polish-1">
 <style>
 @font-face{font-family:DM Sans;src:url('assets/fonts/dm-sans-latin-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:Cormorant Garamond;src:url('assets/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
@@ -26,23 +28,26 @@
 <link rel="stylesheet" href="assets/footer.css?v=calm-1">
 <script src="assets/site-footer.js?v=admin-1" defer></script>
 <link rel="stylesheet" href="assets/site-effects.css?v=lullaby-3">
+<script src="assets/navigation.js?v=polish-1" defer></script>
 <script src="assets/lullaby.js?v=lullaby-3" defer></script>
+<link rel="stylesheet" href="assets/navigation.css?v=polish-1">
+<link rel="stylesheet" href="assets/site-review.css?v=polish-1">
 </head>
 <body>
-<div class="topbar">Private, browser-based assistance for home pregnancy tests and hospital/lab reports</div>
+
 <header class="site-head"><div class="shell head"><a class="brand" href="./"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"></a><a class="home" href="./">← Mama's Love home</a></div></header>
 <main>
 <section class="hero"><div class="shell hero-grid">
   <div>
-    <span class="kicker">Scan & understand your test</span>
-    <h1>Less guessing. <em>Clearer next steps.</em></h1>
-    <p>Use your phone camera or upload a photo to get help reading a home pregnancy test, or scan a hospital/lab report and turn the medical language into plain English.</p>
-    <div class="privacy"><span>🔒</span><div><b>Privacy first.</b> Your test image is processed in your browser. Mama's Love does not upload or store the report on our server. OCR can misread numbers, decimal points and units, so always compare the extracted text with the original report.</div></div>
+    <span class="kicker">PREGNANCY TESTS & LAB REPORTS</span>
+    <h1>Read your test.<br><em>Check the details.</em></h1>
+    <p>Upload a home test photo or a lab report. Check the visible lines, review the report text, and compare results with the range printed by the laboratory.</p>
+    <div class="page-actions"><a href="#testReader">Open the reader ↓</a><a class="secondary" href="#readingNotes">Reading a result</a></div><div class="privacy"><span>🔒</span><div><b>Privacy first.</b> Your test image is processed in your browser. Mama's Love does not upload or store the report on our server. Text recognition can misread numbers, decimal points and units, so always compare the extracted text with the original report.</div></div>
   </div>
-  <div class="hero-card"><div class="orb o1"></div><div class="orb o2"></div><div class="device"><span class="device-badge">TEST READER</span><h3>Photo in. Plain language out.</h3><p>Designed to explain what a result appears to show — not to make a diagnosis from a photo.</p><div class="device-lines"><div><b>Pregnancy test</b>Line/digital reading assistance</div><div><b>Hospital report</b>OCR + report-range comparison</div></div></div></div>
+  <div class="hero-card"><div class="orb o1"></div><div class="orb o2"></div><div class="device"><span class="device-badge">TEST READER</span><h3>A closer look at your result.</h3><p>Review the details in your test or report. For a diagnosis or treatment advice, speak with a clinician.</p><div class="device-lines"><div><b>Pregnancy test</b>Check the result window</div><div><b>Hospital report</b>Read text and reference ranges</div></div></div></div>
 </div></section>
 
-<section class="tabs-wrap"><div class="shell">
+<section class="tabs-wrap" id="testReader"><div class="shell">
   <div class="tabs"><button class="active" data-panel="pregnancyPanel">Pregnancy test scanner</button><button data-panel="labPanel">Hospital / lab report scanner</button></div>
 
   <section class="panel active" id="pregnancyPanel">
@@ -58,11 +63,11 @@
       <article class="card">
         <div class="drop" id="pregDrop"><strong>Take a photo or upload your pregnancy test</strong><p>JPG, PNG or phone camera image</p><label class="file-btn">Choose image<input id="pregFile" type="file" accept="image/*" capture="environment"></label></div>
         <div class="preview" id="pregPreview"><div class="preview-empty">Your test photo will appear here.</div></div>
-        <div class="form-row"><div class="field"><label>Test style</label><select id="pregStyle"><option value="line">C / T line test</option><option value="digital">Digital pregnancy test</option></select></div><div class="field"><label>Was this photo taken within the brand's reading window?</label><select id="pregTiming"><option value="yes">Yes</option><option value="unsure">I'm not sure</option><option value="no">No</option></select></div></div>
+        <div class="form-row"><div class="field"><label for="pregStyle">Test style</label><select id="pregStyle"><option value="line">C / T line test</option><option value="digital">Digital pregnancy test</option></select></div><div class="field"><label for="pregTiming">Was this photo taken within the brand's reading window?</label><select id="pregTiming"><option value="yes">Yes</option><option value="unsure">I'm not sure</option><option value="no">No</option></select></div></div>
         <div class="action-row"><button class="btn primary" id="scanPreg" disabled>Scan test</button><button class="btn secondary" id="clearPreg">Clear</button></div>
         <div class="status" id="pregStatus"></div>
         <div class="control-check" id="controlCheck"><b>One quick confirmation</b><div class="micro">Can you see the control line/symbol where the instructions say it should be?</div><div class="choice-row" id="controlChoices"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div></div>
-        <div class="result-card" id="pregResult"><div class="result-top"><div><h3 id="pregResultTitle"></h3><p id="pregResultText"></p></div><span class="result-badge info" id="pregResultBadge">ASSISTED READ</span></div><div class="micro" id="pregDetail"></div></div>
+        <div class="result-card" id="pregResult"><div class="result-top"><div><h3 id="pregResultTitle"></h3><p id="pregResultText"></p></div><span class="result-badge info" id="pregResultBadge">CHECK THE RESULT</span></div><div class="micro" id="pregDetail"></div></div>
       </article>
     </div>
   </section>
@@ -76,22 +81,22 @@
         <div class="ocr-progress" id="ocrProgress"><span id="ocrBar"></span></div>
         <div class="status" id="labStatus"></div>
         <div class="lab-actions"><button class="btn primary" id="scanLab" disabled>Scan report</button><button class="btn secondary" id="clearLab">Clear</button></div>
-        <div class="field" style="margin-top:16px"><label>Extracted text — check this against your report before interpreting</label><textarea id="ocrText" placeholder="OCR text will appear here. You can also paste your lab report text manually."></textarea></div>
-        <div class="lab-actions"><button class="btn primary" id="interpretLab">Interpret checked text</button></div>
+        <div class="field" style="margin-top:16px"><label for="ocrText">Report text — check this against the original</label><textarea id="ocrText" placeholder="Report text will appear here. You can also paste it from your report."></textarea></div>
+        <div class="lab-actions"><button class="btn primary" id="interpretLab">Explain checked text</button></div>
         <div class="safety"><b>Why the report's own range matters:</b><p>Reference ranges vary between laboratories, test methods, ages and other factors. A value outside the printed range does not automatically mean disease, and a value inside the range does not rule one out.</p></div>
       </article>
 
       <article class="card">
-        <span class="kicker">Your report summary</span><h2 id="labTitle">Nothing scanned yet</h2><p id="labIntro">After OCR, review the extracted text and tap “Interpret checked text.”</p>
+        <span class="kicker">Your report summary</span><h2 id="labTitle">Nothing scanned yet</h2><p id="labIntro">Review the report text, then choose “Explain checked text.”</p>
         <div id="labTableWrap"></div>
         <div class="explain-grid" id="labExplain"></div>
-        <div class="result-card" id="labCaution"><div class="result-top"><div><h3>Check the original report</h3><p>OCR can confuse 1 with 7, 0 with O, decimal points, symbols and units. Any result that changes what you plan to do medically should be verified on the original report and discussed with a qualified clinician.</p></div><span class="result-badge warn">VERIFY</span></div></div>
+        <div class="result-card" id="labCaution"><div class="result-top"><div><h3>Check the original report</h3><p>Text recognition can confuse 1 with 7, 0 with O, decimal points, symbols and units. Any result that changes what you plan to do medically should be verified on the original report and discussed with a qualified clinician.</p></div><span class="result-badge warn">VERIFY</span></div></div>
       </article>
     </div>
   </section>
 </div></section>
 
-<section class="sources"><div class="shell"><span class="kicker">How this page is designed</span><h2>Built around established test-reading principles.</h2><p>Home pregnancy tests differ by brand, so instructions and timing matter. Lab results should be compared with the reference range on the actual report and interpreted in the context of symptoms, history and other tests.</p><div class="source-links"><a href="https://www.fda.gov/medical-devices/home-use-tests/pregnancy" target="_blank" rel="noopener">FDA: Pregnancy tests</a><a href="https://www.fda.gov/medical-devices/home-use-tests/how-you-can-get-best-results-home-use-tests" target="_blank" rel="noopener">FDA: Home-test accuracy</a><a href="https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/" target="_blank" rel="noopener">MedlinePlus: Understanding lab results</a><a href="https://www.nhs.uk/pregnancy/trying-for-a-baby/doing-a-pregnancy-test/" target="_blank" rel="noopener">NHS: Pregnancy tests</a></div></div></section>
+<section class="sources" id="readingNotes"><div class="shell"><span class="kicker">BEFORE YOU READ A RESULT</span><h2>Start with the test instructions.</h2><p>Home pregnancy tests differ by brand, so instructions and timing matter. Lab results should be compared with the reference range on the actual report and interpreted in the context of symptoms, history and other tests.</p><div class="source-links"><a href="https://www.fda.gov/medical-devices/home-use-tests/pregnancy" target="_blank" rel="noopener">FDA: Pregnancy tests</a><a href="https://www.fda.gov/medical-devices/home-use-tests/how-you-can-get-best-results-home-use-tests" target="_blank" rel="noopener">FDA: Home-test accuracy</a><a href="https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/" target="_blank" rel="noopener">MedlinePlus: Understanding lab results</a><a href="https://www.nhs.uk/pregnancy/trying-for-a-baby/doing-a-pregnancy-test/" target="_blank" rel="noopener">NHS: Pregnancy tests</a></div></div></section>
 </main>
 <footer class="footer"><div class="shell foot"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"><p>This tool provides educational assistance and cannot diagnose pregnancy complications, infections, anemia, thyroid disease or other medical conditions. Seek urgent medical care for severe symptoms such as fainting, severe one-sided abdominal pain, very heavy bleeding, trouble breathing, confusion or collapse.</p></div></footer>
 
@@ -152,13 +157,13 @@ function showPregResult(title,text,kind,detail){$('#pregResultTitle').textConten
 // Lab scanner
 let labFile=null;
 $('#labFile').addEventListener('change',e=>loadLab(e.target.files[0]));
-function loadLab(file){if(!file)return;labFile=file;$('#scanLab').disabled=false;$('#ocrText').value='';$('#labTableWrap').innerHTML='';$('#labExplain').innerHTML='';$('#labTitle').textContent='Ready to scan';$('#labIntro').textContent='OCR will extract text from this file. Review it before interpreting.';$('#labCaution').classList.remove('show');clearStatus($('#labStatus'));if(file.type==='application/pdf'){$('#labPreview').innerHTML='<div class="preview-empty">PDF selected: '+escapeHtml(file.name)+'</div>'}else showImage(file,$('#labPreview'))}
+function loadLab(file){if(!file)return;labFile=file;$('#scanLab').disabled=false;$('#ocrText').value='';$('#labTableWrap').innerHTML='';$('#labExplain').innerHTML='';$('#labTitle').textContent='Ready to scan';$('#labIntro').textContent='The reader will copy text from this file. Check it against the original report.';$('#labCaution').classList.remove('show');clearStatus($('#labStatus'));if(file.type==='application/pdf'){$('#labPreview').innerHTML='<div class="preview-empty">PDF selected: '+escapeHtml(file.name)+'</div>'}else showImage(file,$('#labPreview'))}
 $('#labDrop').addEventListener('dragover',e=>{e.preventDefault();e.currentTarget.classList.add('drag')});$('#labDrop').addEventListener('dragleave',e=>e.currentTarget.classList.remove('drag'));$('#labDrop').addEventListener('drop',e=>{e.preventDefault();e.currentTarget.classList.remove('drag');loadLab(e.dataTransfer.files[0])});
-$('#clearLab').onclick=()=>{labFile=null;$('#labFile').value='';$('#scanLab').disabled=true;$('#ocrText').value='';$('#labPreview').innerHTML='<div class="preview-empty">A preview of your report will appear here.</div>';$('#labTableWrap').innerHTML='';$('#labExplain').innerHTML='';$('#labTitle').textContent='Nothing scanned yet';$('#labIntro').textContent='After OCR, review the extracted text and tap “Interpret checked text.”';$('#labCaution').classList.remove('show');clearStatus($('#labStatus'));$('#ocrProgress').classList.remove('show')};
+$('#clearLab').onclick=()=>{labFile=null;$('#labFile').value='';$('#scanLab').disabled=true;$('#ocrText').value='';$('#labPreview').innerHTML='<div class="preview-empty">A preview of your report will appear here.</div>';$('#labTableWrap').innerHTML='';$('#labExplain').innerHTML='';$('#labTitle').textContent='Nothing scanned yet';$('#labIntro').textContent='Review the report text, then choose “Explain checked text.”';$('#labCaution').classList.remove('show');clearStatus($('#labStatus'));$('#ocrProgress').classList.remove('show')};
 function ocrLogger(m){if(m.status==='recognizing text'){const p=Math.round((m.progress||0)*100);$('#ocrProgress').classList.add('show');$('#ocrBar').style.width=p+'%';setStatus($('#labStatus'),'Reading report text… '+p+'%','')}}
 async function ocrImageSource(src){if(!window.Tesseract)throw new Error('OCR library not available');const out=await Tesseract.recognize(src,'eng',{logger:ocrLogger});return out.data.text||''}
 async function ocrPdf(file){if(!window.pdfjsLib)throw new Error('PDF reader not available');const buf=await file.arrayBuffer();const pdf=await pdfjsLib.getDocument({data:buf}).promise;const pages=Math.min(3,pdf.numPages);let text='';for(let n=1;n<=pages;n++){setStatus($('#labStatus'),'Preparing PDF page '+n+' of '+pages+'…','');const page=await pdf.getPage(n),vp=page.getViewport({scale:1.65});const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;text+='\n'+await ocrImageSource(c)}return text}
-$('#scanLab').onclick=async()=>{if(!labFile)return;try{$('#ocrProgress').classList.add('show');$('#ocrBar').style.width='2%';let text='';if(labFile.type==='application/pdf')text=await ocrPdf(labFile);else text=await ocrImageSource(labFile);$('#ocrText').value=text.trim();$('#ocrBar').style.width='100%';setStatus($('#labStatus'),'OCR finished. Carefully compare the extracted text with the original report, correct any errors, then tap “Interpret checked text.”','good')}catch(e){setStatus($('#labStatus'),'OCR could not read this report. Try a clearer image, a different PDF, or paste the report text manually.','warn')}};
+$('#scanLab').onclick=async()=>{if(!labFile)return;try{$('#ocrProgress').classList.add('show');$('#ocrBar').style.width='2%';let text='';if(labFile.type==='application/pdf')text=await ocrPdf(labFile);else text=await ocrImageSource(labFile);$('#ocrText').value=text.trim();$('#ocrBar').style.width='100%';setStatus($('#labStatus'),'Text copied. Compare it with the original report, correct any errors, then choose “Explain checked text.”','good')}catch(e){setStatus($('#labStatus'),'This report could not be read. Try a clearer image, a different PDF, or paste the report text manually.','warn')}};
 const explainers=[
   [/\b(hb|hgb|hemoglobin|haemoglobin)\b/i,'Hemoglobin','Carries oxygen in red blood cells. A low result can have several causes, including iron deficiency; pregnancy also changes blood values.'],
   [/\b(wbc|white blood cell|leucocyte|leukocyte)\b/i,'White blood cells','Part of the immune system. Levels can change with infection, inflammation, medicines, stress and pregnancy.'],
@@ -176,9 +181,9 @@ const explainers=[
 ];
 function parseLabText(text){const rows=[];const lines=text.split(/\n+/).map(s=>s.replace(/\s+/g,' ').trim()).filter(Boolean);for(const line of lines){let m=line.match(/^(.{2,45}?)\s+([<>]?\s*-?\d+(?:\.\d+)?)\s*([a-zA-Zµμ%\/\^0-9.*-]+)?\s+([<>]?\s*-?\d+(?:\.\d+)?)\s*[-–]\s*([<>]?\s*-?\d+(?:\.\d+)?)(?:\s|$)/);if(m){const name=m[1].trim(),value=parseFloat(m[2].replace(/[<>\s]/g,'')),unit=m[3]||'',low=parseFloat(m[4].replace(/[<>\s]/g,'')),high=parseFloat(m[5].replace(/[<>\s]/g,''));let flag='ok';if(Number.isFinite(value)&&Number.isFinite(low)&&value<low)flag='low';else if(Number.isFinite(value)&&Number.isFinite(high)&&value>high)flag='high';rows.push({name,value:m[2].trim(),unit,range:m[4]+'–'+m[5],flag,raw:line});continue}m=line.match(/^(.{2,50}?)\s+(positive|negative|reactive|non.?reactive|detected|not detected|normal|abnormal)(?:\s|$)/i);if(m)rows.push({name:m[1].trim(),value:m[2],unit:'',range:'',flag:'text',raw:line})}return rows.slice(0,50)}
 function interpretRows(text,rows){const matches=[];for(const [re,title,desc] of explainers){if(re.test(text)&&!matches.some(x=>x.title===title))matches.push({title,desc})}return matches}
-$('#interpretLab').onclick=()=>{const text=$('#ocrText').value.trim();if(!text){setStatus($('#labStatus'),'Paste or scan some report text first.','warn');return}const rows=parseLabText(text);const ex=interpretRows(text,rows);$('#labTitle').textContent=rows.length?'Report values found':'Plain-language report notes';$('#labIntro').textContent=rows.length?'These comparisons use only the reference ranges that the scanner could detect in your report.':'The scanner did not confidently detect numeric value/range rows, but it can still explain recognized test names below.';if(rows.length){let h='<div class="table-wrap"><table class="lab-table"><thead><tr><th>Test</th><th>Result</th><th>Unit</th><th>Report range</th><th>Flag</th></tr></thead><tbody>';for(const r of rows){const label=r.flag==='ok'?'Within detected range':r.flag==='low'?'Below detected range':r.flag==='high'?'Above detected range':'Text result';h+='<tr><td>'+escapeHtml(r.name)+'</td><td>'+escapeHtml(r.value)+'</td><td>'+escapeHtml(r.unit)+'</td><td>'+escapeHtml(r.range||'—')+'</td><td><span class="flag '+r.flag+'">'+label+'</span></td></tr>'}h+='</tbody></table></div>';$('#labTableWrap').innerHTML=h}else $('#labTableWrap').innerHTML='';$('#labExplain').innerHTML=ex.length?ex.map(x=>'<div class="explain"><b>'+escapeHtml(x.title)+'</b><span>'+escapeHtml(x.desc)+'</span></div>').join(''):'<div class="explain"><b>No familiar test names recognized</b><span>Check the OCR text for errors, or ask a clinician/laboratory to explain the report.</span></div>';$('#labCaution').classList.add('show')};
+$('#interpretLab').onclick=()=>{const text=$('#ocrText').value.trim();if(!text){setStatus($('#labStatus'),'Paste or scan some report text first.','warn');return}const rows=parseLabText(text);const ex=interpretRows(text,rows);$('#labTitle').textContent=rows.length?'Report values found':'Plain-language report notes';$('#labIntro').textContent=rows.length?'These comparisons use only the reference ranges that the scanner could detect in your report.':'The scanner did not confidently detect numeric value/range rows, but it can still explain recognized test names below.';if(rows.length){let h='<div class="table-wrap"><table class="lab-table"><thead><tr><th>Test</th><th>Result</th><th>Unit</th><th>Report range</th><th>Flag</th></tr></thead><tbody>';for(const r of rows){const label=r.flag==='ok'?'Within detected range':r.flag==='low'?'Below detected range':r.flag==='high'?'Above detected range':'Text result';h+='<tr><td>'+escapeHtml(r.name)+'</td><td>'+escapeHtml(r.value)+'</td><td>'+escapeHtml(r.unit)+'</td><td>'+escapeHtml(r.range||'—')+'</td><td><span class="flag '+r.flag+'">'+label+'</span></td></tr>'}h+='</tbody></table></div>';$('#labTableWrap').innerHTML=h}else $('#labTableWrap').innerHTML='';$('#labExplain').innerHTML=ex.length?ex.map(x=>'<div class="explain"><b>'+escapeHtml(x.title)+'</b><span>'+escapeHtml(x.desc)+'</span></div>').join(''):'<div class="explain"><b>No familiar test names recognized</b><span>Check the copied text for errors, or ask a clinician or laboratory to explain the report.</span></div>';$('#labCaution').classList.add('show')};
 function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]))}
 </script>
-<script src="assets/social.js?v=calm-1" defer></script>
+<script src="assets/social.js?v=polish-1" defer></script>
 </body>
 </html>
