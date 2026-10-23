@@ -3,32 +3,31 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#fff8f6" />
-<title>Mama's Love — Baby Names & Oriki</title>
+<meta name="theme-color" content="#fff8f7" />
+<title>Mama's Love — Baby Names</title>
 <style>
   :root{
-    --bg:#fff8f6; --card:#ffffff; --ink:#3f2d3a; --muted:#7f6b78; --line:#ecdde2;
-    --rose:#f26f9f; --rose2:#d64f83; --peach:#ffd0b1; --plum:#4e3149; --cream:#fff1ea;
-    --shadow:0 18px 46px rgba(88, 47, 71, .10); --radius:26px;
+    --bg:#fff8f7; --ink:#3f2b37; --muted:#7b6976; --line:#eadce2;
+    --rose:#f173a2; --rose2:#c54f7d; --plum:#4b2e46; --peach:#f6d1bc;
+    --soft:#fff1f5; --card:#ffffff; --shadow:0 18px 50px rgba(86,46,67,.09);
   }
-  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#fff9f7 0%,#fff3f5 100%);color:var(--ink)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#fffaf8 0%,#fff2f5 100%);color:var(--ink)}
   h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
-  a{text-decoration:none;color:inherit}
-  .shell{width:min(1200px,calc(100% - 28px));margin:auto}
+  .shell{width:min(1180px,calc(100% - 28px));margin:auto}
   .topline{background:var(--plum);color:#fff;text-align:center;padding:9px 16px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-  .hero{padding:56px 0 28px}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
-  .eyebrow{display:inline-block;font-size:.76rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--rose2)}
-  .hero h1{font-size:clamp(3rem,5.5vw,5.6rem);line-height:.92;letter-spacing:-.04em;margin:12px 0 16px}
+  .hero{padding:54px 0 30px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+  .eyebrow{display:inline-block;font-size:.76rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--rose2)}
+  .hero h1{font-size:clamp(3rem,5.8vw,5.8rem);line-height:.92;letter-spacing:-.04em;margin:12px 0 14px}
   .hero h1 em{font-style:normal;color:var(--rose2)}
-  .hero p{font-size:1.06rem;color:var(--muted);max-width:680px}
-  .hero-art{min-height:430px;border-radius:38px;background:linear-gradient(145deg,#ffe9ef 0%,#fff7f0 55%,#f8e7ef 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}
-  .blob{position:absolute;border-radius:50%}.b1{width:260px;height:260px;background:#ffd8e5;right:-18px;top:-20px}.b2{width:180px;height:180px;background:#ffd7b9;left:10px;bottom:-26px}
-  .baby-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74%;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.7);border-radius:30px;padding:26px;box-shadow:0 28px 70px rgba(76,42,63,.13)}
-  .mark{width:78px;height:90px;display:block;margin:0 auto 14px;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 180"><circle cx="56" cy="28" r="22" fill="%23f26f9f"/><circle cx="118" cy="66" r="18" fill="%23f5c7a8"/><path d="M48 56C17 47-8 72 5 107c8 23 34 44 59 67 10 9 18 17 22 22 8-21 2-37-16-53L40 117C18 98 12 80 25 68c14-13 33-8 49 9 14 15 28 13 45-1-21 5-32-8-42-24-8-13-15-22-29-28Z" fill="%23f26f9f"/><path d="M119 85c28-5 49 16 48 42-2 29-30 50-53 68l-28 23c-3-21 6-39 26-57 22-19 42-35 39-56-2-17-20-19-33-8l-13 11c10-18 17-31 14-23Z" fill="%23f5c7a8"/></svg>') center/contain no-repeat}
-  .baby-card h3{font-size:2.45rem;line-height:1;margin:0 0 8px;text-align:center}.baby-card p{margin:0;text-align:center;color:var(--muted)}
-  .script-row{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:18px}.script-row span{padding:8px 11px;border-radius:999px;background:#fff1f6;color:#8c3d62;font-size:.75rem;font-weight:800}
-  .finder{padding:20px 0 64px}
+  .hero p{font-size:1.02rem;color:var(--muted);max-width:650px}
+  .hero-art{min-height:420px;border-radius:38px;background:linear-gradient(145deg,#ffe9ef 0%,#fff6f0 55%,#f7e8ef 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .blob{position:absolute;border-radius:50%}.b1{width:260px;height:260px;background:#ffd8e5;right:-18px;top:-20px}.b2{width:185px;height:185px;background:#ffd7b9;left:12px;bottom:-24px}
+  .promo-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76%;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.7);border-radius:30px;padding:28px;box-shadow:0 28px 70px rgba(76,42,63,.14)}
+  .promo-card h3{font-size:2.2rem;line-height:1.04;margin:0 0 10px;text-align:center}.promo-card p{margin:0;text-align:center;color:var(--muted)}
+  .pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}.pills span{padding:8px 11px;border-radius:999px;background:#fff1f6;color:#8c3d62;font-size:.75rem;font-weight:800}
+  .finder{padding:16px 0 70px}
   .finder-card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:22px;box-shadow:var(--shadow)}
   .controls{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
   .search{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fffafc;border-radius:16px;padding:0 14px}.search input{border:0;outline:0;background:transparent;width:100%;padding:15px 0;font:inherit;color:var(--ink)}
@@ -36,37 +35,35 @@
   .cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.cat-tabs button{padding:10px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#755e6d}.cat-tabs button.active{background:#ffe9f0;color:var(--rose2);border-color:#f1b8cc}
   .results-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 14px}.results-head h2{font-size:2.4rem;margin:0}.results-head p{margin:0;color:var(--muted);font-size:.86rem}
   .name-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .name-card{position:relative;padding:20px 18px;border-radius:22px;background:#fff;border:1px solid var(--line);min-height:182px;transition:.2s ease;cursor:pointer}
-  .name-card:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(85,50,69,.09)}
+  .name-card{position:relative;padding:20px 18px;border-radius:22px;background:#fff;border:1px solid var(--line);min-height:182px;transition:.2s ease;cursor:pointer}.name-card:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(85,50,69,.09)}
   .name-card .type{font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--rose2)}
   .name-card h3{font-size:2rem;line-height:1;margin:8px 0 7px;padding-right:38px}.name-card p{margin:0;color:var(--muted);font-size:.87rem}
   .fav{position:absolute;right:14px;top:14px;border:0;background:#fff3f7;color:#c84e7c;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem}.fav.active{background:var(--rose);color:white}
   .hint{margin-top:16px;padding:16px 18px;border-radius:18px;background:#fff6ed;border:1px solid #f2deca;color:#745c4f;font-size:.85rem}
+  .load-more-wrap{text-align:center;margin-top:24px}.load-more{border:0;background:var(--plum);color:#fff;padding:13px 20px;border-radius:999px;font:inherit;font-weight:850;cursor:pointer;box-shadow:0 10px 25px rgba(78,49,73,.14)}.load-more[hidden]{display:none}
   .favorites{padding:64px 0;background:#fff3f6}.favorites h2{font-size:2.8rem;margin:0 0 8px}.favorites p{color:var(--muted);margin:0 0 20px}.empty{padding:22px;border:1px dashed #dfcbd4;border-radius:20px;color:var(--muted);background:#fff}
   .download-toast{position:fixed;right:18px;bottom:18px;padding:12px 14px;border-radius:16px;background:var(--plum);color:#fff;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s ease;z-index:50}.download-toast.show{opacity:1;transform:none}
   footer{padding:26px 0;border-top:1px solid var(--line);background:#fff}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot p{font-size:.78rem;color:var(--muted);max-width:600px;text-align:right}
   @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.name-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:640px){.hero{padding-top:30px}.hero h1{font-size:3.2rem}.hero-art{min-height:390px}.baby-card{width:86%;padding:20px}.controls{grid-template-columns:1fr}.gender-toggle button{flex:1}.name-grid{grid-template-columns:1fr}.results-head{align-items:start;flex-direction:column}.cat-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.cat-tabs button{white-space:nowrap}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}}
-.load-more-wrap{text-align:center;margin-top:24px}.load-more{border:0;background:var(--plum);color:#fff;padding:13px 20px;border-radius:999px;font:inherit;font-weight:850;cursor:pointer;box-shadow:0 10px 25px rgba(78,49,73,.14)}.load-more[hidden]{display:none}.library-stat{display:inline-flex;margin-top:14px;padding:9px 12px;border-radius:999px;background:#fff0f4;color:#9c4168;font-size:.78rem;font-weight:850}
+  @media(max-width:640px){.hero{padding-top:30px}.hero h1{font-size:3.2rem}.hero-art{min-height:390px}.promo-card{width:86%;padding:20px}.controls{grid-template-columns:1fr}.gender-toggle button{flex:1}.name-grid{grid-template-columns:1fr}.results-head{align-items:start;flex-direction:column}.cat-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.cat-tabs button{white-space:nowrap}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}}
 </style>
 </head>
 <body>
-<div class="topline">Baby-name ideas with download-ready cards</div>
+<div class="topline">Luxury baby-name cards in PNG format</div>
 <main>
 <section class="hero">
   <div class="shell hero-grid">
     <div>
-      <span class="eyebrow">More names, better cards</span>
+      <span class="eyebrow">Cleaner and more premium</span>
       <h1>Find a name that <em>feels right.</em></h1>
-      <p>Browse a library of nearly 4,000 baby names across English, Hebrew, Islamic, Yorùbá and Yorùbá Oríkì. Click any name card to instantly download a beautiful shareable card with the <strong>mamaslove.ng</strong> watermark.</p>
+      <p>This updated version removes the visible name counts and upgrades downloads to a more beautiful <strong>PNG luxury business-card design</strong> with a subtle <strong>mamaslove.ng</strong> watermark.</p>
     </div>
     <div class="hero-art">
       <div class="blob b1"></div><div class="blob b2"></div>
-      <div class="baby-card">
-        <span class="mark"></span>
+      <div class="promo-card">
         <h3>Tap a card to download</h3>
-        <p>Every name card generates a clean branded design for sharing or saving.</p>
-        <div class="script-row"><span>English</span><span>Hebrew</span><span>Islamic</span><span>Yorùbá</span><span>Oríkì</span></div>
+        <p>Each name downloads as a polished PNG card in a premium ATM/business-card style.</p>
+        <div class="pills"><span>English</span><span>Hebrew</span><span>Islamic</span><span>Yorùbá</span><span>Oríkì</span></div>
       </div>
     </div>
   </div>
@@ -79,8 +76,9 @@
         <div class="gender-toggle"><button class="active" data-gender="girl">Girls</button><button data-gender="boy">Boys</button></div>
       </div>
       <div class="cat-tabs" id="catTabs"></div>
-      <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2><p id="resultsCount"></p></div><p>♡ Save favourites • Tap any card to download</p></div>
-      <div class="name-grid" id="nameGrid"></div><div class="load-more-wrap"><button class="load-more" id="loadMore">Load 48 more names</button></div>
+      <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2></div><p>♡ Save favourites • Tap any card to download</p></div>
+      <div class="name-grid" id="nameGrid"></div>
+      <div class="load-more-wrap"><button class="load-more" id="loadMore">Load more names</button></div>
       <div class="hint" id="originNote"></div>
     </div>
   </div>
@@ -103,112 +101,146 @@
 <div class="download-toast" id="toast">Name card downloaded</div>
 <script src="assets/names-data.js"></script>
 <script>
-const names=window.MAMAS_NAMES||[];
-let visible=48;
-
-
+const fallbackNames = [
+  {n:'Ariella',g:'girl',c:'Hebrew',m:'Lion of God.'},
+  {n:'Amina',g:'girl',c:'Islamic',m:'Trustworthy and faithful.'},
+  {n:'Adesewa',g:'girl',c:'Yoruba',m:'The crown makes beauty.'},
+  {n:'Arike',g:'girl',c:'Oriki',m:'One who is cared for on sight.'},
+  {n:'Leo',g:'boy',c:'English',m:'Lion.'},
+  {n:'Ezra',g:'boy',c:'Hebrew',m:'Help.'},
+  {n:'Rayyan',g:'boy',c:'Islamic',m:'Lush, abundant and well-watered.'},
+  {n:'Adewale',g:'boy',c:'Yoruba',m:'The crown has come home.'}
+];
+const names = (window.MAMAS_NAMES && window.MAMAS_NAMES.length ? window.MAMAS_NAMES : fallbackNames);
 const categories=['All','English','Hebrew','Islamic','Yoruba','Oriki'];
-let gender='girl',category='All',query='';
-const grid=document.getElementById('nameGrid'), title=document.getElementById('resultsTitle'), count=document.getElementById('resultsCount'), tabs=document.getElementById('catTabs'), search=document.getElementById('search');
+let gender='girl', category='All', query='', visible=48;
+const grid=document.getElementById('nameGrid'), title=document.getElementById('resultsTitle'), tabs=document.getElementById('catTabs'), search=document.getElementById('search');
 let favs=JSON.parse(localStorage.getItem('mamasNameFavs')||'[]');
 
-categories.forEach((c,i)=>{const b=document.createElement('button');const n=c==='All'?names.length:names.filter(x=>x.c===c).length;b.textContent=(c==='Oriki'?'Yorùbá Oríkì':c)+' ('+n.toLocaleString()+')';b.className=i===0?'active':'';b.onclick=()=>{category=c;visible=48;[...tabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};tabs.appendChild(b)});
-document.querySelectorAll('.gender-toggle button').forEach(b=>b.onclick=()=>{gender=b.dataset.gender;visible=48;document.querySelectorAll('.gender-toggle button').forEach(x=>x.classList.toggle('active',x===b));render()});
+categories.forEach((c,i)=>{
+  const b=document.createElement('button');
+  b.textContent=(c==='Oriki'?'Yorùbá Oríkì':c);
+  b.className=i===0?'active':'';
+  b.onclick=()=>{category=c;visible=48;[...tabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};
+  tabs.appendChild(b);
+});
+
+document.querySelectorAll('.gender-toggle button').forEach(b=>b.onclick=()=>{
+  gender=b.dataset.gender;visible=48;
+  document.querySelectorAll('.gender-toggle button').forEach(x=>x.classList.toggle('active',x===b));
+  render();
+});
 search.addEventListener('input',e=>{query=e.target.value.toLowerCase();visible=48;render()});
 function key(x){return x.n+'|'+x.g+'|'+x.c}
 function toggleFav(k){favs=favs.includes(k)?favs.filter(x=>x!==k):[...favs,k];localStorage.setItem('mamasNameFavs',JSON.stringify(favs));render();renderFavs()}
 function card(x){const k=key(x),saved=favs.includes(k);return `<article class="name-card" onclick='downloadCard(${JSON.stringify(JSON.stringify(x))})'><button class="fav ${saved?'active':''}" onclick='event.stopPropagation();toggleFav(${JSON.stringify(k)})' aria-label="Save ${x.n}">♥</button><span class="type">${x.c==='Oriki'?'Yorùbá Oríkì':x.c}</span><h3>${x.n}</h3><p>${x.m}</p></article>`}
-function render(){const list=names.filter(x=>(x.g===gender||x.g==='unisex')&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));const shown=list.slice(0,visible);grid.innerHTML=shown.map(card).join('')||'<div class="empty">No names match that search yet.</div>';title.textContent=(gender==='girl'?'Girl':'Boy')+' name ideas';count.textContent=shown.length.toLocaleString()+' shown of '+list.length.toLocaleString()+' matching names';const lm=document.getElementById('loadMore');lm.hidden=shown.length>=list.length;lm.textContent='Load 48 more names';document.getElementById('originNote').innerHTML=category==='Oriki'?'<b>About Oríkì:</b> These are praise-names or cognomens. Their meaning can be deeper than a one-line gloss because family, lineage and circumstance can add more layers.':'This library now contains <b>'+names.length.toLocaleString()+'</b> names. Tap any card to download a luxurious ATM-style business card with a subtle <b>mamaslove.ng</b> watermark.'}
+function render(){
+  const list=names.filter(x=>(x.g===gender||x.g==='unisex')&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));
+  const shown=list.slice(0,visible);
+  grid.innerHTML=shown.map(card).join('')||'<div class="empty">No names match that search yet.</div>';
+  title.textContent=(gender==='girl'?'Girl':'Boy')+' name ideas';
+  document.getElementById('loadMore').hidden = shown.length >= list.length;
+  document.getElementById('originNote').innerHTML = category==='Oriki'
+    ? '<b>About Oríkì:</b> These are praise-names or cognomens. Their meaning can be deeper than a one-line gloss because family, lineage and circumstance can add more layers.'
+    : 'Tap any card to download a more beautiful <b>PNG luxury business card</b> with a subtle <b>mamaslove.ng</b> watermark.';
+}
 function renderFavs(){const list=names.filter(x=>favs.includes(key(x)));document.getElementById('favoritesGrid').innerHTML=list.length?list.map(card).join(''):'<div class="empty">Your saved names will appear here.</div>'}
+function toast(msg){const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
+function wrapText(ctx,text,maxWidth){
+  const words=String(text).split(' '), lines=[]; let line='';
+  for(const word of words){
+    const test=line?line+' '+word:word;
+    if(ctx.measureText(test).width>maxWidth && line){ lines.push(line); line=word; }
+    else line=test;
+  }
+  if(line) lines.push(line);
+  return lines.slice(0,4);
+}
+function roundedRect(ctx,x,y,w,h,r,fill,stroke){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath();
+  if(fill){ctx.fillStyle=fill;ctx.fill();}
+  if(stroke){ctx.strokeStyle=stroke;ctx.stroke();}
+}
+function escapeFilename(s){return s.toLowerCase().replace(/[^a-z0-9]+/gi,'-').replace(/^-+|-+$/g,'')}
+function downloadCard(json){
+  const x=JSON.parse(json);
+  const canvas=document.createElement('canvas');
+  canvas.width=1016; canvas.height=640;
+  const ctx=canvas.getContext('2d');
 
-function downloadCard(json){const x=JSON.parse(json); const svg = makeCardSVG(x); const blob = new Blob([svg], {type:'image/svg+xml;charset=utf-8'}); const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=`${x.n.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}-mamaslove-card.svg`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1000); toast('Downloaded: '+x.n);}
-function makeCardSVG(x){
-  const name=escapeXML(x.n);
-  const origin=escapeXML(x.c==='Oriki'?'Yorùbá Oríkì':x.c);
-  const meaning=wrapText(x.m,46);
-  const tag=escapeXML(x.g==='girl'?'GIRL NAME':x.g==='boy'?'BOY NAME':'UNISEX NAME');
+  // background
+  const bg=ctx.createLinearGradient(0,0,1016,640); bg.addColorStop(0,'#241722'); bg.addColorStop(.55,'#4e2c43'); bg.addColorStop(1,'#6e3f5a');
+  roundedRect(ctx,0,0,1016,640,42,bg,null);
 
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1016" height="640" viewBox="0 0 1016 640">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2a1826"/>
-      <stop offset="55%" stop-color="#4a293f"/>
-      <stop offset="100%" stop-color="#6a3855"/>
-    </linearGradient>
-    <linearGradient id="roseGold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f9dfd1"/>
-      <stop offset="28%" stop-color="#e7b59d"/>
-      <stop offset="58%" stop-color="#fff1e4"/>
-      <stop offset="100%" stop-color="#c78f78"/>
-    </linearGradient>
-    <linearGradient id="ivory" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fffdf9"/>
-      <stop offset="100%" stop-color="#f9f1ed"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity=".16"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="wm" width="230" height="105" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
-      <text x="0" y="62" font-family="Arial, sans-serif" font-size="28" fill="#fff" opacity=".035">mamaslove.ng</text>
-    </pattern>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#120a10" flood-opacity=".28"/>
-    </filter>
-  </defs>
+  // subtle watermark pattern
+  ctx.save(); ctx.fillStyle='rgba(255,255,255,.04)'; ctx.font='28px Arial'; ctx.rotate(-0.32);
+  for(let y=120;y<1000;y+=110){ for(let xPos=-220;xPos<1200;xPos+=230){ ctx.fillText('mamaslove.ng',xPos,y); } }
+  ctx.restore();
 
-  <rect width="1016" height="640" rx="42" fill="url(#bg)"/>
-  <rect width="1016" height="640" rx="42" fill="url(#wm)"/>
-  <ellipse cx="820" cy="90" rx="260" ry="170" fill="url(#glow)"/>
-  <ellipse cx="145" cy="560" rx="230" ry="150" fill="url(#glow)" opacity=".55"/>
+  // glows
+  const glow1=ctx.createRadialGradient(820,90,10,820,90,220); glow1.addColorStop(0,'rgba(255,255,255,.14)'); glow1.addColorStop(1,'rgba(255,255,255,0)');
+  ctx.fillStyle=glow1; ctx.beginPath(); ctx.ellipse(820,90,260,170,0,0,Math.PI*2); ctx.fill();
+  const glow2=ctx.createRadialGradient(145,560,10,145,560,210); glow2.addColorStop(0,'rgba(255,255,255,.10)'); glow2.addColorStop(1,'rgba(255,255,255,0)');
+  ctx.fillStyle=glow2; ctx.beginPath(); ctx.ellipse(145,560,220,145,0,0,Math.PI*2); ctx.fill();
 
-  <rect x="28" y="28" width="960" height="584" rx="34" fill="none" stroke="url(#roseGold)" stroke-width="2"/>
-  <rect x="40" y="40" width="936" height="560" rx="30" fill="none" stroke="#ffffff" stroke-opacity=".10"/>
+  // rose gold border
+  const rg=ctx.createLinearGradient(28,28,988,612); rg.addColorStop(0,'#f9dfd1'); rg.addColorStop(.28,'#e7b59d'); rg.addColorStop(.58,'#fff1e4'); rg.addColorStop(1,'#c78f78');
+  ctx.lineWidth=2; roundedRect(ctx,28,28,960,584,34,null,rg); ctx.lineWidth=1; roundedRect(ctx,40,40,936,560,30,null,'rgba(255,255,255,.10)');
 
-  <g transform="translate(64 64)">
-    <circle cx="34" cy="24" r="18" fill="#f07ba6"/>
-    <circle cx="86" cy="58" r="14" fill="#f2c7a8"/>
-    <path d="M30 52C5 44-17 64-9 92c6 20 30 38 52 58 8 8 16 15 21 21 7-19 2-32-14-46l-26-22C5 86 1 71 12 60c12-11 28-7 41 9 12 13 23 11 38-1-18 4-27-8-36-21-7-11-13-18-25-15Z" fill="#f07ba6"/>
-    <path d="M88 72c24-4 41 13 40 34-1 24-23 42-43 59l-24 19c-2-18 6-32 22-46 18-15 31-25 29-42-1-12-15-14-25-6l-10 9c8-12 12-21 11-27Z" fill="#f2c7a8"/>
-  </g>
+  // mark bubbles
+  ctx.fillStyle='#f07ba6'; ctx.beginPath(); ctx.arc(98,88,18,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#f2c7a8'; ctx.beginPath(); ctx.arc(150,122,14,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#f07ba6'; ctx.beginPath(); ctx.moveTo(94,116); ctx.bezierCurveTo(69,108,47,128,55,156); ctx.bezierCurveTo(61,176,85,194,107,214); ctx.bezierCurveTo(115,222,123,229,128,235); ctx.bezierCurveTo(135,216,130,203,114,189); ctx.lineTo(88,167); ctx.bezierCurveTo(69,150,65,135,76,124); ctx.bezierCurveTo(88,113,104,117,117,133); ctx.bezierCurveTo(129,146,140,144,155,132); ctx.bezierCurveTo(137,136,128,124,119,111); ctx.bezierCurveTo(112,100,106,93,94,96); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#f2c7a8'; ctx.beginPath(); ctx.moveTo(152,136); ctx.bezierCurveTo(176,132,193,149,192,170); ctx.bezierCurveTo(191,194,169,212,149,229); ctx.lineTo(125,248); ctx.bezierCurveTo(123,230,131,216,147,202); ctx.bezierCurveTo(165,187,178,177,176,160); ctx.bezierCurveTo(175,148,161,146,151,154); ctx.lineTo(141,163); ctx.bezierCurveTo(149,151,153,142,152,136); ctx.closePath(); ctx.fill();
 
-  <text x="190" y="95" fill="#fff8f5" font-family="Georgia, serif" font-size="32">Mama's Love</text>
-  <text x="190" y="121" fill="#e8bba8" font-family="Arial, sans-serif" font-size="12" letter-spacing="4">NAME COLLECTION</text>
+  // brand text
+  ctx.fillStyle='#fff8f5'; ctx.font='32px Georgia'; ctx.fillText("Mama's Love",190,95);
+  ctx.fillStyle='#e8bba8'; ctx.font='12px Arial'; ctx.letterSpacing='4px';
+  ctx.fillText('NAME COLLECTION',190,121); ctx.letterSpacing='0px';
 
-  <g filter="url(#softShadow)">
-    <rect x="74" y="166" width="868" height="356" rx="30" fill="url(#ivory)"/>
-  </g>
+  // inner ivory panel shadow mimic
+  ctx.shadowColor='rgba(18,10,16,.28)'; ctx.shadowBlur=18; ctx.shadowOffsetY=16;
+  const ivory=ctx.createLinearGradient(74,166,942,522); ivory.addColorStop(0,'#fffdf9'); ivory.addColorStop(1,'#f9f1ed');
+  roundedRect(ctx,74,166,868,356,30,ivory,null);
+  ctx.shadowColor='transparent'; ctx.shadowBlur=0; ctx.shadowOffsetY=0;
 
-  <rect x="100" y="192" width="156" height="36" rx="18" fill="#f6e7e0"/>
-  <text x="178" y="216" text-anchor="middle" fill="#875b62" font-family="Arial, sans-serif" font-size="15" font-weight="700">${origin}</text>
+  // origin pill
+  roundedRect(ctx,100,192,156,36,18,'#f6e7e0',null);
+  ctx.fillStyle='#875b62'; ctx.font='700 15px Arial'; ctx.textAlign='center'; ctx.fillText(x.c==='Oriki'?'Yorùbá Oríkì':x.c,178,216);
 
-  <rect x="784" y="192" width="130" height="36" rx="18" fill="#3a2033"/>
-  <text x="849" y="216" text-anchor="middle" fill="#f8ded1" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">${tag}</text>
+  // tag pill
+  roundedRect(ctx,784,192,130,36,18,'#3a2033',null);
+  ctx.fillStyle='#f8ded1'; ctx.font='700 13px Arial'; ctx.fillText(x.g==='girl'?'GIRL NAME':x.g==='boy'?'BOY NAME':'UNISEX NAME',849,216);
 
-  <text x="100" y="320" fill="#2f1e2a" font-family="Georgia, serif" font-size="76">${name}</text>
-  <line x1="100" y1="350" x2="914" y2="350" stroke="#d9b19f" stroke-width="1.5"/>
+  // name & divider
+  ctx.textAlign='left'; ctx.fillStyle='#2f1e2a'; ctx.font='76px Georgia'; ctx.fillText(x.n,100,320);
+  ctx.strokeStyle='#d9b19f'; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(100,350); ctx.lineTo(914,350); ctx.stroke();
 
-  <text x="100" y="392" fill="#9d6a74" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">MEANING</text>
-  ${meaning.map((line,i)=>`<text x="100" y="${438 + i*34}" fill="#65525d" font-family="Arial, sans-serif" font-size="25">${escapeXML(line)}</text>`).join('')}
+  // meaning label and text
+  ctx.fillStyle='#9d6a74'; ctx.font='700 13px Arial'; ctx.fillText('MEANING',100,392);
+  ctx.fillStyle='#65525d'; ctx.font='25px Arial';
+  const lines=wrapText(ctx,x.m,540);
+  lines.forEach((line,i)=>ctx.fillText(line,100,438 + i*34));
 
-  <g transform="translate(718 406)">
-    <rect x="0" y="0" width="196" height="82" rx="20" fill="#f3e4de"/>
-    <text x="20" y="28" fill="#926879" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">DISCOVER MORE</text>
-    <text x="20" y="55" fill="#4a293f" font-family="Georgia, serif" font-size="24">mamaslove.ng</text>
-  </g>
+  // info box
+  roundedRect(ctx,718,406,196,82,20,'#f3e4de',null);
+  ctx.fillStyle='#926879'; ctx.font='11px Arial'; ctx.fillText('DISCOVER MORE',738,434);
+  ctx.fillStyle='#4a293f'; ctx.font='24px Georgia'; ctx.fillText('mamaslove.ng',738,461);
 
-  <g>
-    <line x1="74" y1="560" x2="942" y2="560" stroke="url(#roseGold)" stroke-width="1"/>
-    <text x="76" y="586" fill="#e6c8bc" font-family="Arial, sans-serif" font-size="13" letter-spacing="2">A NAME CHOSEN WITH LOVE</text>
-    <text x="942" y="586" text-anchor="end" fill="#d4a68f" font-family="Arial, sans-serif" font-size="14">mamaslove.ng</text>
-  </g>
-</svg>`;
+  // footer line
+  ctx.strokeStyle='#dcb29c'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(74,560); ctx.lineTo(942,560); ctx.stroke();
+  ctx.fillStyle='#e6c8bc'; ctx.font='13px Arial'; ctx.fillText('A NAME CHOSEN WITH LOVE',76,586);
+  ctx.textAlign='right'; ctx.fillStyle='#d4a68f'; ctx.font='14px Arial'; ctx.fillText('mamaslove.ng',942,586);
+
+  canvas.toBlob(blob=>{
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download=`${escapeFilename(x.n)}-mamaslove-card.png`;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1200);
+    toast('Downloaded PNG: '+x.n);
+  },'image/png');
 }
 
-function wrapText(text,max){const words=text.split(' '); const lines=[]; let line=''; for(const w of words){ if((line+' '+w).trim().length>max){ if(line) lines.push(line.trim()); line=w; } else { line += ' '+w; }} if(line.trim()) lines.push(line.trim()); return lines.slice(0,5); }
-function escapeXML(str){return String(str).replace(/[<>&"']/g,s=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[s]));}
-function toast(msg){const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
 document.getElementById('loadMore').addEventListener('click',()=>{visible+=48;render()});
 render(); renderFavs();
 </script>
