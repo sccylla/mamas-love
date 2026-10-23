@@ -58,7 +58,7 @@
 <script src="assets/lullaby.js?v=lullaby-3" defer></script>
 <link rel="stylesheet" href="assets/navigation.css?v=polish-1">
 <link rel="stylesheet" href="assets/site-review.css?v=mobile-hero-1">
-<link rel="stylesheet" href="assets/names.css?v=polish-1">
+<link rel="stylesheet" href="assets/names.css?v=funky-1">
 </head>
 <body>
 
@@ -70,7 +70,7 @@
       <h1>Find a name that <em>feels right.</em></h1>
       <p>Explore names and meanings, build a shortlist, and keep a name you love as a beautifully designed card.</p><div class="page-actions"><a href="#nameFinder">Find a name ↓</a><a class="secondary" href="#savedNames">Your shortlist</a></div>
     </div>
-    <div class="hero-art name-card-showcase"><canvas id="nameCardPreview" width="1800" height="1125" role="img" aria-label="Preview of an Ariella keepsake name card"></canvas><p>A name, its meaning, and a little keepsake.</p></div>
+    <div class="hero-art name-card-showcase"><canvas id="nameCardPreview" width="1800" height="1350" role="img" aria-label="Preview of an Ariella keepsake name card"></canvas><p>BIG NAMES. BIG PERSONALITY.</p></div>
   </div>
 </section>
 <section class="finder" id="nameFinder">
@@ -81,8 +81,8 @@
         <div class="gender-toggle"><button class="active" data-gender="girl">Girls</button><button data-gender="boy">Boys</button></div>
       </div>
       <div class="cat-tabs" id="catTabs"></div>
-      <div class="card-preferences"><label>Card colour<select id="cardTheme"><option value="plum">Plum & gold</option><option value="rose">Rose & ivory</option><option value="sage">Sage & cream</option></select></label><p>Download a high-resolution PNG to keep or share.</p></div>
-      <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2></div><p>♡ Save a favourite · ↓ Download a name card</p></div>
+      <div class="card-preferences"><label>Card colour<select id="cardTheme"><option value="plum">Electric plum</option><option value="rose">Hot pink</option><option value="sage">Lime pop</option></select></label><p>Add pronunciation. Make it yours. Download your card.</p></div>
+      <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2></div><p>♡ Save a favourite · Style your name card</p></div>
       <div class="name-grid" id="nameGrid"></div>
       <div class="load-more-wrap"><button class="load-more" id="loadMore">Load more names</button></div>
       <div class="hint" id="originNote"></div>
@@ -104,9 +104,17 @@
     <p>Name meanings can vary by spelling, language and family tradition. Yorùbá Oríkì can also carry deeper lineage meaning beyond a short gloss.</p>
   </div>
 </footer>
+<dialog id="nameStudio" class="name-studio" aria-labelledby="studioTitle">
+  <div class="studio-heading"><div><span class="eyebrow">YOUR NAME CARD</span><h2 id="studioTitle">Style your card</h2></div><button id="studioClose" class="studio-close" type="button" aria-label="Close card preview">×</button></div>
+  <div class="studio-grid"><div class="studio-art"><canvas id="studioPreview" width="1800" height="1350" role="img" aria-label="Your personalised name card preview"></canvas></div>
+  <form id="studioForm" class="studio-controls"><label for="studioTheme">Pick a colour</label><select id="studioTheme"><option value="plum">Electric plum</option><option value="rose">Hot pink</option><option value="sage">Lime pop</option></select>
+  <label for="studioPronunciation">How do you say the name?</label><input id="studioPronunciation" required maxlength="100" autocomplete="off" spellcheck="false" placeholder="e.g. ah-ree-EL-ah" aria-describedby="pronunciationNote"><p id="pronunciationNote" class="studio-note"></p>
+  <p class="studio-export">Big lettering. Your pronunciation.<br>1800 × 1350 PNG, ready to share.</p><button id="studioDownload" class="studio-download" type="submit">Download name card ↓</button><p id="studioStatus" class="studio-status" role="status" aria-live="polite"></p></form></div>
+</dialog>
 <div class="download-toast" id="toast">Name card downloaded</div>
 <script src="assets/names-data.js?v=polish-1"></script>
-<script src="assets/name-card.js?v=polish-1"></script>
+<script src="assets/name-pronunciations.js?v=funky-1"></script>
+<script src="assets/name-card.js?v=funky-1"></script>
 <script>
 const fallbackNames = [
   {n:'Ariella',g:'girl',c:'Hebrew',m:'Lion of God.'},
@@ -141,7 +149,9 @@ document.querySelectorAll('.gender-toggle button').forEach(b=>b.onclick=()=>{
 search.addEventListener('input',e=>{query=e.target.value.toLowerCase();visible=48;render()});
 function key(x){return x.n+'|'+x.g+'|'+x.c}
 function toggleFav(k){favs=favs.includes(k)?favs.filter(x=>x!==k):[...favs,k];try{localStorage.setItem('mamasNameFavs',JSON.stringify(favs))}catch{}render();renderFavs()}
-function card(x){const k=key(x),saved=favs.includes(k);return `<article class="name-card"><button type="button" class="fav ${saved?'active':''}" data-save="${escapeName(k)}" aria-label="${saved?'Remove':'Save'} ${escapeName(x.n)}${saved?' from favourites':''}" aria-pressed="${saved}">♥</button><button type="button" class="name-download" data-download="${escapeName(k)}" aria-label="Download ${escapeName(x.n)} name card"><span class="type">${escapeName(x.c==='Oriki'?'Yorùbá Oríkì':x.c==='Yoruba'?'Yorùbá':x.c)}</span><strong class="name">${escapeName(x.n)}</strong><span class="meaning">${escapeName(x.m)}</span><span class="download-label">Download name card ↓</span></button></article>`}
+let savedPronunciations={};try{const saved=JSON.parse(localStorage.getItem('mamasNamePronunciations')||'{}');if(saved&&typeof saved==='object'&&!Array.isArray(saved))savedPronunciations=saved;}catch{}
+function pronunciationFor(name){const saved=savedPronunciations[key(name)];return typeof saved==='string'?saved.slice(0,100):window.MamasPronunciation.suggest(name)}
+function card(x){const k=key(x),saved=favs.includes(k),spoken=pronunciationFor(x);return `<article class="name-card"><button type="button" class="fav ${saved?'active':''}" data-save="${escapeName(k)}" aria-label="${saved?'Remove':'Save'} ${escapeName(x.n)}${saved?' from favourites':''}" aria-pressed="${saved}">♥</button><button type="button" class="name-download" data-download="${escapeName(k)}" aria-label="Style and download ${escapeName(x.n)} name card"><span class="type">${escapeName(x.c==='Oriki'?'Yorùbá Oríkì':x.c==='Yoruba'?'Yorùbá':x.c)}</span><strong class="name">${escapeName(x.n)}</strong><span class="name-spoken${spoken?'':' needs-pronunciation'}">${spoken?escapeName(spoken):'Add your pronunciation'}</span><span class="meaning">${escapeName(x.m)}</span><span class="download-label">Style & download card ↓</span></button></article>`}
 function render(){
   const list=names.filter(x=>(x.g===gender||x.g==='unisex')&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));
   const shown=list.slice(0,visible);
@@ -150,26 +160,57 @@ function render(){
   document.getElementById('loadMore').hidden = shown.length >= list.length;
   document.getElementById('originNote').innerHTML = category==='Oriki'
     ? '<b>About Oríkì:</b> These are praise-names or cognomens. Their meaning can be deeper than a one-line gloss because family, lineage and circumstance can add more layers.'
-    : 'Meanings can vary with spelling and family tradition. Choose a card colour, then download any name you would like to keep.';
+    : 'Meanings can vary with spelling and family tradition. Open a card to choose its colour and check the pronunciation before downloading.';
 }
 function renderFavs(){const list=names.filter(x=>favs.includes(key(x)));document.getElementById('favoritesGrid').innerHTML=list.length?list.map(card).join(''):'<div class="empty">Your saved names will appear here.</div>'}
 function toast(msg){const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
 function escapeFilename(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'baby-name'}
-async function downloadCard(name){
+let studioName=null,studioRequest=0;
+const studio=document.getElementById('nameStudio'),pronunciationInput=document.getElementById('studioPronunciation');
+async function updateStudio(){
+  if(!studioName)return;const request=++studioRequest;
+  const name=studioName,pronunciation=pronunciationInput.value.trim();
+  const canvas=await window.MamasNameCard.render(name,document.getElementById('studioTheme').value,{pronunciation});
+  if(request!==studioRequest||!studio.open)return;
+  document.getElementById('studioPreview').getContext('2d').drawImage(canvas,0,0);
+  document.getElementById('studioStatus').textContent=pronunciation?'':'Add the pronunciation to finish your card.';
+}
+function openStudio(name){
+  studioName=name;document.getElementById('studioTitle').textContent=name.n;
+  document.getElementById('studioPreview').setAttribute('aria-label',name.n+' personalised name card preview');
+  document.getElementById('studioTheme').value=document.getElementById('cardTheme').value;
+  pronunciationInput.value=pronunciationFor(name);
+  document.getElementById('pronunciationNote').textContent=(name.c==='Yoruba'||name.c==='Oriki')?'This is a syllable guide; it does not show Yorùbá tones. Check it with a speaker and edit it for your family.':'An approximate guide. Edit it to match how your family says the name. Use CAPITALS to show emphasis.';
+  document.getElementById('studioStatus').textContent='Preparing your preview…';
+  studio.showModal();updateStudio().catch(()=>{document.getElementById('studioStatus').textContent='The preview could not load. Please try again.'});
+}
+async function downloadCard(name,pronunciation){
+  const button=document.getElementById('studioDownload');button.disabled=true;
+  document.getElementById('studioStatus').textContent='Preparing your name card…';
   try{
-    const canvas=await window.MamasNameCard.render(name,document.getElementById('cardTheme').value);
+    const canvas=await window.MamasNameCard.render(name,document.getElementById('studioTheme').value,{pronunciation});
     const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob)throw new Error();
-    const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`${escapeFilename(name.n)}-mamas-love-name-card.png`;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);toast('Name card downloaded: '+name.n);
-  }catch{toast('The card could not be downloaded. Please try again.');}
+    const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`${escapeFilename(name.n)}-mamas-love-name-card.png`;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+    savedPronunciations[key(name)]=pronunciation;try{localStorage.setItem('mamasNamePronunciations',JSON.stringify(savedPronunciations))}catch{}
+    render();renderFavs();updatePreview().catch(()=>{});document.getElementById('studioStatus').textContent='Downloaded. Your card is ready to share.';
+  }catch{document.getElementById('studioStatus').textContent='The card could not be downloaded. Please try again.';}
+  finally{button.disabled=false;}
 }
 for(const host of [grid,document.getElementById('favoritesGrid')])host.addEventListener('click',event=>{
   const save=event.target.closest('[data-save]');if(save){toggleFav(save.dataset.save);return;}
-  const download=event.target.closest('[data-download]');if(download){const name=names.find(name=>key(name)===download.dataset.download);if(name)downloadCard(name);}
+  const download=event.target.closest('[data-download]');if(download){const name=names.find(name=>key(name)===download.dataset.download);if(name)openStudio(name);}
 });
+document.getElementById('studioClose').addEventListener('click',()=>studio.close());
+studio.addEventListener('close',()=>{studioRequest++;if(studioName){const target=[...document.querySelectorAll('[data-download]')].find(button=>button.dataset.download===key(studioName));target?.focus({preventScroll:true});}studioName=null;});
+studio.addEventListener('click',event=>{if(event.target!==studio)return;const rect=studio.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)studio.close();});
+pronunciationInput.addEventListener('input',()=>{pronunciationInput.setCustomValidity('');updateStudio().catch(()=>{});});
+document.getElementById('studioTheme').addEventListener('change',event=>{document.getElementById('cardTheme').value=event.target.value;updateStudio().catch(()=>{});updatePreview().catch(()=>{});});
+document.getElementById('studioForm').addEventListener('submit',event=>{event.preventDefault();const pronunciation=pronunciationInput.value.trim();if(!pronunciation){pronunciationInput.setCustomValidity('Add how you pronounce this name.');pronunciationInput.reportValidity();return;}if(studioName)downloadCard(studioName,pronunciation);});
+
 let previewRequest=0;
 async function updatePreview(){
   const request=++previewRequest,name=names.find(name=>name.n==='Ariella')||{n:'Ariella',g:'girl',c:'Hebrew',m:'Lion of God.'};
-  const canvas=await window.MamasNameCard.render(name,document.getElementById('cardTheme').value);
+  const canvas=await window.MamasNameCard.render(name,document.getElementById('cardTheme').value,{pronunciation:pronunciationFor(name)});
   if(request!==previewRequest)return;const preview=document.getElementById('nameCardPreview');preview.getContext('2d').drawImage(canvas,0,0);
 }
 document.getElementById('cardTheme').addEventListener('change',()=>updatePreview().catch(()=>{}));

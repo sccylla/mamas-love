@@ -29,3 +29,7 @@ Only the selected font files and license documents were copied into the website.
 ## Funky display type
 
 Lilita One regular Latin is self-hosted as `lilita-one-latin-400-normal.woff2`. Source: `@fontsource/lilita-one@5.3.0`, https://registry.npmjs.org/@fontsource/lilita-one/-/lilita-one-5.3.0.tgz. Original license: `OFL-Lilita-One.txt`. TLS and the registry SHA-512 integrity were verified before copying the font.
+
+## Extended name-card lettering
+
+The name-card studio also uses `lilita-one-latin-ext-400-normal.woff2` from the same pinned `@fontsource/lilita-one@5.3.0` package and `dm-sans-latin-ext-variable.woff2` from `@fontsource-variable/dm-sans@5.3.0` (`files/dm-sans-latin-ext-wght-normal.woff2`). These unmodified subsets expand accented character coverage, including Yorùbá spelling. The existing SIL OFL license files apply. Font files are served locally.
