@@ -18,6 +18,15 @@
     .ml-social-footer .fb{background:#eaf2ff;color:#155dc2}.ml-social-footer .tt{background:#f1ecf2;color:#32202f}.ml-social-footer .em{background:#ffe8f0;color:#b63f6c}
     @media(max-width:760px){
       body{padding-bottom:82px!important}
+      .hero{grid-template-columns:1fr!important}
+      .hero>.hero-visual{order:-1!important}
+      .hero>.hero-copy{order:0!important}
+      .subhero{grid-template-columns:1fr!important}
+      .subhero>.subhero-img{order:-1!important}
+      .subhero>.subhero-copy{order:0!important}
+      .hero-grid{grid-template-columns:1fr!important}
+      .hero-grid>.hero-art,.hero-grid>.hero-card{order:-1!important}
+      .hero-grid>div:not(.hero-art):not(.hero-card){order:0!important}
       .ml-social-dock{left:10px;right:10px;top:auto;bottom:10px;transform:none;flex-direction:row;gap:8px;background:rgba(255,250,248,.96);border:1px solid rgba(75,45,70,.10);border-radius:20px;padding:8px;box-shadow:0 16px 45px rgba(75,45,70,.22);backdrop-filter:blur(14px)}
       .ml-social-title{display:none}.ml-social-btn{min-width:0;flex:1;justify-content:center;padding:12px 8px;border-radius:14px;font-size:11px;box-shadow:none}.ml-social-btn:hover{transform:none}.ml-social-btn svg{width:19px;height:19px;flex-basis:19px}
     }
