@@ -4,8 +4,7 @@
 // read only on the server: UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN,
 // or the Vercel integration's KV_REST_API_URL / KV_REST_API_TOKEN.
 const { randomUUID, createHmac } = require('node:crypto');
-// Keep in sync when publishing new articles in assets/content.js.
-const POSTS = new Set(['cycle', 'period-warning-signs', 'pregnancy', 'first-trimester', 'postpartum', 'postpartum-mood', 'newborn', 'safe-sleep', 'baby-milestones', 'body']);
+const cms = require('../lib/cms');
 const UNAVAILABLE = { error: 'Comments are temporarily unavailable. Please try again later.', code: 'COMMENTS_UNAVAILABLE' };
 const LIMIT = 10 * 1024;
 const SAVE_COMMENT = `
@@ -70,7 +69,7 @@ module.exports = async function comments(req, res) {
   let post;
   try { post = method === 'GET' ? new URL(req.url || '/', 'http://localhost').searchParams.get('post') : input.post; }
   catch { return reply(res, 400, { error: 'Please choose a valid post.' }); }
-  if (typeof post !== 'string' || !POSTS.has(post)) return reply(res, 400, { error: 'Please choose a valid post.' });
+  if (!cms.validId(post)) return reply(res, 400, { error: 'Please choose a valid post.' });
   let name, comment;
   if (method === 'POST') {
     name = typeof input.name === 'string' ? input.name.trim() : '';
@@ -94,6 +93,7 @@ module.exports = async function comments(req, res) {
   }
   const key = `mamas:comments:v1:post:${post}`;
   try {
+    if (!await cms.publishedPost(post)) return reply(res, 400, { error: 'Please choose a valid post.' });
     if (method === 'GET') {
       const items = await redis(['LRANGE', key, 0, 49]);
       if (!Array.isArray(items)) throw new Error('Invalid storage result.');

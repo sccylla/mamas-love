@@ -10,7 +10,8 @@ global.fetch = async (url, opts) => {
   assert.equal(opts.headers.Authorization, 'Bearer private-test-token');
   const cmd = JSON.parse(opts.body); commands.push(cmd);
   let result;
-  if (cmd[0] === 'LRANGE') result = (lists.get(cmd[1]) || []).slice(0, 50);
+  if (cmd[0] === 'HGET') result = null;
+  else if (cmd[0] === 'LRANGE') result = (lists.get(cmd[1]) || []).slice(0, 50);
   else if (cmd[0] === 'EVAL') {
     const n = rates.get(cmd[3]) || 0;
     if (n >= 5) result = [0, 500];
