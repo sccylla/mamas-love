@@ -3,8 +3,8 @@
   "short_name": "Mama's Love",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#fffaf7",
-  "theme_color": "#683b68",
+  "background_color": "#d8b9ef",
+  "theme_color": "#352044",
   "description": "Health guides and private period, pregnancy and baby trackers.",
   "icons": [
     {

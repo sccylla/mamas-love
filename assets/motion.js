@@ -86,9 +86,9 @@
       const px = (pointer.x - 0.5) * width * 0.12;
       const py = (pointer.y - 0.5) * height * 0.12;
       const span = Math.max(width, height);
-      glow(width * (0.18 + Math.sin(time * 0.075) * 0.12) + px, height * (0.2 + Math.cos(time * 0.06) * 0.09) + py, span * 0.55, 'rgba(235,129,174,0.28)', 'rgba(249,183,205,0.10)');
-      glow(width * (0.78 + Math.cos(time * 0.065) * 0.1) - px, height * (0.5 + Math.sin(time * 0.08) * 0.13) - py, span * 0.58, 'rgba(164,141,220,0.24)', 'rgba(205,188,240,0.08)');
-      glow(width * (0.43 + Math.sin(time * 0.055 + 2) * 0.12), height * (0.9 + Math.cos(time * 0.07) * 0.08), span * 0.5, 'rgba(255,191,144,0.24)', 'rgba(255,219,187,0.08)');
+      glow(width * (0.18 + Math.sin(time * 0.075) * 0.12) + px, height * (0.2 + Math.cos(time * 0.06) * 0.09) + py, span * 0.55, 'rgba(222,77,144,0.46)', 'rgba(246,137,185,0.22)');
+      glow(width * (0.78 + Math.cos(time * 0.065) * 0.1) - px, height * (0.5 + Math.sin(time * 0.08) * 0.13) - py, span * 0.58, 'rgba(126,91,205,0.40)', 'rgba(172,139,231,0.19)');
+      glow(width * (0.43 + Math.sin(time * 0.055 + 2) * 0.12), height * (0.9 + Math.cos(time * 0.07) * 0.08), span * 0.5, 'rgba(255,151,99,0.40)', 'rgba(255,187,139,0.20)');
 
       ribbon(0, time, '218,132,168');
       ribbon(1, time + 5, '170,146,217');
