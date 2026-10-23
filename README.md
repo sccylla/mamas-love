@@ -63,3 +63,9 @@ Run the backend checks with `node tests/comments-api.test.cjs`. They use a mocke
 The two illustration sheets in `assets/illustrations/` are displayed as individual stage panels using CSS; they are downloaded once and reused across the weekly cards. Descriptive alternatives and captions identify illustrative stages. Weekly information and NHS source links remain in `assets/growth-content.js`.
 
 All twelve page shells use the same SVG, PNG and ICO favicon set, Apple icon and manifest, with versioned asset URLs.
+
+## Compact footer and background lullaby
+
+All pages use the compact shared footer in `assets/site-footer.js` and `assets/footer.css`. It contains one navigation group, a short care/privacy note and inline social links. The previous tracker callout and separate social banner are removed. Header logos have a slow rose halo in `assets/site-effects.css`, which respects reduced-motion preferences.
+
+`assets/lullaby.js` attempts to play the local Moonlight Hush WAV when a page loads, at low volume. Browsers may block unprompted sound: when that happens, the play control stays available and playback can begin on the first trusted tap or keyboard interaction. A persistent pause control is always visible; the visitor’s pause choice is remembered. The position is kept within the tab when navigating, and hidden pages pause. Sound-library previews pause the background lullaby; restarting the lullaby stops a library preview so they do not overlap. Browser autoplay restrictions cannot be bypassed by the website.

@@ -23,6 +23,10 @@
 @media(max-width:920px){.hero-grid,.scan-layout,.lab-grid{grid-template-columns:1fr}.name-grid{grid-template-columns:1fr}.hero-card{min-height:400px}}
 @media(max-width:620px){.brand img{width:175px}.hero{padding-top:32px}.hero h1{font-size:3.35rem}.device{width:86%;padding:20px}.tabs{width:100%;overflow:auto}.tabs button{white-space:nowrap}.form-row{grid-template-columns:1fr}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}.result-top{flex-direction:column}.device-lines{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="assets/footer.css?v=calm-1">
+<script src="assets/site-footer.js?v=calm-1" defer></script>
+<link rel="stylesheet" href="assets/site-effects.css?v=calm-1">
+<script src="assets/lullaby.js?v=calm-1" defer></script>
 </head>
 <body>
 <div class="topbar">Private, browser-based assistance for home pregnancy tests and hospital/lab reports</div>
@@ -175,6 +179,6 @@ function interpretRows(text,rows){const matches=[];for(const [re,title,desc] of 
 $('#interpretLab').onclick=()=>{const text=$('#ocrText').value.trim();if(!text){setStatus($('#labStatus'),'Paste or scan some report text first.','warn');return}const rows=parseLabText(text);const ex=interpretRows(text,rows);$('#labTitle').textContent=rows.length?'Report values found':'Plain-language report notes';$('#labIntro').textContent=rows.length?'These comparisons use only the reference ranges that the scanner could detect in your report.':'The scanner did not confidently detect numeric value/range rows, but it can still explain recognized test names below.';if(rows.length){let h='<div class="table-wrap"><table class="lab-table"><thead><tr><th>Test</th><th>Result</th><th>Unit</th><th>Report range</th><th>Flag</th></tr></thead><tbody>';for(const r of rows){const label=r.flag==='ok'?'Within detected range':r.flag==='low'?'Below detected range':r.flag==='high'?'Above detected range':'Text result';h+='<tr><td>'+escapeHtml(r.name)+'</td><td>'+escapeHtml(r.value)+'</td><td>'+escapeHtml(r.unit)+'</td><td>'+escapeHtml(r.range||'—')+'</td><td><span class="flag '+r.flag+'">'+label+'</span></td></tr>'}h+='</tbody></table></div>';$('#labTableWrap').innerHTML=h}else $('#labTableWrap').innerHTML='';$('#labExplain').innerHTML=ex.length?ex.map(x=>'<div class="explain"><b>'+escapeHtml(x.title)+'</b><span>'+escapeHtml(x.desc)+'</span></div>').join(''):'<div class="explain"><b>No familiar test names recognized</b><span>Check the OCR text for errors, or ask a clinician/laboratory to explain the report.</span></div>';$('#labCaution').classList.add('show')};
 function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]))}
 </script>
-<script src="assets/social.js?v=social-1" defer></script>
+<script src="assets/social.js?v=calm-1" defer></script>
 </body>
 </html>

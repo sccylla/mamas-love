@@ -12,10 +12,10 @@
     .ml-social-tiktok{background:linear-gradient(135deg,#111,#4b2d46)}
     .ml-social-email{background:linear-gradient(135deg,#ed6b99,#c94d7b)}
     .ml-social-label{white-space:nowrap}
-    .ml-social-footer{margin:36px auto 18px;width:min(1180px,calc(100% - 28px));padding:18px;border:1px solid rgba(75,45,70,.10);border-radius:22px;background:linear-gradient(135deg,#fff7fa,#fff3ed);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-    .ml-social-footer b{width:100%;text-align:center;color:#4b2d46;font:700 20px/1.1 Georgia,serif;margin-bottom:3px}
-    .ml-social-footer a{display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border-radius:999px;text-decoration:none!important;font:800 12px/1 'DM Sans',system-ui,sans-serif}
-    .ml-social-footer .fb{background:#eaf2ff;color:#155dc2}.ml-social-footer .tt{background:#f1ecf2;color:#32202f}.ml-social-footer .em{background:#ffe8f0;color:#b63f6c}
+    .ml-social-footer{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:3px 18px;margin:0;padding:0;width:auto;border:0;background:none}
+    .ml-social-footer a{display:inline-flex;align-items:center;min-height:32px;padding:3px 0;color:#f3c1d7!important;text-decoration:none;font:600 11px/1.6 'DM Sans',system-ui,sans-serif;text-underline-offset:4px}
+    .ml-social-footer a:hover{color:#e4ee9c!important;text-decoration:underline}
+    .ml-social-footer a:focus-visible{outline:2px solid #e4ee9c;outline-offset:3px}
     @media(max-width:760px){
       body{padding-bottom:82px!important}
       .hero{grid-template-columns:1fr!important}
@@ -41,7 +41,9 @@
     <a class="ml-social-btn ml-social-email" href="mailto:mamaslovelies@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7.1L20.7 7H3.3L12 12.1zm0 2.3L3 9.1V17h18V9.1l-9 5.3z"/></svg><span class="ml-social-label">Email</span></a>
   `;
   document.body.appendChild(dock);
-  const footer=document.createElement('div'); footer.className='ml-social-footer';
-  footer.innerHTML=`<b>Stay connected with Mama's Love</b><a class="fb" href="https://facebook.com/mamaslove" target="_blank" rel="noopener noreferrer">Facebook · @mamaslove</a><a class="tt" href="https://tiktok.com/@.mamaslove" target="_blank" rel="noopener noreferrer">TikTok · @.mamaslove</a><a class="em" href="mailto:mamaslovelies@gmail.com">mamaslovelies@gmail.com</a>`;
-  const existingFooter=document.querySelector('footer'); if(existingFooter) existingFooter.parentNode.insertBefore(footer,existingFooter); else document.body.appendChild(footer);
+  const footer=document.createElement('nav'); footer.className='ml-social-footer';footer.setAttribute('aria-label','Follow Mama’s Love');
+  footer.innerHTML=`<a href="https://facebook.com/mamaslove" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://tiktok.com/@.mamaslove" target="_blank" rel="noopener noreferrer">TikTok</a><a href="mailto:mamaslovelies@gmail.com" aria-label="Email Mama’s Love">Email</a>`;
+  const existingFooter=document.querySelector('footer');
+  const slot=existingFooter?.querySelector('[data-footer-social]');
+  if(slot) slot.appendChild(footer); else if(existingFooter) existingFooter.appendChild(footer);
 })();
