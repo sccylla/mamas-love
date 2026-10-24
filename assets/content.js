@@ -34,8 +34,8 @@ window.MAMAS_CONTENT = {
     },
     {
       id: 'names',
-      title: 'Baby names & Oríkì',
-      description: 'Browse meaningful boy and girl names across English, Hebrew, Islamic, Yorùbá and traditional Yorùbá Oríkì.',
+      title: 'Baby Name Ideas',
+      description: 'Find baby names with meanings and pronunciation guides, save your favourites and create a keepsake name card.',
       href: 'names.html',
       image: 'mamas-love-3.jpg',
       category: 'Baby names'

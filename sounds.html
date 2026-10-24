@@ -24,9 +24,9 @@
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.track-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.brand img{width:175px}.hero{padding-top:32px}.hero h1{font-size:3.35rem}.hero-art{min-height:400px}.player-card{width:86%;padding:20px}.toolbar{grid-template-columns:1fr}.track-grid{grid-template-columns:1fr}.filters{overflow:auto;flex-wrap:nowrap;padding-bottom:3px}.filters button{white-space:nowrap}.section-head{align-items:start;flex-direction:column}.foot{flex-direction:column;align-items:flex-start}.foot p{text-align:left}.now{left:10px;right:10px}}
 </style>
 <link rel="stylesheet" href="assets/footer.css?v=contact-1">
-<script src="assets/site-footer.js?v=videos-2" defer></script>
+<script src="assets/site-footer.js?v=copy-3" defer></script>
 <link rel="stylesheet" href="assets/site-effects.css?v=discover-1">
-<script src="assets/navigation.js?v=videos-2" defer></script>
+<script src="assets/navigation.js?v=copy-3" defer></script>
 <script src="assets/lullaby.js?v=videos-2" defer></script>
 <link rel="stylesheet" href="assets/navigation.css?v=polish-1">
 <link rel="stylesheet" href="assets/site-review.css?v=floral-1">
@@ -51,7 +51,7 @@
 </div></section>
 <section class="favs-section" id="savedSounds"><div class="shell"><span class="kicker">Your favourites</span><h2>Saved sounds</h2><p>Saved on this device only.</p><div class="track-grid" id="favGrid"></div></div></section>
 </main>
-<footer class="footer"><div class="shell foot"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"><p>The audio on this page is generated in your browser from Mama's Love original patterns and synthetic sound recipes. Downloads are WAV files and may take a few seconds to render, especially for longer tracks.</p></div></footer>
+<footer class="footer"><div class="shell foot"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"><p>Listen to lullabies and sleep sounds, save your favourites and download a track to keep. Longer downloads may take a few seconds to prepare.</p></div></footer>
 <div class="now" id="now"><div class="now-info"><b id="nowTitle"></b><span id="nowMeta"></span></div><button id="nowStop">Stop</button></div>
 <div class="toast" id="toast"></div>
 <script>
@@ -88,7 +88,7 @@ addNames([
 ['Gentle Brown Noise','brown','Soft rounded low-frequency ambience.'],
 ['Soft Gray Noise','pink','Balanced soft noise texture.'],
 ['Low Blue-Style Noise','white','Brighter high-frequency hush, softened for comfort.'],
-['Soft Violet-Style Noise','white','Very airy synthetic hiss at a gentle level.']
+['Soft Violet-Style Noise','white','A light, airy hiss at a gentle level.']
 ].forEach((d,i)=>add(d[0],'Noise colours',d[1],d[2],'Steady noise',130+i));
 
 // Womb & heartbeat
@@ -105,18 +105,18 @@ addNames([
 ['Heartbeat + Brown Noise','heartwomb','Heartbeat over deep low-frequency noise.'],
 ['Womb + Heartbeat','heartwomb','Womb-like hush with a soft heartbeat.'],
 ['Womb + Slow Pulse','heartwomb','Warm low ambience with slower pulses.'],
-['Womb + Soft Rumble','womb','Low synthetic rumble inspired by enclosed ambience.'],
+['Womb + Soft Rumble','womb','A low, womb-like rumble.'],
 ['Womb + Gentle Flow','womb','Low filtered flowing sound.'],
 ['Womb Night Mix','heartwomb','Deep hush and slow heartbeat-style pulse.']
 ].forEach((d,i)=>add(d[0],'Womb & heartbeat',d[1],d[2],'Womb-style ambience',160+i));
 
 // Shushing and soothing voice-like noise
 [
-['Soft Shushing','shush','Slow synthetic shushing pattern.'],
+['Soft Shushing','shush','Slow, rhythmic shushing.'],
 ['Slow Shush','shush','Longer spaced shushing sweeps.'],
 ['Gentle Repeating Shush','shush','Even, quiet shush rhythm.'],
 ['Deep Shushing','shush','Lower, softer shushing texture.'],
-['Breathy Shush','shush','Airy synthetic shush pattern.'],
+['Breathy Shush','shush','Light, breathy shushing.'],
 ['Double Shush','shush','Two soft shush sweeps in each cycle.'],
 ['Shush + Pink Noise','shushmix','Shushing over soft pink noise.'],
 ['Shush + Brown Noise','shushmix','Shushing over deeper noise.'],
