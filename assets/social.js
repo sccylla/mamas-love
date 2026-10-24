@@ -1,5 +1,6 @@
 (()=>{
   if(document.getElementById('mamas-social-dock')) return;
+  const youtube='https://www.youtube.com/@Mamaslove-ng';
   const contacts=[['2348163030911','+234 816 303 0911'],['2290145389531','+229 01 45 38 95 31']];
   const contactMenu=(kind,label,path)=>`<details class="ml-contact-menu"><summary class="ml-social-btn ml-social-${kind}" aria-label="${label}: choose a number" title="${label}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${path}"/></svg><span class="ml-social-label">${label}</span></summary><div class="ml-contact-options"><span>${label} Mama’s Love</span>${contacts.map(([number,display])=>`<a href="${kind==='whatsapp'?'https://wa.me/'+number:'tel:+'+number}"${kind==='whatsapp'?' target="_blank" rel="noopener noreferrer"':''} aria-label="${label} ${display}">${display}</a>`).join('')}</div></details>`;
   const style=document.createElement('style');
@@ -11,6 +12,7 @@
     .ml-social-btn:hover{transform:translateX(-4px);box-shadow:0 22px 58px rgba(75,45,70,.28)}
     .ml-social-btn svg{width:21px;height:21px;flex:0 0 21px;fill:currentColor}
     .ml-social-facebook{background:linear-gradient(135deg,#1877f2,#0d5ed0)}
+    .ml-social-youtube{background:linear-gradient(135deg,#d91f32,#ac1124)}
     .ml-social-tiktok{background:linear-gradient(135deg,#111,#4b2d46)}
     .ml-social-whatsapp{background:linear-gradient(135deg,#167a53,#105e43)}
     .ml-social-call{background:linear-gradient(135deg,#744b91,#503364)}
@@ -40,6 +42,7 @@
       .ml-social-dock .ml-social-btn{flex-direction:column;gap:6px;width:100%;box-sizing:border-box;min-height:50px;padding:6px 2px;font-size:9px;line-height:1.2}
       .ml-contact-options{position:fixed;left:12px;right:12px;bottom:94px;top:auto;transform:none;width:auto}
     }
+    @media(max-width:360px){.ml-social-dock{left:8px;right:8px;gap:3px;padding:6px}.ml-social-dock .ml-social-btn{font-size:8.5px}}
     @media(prefers-reduced-motion:reduce){.ml-social-btn{transition:none}.ml-social-btn:hover{transform:none}}
   `;
   document.head.appendChild(style);
@@ -49,6 +52,7 @@
     <div class="ml-social-title">Connect with us</div>
     <a class="ml-social-btn ml-social-facebook" aria-label="Facebook" title="Facebook" href="https://facebook.com/mamaslove" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.5-3h-3.5V8.1c0-.9.3-1.6 1.7-1.6H17V3.8c-.3 0-1.4-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v9h3.2z"/></svg><span class="ml-social-label">Facebook</span></a>
     <a class="ml-social-btn ml-social-tiktok" aria-label="TikTok" title="TikTok" href="https://tiktok.com/@.mamaslove" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M15.6 3c.4 2.2 1.7 3.5 3.9 3.7v3.1c-1.5 0-2.8-.4-3.9-1.2v6.1c0 4-2.8 6.3-6.1 6.3A6 6 0 0 1 3.5 15c0-3.5 2.7-6 6.5-6v3.2c-.4-.1-.7-.1-1-.1-1.6 0-2.5 1.1-2.5 2.8 0 1.8 1.2 3 2.9 3 2 0 3-1.2 3-3.7V3h3.2z"/></svg><span class="ml-social-label">TikTok</span></a>
+    <a class="ml-social-btn ml-social-youtube" aria-label="YouTube" title="YouTube" href="${youtube}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7a4 4 0 0 0-2.8-2.8C18.4 3.7 12 3.7 12 3.7s-6.4 0-8.2.5A4 4 0 0 0 1 7a37 37 0 0 0-.5 5 37 37 0 0 0 .5 5 4 4 0 0 0 2.8 2.8c1.8.5 8.2.5 8.2.5s6.4 0 8.2-.5A4 4 0 0 0 23 17a37 37 0 0 0 .5-5 37 37 0 0 0-.5-5ZM9.7 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg><span class="ml-social-label">YouTube</span></a>
     ${contactMenu('whatsapp','WhatsApp','M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.4-.2-3.1.8.8-3-.2-.4A8 8 0 1 1 12 20Zm4.5-5.9-1.7-.8c-.3-.1-.5-.1-.7.2l-.7.9c-.1.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.3 0-.4.1-.6l.5-.6c.2-.2.2-.4.1-.6l-.8-1.9c-.1-.3-.3-.3-.5-.3h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.6-.7 2.6.4 1.5 2.4 4.4 5.5 5.5 1.4.5 2.3.5 3.1-.1.5-.4.8-1.1.8-1.5 0-.2-.1-.2-.4-.3Z')}
     ${contactMenu('call','Call','M6.6 2.5 3.1 4a2 2 0 0 0-1.1 2.2c1.6 8 7.8 14.2 15.8 15.8A2 2 0 0 0 20 20.9l1.5-3.5a1 1 0 0 0-.5-1.3l-4-1.8a1 1 0 0 0-1.2.3l-1.7 2.1a15 15 0 0 1-6.8-6.8l2.1-1.7a1 1 0 0 0 .3-1.2L7.9 3a1 1 0 0 0-1.3-.5Z')}
     <a class="ml-social-btn ml-social-email" aria-label="Email" title="Email" href="mailto:mamaslovelies@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7.1L20.7 7H3.3L12 12.1zm0 2.3L3 9.1V17h18V9.1l-9 5.3z"/></svg><span class="ml-social-label">Email</span></a>
@@ -60,7 +64,7 @@
   document.addEventListener('click',event=>{if(!dock.contains(event.target))closeContacts()});
   dock.addEventListener('keydown',event=>{if(event.key==='Escape'){const open=contactMenus.find(menu=>menu.open);closeContacts();open?.querySelector('summary').focus()}});
   const footer=document.createElement('nav'); footer.className='ml-social-footer';footer.setAttribute('aria-label','Follow Mama’s Love');
-  footer.innerHTML=`<a href="https://facebook.com/mamaslove" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://tiktok.com/@.mamaslove" target="_blank" rel="noopener noreferrer">TikTok</a><a href="mailto:mamaslovelies@gmail.com" aria-label="Email Mama’s Love">Email</a>`;
+  footer.innerHTML=`<a href="https://facebook.com/mamaslove" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://tiktok.com/@.mamaslove" target="_blank" rel="noopener noreferrer">TikTok</a><a href="${youtube}" target="_blank" rel="noopener noreferrer">YouTube</a><a href="mailto:mamaslovelies@gmail.com" aria-label="Email Mama’s Love">Email</a>`;
   const existingFooter=document.querySelector('footer');
   const slot=existingFooter?.querySelector('[data-footer-social]');
   if(slot) slot.appendChild(footer); else if(existingFooter) existingFooter.appendChild(footer);
