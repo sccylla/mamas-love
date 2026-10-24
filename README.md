@@ -115,3 +115,8 @@ The name catalogue contains 538 Yorùbá names, 16 Oríkì, 161 familiar English
 `videos.html` is the public video library, linked from shared desktop/mobile navigation, shortcuts, the footer and the homepage. `video.html` preserves the previous preview URL and points its canonical URL to the library. `assets/videos-data.js` stores the published lesson and three readable steps; `assets/videos.js` renders the homepage feature, library player, steps, downloads and save/share instructions. `assets/videos.css` styles the section. Playing a lesson pauses background music and MP3 players; choosing music pauses the video.
 
 The 39-second safer-newborn-sleep lesson is stored in `downloads/videos/` as a 720 × 1280 H.264 Constrained Baseline MP4 with AAC audio and a front-loaded MP4 index. The poster, downloadable caption and ZIP all match the current video. Public source credits were removed from the frames, closing text, caption and video pages at the owner's request. The lesson's factual basis remains the NHS safer-sleep guidance used during production; its advice has not changed. The local development server serves MP4 files as `video/mp4` and supports byte ranges for seeking; Vercel serves the same files as static assets.
+
+
+## HTTPS resource policy
+
+`vercel.json` sends `Content-Security-Policy: upgrade-insecure-requests` so browsers request page resources over HTTPS. The existing strict policies for the admin page and uploaded media are retained and include this directive. This policy does not install or replace certificates: Vercel manages domain certificates separately. A browser screenshot confirmed a valid certificate, but the live browser warning could not be independently diagnosed from this environment.
