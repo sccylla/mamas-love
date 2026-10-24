@@ -38,7 +38,7 @@
     try{await audio.play();disarm();}catch(error){if(error.name==='NotAllowedError')arm();else if(error.name!=='AbortError'){unavailable=true;disarm();}}finally{update()}
   }
   function unlock(event){
-    if(!event.isTrusted||event.target.closest('#lullabyToggle,.track-actions,.now,.music-pick'))return;
+    if(!event.isTrusted||event.target.closest('#lullabyToggle,.track-actions,.now,.music-pick,.lesson-player'))return;
     if(event.type==='keydown'&&['Tab','Shift','Control','Alt','Meta','Escape'].includes(event.key))return;
     start();
   }
