@@ -1,0 +1,895 @@
+# Format: name | gender (girl, boy, unisex) | common meaning or interpretation
+# These are reading-friendly glosses, not claims of a single etymology or tone pattern.
+[Yoruba]
+Abayomi|unisex|Born to bring me joy.
+Abidemi|unisex|Born while a parent was away.
+Abimbola|unisex|Born into wealth and honour.
+Abiodun|unisex|Born during a festival or celebration.
+Abiola|unisex|Born into honour and prosperity.
+Abiona|unisex|Born on a journey.
+Abisola|girl|Born into wealth and comfort.
+Abisoye|unisex|Born into a position of honour.
+Abosede|girl|Born at the start of the week.
+Aboyade|unisex|One who arrived with a crown.
+Adedamola|unisex|The crown is mixed with wealth.
+Adedapo|boy|Crowns have come together.
+Adedayo|unisex|The crown has become joy.
+Adediran|boy|Royalty has become a family tradition.
+Adedolapo|unisex|The crown has joined with wealth.
+Adedotun|boy|The crown has been renewed.
+Adedoyin|unisex|The crown has become sweet.
+Adefemi|boy|The crown loves me.
+Adefisayo|unisex|The crown has added to joy.
+Adefolarin|boy|The crown walks with wealth.
+Adefolahan|boy|The crown displays wealth.
+Adefolake|girl|The crown cares for wealth.
+Adefowope|unisex|The crown has brought thanks.
+Adegbenro|boy|The crown has taken its place.
+Adegoke|boy|The crown has risen.
+Adeife|unisex|Crown of love.
+Adejare|boy|The crown is vindicated.
+Adejoke|girl|The crown is cherished together.
+Adejola|unisex|The crown enjoys wealth.
+Adejompo|boy|Crowns have gathered together.
+Adejumo|boy|The crown has brought people together.
+Adejuwon|boy|The crown is greater than them.
+Adekunle|boy|The crown has filled the home.
+Adelaja|boy|The crown has settled a dispute.
+Adelani|boy|We possess the crown.
+Adelere|boy|The crown has its reward.
+Adelodun|unisex|The crown has become a celebration.
+Ademide|unisex|My crown has arrived.
+Ademola|boy|The crown is joined with wealth.
+Adenike|girl|The crown is to be cherished.
+Adeniran|boy|The crown has a place in the family.
+Adeniyi|boy|The crown has honour.
+Adenola|unisex|The crown has wealth.
+Adenrele|unisex|The crown has returned home.
+Adenuga|boy|The crown has risen high.
+Adeola|unisex|Crown of wealth and honour.
+Adeolu|boy|Crown of the Lord.
+Adeoluwa|unisex|The crown of God.
+Adeoti|unisex|The crown does not fade.
+Adeoye|boy|Crown of distinction.
+Adepeju|girl|The crown is complete.
+Aderemi|unisex|The crown comforts me.
+Aderinsola|girl|The crown walks into wealth.
+Aderoju|unisex|The crown brings comfort.
+Aderonke|girl|The crown has someone to cherish.
+Adesewa|girl|The crown makes beauty.
+Adeshina|boy|The crown opens the way.
+Adesina|unisex|The crown opens the way.
+Adesoji|boy|The crown has awakened.
+Adesola|unisex|The crown makes wealth.
+Adesoye|boy|The crown brings a title of honour.
+Adetayo|unisex|The crown is worthy of joy.
+Adetokunbo|unisex|The crown has returned from overseas.
+Adetola|unisex|The crown is worthy of wealth.
+Adetomi|unisex|The crown is enough for me.
+Adetomilola|girl|The crown is enough wealth for me.
+Adetoun|girl|The crown is worthy of praise.
+Adetoyese|unisex|The crown deserves celebration.
+Adetunji|boy|The crown has awakened again.
+Adetutu|girl|The crown is gentle and peaceful.
+Adewale|boy|The crown has come home.
+Adewemimo|unisex|The crown has washed me clean.
+Adewumi|unisex|I desire the crown.
+Adeyemi|boy|The crown befits me.
+Adeyeye|boy|The crown is fitting.
+Adeyinka|unisex|The crown surrounds me.
+Adeyipo|boy|The crown holds its place.
+Adeyoola|unisex|The crown rejoices in wealth.
+Adeyoye|boy|The crown rejoices in honour.
+Adunni|girl|One who is sweet to have.
+Afolabi|boy|Born into wealth.
+Afolahan|boy|One who displays wealth.
+Afolasade|girl|Wealth is used to make a crown.
+Ajibade|boy|One who wakes to meet the crown.
+Ajibola|unisex|One who wakes to meet wealth.
+Ajiboye|boy|One who wakes to meet honour.
+Ajiferuke|unisex|One who wakes to receive care.
+Ajoke|girl|One cherished by all.
+Akinade|boy|The brave one wears a crown.
+Akinbode|boy|The brave one has arrived.
+Akindele|boy|The brave one has come home.
+Akinfemi|boy|The brave one loves me.
+Akinjide|boy|The brave one has awakened.
+Akinloye|boy|The brave one has honour.
+Akinlolu|boy|Bravery belongs to the Lord.
+Akinola|boy|The brave one has wealth.
+Akintayo|boy|Bravery is worthy of joy.
+Akintola|boy|Bravery is worthy of wealth.
+Akintomiwa|boy|The brave one has come to me.
+Akintunde|boy|The brave one has returned.
+Akinwale|boy|The brave one has come home.
+Akinwande|boy|The brave one has come looking for me.
+Akinyemi|boy|Bravery befits me.
+Akinyinka|boy|Bravery surrounds me.
+Anu|unisex|Mercy; often part of a longer name.
+Anuoluwapo|unisex|God's mercy is abundant.
+Anuoluwatomi|unisex|God's mercy is enough for me.
+Anuoluwa|unisex|The mercy of God.
+Anuoluwagbemiga|unisex|God's mercy has lifted me up.
+Anuoluwakiitan|unisex|God's mercy never ends.
+Anuoluwalere|unisex|God's mercy has its reward.
+Anuoluwamipo|unisex|God's mercy is abundant around me.
+Anuoluwani|unisex|We have God's mercy.
+Anuoluwaseun|unisex|God's mercy has done this.
+Aramide|girl|My beloved has arrived.
+Ayinke|girl|One praised and cherished.
+Ayo|unisex|Joy; often part of a longer name.
+Ayobami|unisex|Joy has met me.
+Ayodeji|boy|Joy has become twofold.
+Ayodele|unisex|Joy has come home.
+Ayodimeji|boy|My joy has doubled.
+Ayofemi|unisex|Joy loves me.
+Ayokunle|unisex|Joy has filled the home.
+Ayomide|unisex|My joy has arrived.
+Ayomikun|unisex|My joy is full.
+Ayomiposi|unisex|My joy has increased.
+Ayoola|unisex|The joy of wealth and honour.
+Ayorinde|unisex|Joy has walked in.
+Ayotomi|unisex|Joy is enough for me.
+Ayotomiwa|unisex|Joy has come to me.
+Ayotunde|unisex|Joy has returned.
+Ayowale|unisex|Joy has come home.
+Ayoyemi|unisex|Joy befits me.
+Babatunde|boy|Father has returned.
+Babatunji|boy|Father has awakened again.
+Bamidele|unisex|Come home with me.
+Bamigboye|boy|Join me in receiving honour.
+Bolade|unisex|One who arrives with a crown.
+Bolanle|girl|One who finds wealth at home.
+Bolarinwa|unisex|One who arrives with wealth.
+Bolu|unisex|A short form found in several longer names.
+Boluwatife|unisex|As God wishes.
+Bukunmi|unisex|Bless me.
+Bukola|unisex|Added wealth and honour.
+Bunmi|unisex|Give to me; a short form of a longer name.
+Damilare|unisex|Vindicate me.
+Damilola|unisex|Bless me with wealth.
+Damisi|unisex|Spare me; preserve my life.
+Dara|unisex|Good; a short form of a longer name.
+Darasimi|unisex|Be good to me.
+Dideoluwa|unisex|The rising of the Lord.
+Doyinsola|girl|Sweetness has come into wealth.
+Dupe|girl|Give thanks; short for a longer name.
+Ebun|unisex|A gift.
+Ebunoluwa|unisex|A gift from God.
+Eniola|unisex|A person of wealth and honour.
+Enitan|unisex|A person with a story.
+Enioluwafe|unisex|A person whom God loves.
+Enioluwani|unisex|A person who belongs to God.
+Eniolorunda|unisex|A person created by God.
+Eri|unisex|Testimony; often part of a longer name.
+Eriifeoluwa|unisex|A testimony of God's love.
+Erioluwa|unisex|God's testimony.
+Eritomiwa|unisex|Testimony has come to me.
+Ewatomi|girl|Beauty is enough for me.
+Ewatomilola|girl|Beauty is enough wealth for me.
+Ewawunmi|girl|I desire beauty.
+Eyitayo|unisex|This is worthy of joy.
+Fadekemi|girl|Care for me with the crown.
+Fadesewa|girl|Adorned with the crown's beauty.
+Faramade|unisex|Move closer to the crown.
+Faramola|unisex|Move closer to wealth.
+Feyikemi|girl|Use this to care for me.
+Feyisara|girl|Use this as a wonder.
+Feyisayo|unisex|Use this to add to joy.
+Feyisetan|unisex|Use this to complete the story.
+Fiyin|unisex|Praise; a short form of a longer name.
+Fiyinfoluwa|unisex|Give praise to God.
+Fiyinoluwa|unisex|Praise to God.
+Folabi|boy|Born into wealth; a short form of Afolabi.
+Folake|girl|One cared for with wealth.
+Folarin|boy|One who walks with wealth.
+Folasade|girl|Wealth is used to make a crown.
+Folashayo|unisex|Wealth has added to joy.
+Folashade|girl|A spelling of Folasade: wealth is used to make a crown.
+Folorunsho|unisex|One entrusted to God's care.
+Folusho|unisex|One placed in the Lord's care.
+Funke|girl|One given to be cherished.
+Funmilayo|girl|Give me joy.
+Gbemisola|girl|Carry me into wealth.
+Gbemisoke|unisex|Lift me up.
+Gbemileke|unisex|Lift me above my troubles.
+Gbemiga|unisex|Lift me high.
+Ibidunni|girl|Birth is sweet.
+Ibidun|girl|Birth is sweet.
+Ibukun|unisex|Blessing.
+Ibukunoluwa|unisex|The blessing of God.
+Ibukunoluwapo|unisex|God's blessing is abundant.
+Idowu|unisex|A child born after twins.
+Ife|unisex|Love; often part of a longer name.
+Ifeade|unisex|The love of the crown.
+Ifeayo|unisex|The love of joy.
+Ifeoluwa|unisex|The love of God.
+Ifeoluwapo|unisex|God's love is abundant.
+Ifeoluwakitan|unisex|God's love never ends.
+Ifeoluwatomi|unisex|God's love is enough for me.
+Ifedayo|unisex|Love has become joy.
+Ifedolapo|unisex|Love has joined with wealth.
+Ifedunni|girl|Love is sweet to have.
+Ifeduro|unisex|Love endures.
+Ifekunle|unisex|Love has filled the home.
+Ifemide|unisex|My love has arrived.
+Ifemi|unisex|My love.
+Ifetayo|unisex|Love is worthy of joy.
+Ifetola|unisex|Love is worthy of wealth.
+Ifetomi|unisex|Love is enough for me.
+Ifetomiwa|unisex|Love has come to me.
+Ifetunde|unisex|Love has returned.
+Ifeyemi|unisex|Love befits me.
+Ileri|unisex|Promise; often part of a longer name.
+Ilerioluwa|unisex|The promise of God.
+Ilerioluwakiye|unisex|God's promise does not fail.
+Iremide|unisex|My goodness has arrived.
+Ire|unisex|Goodness; good fortune.
+Ireoluwa|unisex|The goodness of God.
+Ireoluwatomi|unisex|God's goodness is enough for me.
+Ireti|girl|Hope.
+Iretioluwa|unisex|Hope in God.
+Iretomiwa|unisex|Good fortune has come to me.
+Irewamiri|unisex|Goodness has found me.
+Iseoluwa|unisex|The work of God.
+Iseoluwatomi|unisex|God's work is enough for me.
+Ishola|boy|One born into wealth.
+Itunu|unisex|Comfort.
+Itunuoluwa|unisex|The comfort of God.
+Iwalewa|girl|Good character is beauty.
+Iyanu|unisex|Wonder; a miracle.
+Iyanuoluwa|unisex|The wonder of God.
+Iyanuoluwapo|unisex|God's wonders are abundant.
+Iyanuoluwatomi|unisex|God's wonder is enough for me.
+Jesufemi|unisex|Jesus loves me.
+Jesuloba|unisex|Jesus is king.
+Jesuloluwa|unisex|Jesus is Lord.
+Jesusegun|unisex|Jesus has won the victory.
+Jesutobi|unisex|Jesus is great.
+Jesutofunmi|unisex|Jesus is enough for me.
+Jesutomisin|unisex|Jesus is worthy of my worship.
+Jesuwale|unisex|Jesus has come home.
+Jokotade|girl|Sit with the crown.
+Jomiloju|unisex|You amaze me.
+Juwon|unisex|A short form of names meaning greater or surpassing.
+Kehinde|unisex|The second-born twin.
+Kikelomo|girl|A child to be cherished.
+Kofoworola|girl|Wealth was not bought with money.
+Kokumo|unisex|This child will not die again; a traditional protective name.
+Kolade|boy|Bring the crown.
+Kolapo|boy|Gather wealth together.
+Korede|unisex|Good fortune has arrived.
+Koyinsola|girl|Bring sweetness into wealth.
+Kunle|boy|Filled the home; a short form of a longer name.
+Lanre|unisex|Wealth is progressing; often short for Olanrewaju.
+Lara|girl|A short form found in several longer Yorùbá names.
+Layo|unisex|In joy; a short form of a longer name.
+Leke|boy|Above; a short form of a longer name.
+Lola|girl|Wealth or honour; a short form of a longer name.
+Mayowa|unisex|Bring joy.
+Mofe|unisex|I desire; a short form of a longer name.
+Mofeoluwa|unisex|I desire God.
+Mofeyisade|girl|I use this to make a crown.
+Mofoluwake|girl|I entrust this child to God's care.
+Mofoluwaso|unisex|I entrust this child to God's protection.
+Mojirayo|girl|I have awakened to joy.
+Mojisola|girl|I have awakened to wealth.
+Mojola|unisex|I enjoy wealth.
+Mojolajesu|unisex|I enjoy the wealth of Jesus.
+Mojolaoluwa|unisex|I enjoy God's wealth.
+Morenike|girl|I have found someone to cherish.
+Morayo|girl|I have found joy.
+Morire|unisex|I have found goodness.
+Mosunmola|girl|I have moved closer to wealth.
+Motunrayo|girl|I have found joy again.
+Motunrola|girl|I have found wealth again.
+Moyosore|unisex|I rejoice in favour.
+Nifemi|unisex|Love me; a short form of a longer name.
+Niniola|girl|Having wealth and honour.
+Niyi|boy|Honour; a short form of a longer name.
+Obafemi|boy|The king loves me.
+Obafunmilayo|unisex|The king has given me joy.
+Obaloluwa|unisex|God is king.
+Obanifemi|unisex|The king loves me.
+Obaniyi|boy|The king has honour.
+Obasegun|boy|The king has won the victory.
+Obatomi|unisex|The king is enough for me.
+Olamide|unisex|My wealth has arrived.
+Olamilekan|boy|My wealth has increased.
+Olamiposi|unisex|My wealth has increased.
+Oladapo|boy|Wealth has come together.
+Oladayo|unisex|Wealth has become joy.
+Oladimeji|boy|My wealth has doubled.
+Oladipupo|boy|Wealth has become abundant.
+Oladotun|boy|Wealth has been renewed.
+Olafemi|boy|Wealth loves me.
+Olajide|boy|Wealth has awakened.
+Olajumoke|girl|Wealth is cherished together.
+Olakunle|boy|Wealth has filled the home.
+Olalekan|boy|Wealth has increased.
+Olalere|boy|Wealth has its reward.
+Olaleye|boy|Wealth has honour.
+Olanike|girl|Wealth is to be cherished.
+Olanipekun|boy|Wealth has no limit.
+Olaniyi|boy|Wealth has honour.
+Olanrewaju|unisex|Wealth is moving forward.
+Olaoluwa|unisex|The wealth of God.
+Olaosebikan|boy|Wealth is not found in only one place.
+Olaseni|boy|Wealth is not denied.
+Olasunkanmi|boy|Wealth has moved close to me.
+Olasupo|boy|Wealth has gathered together.
+Olatayo|unisex|Wealth is worthy of joy.
+Olatomi|unisex|Wealth is enough for me.
+Olatomiwa|unisex|Wealth has come to me.
+Olatunde|boy|Wealth has returned.
+Olawale|boy|Wealth has come home.
+Olawunmi|girl|I desire wealth.
+Olayemi|unisex|Wealth befits me.
+Olayinka|unisex|Wealth surrounds me.
+Olayiwola|boy|Wealth surrounds honour.
+Olubamise|unisex|God helps me.
+Olubunmi|girl|God has given me a gift.
+Oludamilola|unisex|God has blessed me with wealth.
+Oludamola|unisex|God has joined me with wealth.
+Olufemi|boy|God loves me.
+Olufunke|girl|God has given me someone to cherish.
+Olufunmilayo|girl|God has given me joy.
+Olugbenga|boy|God has lifted me up.
+Olugbemiga|boy|God has lifted me high.
+Olumayowa|unisex|God brings joy.
+Olumide|boy|My Lord has arrived.
+Olumuyiwa|boy|God has brought this child.
+Oluremi|unisex|God comforts me.
+Oluranti|unisex|God remembers.
+Olusayo|unisex|God has added to joy.
+Olusegun|boy|God has won the victory.
+Olusola|unisex|God has made wealth.
+Olusomiji|unisex|God has revived me.
+Olutayo|unisex|God is worthy of joy.
+Olutobi|unisex|God is great.
+Olutomi|unisex|God is enough for me.
+Olutoyin|unisex|God is worthy of praise.
+Olutunde|boy|God has returned.
+Oluwadamilare|unisex|God has vindicated me.
+Oluwadamilola|unisex|God has blessed me with wealth.
+Oluwadara|unisex|God is good.
+Oluwadayisi|unisex|God has spared this child.
+Oluwadolapo|unisex|God has joined wealth together.
+Oluwafemi|unisex|God loves me.
+Oluwafeyikemi|girl|God has given me this child to cherish.
+Oluwafikayomi|unisex|God has added to my joy.
+Oluwafikunayomi|unisex|God has added to my joy.
+Oluwafunmilayo|girl|God has given me joy.
+Oluwagbemiga|unisex|God has lifted me high.
+Oluwagbemileke|unisex|God has lifted me above my troubles.
+Oluwagbenga|boy|God has lifted me up.
+Oluwakayode|unisex|God has brought joy.
+Oluwakemi|girl|God cares for me.
+Oluwakorede|unisex|God has brought good fortune.
+Oluwakorewa|unisex|God has brought goodness.
+Oluwakunmi|unisex|God has filled my life.
+Oluwalana|unisex|God opens the way.
+Oluwaleke|boy|God is supreme.
+Oluwaloba|unisex|God is king.
+Oluwalonimi|unisex|I belong to God.
+Oluwaloseyi|unisex|God has done this.
+Oluwalowo|unisex|God has wealth.
+Oluwamayowa|unisex|God brings joy.
+Oluwamide|unisex|My God has arrived.
+Oluwamisayo|unisex|God has added to my joy.
+Oluwanifemi|unisex|God loves me.
+Oluwanimisi|unisex|God inspires me.
+Oluwapamilerin|unisex|God has made me smile.
+Oluwapelumi|unisex|God is with me.
+Oluwarantimi|unisex|God remembers me.
+Oluwarantola|unisex|God remembers wealth and honour.
+Oluwaremilekun|unisex|God has dried my tears.
+Oluwaremileke|unisex|God has comforted me with victory.
+Oluwarotimi|unisex|God stands by me.
+Oluwasegun|unisex|God has won the victory.
+Oluwaseun|unisex|God has done this.
+Oluwaseyi|unisex|God has done this.
+Oluwasemilore|unisex|God has shown me favour.
+Oluwasikemi|girl|God has added to my care.
+Oluwasindara|unisex|God is still doing wonderful things.
+Oluwasola|unisex|God has made wealth.
+Oluwasore|unisex|God has shown kindness.
+Oluwatan|unisex|God is sufficient.
+Oluwatishe|unisex|God has done it.
+Oluwatimilehin|unisex|God supports me.
+Oluwatise|unisex|God has done this.
+Oluwatobiloba|unisex|God is a great king.
+Oluwatofunmi|unisex|God is enough for me.
+Oluwatomi|unisex|God is enough for me.
+Oluwatomiwa|unisex|God has come to me.
+Oluwatomisin|unisex|God is worthy of my worship.
+Oluwatoni|unisex|God is enough to have.
+Oluwatoyosi|unisex|God has added to joy.
+Oluwatumininu|unisex|God comforts me.
+Oluwatunmise|unisex|God has renewed me.
+Oluwayemisi|unisex|God has honoured me.
+Oluwayemisiola|unisex|God has honoured me with wealth.
+Oluwayimika|unisex|God surrounds me with honour.
+Oluwayinka|unisex|God surrounds me.
+Oluwaseyifunmi|unisex|God has done this for me.
+Omobolanle|girl|A child who finds wealth at home.
+Omobolaji|unisex|A child awakens with wealth.
+Omobowale|unisex|A child has returned home.
+Omodara|unisex|A child is good.
+Omodolapo|unisex|A child has joined with wealth.
+Omofolahan|unisex|A child displays wealth.
+Omolade|unisex|A child is a crown.
+Omolara|girl|A child is family.
+Omolayo|unisex|A child is joy.
+Omolewa|girl|A child is beautiful.
+Omololu|unisex|A child belongs to God.
+Omolola|girl|A child is wealth.
+Omoluwa|unisex|A child of God.
+Omonike|girl|A child is to be cherished.
+Omoniyi|unisex|A child is honour.
+Omorinsola|girl|A child walks into wealth.
+Omotara|girl|A child is part of the family.
+Omotayo|unisex|A child is worthy of joy.
+Omotola|unisex|A child is worthy of wealth.
+Omotolani|unisex|A child is worthy of having wealth.
+Omotomi|unisex|A child is enough for me.
+Omowale|unisex|A child has come home.
+Omowunmi|girl|I desire a child.
+Omoyemi|unisex|A child befits me.
+Omoyeni|girl|A child is worthy to have.
+Omoyimika|unisex|A child surrounds me with honour.
+Omoyosola|girl|A child rejoices in wealth.
+Opeyemi|unisex|Gratitude befits me.
+Opeoluwa|unisex|Thanks to God.
+Opeoluwatomi|unisex|Gratitude to God is enough for me.
+Oreofe|unisex|Grace; unearned favour.
+Oreofeoluwa|unisex|The grace of God.
+Oreoluwa|unisex|A gift from God.
+Oreoluwatomi|unisex|God's gift is enough for me.
+Oresanya|boy|A favour has rewarded suffering.
+Oriyomi|unisex|My destiny has saved me.
+Oyekanmi|boy|Honour has reached me.
+Oyindamola|girl|Sweetness is mixed with wealth.
+Oyinlola|girl|Wealth is sweet like honey.
+Oyinkansola|girl|Sweetness has been added to wealth.
+Oyinkanyinsola|girl|Sweetness has been added to wealth.
+Oyinlade|girl|The crown is sweet like honey.
+Oyinloye|girl|Honour is sweet like honey.
+Oyinloluwa|girl|God's sweetness.
+Oyinmide|girl|My sweetness has arrived.
+Oyintomi|girl|Sweetness is enough for me.
+Oyintomilola|girl|Sweetness is enough wealth for me.
+Oyintola|girl|Sweetness is worthy of wealth.
+Oyinwande|girl|Sweetness has come looking for me.
+Pamilerin|unisex|Make me smile.
+Pelumi|unisex|With me; a short form of Oluwapelumi.
+Remilekun|unisex|Dry my tears.
+Remileke|unisex|Comfort me with victory.
+Rereloluwa|unisex|God is good.
+Rinsola|girl|Walk into wealth; a short form of a longer name.
+Ronke|girl|Someone to cherish; a short form of a longer name.
+Rotimi|unisex|Stand by me.
+Sade|girl|A short form of Folasade and other crown names.
+Segun|boy|Victory; a short form of a longer name.
+Seun|unisex|Give thanks; a short form of a longer name.
+Seyi|unisex|Has done this; a short form of a longer name.
+Similoluwa|unisex|Rest in God.
+Simisola|girl|Rest in wealth and comfort.
+Sijuwade|unisex|Look towards the crown.
+Sijuade|unisex|Look towards the crown.
+Sikemi|girl|Add to my care.
+Sinmiloluwa|unisex|Rest in God.
+Sola|unisex|A short form of several names associated with wealth.
+Taiwo|unisex|The first-born twin; the one who tastes the world first.
+Temidayo|unisex|My own has become joy.
+Temidire|unisex|My own has become goodness.
+Temilade|unisex|The crown belongs to me.
+Temilayo|unisex|Joy belongs to me.
+Temilola|unisex|Wealth belongs to me.
+Temiloluwa|unisex|I belong to God.
+Temini|unisex|My own.
+Temitayo|unisex|My own is worthy of joy.
+Temitola|unisex|My own is worthy of wealth.
+Temitope|unisex|My own is worthy of thanks.
+Temitomilola|unisex|My own is enough wealth for me.
+Temitomisin|unisex|My own is worthy of worship.
+Temitopeloluwa|unisex|My own is worthy of thanks to God.
+Temi|unisex|My own; a short form of a longer name.
+Teniola|girl|One who possesses wealth.
+Tenilayo|unisex|Joy belongs to us.
+Tenilola|unisex|Wealth belongs to us.
+Tife|unisex|A short form of Boluwatife: as God wishes.
+Tijesunimi|unisex|I belong to Jesus.
+Timilehin|unisex|Support me; stand behind me.
+Tiwalade|unisex|The crown belongs to us.
+Tiwa|unisex|Our own; a short form of a longer name.
+Tiwaloluwa|unisex|We belong to God.
+Tiwatope|unisex|Our own is worthy of thanks.
+Tobiloba|unisex|A great king; a short form of Oluwatobiloba.
+Tobi|unisex|Great; a short form of a longer name.
+Tofunmi|unisex|Enough for me; a short form of a longer name.
+Tokunbo|unisex|One who has returned from overseas.
+Tolani|unisex|Worthy of having; a short form of a longer name.
+Tolu|unisex|Belongs to God; a short form of a longer name.
+Tolulope|unisex|Thanks belong to God.
+Tolulola|unisex|Wealth belongs to God.
+Toluwalope|unisex|Thanks belong to God.
+Toluwanimi|unisex|I belong to God.
+Toluwani|unisex|Belongs to God.
+Toluwalase|unisex|Authority belongs to God.
+Toluwalashe|unisex|A spelling of Toluwalase: authority belongs to God.
+Tomi|unisex|Enough for me; a short form of a longer name.
+Tomilola|unisex|Enough wealth for me; a short form of a longer name.
+Tomisin|unisex|Worthy of worship; a short form of a longer name.
+Tomiwa|unisex|Has come to me; a short form of a longer name.
+Tosin|unisex|Worthy of worship; a short form of a longer name.
+Tosinoluwa|unisex|God is worthy of worship.
+Toyin|unisex|Worthy of praise; a short form of a longer name.
+Toyosi|unisex|Added to joy; a short form of a longer name.
+Tumininu|unisex|Comfort me.
+Tunmise|unisex|Renew me.
+Tunde|boy|Has returned; a short form of a longer name.
+Wale|boy|Has come home; a short form of a longer name.
+Wura|girl|Gold; a short form of a longer name.
+Wuraola|girl|Gold of wealth and honour.
+Wurami|girl|My gold.
+Yejide|girl|Mother has awakened.
+Yemisi|girl|Honour me; a short form of a longer name.
+Yetunde|girl|Mother has returned.
+Yewande|girl|Mother has returned.
+Yimika|unisex|Surround me with honour.
+Yinka|unisex|Surrounds me; a short form of a longer name.
+[Oriki]
+Abeke|girl|One whose care is sought; a cherished child.
+Aduke|girl|One people compete to cherish.
+Ajani|boy|One we fought to have.
+Ajoke|girl|One cherished by all.
+Akanbi|boy|One deliberately brought into the world.
+Akanni|boy|One who is special to have.
+Akoni|boy|A brave one; a champion.
+Amoke|girl|One known and cherished.
+Anike|girl|One born to be cherished.
+Arike|girl|One cherished on sight.
+Asabi|girl|One specially chosen to be born.
+Ashabi|girl|A spelling of Asabi: one specially chosen to be born.
+Asake|girl|One specially chosen to be cherished.
+Ayinde|boy|One whose arrival is praised.
+Ayoka|girl|One who brings joy to those around her.
+Ishola|boy|One born into wealth.
+[English]
+Abigail|girl|My father's joy.
+Ada|girl|Noble.
+Adelaide|girl|Noble nature.
+Alice|girl|Of noble kind.
+Amelia|girl|Associated with work and industriousness.
+Amy|girl|Beloved.
+Anna|girl|Grace; favour.
+Annabelle|girl|A combination of Anna and Belle.
+Audrey|girl|Noble strength.
+Aurora|girl|Dawn.
+Ava|girl|A name with several proposed origins; the meaning is uncertain.
+Beatrice|girl|One who brings happiness; associated with blessing.
+Bella|girl|Beautiful; also a short form of Isabella.
+Bethany|girl|From the biblical place name Bethany.
+Bonnie|girl|Pretty; charming.
+Charlotte|girl|A feminine form of Charles, associated with a free person.
+Chloe|girl|Young green shoot.
+Clara|girl|Bright; clear.
+Daisy|girl|The daisy flower.
+Eleanor|girl|An established name whose original meaning is uncertain.
+Eliza|girl|A form of Elizabeth: my God is an oath.
+Elizabeth|girl|My God is an oath.
+Ella|girl|A short form with several origins and meanings.
+Eloise|girl|A name linked to the Germanic Helewidis; its meaning is debated.
+Emily|girl|From the Roman family name Aemilius; traditionally linked to rivalry.
+Emma|girl|Whole; universal.
+Esme|girl|Loved; esteemed.
+Eva|girl|Life.
+Evelyn|girl|From the name Aveline; its earlier meaning is uncertain.
+Faith|girl|Trust; faith.
+Florence|girl|Flourishing; prosperous.
+Freya|girl|Lady; associated with the Norse goddess.
+Gabriella|girl|God is my strength.
+Georgia|girl|A feminine form of George: farmer.
+Grace|girl|Grace; favour.
+Harriet|girl|A feminine form of Henry: home ruler.
+Hazel|girl|The hazel tree.
+Holly|girl|The holly plant.
+Hope|girl|Hope; expectation.
+Isabel|girl|A form of Elizabeth: my God is an oath.
+Isabella|girl|A form of Elizabeth: my God is an oath.
+Isla|girl|From the Scottish island name Islay.
+Ivy|girl|The ivy plant.
+Jade|girl|The green gemstone.
+Jane|girl|God is gracious.
+Jasmine|girl|The jasmine flower.
+Jessica|girl|A literary name introduced by Shakespeare; often linked to a Hebrew root.
+Josephine|girl|God will add.
+Joy|girl|Happiness; delight.
+Julia|girl|From the Roman family name Julius; earlier meaning uncertain.
+Juliet|girl|A form of Julia.
+Kate|girl|A form of Katherine, traditionally associated with purity.
+Katherine|girl|Traditionally associated with purity; its earlier origin is uncertain.
+Laura|girl|Laurel.
+Lily|girl|The lily flower.
+Lucy|girl|Light.
+Luna|girl|Moon.
+Mabel|girl|Lovable.
+Maisie|girl|A form of Margaret: pearl.
+Margaret|girl|Pearl.
+Maria|girl|A form of Mary; its original meaning is debated.
+Mary|girl|An ancient name with several proposed meanings.
+Matilda|girl|Strength in battle.
+Mia|girl|A short form of Maria; also associated with the word mine.
+Millie|girl|A short form of names including Mildred and Millicent.
+Molly|girl|A form of Mary.
+Naomi|girl|Pleasantness.
+Natalie|girl|Associated with Christmas Day.
+Nora|girl|A short form of Honora or Eleanor.
+Olive|girl|The olive tree; associated with peace.
+Olivia|girl|Associated with the olive tree.
+Ophelia|girl|Help; assistance.
+Penelope|girl|An ancient Greek name whose original meaning is uncertain.
+Phoebe|girl|Bright; radiant.
+Poppy|girl|The poppy flower.
+Rose|girl|The rose flower.
+Rosie|girl|A familiar form of Rose.
+Ruby|girl|The red gemstone.
+Scarlett|girl|From the name of the rich red colour and cloth.
+Sophia|girl|Wisdom.
+Sophie|girl|Wisdom.
+Stella|girl|Star.
+Summer|girl|The summer season.
+Thea|girl|Goddess; also a short form of longer names.
+Victoria|girl|Victory.
+Violet|girl|The violet flower.
+Willow|girl|The willow tree.
+Zoe|girl|Life.
+Aaron|boy|An ancient name with uncertain origin, often interpreted as exalted.
+Adam|boy|Human; associated with earth.
+Adrian|boy|From Hadria.
+Albert|boy|Noble and bright.
+Alexander|boy|Defender of people.
+Alfred|boy|Elf counsel.
+Andrew|boy|Brave; manly.
+Anthony|boy|From the Roman family name Antonius; meaning uncertain.
+Archie|boy|A form of Archibald: genuine and bold.
+Arthur|boy|An ancient name whose original meaning is uncertain.
+Benjamin|boy|Son of the right hand.
+Blake|unisex|An English surname with roots referring to dark or fair colouring.
+Caleb|boy|Traditionally interpreted as faithful or wholehearted; origin debated.
+Callum|boy|Dove.
+Charles|boy|Free person.
+Charlie|unisex|A familiar form of Charles.
+Christopher|boy|Bearer of Christ.
+Daniel|boy|God is my judge.
+David|boy|Beloved.
+Dylan|boy|Associated with the sea in Welsh tradition.
+Edward|boy|Wealthy guardian.
+Elijah|boy|My God is Yahweh.
+Elliot|unisex|A form related to Elijah.
+Ethan|boy|Firm; enduring.
+Ezra|boy|Help.
+Felix|boy|Happy; fortunate.
+Finn|boy|Fair; white.
+Frederick|boy|Peaceful ruler.
+Gabriel|boy|God is my strength.
+George|boy|Farmer.
+Harry|boy|A form of Henry: home ruler.
+Henry|boy|Home ruler.
+Hugo|boy|Mind; spirit.
+Isaac|boy|He will laugh.
+Jack|boy|A form of John: God is gracious.
+Jacob|boy|Traditionally interpreted as holder of the heel or supplanter.
+James|boy|An English form of Jacob.
+Jasper|boy|Traditionally associated with a treasurer.
+John|boy|God is gracious.
+Jonathan|boy|God has given.
+Joseph|boy|God will add.
+Joshua|boy|God is salvation.
+Jude|boy|Praised.
+Julian|boy|From the Roman family name Julius.
+Leo|boy|Lion.
+Liam|boy|A form of William: resolute protector.
+Logan|unisex|Little hollow.
+Louis|boy|Famous in battle.
+Lucas|boy|From Lucania.
+Luke|boy|From Lucania.
+Matthew|boy|Gift of God.
+Max|boy|Greatest; a short form of Maximilian.
+Michael|boy|Who is like God?
+Miles|boy|A name with several proposed origins.
+Nathan|boy|He has given.
+Nicholas|boy|Victory of the people.
+Noah|boy|Rest; comfort.
+Oliver|boy|Traditionally associated with the olive tree; earlier origin uncertain.
+Oscar|boy|An established name with Irish and Germanic interpretations.
+Owen|boy|A Welsh name often interpreted as well-born.
+Peter|boy|Rock; stone.
+Philip|boy|Lover of horses.
+Rafael|boy|God has healed.
+Reuben|boy|Behold, a son.
+Robert|boy|Bright fame.
+Samuel|boy|Traditionally interpreted as heard by God.
+Sebastian|boy|From Sebaste; associated with reverence.
+Simon|boy|He has heard.
+Theodore|boy|Gift of God.
+Thomas|boy|Twin.
+Toby|boy|God is good.
+William|boy|Resolute protector.
+Zachary|boy|God has remembered.
+[Hebrew]
+Abigail|girl|My father's joy.
+Adina|girl|Gentle; delicate.
+Ahava|girl|Love.
+Aliza|girl|Joyful.
+Ariella|girl|Lion of God.
+Aviva|girl|Springlike; fresh.
+Batya|girl|Daughter of God.
+Chava|girl|Life.
+Dalia|girl|A branch; distinct from the flower name Dahlia.
+Deborah|girl|Bee.
+Eliana|girl|My God has answered.
+Elisheva|girl|My God is an oath.
+Esther|girl|Often linked to a Persian word for star; origin debated.
+Hadassah|girl|Myrtle.
+Hannah|girl|Grace; favour.
+Leah|girl|An ancient name whose original meaning is uncertain.
+Liora|girl|My light.
+Maya|girl|A name with several origins; in modern Hebrew often linked to water.
+Miriam|girl|An ancient name with several proposed meanings.
+Naomi|girl|Pleasantness.
+Noa|girl|Movement; distinct from the name Noah.
+Orli|girl|My light.
+Rachel|girl|Ewe.
+Rebecca|girl|Traditionally associated with binding or joining; origin debated.
+Rivka|girl|The Hebrew form of Rebecca.
+Ruth|girl|Friendship; companionship.
+Sarah|girl|Princess.
+Shira|girl|Song; poetry.
+Talia|girl|Dew of God.
+Tamar|girl|Date palm.
+Yael|girl|Ibex; mountain goat.
+Zahava|girl|Golden.
+Amir|boy|Treetop in Hebrew; a separate Arabic name means prince.
+Ariel|unisex|Lion of God.
+Asher|boy|Happy; blessed.
+Avi|boy|My father; also a short form of longer names.
+Avraham|boy|Father of a multitude.
+Barak|boy|Lightning.
+Boaz|boy|Traditionally interpreted as strength.
+Dov|boy|Bear.
+Eli|boy|Ascent; my God, depending on spelling and origin.
+Eliezer|boy|My God is help.
+Eliyahu|boy|My God is Yahweh.
+Eitan|boy|Firm; enduring.
+Ezekiel|boy|God strengthens.
+Gideon|boy|One who cuts down.
+Ilan|boy|Tree.
+Immanuel|boy|God is with us.
+Itamar|boy|Island of palms.
+Lev|boy|Heart in Hebrew; a separate name means lion in Slavic languages.
+Lior|unisex|My light.
+Malachi|boy|My messenger.
+Micah|boy|Who is like God?
+Moshe|boy|Traditionally associated with being drawn out of water.
+Natan|boy|He has given.
+Noam|unisex|Pleasantness.
+Oren|boy|Pine tree.
+Raphael|boy|God has healed.
+Shai|unisex|Gift.
+Shalom|unisex|Peace.
+Uri|boy|My light.
+Yair|boy|He will shine.
+Yonatan|boy|God has given.
+[Islamic]
+Aaliyah|girl|High; exalted.
+Aamina|girl|Safe; secure.
+Aisha|girl|Living; alive.
+Aliyah|girl|High; exalted.
+Amal|unisex|Hope.
+Amani|girl|Wishes; aspirations.
+Amina|girl|Trustworthy; faithful, depending on Arabic spelling.
+Amira|girl|Princess; leader.
+Asma|girl|Supreme; lofty.
+Aya|girl|A sign; a verse.
+Ayah|girl|A sign; a verse.
+Aziza|girl|Dear; powerful.
+Basma|girl|Smile.
+Bushra|girl|Good news.
+Dalia|girl|A vine; meaning varies with language and spelling.
+Dua|girl|Prayer; supplication.
+Farah|girl|Joy.
+Fatima|girl|One who abstains; traditionally associated with weaning.
+Habiba|girl|Beloved.
+Hafsa|girl|Young lioness.
+Hana|girl|Happiness in Arabic; other origins have different meanings.
+Hanan|unisex|Compassion; tenderness.
+Hiba|girl|Gift.
+Iman|unisex|Faith.
+Inaya|girl|Care; attention.
+Jamila|girl|Beautiful.
+Khadija|girl|Traditionally associated with a child born early.
+Layla|girl|Night.
+Lina|girl|Tender; also associated with a type of palm.
+Mariam|girl|An Arabic form of Maryam; original meaning debated.
+Maryam|girl|An ancient name whose original meaning is debated.
+Muna|girl|Wishes; desires.
+Nadia|girl|Tender or generous in Arabic; a separate Slavic name means hope.
+Nafisa|girl|Precious; valuable.
+Naima|girl|At ease; comfortable.
+Nawal|girl|Gift; generosity.
+Noor|unisex|Light.
+Nur|unisex|Light.
+Rahma|girl|Mercy.
+Rania|girl|One who gazes attentively.
+Ruqayyah|girl|Often associated with rising or advancement.
+Safa|girl|Purity; clarity.
+Safiya|girl|Pure; a close friend.
+Salma|girl|Safe; peaceful.
+Samira|girl|An evening companion.
+Sana|girl|Radiance; splendour, depending on Arabic spelling.
+Sumayya|girl|An early Arabic name often associated with elevation.
+Tasnim|girl|A spring in Paradise mentioned in the Quran.
+Yasmin|girl|Jasmine.
+Zahra|girl|Radiant; flowering, depending on Arabic spelling.
+Zainab|girl|Traditionally associated with a fragrant flowering tree.
+Abdullah|boy|Servant of God.
+Abdulrahman|boy|Servant of the Most Merciful.
+Adil|boy|Just; fair.
+Ahmad|boy|Most praiseworthy.
+Ahmed|boy|A spelling of Ahmad: most praiseworthy.
+Ali|boy|High; exalted.
+Amin|boy|Trustworthy; faithful.
+Amir|boy|Prince; commander.
+Anas|boy|Affection; friendliness.
+Ayman|boy|Blessed; fortunate.
+Aziz|boy|Powerful; dear.
+Bilal|boy|Associated with moisture and refreshment.
+Fahad|boy|Leopard.
+Faisal|boy|One who distinguishes or judges.
+Faris|boy|Knight; horseman.
+Farid|boy|Unique; precious.
+Hamza|boy|Traditionally associated with strength and a lion.
+Harun|boy|The Arabic form of Aaron; original meaning uncertain.
+Hasan|boy|Good; handsome.
+Hassan|boy|A common spelling associated with goodness or beauty.
+Husayn|boy|A diminutive of Hasan: good; handsome.
+Ibrahim|boy|Father of a multitude.
+Idris|boy|A prophetic name whose original meaning is uncertain.
+Ilyas|boy|The Arabic form of Elijah: my God is Yahweh.
+Imran|boy|Prosperity; an inhabited place.
+Ismail|boy|God hears.
+Jamal|boy|Beauty.
+Karim|boy|Generous; noble.
+Khalid|boy|Lasting; enduring.
+Luqman|boy|A Quranic name whose original meaning is uncertain.
+Mahmud|boy|Praised.
+Malik|boy|King; owner.
+Mansur|boy|Victorious; supported.
+Muhammad|boy|Praised; praiseworthy.
+Musa|boy|The Arabic form of Moses; original origin debated.
+Mustafa|boy|Chosen.
+Nabil|boy|Noble.
+Nasir|boy|Helper; supporter.
+Omar|boy|Flourishing; long-lived.
+Rashid|boy|Rightly guided.
+Rayyan|boy|Well-watered; also the name of a gate of Paradise in Islamic tradition.
+Rayan|boy|A spelling of Rayyan: well-watered.
+Ridwan|boy|Contentment; acceptance.
+Saad|boy|Happiness; good fortune.
+Saeed|boy|Happy; fortunate.
+Salim|boy|Safe; sound.
+Sami|boy|Elevated; noble, depending on Arabic spelling.
+Samir|boy|An evening companion.
+Sulaiman|boy|The Arabic form of Solomon, associated with peace.
+Tariq|boy|Night visitor; morning star.
+Umar|boy|Flourishing; long-lived.
+Usman|boy|A spelling of Uthman, an early Arabic name.
+Waleed|boy|Newborn child.
+Yahya|boy|The Arabic form of John, associated with God's grace.
+Yasin|boy|From the opening letters of a Quranic chapter; literal meaning is uncertain.
+Yusuf|boy|God will add.
+Zaid|boy|Increase; growth.
+Zayd|boy|Increase; growth.
+Zayn|boy|Beauty; grace.

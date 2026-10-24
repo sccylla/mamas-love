@@ -25,24 +25,27 @@
 </style>
 <link rel="stylesheet" href="assets/footer.css?v=calm-1">
 <script src="assets/site-footer.js?v=admin-1" defer></script>
-<link rel="stylesheet" href="assets/site-effects.css?v=lullaby-3">
-<script src="assets/navigation.js?v=polish-1" defer></script>
-<script src="assets/lullaby.js?v=lullaby-3" defer></script>
+<link rel="stylesheet" href="assets/site-effects.css?v=discover-1">
+<script src="assets/navigation.js?v=discover-1" defer></script>
+<script src="assets/lullaby.js?v=discover-1" defer></script>
 <link rel="stylesheet" href="assets/navigation.css?v=polish-1">
 <link rel="stylesheet" href="assets/site-review.css?v=floral-1">
+<link rel="stylesheet" href="assets/discovery.css?v=discover-1">
+<script src="assets/music-library.js?v=discover-1" defer></script>
 </head>
 <body>
 
 <header class="site-head"><div class="shell head"><a class="brand" href="./"><img src="assets/brand/mamas-love-logo.svg" alt="Mama's Love"></a><a class="home" href="./">← Mama's Love home</a></div></header>
 <main>
 <section class="hero"><div class="shell hero-grid">
-  <div><span class="kicker">Lullabies & baby sounds</span><h1>Lullabies &<br><em>sleep sounds.</em></h1><p>Find a lullaby, a steady hush, or a favourite rain sound. Listen to a short preview, save the sounds you like, or download a longer version for later.</p><div class="page-actions"><a href="#soundLibrary">Browse sounds ↓</a><a class="secondary" href="#savedSounds">Saved sounds</a></div><div class="hero-note"><b>Gentle listening:</b> keep playback at a comfortable low volume and place speakers or phones away from a baby's ears. These sounds are for comfort and routine, not a substitute for safe-sleep practices or medical care.</div></div>
+  <div><span class="kicker">Lullabies & baby sounds</span><h1>Lullabies &<br><em>sleep sounds.</em></h1><p>Find a lullaby, a steady hush, or a favourite rain sound. Listen to a short preview, save the sounds you like, or download a longer version for later.</p><div class="page-actions"><a href="#lullabyDownloads">Play & download MP3s ↓</a><a class="secondary" href="#soundLibrary">More sleep sounds</a><a class="secondary" href="#savedSounds">Saved sounds</a></div><div class="hero-note"><b>Gentle listening:</b> keep playback at a comfortable low volume and place speakers or phones away from a baby's ears. These sounds are for comfort and routine, not a substitute for safe-sleep practices or medical care.</div></div>
   <div class="hero-art"><div class="orb o1"></div><div class="orb o2"></div><div class="player-card"><div class="cover"><div class="stars"></div><div class="moon"></div></div><h3>Moonlight Hush</h3><p>Soft music-box tones with a slow bedtime pulse.</p><div class="wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
 </div></section>
+<div data-music-library="sounds"></div>
 <section class="library" id="soundLibrary"><div class="shell library-shell">
   <div class="toolbar"><label class="search">⌕ <input id="search" type="search" aria-label="Search lullabies and sounds" placeholder="Search lullabies, songs or sounds…"></label><select id="duration" aria-label="Download length"><option value="60">Download 1 minute</option><option value="120" selected>Download 2 minutes</option><option value="300">Download 5 minutes</option></select></div>
   <p class="library-note">30-second previews · WAV downloads · Playback volume 45%</p><label class="mobile-category">Sound category<select id="soundCategory" aria-label="Sound category"></select></label><div class="filters" id="filters"></div>
-  <div class="section-head"><div><span class="kicker">Audio library</span><h2>Choose something gentle.</h2></div><p>Choose a category, or search for a sound you already love.</p></div>
+  <div class="section-head"><div><span class="kicker">Audio library</span><h2>More music & sleep sounds.</h2></div><p>Choose a category, or search for a sound you already love.</p></div>
   <div class="track-grid" id="trackGrid"></div>
   <div class="download-status" id="downloadStatus"></div>
 </div></section>
@@ -193,7 +196,7 @@ document.getElementById('soundCategory').addEventListener('change',event=>{categ
 document.getElementById('search').addEventListener('input',e=>{query=e.target.value.toLowerCase();render()});
 function key(t){return t.id}
 function toggleFav(id){favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];try{localStorage.setItem('mamasAudioFavs',JSON.stringify(favs))}catch{}render();renderFavs()}
-function trackCard(t){const saved=favs.includes(t.id),playing=active&&active.id===t.id;return `<article class="track ${playing?'playing':''}" style="--trackGlow:${t.cat==='Nature & night'?'#e5f3eb':t.cat==='Noise colours'?'#e9eef7':t.cat==='Rain & water'?'#e5f3f4':t.cat==='Transport'?'#eeeaf4':t.cat==='Sleep mixes'?'#eee6f8':'#ffe4ec'}"><div class="track-top"><span class="tag">${t.cat}</span><button class="fav ${saved?'active':''}" onclick="event.stopPropagation();toggleFav('${t.id}')" aria-label="${saved?'Remove':'Save'} ${t.title}" aria-pressed="${saved}">♥</button></div><h3>${t.title}</h3><p>${t.desc}</p><div class="meta"><span>${t.mood}</span><span>30-sec preview</span><span>WAV download</span></div><div class="track-actions"><button class="play" onclick="playTrack('${t.id}')">${playing?'Restart':'Play'}</button><button class="download" onclick="downloadTrack('${t.id}',this)">Download</button></div><div class="progress"><span id="p-${t.id}"></span></div></article>`}
+function trackCard(t){const saved=favs.includes(t.id),playing=active&&active.id===t.id;return `<article class="track ${playing?'playing':''}" style="--trackGlow:${t.cat==='Nature & night'?'#e5f3eb':t.cat==='Noise colours'?'#e9eef7':t.cat==='Rain & water'?'#e5f3f4':t.cat==='Transport'?'#eeeaf4':t.cat==='Sleep mixes'?'#eee6f8':'#ffe4ec'}"><div class="track-top"><span class="tag">${t.cat}</span><button class="fav ${saved?'active':''}" onclick="event.stopPropagation();toggleFav('${t.id}')" aria-label="${saved?'Remove':'Save'} ${t.title}" aria-pressed="${saved}">♥</button></div><h3>${t.title}</h3><p>${t.desc}</p><div class="meta"><span>${t.mood}</span><span>30-sec preview</span><span>WAV download</span></div><div class="track-actions"><button class="play" onclick="playTrack('${t.id}')">${playing?'Restart':'Play'}</button><button class="download" onclick="downloadTrack('${t.id}',this)">Download WAV ↓</button></div><div class="progress"><span id="p-${t.id}"></span></div></article>`}
 function render(){const list=tracks.filter(t=>(category==='All'||t.cat===category)&&(!query||(t.title+' '+t.cat+' '+t.desc).toLowerCase().includes(query)));grid.innerHTML=list.length?list.map(trackCard).join(''):'<div class="empty">No sounds match that search.</div>'}
 function renderFavs(){const list=tracks.filter(t=>favs.includes(t.id));favGrid.innerHTML=list.length?list.map(trackCard).join(''):'<div class="empty">Tap the heart on any track to save it here.</div>'}
 const LIBRARY_VOLUME=.45;

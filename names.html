@@ -53,12 +53,13 @@
 </style>
 <link rel="stylesheet" href="assets/footer.css?v=calm-1">
 <script src="assets/site-footer.js?v=admin-1" defer></script>
-<link rel="stylesheet" href="assets/site-effects.css?v=lullaby-3">
-<script src="assets/navigation.js?v=polish-1" defer></script>
-<script src="assets/lullaby.js?v=lullaby-3" defer></script>
+<link rel="stylesheet" href="assets/site-effects.css?v=discover-1">
+<script src="assets/navigation.js?v=discover-1" defer></script>
+<script src="assets/lullaby.js?v=discover-1" defer></script>
 <link rel="stylesheet" href="assets/navigation.css?v=polish-1">
 <link rel="stylesheet" href="assets/site-review.css?v=floral-1">
-<link rel="stylesheet" href="assets/names.css?v=auto-pron-1">
+<link rel="stylesheet" href="assets/names.css?v=discover-1">
+<link rel="stylesheet" href="assets/discovery.css?v=discover-1">
 </head>
 <body>
 
@@ -67,10 +68,10 @@
   <div class="shell hero-grid">
     <div>
       <span class="eyebrow">BABY NAMES & ORÍKÌ</span>
-      <h1>Find a name that <em>feels right.</em></h1>
-      <p>Explore names and meanings, build a shortlist, and keep a name you love as a beautifully designed card.</p><div class="page-actions"><a href="#nameFinder">Find a name ↓</a><a class="secondary" href="#savedNames">Your shortlist</a></div>
+      <h1>A name to love.<br><em>A meaning to keep.</em></h1>
+      <p>A fuller collection of Yorùbá names, Oríkì and familiar favourites from other traditions. Find a meaning you love, then keep it on a floral name card.</p><div class="name-collection-stats" id="nameCollectionStats"></div><div class="page-actions"><a href="#nameFinder">Browse the names ↓</a><a class="secondary" href="#savedNames">Your shortlist</a></div>
     </div>
-    <div class="hero-art name-card-showcase"><canvas id="nameCardPreview" width="1800" height="1350" role="img" aria-label="Preview of an Ariella keepsake name card"></canvas><p>A NAME IN FULL BLOOM.</p></div>
+    <div class="hero-art name-card-showcase"><canvas id="nameCardPreview" width="1800" height="1350" role="img" aria-label="Preview of an Ayomide keepsake name card"></canvas><p>A NAME IN FULL BLOOM.</p></div>
   </div>
 </section>
 <section class="finder" id="nameFinder">
@@ -78,11 +79,11 @@
     <div class="finder-card">
       <div class="controls">
         <label class="search">⌕ <input id="search" type="search" aria-label="Search names and meanings" placeholder="Search a name or meaning…" /></label>
-        <div class="gender-toggle"><button class="active" data-gender="girl">Girls</button><button data-gender="boy">Boys</button></div>
+        <div class="gender-toggle" aria-label="Filter names"><button class="active" data-gender="all" aria-pressed="true">All names</button><button data-gender="girl" aria-pressed="false">Girls</button><button data-gender="boy" aria-pressed="false">Boys</button></div>
       </div>
       <div class="cat-tabs" id="catTabs"></div>
       <div class="card-preferences"><label>Card colour<select id="cardTheme"><option value="plum">Orchid garden</option><option value="rose">Rose bouquet</option><option value="sage">Sage blossoms</option></select></label><p>Pronunciation included. Pick a colour and download.</p></div>
-      <div class="results-head"><div><h2 id="resultsTitle">Girl name ideas</h2></div><p>♡ Save a favourite · Style your name card</p></div>
+      <div class="results-head"><div><h2 id="resultsTitle">Names with meaning</h2><p id="nameResultCount" class="name-result-count" role="status" aria-live="polite"></p></div><p>♡ Save a favourite · Style your name card</p></div>
       <div class="name-grid" id="nameGrid"></div>
       <div class="load-more-wrap"><button class="load-more" id="loadMore">Load more names</button></div>
       <div class="hint" id="originNote"></div>
@@ -112,8 +113,8 @@
   <p class="studio-export">Big lettering. Pronunciation included.<br>1800 × 1350 PNG, ready to share.</p><button id="studioDownload" class="studio-download" type="submit">Download name card ↓</button><p id="studioStatus" class="studio-status" role="status" aria-live="polite"></p></form></div>
 </dialog>
 <div class="download-toast" id="toast">Name card downloaded</div>
-<script src="assets/names-data.js?v=polish-1"></script>
-<script src="assets/name-pronunciation-data.js?v=auto-pron-1"></script>
+<script src="assets/names-data.js?v=discover-1"></script>
+<script src="assets/name-pronunciation-data.js?v=discover-1"></script>
 <script src="assets/name-pronunciations.js?v=auto-pron-1"></script>
 <script src="assets/name-card.js?v=auto-pron-1"></script>
 <script>
@@ -127,40 +128,45 @@ const fallbackNames = [
   {n:'Rayyan',g:'boy',c:'Islamic',m:'Lush, abundant and well-watered.'},
   {n:'Adewale',g:'boy',c:'Yoruba',m:'The crown has come home.'}
 ];
-const names = [...(window.MAMAS_NAMES && window.MAMAS_NAMES.length ? window.MAMAS_NAMES : fallbackNames)].sort((a,b)=>Number(a.m==='Meaning not confirmed.')-Number(b.m==='Meaning not confirmed.'));
-const categories=['All','English','Hebrew','Islamic','Yoruba','Oriki'];
-let gender='girl', category='All', query='', visible=48;
+const names = [...(window.MAMAS_NAMES && window.MAMAS_NAMES.length ? window.MAMAS_NAMES : fallbackNames)];
+const categories=['All','Yoruba','Oriki','English','Hebrew','Islamic'];
+let gender='all', category='All', query='', visible=60;
+const normalizeName=value=>String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+document.getElementById('nameCollectionStats').innerHTML=`<span><strong>${names.filter(name=>name.c==='Yoruba').length}</strong> Yorùbá names</span><span><strong>${names.filter(name=>name.c==='Oriki').length}</strong> Oríkì names</span><span>Meanings & pronunciation included</span>`;
 const grid=document.getElementById('nameGrid'), title=document.getElementById('resultsTitle'), tabs=document.getElementById('catTabs'), search=document.getElementById('search');
 let favs=[];try{const saved=JSON.parse(localStorage.getItem('mamasNameFavs')||'[]');if(Array.isArray(saved))favs=saved;}catch{}
 const escapeName=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 
 categories.forEach((c,i)=>{
   const b=document.createElement('button');
-  b.textContent=(c==='Oriki'?'Yorùbá Oríkì':c);
+  b.textContent=(c==='Oriki'?'Oríkì':c==='Yoruba'?'Yorùbá':c)+' · '+names.filter(name=>c==='All'||name.c===c).length;
+  b.setAttribute('aria-pressed',String(i===0));
   b.className=i===0?'active':'';
-  b.onclick=()=>{category=c;visible=48;[...tabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};
+  b.onclick=()=>{category=c;visible=60;[...tabs.children].forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});render()};
   tabs.appendChild(b);
 });
 
 document.querySelectorAll('.gender-toggle button').forEach(b=>b.onclick=()=>{
-  gender=b.dataset.gender;visible=48;
-  document.querySelectorAll('.gender-toggle button').forEach(x=>x.classList.toggle('active',x===b));
+  gender=b.dataset.gender;visible=60;
+  document.querySelectorAll('.gender-toggle button').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});
   render();
 });
-search.addEventListener('input',e=>{query=e.target.value.toLowerCase();visible=48;render()});
+search.addEventListener('input',e=>{query=normalizeName(e.target.value.trim());visible=60;render()});
 function key(x){return x.n+'|'+x.g+'|'+x.c}
 function toggleFav(k){favs=favs.includes(k)?favs.filter(x=>x!==k):[...favs,k];try{localStorage.setItem('mamasNameFavs',JSON.stringify(favs))}catch{}render();renderFavs()}
 function pronunciationFor(name){return window.MamasPronunciation.suggest(name)}
 function card(x){const k=key(x),saved=favs.includes(k),spoken=pronunciationFor(x);return `<article class="name-card"><button type="button" class="fav ${saved?'active':''}" data-save="${escapeName(k)}" aria-label="${saved?'Remove':'Save'} ${escapeName(x.n)}${saved?' from favourites':''}" aria-pressed="${saved}">♥</button><button type="button" class="name-download" data-download="${escapeName(k)}" aria-label="Style and download ${escapeName(x.n)} name card"><span class="type">${escapeName(x.c==='Oriki'?'Yorùbá Oríkì':x.c==='Yoruba'?'Yorùbá':x.c)}</span><strong class="name">${escapeName(x.n)}</strong><span class="name-spoken">${escapeName(spoken)}</span><span class="meaning">${escapeName(x.m)}</span><span class="download-label">Style & download card ↓</span></button></article>`}
 function render(){
-  const list=names.filter(x=>(x.g===gender||x.g==='unisex')&&(category==='All'||x.c===category)&&(!query||(x.n+' '+x.m+' '+x.c).toLowerCase().includes(query)));
+  const list=names.filter(x=>(gender==='all'||x.g===gender||x.g==='unisex')&&(category==='All'||x.c===category)&&(!query||normalizeName(x.n+' '+x.m+' '+x.c).includes(query)));
   const shown=list.slice(0,visible);
   grid.innerHTML=shown.map(card).join('')||'<div class="empty">No names match that search yet.</div>';
-  title.textContent=(gender==='girl'?'Girl':'Boy')+' name ideas';
+  title.textContent=category==='Yoruba'?'Yorùbá names':category==='Oriki'?'Yorùbá Oríkì':category==='All'?'Names with meaning':category+' names';
+  document.getElementById('nameResultCount').textContent=`Showing ${shown.length} of ${list.length} names${gender==='all'?'':gender==='girl'?' · Girls & unisex':' · Boys & unisex'}`;
+  document.getElementById('loadMore').textContent=`Show ${Math.min(60,list.length-shown.length)} more names ↓`;
   document.getElementById('loadMore').hidden = shown.length >= list.length;
   document.getElementById('originNote').innerHTML = category==='Oriki'
     ? '<b>About Oríkì:</b> These are praise-names or cognomens. Their meaning can be deeper than a one-line gloss because family, lineage and circumstance can add more layers.'
-    : 'Meanings can vary with spelling and family tradition. Open a card to choose its colour and check the pronunciation before downloading.';
+    : 'Meanings are common interpretations and can vary with tone, spelling and family tradition. Short forms are labelled. Open any card to preview and download it with pronunciation included.';
 }
 function renderFavs(){const list=names.filter(x=>favs.includes(key(x)));document.getElementById('favoritesGrid').innerHTML=list.length?list.map(card).join(''):'<div class="empty">Your saved names will appear here.</div>'}
 function toast(msg){const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
@@ -208,14 +214,14 @@ document.getElementById('studioForm').addEventListener('submit',event=>{event.pr
 
 let previewRequest=0;
 async function updatePreview(){
-  const request=++previewRequest,name=names.find(name=>name.n==='Ariella')||{n:'Ariella',g:'girl',c:'Hebrew',m:'Lion of God.'};
+  const request=++previewRequest,name=names.find(name=>name.n==='Ayomide')||{n:'Ariella',g:'girl',c:'Hebrew',m:'Lion of God.'};
   const canvas=await window.MamasNameCard.render(name,document.getElementById('cardTheme').value,{pronunciation:pronunciationFor(name)});
   if(request!==previewRequest)return;const preview=document.getElementById('nameCardPreview');preview.getContext('2d').drawImage(canvas,0,0);
 }
 document.getElementById('cardTheme').addEventListener('change',()=>updatePreview().catch(()=>{}));
 updatePreview().catch(()=>{});
 
-document.getElementById('loadMore').addEventListener('click',()=>{visible+=48;render()});
+document.getElementById('loadMore').addEventListener('click',()=>{visible+=60;render()});
 render(); renderFavs();
 </script>
 <script src="assets/social.js?v=polish-1" defer></script>
