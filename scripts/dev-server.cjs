@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, '..');
 const env = path.join(root, '.env');
 if (fs.existsSync(env) && process.loadEnvFile) process.loadEnvFile(env);
 const handlers = Object.fromEntries(['admin', 'posts', 'media', 'comments'].map(name => [`/api/${name}`, require(`../api/${name}`)]));
-const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.zip': 'application/zip', '.webmanifest': 'application/manifest+json' };
+const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.mp4': 'video/mp4', '.txt': 'text/plain; charset=utf-8', '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.zip': 'application/zip', '.webmanifest': 'application/manifest+json' };
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost');
@@ -24,6 +24,26 @@ const server = http.createServer(async (req, res) => {
     if (!stat?.isFile()) { res.writeHead(404); return res.end('Not found.'); }
     res.setHeader('Content-Type', types[path.extname(file)] || 'application/octet-stream');
     res.setHeader('X-Content-Type-Options', 'nosniff');
+    // Match Vercel's static-video byte ranges so browser previews can seek.
+    if (path.extname(file) === '.mp4') {
+      res.setHeader('Accept-Ranges', 'bytes');
+      let start = 0, end = stat.size - 1;
+      if (req.headers.range) {
+        const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range);
+        if (range && (range[1] || range[2])) {
+          start = range[1] ? Number(range[1]) : Math.max(0, stat.size - Number(range[2]));
+          end = range[1] && range[2] ? Math.min(Number(range[2]), stat.size - 1) : stat.size - 1;
+        } else start = -1;
+        if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start < 0 || start > end || start >= stat.size) {
+          res.writeHead(416, { 'Content-Range': `bytes */${stat.size}` }); return res.end();
+        }
+        res.statusCode = 206;
+        res.setHeader('Content-Range', `bytes ${start}-${end}/${stat.size}`);
+      }
+      res.setHeader('Content-Length', end - start + 1);
+      if (req.method === 'HEAD') return res.end();
+      return fs.createReadStream(file, { start, end }).pipe(res);
+    }
     if (path.basename(file) === 'admin.html') { res.setHeader('Cache-Control', 'no-store'); res.setHeader('X-Frame-Options', 'DENY'); }
     if (req.method === 'HEAD') return res.end();
     fs.createReadStream(file).pipe(res);

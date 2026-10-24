@@ -108,3 +108,8 @@ On mobile and narrow tablets (up to 820px), the homepage hero shows the full pho
 `assets/music-library.js` adds the same three piano MP3 players and direct download links to the homepage and `sounds.html#lullabyDownloads`. Players begin at 45% volume, load track metadata without starting playback, and pause background audio, other MP3 players and generated sound previews when another source starts. The sound library retains its generated WAV downloads and duration choices.
 
 The name catalogue contains 538 Yorùbá names, 16 Oríkì, 161 familiar English-language names, 63 Hebrew names and 110 Islamic names. It replaces the previous bulk import of obscure and undocumented entries. The source is `data/curated-names.txt`; regenerate `assets/names-data.js` with `python3 scripts/build-name-catalogue.py`, then run the pronunciation generator. All names show by default, with Yorùbá first; category counts, a visible results count and batches of 60 make the complete collection accessible. Search ignores accents, and every card includes an automatic approximate reading guide.
+
+
+## Educational video download
+
+`video.html` provides a browser preview, visible poster, direct MP4 download and ZIP backup for the 39-second safer-newborn-sleep lesson. Its caption includes the NHS source. The media lives in `downloads/videos/` and uses 720 × 1280 H.264 Constrained Baseline video with AAC audio and the MP4 index at the start for browser playback. This page plays the video's own music without starting the site's background lullaby. The local development server serves MP4 files as `video/mp4` and supports byte ranges for seeking; Vercel serves the same files as static assets.
