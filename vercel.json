@@ -1,8 +1,9 @@
 {
   "cleanUrls": true,
-  "functions": { "api/studio.js": { "maxDuration": 120 } },
+  "functions": { "api/studio.js": { "maxDuration": 120 }, "api/studio-video.js": { "maxDuration": 120 } },
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/", "has": [{ "type": "host", "value": "mamas-love-video-studio.vercel.app" }], "destination": "/video-studio/index.html" },
     { "source": "/lib/:path*", "destination": "/api/not-found" },
     { "source": "/data/:path*", "destination": "/api/not-found" },
     { "source": "/scripts/:path*", "destination": "/api/not-found" },

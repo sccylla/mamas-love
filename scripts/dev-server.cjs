@@ -6,7 +6,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const env = path.join(root, '.env');
 if (fs.existsSync(env) && process.loadEnvFile) process.loadEnvFile(env);
-const handlers = Object.fromEntries(['admin', 'posts', 'media', 'comments', 'studio'].map(name => [`/api/${name}`, require(`../api/${name}`)]));
+const handlers = Object.fromEntries(['admin', 'posts', 'media', 'comments', 'studio', 'studio-video'].map(name => [`/api/${name}`, require(`../api/${name}`)]));
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.mp4': 'video/mp4', '.txt': 'text/plain; charset=utf-8', '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.zip': 'application/zip', '.webmanifest': 'application/manifest+json' };
 const server = http.createServer(async (req, res) => {
   try {

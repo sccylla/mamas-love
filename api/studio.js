@@ -1,17 +1,20 @@
 'use strict';
 const cms = require('../lib/cms');
+const video=require('../lib/studio-video');
 const endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/';
 module.exports = async (req, res) => {
   try {
-    if (req.method === 'GET') return cms.reply(res, 200, { configured: Boolean(process.env.GEMINI_API_KEY), authentication: 'admin' });
+    if (req.method === 'GET') return cms.reply(res, 200, { configured: Boolean(process.env.GEMINI_API_KEY), storageConfigured:cms.configured(), authenticated:Boolean(await cms.session(req,false)), authentication:'admin', version:'veo-scenes-v1' });
     if (req.method !== 'POST') return cms.reply(res, 405, { error: 'Method not allowed.' });
-    const input = await cms.body(req, 16384);
-    if (!['storyboard', 'image', 'narration'].includes(input.action)) throw cms.fail(400, 'Choose storyboard, image, or narration.');
-    if (typeof input.prompt !== 'string' || !input.prompt.trim() || input.prompt.length > 4000) throw cms.fail(400, 'Enter a prompt between 1 and 4000 characters.');
+    const input = await cms.body(req, 3*1024*1024);
+    if (!['storyboard', 'image', 'narration', 'video', 'video-status'].includes(input.action)) throw cms.fail(400, 'Choose storyboard, image, narration, video, or video-status.');
+    if (input.action!=='video-status' && (typeof input.prompt !== 'string' || !input.prompt.trim() || input.prompt.length > 4000)) throw cms.fail(400, 'Enter a prompt between 1 and 4000 characters.');
     if (!process.env.GEMINI_API_KEY) throw cms.fail(503, 'AI generation needs a server-side GEMINI_API_KEY. You can still use templates and upload your own images.');
     const session = await cms.session(req);
+    if(input.action==='video-status')return cms.reply(res,200,await video.poll(input.jobId,session.username));
     const count = await cms.redis(['EVAL', "local n=redis.call('INCR',KEYS[1]); if n==1 then redis.call('EXPIRE',KEYS[1],3600) end; return n", 1, `mamas:studio:rate:${session.username}`]);
     if (Number(count) > 30) throw cms.fail(429, 'Hourly generation limit reached. Try again later.');
+    if(input.action==='video')return cms.reply(res,202,await video.start(input,session.username));
     const image = input.action === 'image', narration = input.action === 'narration';
     const voices = ['Kore','Aoede','Leda','Puck','Charon'];
     if (narration && (input.prompt.length > 220 || !voices.includes(input.voice || 'Kore'))) throw cms.fail(400, 'Use up to 220 characters per scene and select an available voice.');

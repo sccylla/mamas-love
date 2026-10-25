@@ -16,6 +16,8 @@ const voiceAudio='data:audio/wav;base64,'+Buffer.from(media.combineNarration([pc
  await page.route('**/api/studio',async route=>{
  if(route.request().method()==='GET')return route.fulfill({json:{configured:true}});
  const input=route.request().postDataJSON();
+ if(input.action==='video')return route.fulfill({status:202,json:{jobId:'a'.repeat(32),status:'pending'}});
+ if(input.action==='video-status')return route.fulfill({json:{status:'ready',url:'/api/studio-video?id='+'a'.repeat(32)}});
  if(input.action==='narration')return route.fulfill({json:{audio:voiceAudio,duration:1}});
  const image=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=100;c.height=100;const x=c.getContext('2d');x.fillStyle='#cba987';x.fillRect(0,0,100,100);return c.toDataURL();});
  await route.fulfill({json:input.action==='image'?{image}:{scenes:[1,2,3].map(n=>({title:`Morning ${n}`,body:'A quiet moment together',imagePrompt:`Documentary photograph, scene ${n}, warm morning light`}))}});
@@ -44,7 +46,16 @@ const voiceAudio='data:audio/wav;base64,'+Buffer.from(media.combineNarration([pc
  await page.locator('#export-top').click();const download=page.waitForEvent('download');await page.locator('#export-start').click();const exported=await download;assert.match(exported.suggestedFilename(),/\.(webm|mp4)$/);await exported.saveAs('/tmp/mamas-love-narrated.webm');
  const probe=JSON.parse(execFileSync('ffprobe',['-v','quiet','-show_streams','-of','json','/tmp/mamas-love-narrated.webm'],{encoding:'utf8'}));
  assert.ok(probe.streams.some(s=>s.codec_type==='audio'),'Export includes a real audio stream');assert.ok(probe.streams.some(s=>s.codec_type==='video'),'Export includes video');
- await page.locator('#export-close').click();await page.screenshot({path:'/tmp/mamas-studio-desktop.png',fullPage:true});
+ await page.locator('#export-close').click();
+ await page.route('**/api/studio-video?*',route=>route.fulfill({contentType:'video/webm',body:require('node:fs').readFileSync('/tmp/mamas-love-narrated.webm')}));
+ await page.locator('#character-description').fill('A mother with brown eyes and shoulder-length dark curls, in a cream linen shirt.');
+ await page.locator('#ai-video').click();await page.locator('#video-status').filter({hasText:'Veo scene ready'}).waitFor();
+ assert.equal(await page.locator('#generated-video-panel').isVisible(),true);
+ await page.locator('#generated-video').evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1)return resolve();v.onloadedmetadata=resolve;v.onerror=reject;}));
+ await page.reload();await page.waitForFunction(()=>!document.querySelector('#generated-video-panel').hidden);
+ assert.match(await page.locator('#character-description').inputValue(),/cream linen/);
+ await page.locator('#export-top').click();await page.locator('#export-start').click();await page.locator('#toast').filter({hasText:'Download your Veo clips'}).waitFor();await page.locator('#export-close').click();
+ await page.screenshot({path:'/tmp/mamas-studio-desktop.png',fullPage:true});
  await page.setViewportSize({width:390,height:844});await page.screenshot({path:'/tmp/mamas-studio-mobile.png',fullPage:true});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile horizontal overflow');
  assert.deepEqual(errors,[]);console.log('Studio browser passed: missing-key feedback, AI workflow (mocked), persistence, camera motion, narration generation (fixture), audio persistence, visible caption toggles, SRT, stale-narration protection, exported audio/video streams, mobile layout.');

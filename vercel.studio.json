@@ -1,0 +1,75 @@
+{
+  "cleanUrls": true,
+  "functions": {
+    "api/studio.js": {
+      "maxDuration": 120
+    },
+    "api/studio-video.js": {
+      "maxDuration": 120
+    }
+  },
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/video-studio/index.html"
+    },
+    {
+      "source": "/lib/:path*",
+      "destination": "/api/not-found"
+    },
+    {
+      "source": "/data/:path*",
+      "destination": "/api/not-found"
+    },
+    {
+      "source": "/scripts/:path*",
+      "destination": "/api/not-found"
+    },
+    {
+      "source": "/tests/:path*",
+      "destination": "/api/not-found"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "upgrade-insecure-requests"
+        }
+      ]
+    },
+    {
+      "source": "/api/media",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; sandbox; upgrade-insecure-requests"
+        }
+      ]
+    },
+    {
+      "source": "/admin(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+        }
+      ]
+    }
+  ]
+}
