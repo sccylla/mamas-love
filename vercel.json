@@ -1,5 +1,6 @@
 {
   "cleanUrls": true,
+  "functions": { "api/studio.js": { "maxDuration": 120 } },
   "trailingSlash": false,
   "rewrites": [
     { "source": "/lib/:path*", "destination": "/api/not-found" },

@@ -1,0 +1,16 @@
+'use strict';
+const assert=require('node:assert/strict');
+const media=require('../assets/studio-media');
+const cues=media.captionCues('One two three four five six seven eight nine ten',6);
+assert.equal(cues.length,2);assert.equal(cues[1].start,3);assert.equal(cues[1].end,6);
+assert.deepEqual(media.captionCues('hello',6,'off'),[]);
+assert.equal(media.captionCues('One two three four five six seven eight nine ten',6,'scene').length,1);
+const scenes=[{id:'a',body:'Hello mama',duration:2},{id:'b',body:'Your next scene',duration:3}];
+assert.equal(media.srt(scenes),'1\n00:00:00,000 --> 00:00:02,000\nHello mama\n\n2\n00:00:02,000 --> 00:00:05,000\nYour next scene\n');
+const first=new Uint8Array(48000).fill(1),second=new Uint8Array(48000).fill(2);
+const wav=media.combineNarration([first,second],[2,2]);const view=new DataView(wav.buffer);
+assert.equal(view.getUint32(40,true),4*48000);assert.equal(wav[44],1);assert.equal(wav[44+48000],0);assert.equal(wav[44+96000],2);
+assert.throws(()=>media.combineNarration([first],[.5]),/longer/);
+assert.notEqual(media.narrationSignature(scenes,'Kore'),media.narrationSignature([...scenes].reverse(),'Kore'));
+assert.notEqual(media.narrationSignature(scenes,'Kore'),media.narrationSignature(scenes,'Puck'));
+console.log('Caption timing, SRT offsets, narration placement, silence padding and stale-audio detection passed.');

@@ -120,3 +120,22 @@ The 39-second safer-newborn-sleep lesson is stored in `downloads/videos/` as a 7
 ## HTTPS resource policy
 
 `vercel.json` sends `Content-Security-Policy: upgrade-insecure-requests` so browsers request page resources over HTTPS. The existing strict policies for the admin page and uploaded media are retained and include this directive. This policy does not install or replace certificates: Vercel manages domain certificates separately. A browser screenshot confirmed a valid certificate, but the live browser warning could not be independently diagnosed from this environment.
+
+## AI video studio
+
+Run `node scripts/dev-server.cjs` and open `/video-studio/`. The studio supports AI storyboards with 3–6 scenes, editable image prompts, realistic image generation, still/push-in/pull-out camera movements, captions, narration, local IndexedDB projects, JSON backups and browser video export. Templates and uploaded images work without AI credentials. Creating an AI storyboard saves the current project and creates a new one.
+
+Configure `GEMINI_API_KEY` server-side for Google Gemini. Defaults are `gemini-2.5-flash` for storyboards and `gemini-2.5-flash-image` for images; optional server variables `GEMINI_TEXT_MODEL` and `GEMINI_IMAGE_MODEL` select compatible models. The provider account must have model access and quota. AI requests require the existing Redis-backed admin login at `/admin.html` and are limited to 30 requests per admin username per hour. Keep keys out of browser code. In cloud environment settings, allow `generativelanguage.googleapis.com` and your actual Upstash hostname. Configure the existing Upstash URL/token bindings securely to enable admin login.
+
+Each scene image is generated individually and stored in the local project; regeneration replaces that scene's image. Image prompts guide recurring-character consistency but do not guarantee it. Camera motion animates still images: this implementation does not call Veo or synthesize native motion video. Export uses the browser's supported MediaRecorder format (usually WebM); audio must be added separately. JSON backups retain image prompts and camera settings but exclude audio. AI output and health claims need review before publication.
+
+Validation: `node tests/studio-api.test.cjs` uses a mock AI provider; `node tests/studio-browser.test.cjs` uses Playwright and Chromium to exercise the scene workflow, persistence and a real browser video download with fixture imagery. Neither test claims live provider generation.
+
+
+### Narration and captions
+
+Edit the **Narration for this scene** script (up to 220 characters), choose one of five Gemini voices, and select **Generate full voiceover**. Generation uses the same server-side Gemini key and admin login as images; the account also needs access to `gemini-2.5-flash-preview-tts` (override with `GEMINI_TTS_MODEL`). Each clip is placed at its scene's start, with silence padding to the next scene. Scene lengths expand as needed, up to 20 seconds; shorten scripts if a voice clip exceeds that limit. Generate projects with up to 20 scenes at a time; provider calls count toward the existing 30-request hourly limit. The combined WAV is saved locally with the project and included in playback and video export. Uploading or recording your own voiceover remains supported. Changing scene timing, order, scripts or voice makes an AI voiceover stale; regenerate or remove it before exporting. JSON backups exclude audio, so regenerate after importing.
+
+Choose **Timed phrases**, **Full scene caption**, or **Hidden** for each scene. Captions are drawn directly into the exported video. Download the matching SRT file for use elsewhere. Phrase timing is evenly distributed across the scene; it is not speech transcription or word alignment. Narration scripts and caption text can be edited independently.
+
+Run `node tests/studio-media.test.cjs` for caption timing, SRT offsets, PCM placement and stale-narration checks. The studio browser test also verifies caption pixels, generated narration persistence using a fixture, stale-audio protection, and actual exported video and audio streams with `ffprobe`. Live voice quality and provider access require configured credentials and are not established by these fixture tests.
