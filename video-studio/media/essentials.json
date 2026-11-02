@@ -1,0 +1,120 @@
+[
+  {
+    "image": 2,
+    "label": "YOUR SIMPLE CHECKLIST",
+    "title": "Six months.\nSo much to explore.",
+    "items": [
+      "Baby essentials for 6 months+",
+      "Simple choices. Everyday care."
+    ],
+    "note": "Save this guide for your next shop.",
+    "voice": "Baby six months or older? Here's a simple essentials checklist from Mama's Love.",
+    "speech_duration": 4.623333333333333,
+    "duration": 6.0,
+    "photo": "media/essentials-2.png"
+  },
+  {
+    "image": 0,
+    "label": "01 / MEALTIMES",
+    "title": "Ready for\nlittle tastes.",
+    "items": [
+      "Secure high chair + washable bibs",
+      "Soft spoons + bowl",
+      "Small open cup"
+    ],
+    "note": "Start solids around 6 months, when ready. Supervise every meal.",
+    "voice": "For mealtimes: a secure high chair, soft spoons, a bowl, washable bibs, and an open cup. Start solids around six months when baby is ready.",
+    "speech_duration": 7.982875,
+    "duration": 8.833333333333334,
+    "photo": "media/essentials-0.png"
+  },
+  {
+    "image": 1,
+    "label": "02 / MILK FEEDS",
+    "title": "Milk still\ncomes first.",
+    "items": [
+      "Breastfeeding supplies, if needed",
+      "Bottles, if bottle-feeding",
+      "Bottle cleaning + sterilising kit"
+    ],
+    "note": "Breast milk or infant formula is the main drink until 12 months.",
+    "voice": "For milk feeds: breast feeding supplies, or bottles and sterilising equipment. Breast milk or infant formula remains baby's main drink until twelve months.",
+    "speech_duration": 8.589916666666667,
+    "duration": 9.433333333333334,
+    "photo": "media/essentials-1.png"
+  },
+  {
+    "image": 2,
+    "label": "03 / PLAY & DISCOVERY",
+    "title": "Little hands.\nBig discoveries.",
+    "items": [
+      "Comfortable floor play mat",
+      "Large soft blocks + washable toys",
+      "Sturdy board or cloth books"
+    ],
+    "note": "Choose age-appropriate toys with no small, loose parts.",
+    "voice": "For play: a floor mat, soft blocks, sturdy books, and washable toys too large to swallow. Always supervise.",
+    "speech_duration": 6.352833333333334,
+    "duration": 7.2,
+    "photo": "media/essentials-2.png"
+  },
+  {
+    "image": 3,
+    "label": "04 / EVERYDAY CARE",
+    "title": "Fresh, comfy\nand cared for.",
+    "items": [
+      "Nappies, wipes + spare clothes",
+      "Soft towel + washcloths",
+      "Digital thermometer + baby toothbrush"
+    ],
+    "note": "First tooth? Brush with a smear of fluoride toothpaste.",
+    "voice": "For everyday care: nappies, wipes, spare clothes, a soft towel, and a digital thermometer. Add a baby toothbrush when the first tooth appears.",
+    "speech_duration": 7.872958333333333,
+    "duration": 8.733333333333333,
+    "photo": "media/essentials-3.png"
+  },
+  {
+    "image": 4,
+    "label": "05 / SAFER SLEEP",
+    "title": "Keep sleep\nsimple.",
+    "items": [
+      "Firm, flat mattress + fitted sheets",
+      "Suitable, correctly fitted sleep sack",
+      "A clear cot for every sleep"
+    ],
+    "note": "Put baby down on their back. No pillows, loose bedding or toys.",
+    "voice": "For sleep: a firm, flat mattress, fitted sheets, and a suitable sleep sack. Put baby down on their back, with the cot clear.",
+    "speech_duration": 6.968041666666666,
+    "duration": 7.833333333333333,
+    "photo": "media/essentials-4.png"
+  },
+  {
+    "image": 5,
+    "label": "06 / OUT & ABOUT",
+    "title": "Ready for\nyour next outing.",
+    "items": [
+      "Nappy bag + a spare outfit",
+      "Sunhat + stroller with safety straps",
+      "Suitable rear-facing car seat"
+    ],
+    "note": "Fasten stroller straps. Use the car seat for car journeys.",
+    "voice": "For outings: a nappy bag, spare clothes, a sunhat, a stroller, and a suitable rear facing car seat for car journeys.",
+    "speech_duration": 6.6851666666666665,
+    "duration": 7.533333333333333,
+    "photo": "media/essentials-5.png"
+  },
+  {
+    "image": 2,
+    "label": "A LITTLE LOVE, EVERY DAY",
+    "title": "The basics.\nAnd lots of love.",
+    "items": [
+      "Save this essentials checklist",
+      "More guidance at mamaslove.ng"
+    ],
+    "note": "General guidance. Choose products suited to your baby's development.",
+    "voice": "Start with the basics, mama. Save this checklist, and find more at mama's love dot N G.",
+    "speech_duration": 4.705041666666666,
+    "duration": 6.0,
+    "photo": "media/essentials-2.png"
+  }
+]

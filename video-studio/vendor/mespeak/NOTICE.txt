@@ -1,0 +1,9 @@
+meSpeak / eSpeak, distributed under the GNU General Public License.
+meSpeak by Norbert Landsteiner, based on speak.js by Alon Zakai and eSpeak by Jonathan Duddington.
+Bundled from npm mespeak 2.0.2 using browserify 17.0.1.
+Original complete package source: source-2.0.2.tgz in this directory.
+Build: browserify package/src/index.js --standalone meSpeak --outfile mespeak.js
+Project source: https://github.com/sccylla/mamas-love/tree/main/video-studio
+
+Underlying eSpeak / speak.js source and build scripts: speak-js-source.tar.gz.
+Upstream: https://github.com/kripken/speak.js

@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process');
-const media=require('../assets/studio-media');
+const media=require('../video-studio/studio-media');
 const pcm=new Uint8Array(48000),pv=new DataView(pcm.buffer);for(let i=0;i<24000;i++)pv.setInt16(i*2,Math.round(Math.sin(i*2*Math.PI*440/24000)*5000),true);
 const voiceAudio='data:audio/wav;base64,'+Buffer.from(media.combineNarration([pcm],[1])).toString('base64');
 (async()=>{
@@ -11,8 +11,8 @@ const voiceAudio='data:audio/wav;base64,'+Buffer.from(media.combineNarration([pc
  try{
  const page=await browser.newPage({viewport:{width:1440,height:1100}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
  const base=`http://127.0.0.1:${app.address().port}`;
- await page.goto(base+'/video-studio/');await page.waitForFunction(()=>document.querySelector('#scene-title').value.length>0);
- await page.locator('#ai-storyboard').click();await page.locator('#ai-status').filter({hasText:'GEMINI_API_KEY'}).waitFor();
+ await page.goto(base+'/video-studio');await page.waitForFunction(()=>document.querySelector('#scene-title').value.length>0);
+ await page.locator('#paid-storyboard').evaluate(d=>d.open=true);await page.locator('#ai-storyboard').click();await page.locator('#ai-status').filter({hasText:'GEMINI_API_KEY'}).waitFor();
  await page.route('**/api/studio',async route=>{
  if(route.request().method()==='GET')return route.fulfill({json:{configured:true}});
  const input=route.request().postDataJSON();
@@ -23,14 +23,14 @@ const voiceAudio='data:audio/wav;base64,'+Buffer.from(media.combineNarration([pc
  await route.fulfill({json:input.action==='image'?{image}:{scenes:[1,2,3].map(n=>({title:`Morning ${n}`,body:'A quiet moment together',imagePrompt:`Documentary photograph, scene ${n}, warm morning light`}))}});
  });
  await page.locator('#topic').fill('A quiet morning with mama');await page.locator('#ai-storyboard').click();await page.waitForFunction(()=>document.querySelector('#scene-title').value==='Morning 1');
- await page.locator('#ai-image').click();await page.locator('#image-status').filter({hasText:'Image ready'}).waitFor();
+ await page.locator('#paid-images').evaluate(d=>d.open=true);await page.locator('#ai-image').click();await page.locator('#image-status').filter({hasText:'Image ready'}).waitFor();
  assert.equal(await page.locator('#scene-motion').inputValue(),'push');
  await page.reload();await page.waitForFunction(()=>document.querySelector('#scene-title').value==='Morning 1');
  assert.match(await page.locator('#image-prompt').inputValue(),/warm morning light/);
  assert.equal(await page.locator('#remove-image').isVisible(),true);
  await page.locator('#scene-duration').fill('2');await page.locator('#scene-duration').dispatchEvent('change');
  await page.locator('.scene-item[data-index="2"]').click();assert.equal(await page.locator('#scene-title').inputValue(),'Morning 3');await page.locator('#scene-delete').click();await page.locator('#scene-delete').click();assert.equal(await page.locator('#scene-title').inputValue(),'Morning 1');
- await page.locator('#narration-script').fill('A warm welcome, mama.');await page.locator('#generate-narration').click();await page.locator('#narration-status').filter({hasText:'Voiceover ready'}).waitFor();
+ await page.locator('#narration-voice').selectOption('Kore');await page.locator('#narration-script').fill('A warm welcome, mama.');await page.locator('#generate-narration').click();await page.locator('#narration-status').filter({hasText:'Voiceover ready'}).waitFor();
  assert.match(await page.locator('#audio-info').textContent(),/AI narration/);
  await page.reload();await page.waitForFunction(()=>document.querySelector('#narration-script').value==='A warm welcome, mama.');
  assert.match(await page.locator('#audio-info').textContent(),/AI narration/);
@@ -48,8 +48,8 @@ const voiceAudio='data:audio/wav;base64,'+Buffer.from(media.combineNarration([pc
  assert.ok(probe.streams.some(s=>s.codec_type==='audio'),'Export includes a real audio stream');assert.ok(probe.streams.some(s=>s.codec_type==='video'),'Export includes video');
  await page.locator('#export-close').click();
  await page.route('**/api/studio-video?*',route=>route.fulfill({contentType:'video/webm',body:require('node:fs').readFileSync('/tmp/mamas-love-narrated.webm')}));
- await page.locator('#character-description').fill('A mother with brown eyes and shoulder-length dark curls, in a cream linen shirt.');
- await page.locator('#ai-video').click();await page.locator('#video-status').filter({hasText:'Veo scene ready'}).waitFor();
+ await page.locator('#character-description').evaluate(e=>e.closest('details').open=true);await page.locator('#character-description').fill('A mother with brown eyes and shoulder-length dark curls, in a cream linen shirt.');
+ await page.locator('#paid-images').evaluate(d=>d.open=true);await page.locator('#ai-video').click();await page.locator('#video-status').filter({hasText:'Veo scene ready'}).waitFor();
  assert.equal(await page.locator('#generated-video-panel').isVisible(),true);
  await page.locator('#generated-video').evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1)return resolve();v.onloadedmetadata=resolve;v.onerror=reject;}));
  await page.reload();await page.waitForFunction(()=>!document.querySelector('#generated-video-panel').hidden);

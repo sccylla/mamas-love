@@ -18,7 +18,7 @@ const server = http.createServer(async (req, res) => {
     if (/^\/[a-z-]+$/.test(pathname)) pathname += '.html';
     const file = path.resolve(root, `.${pathname}`);
     const relative = path.relative(root, file);
-    if (relative.startsWith('..') || relative.split(path.sep).some(part => part.startsWith('.')) || /^(lib|data|scripts|tests|api)(\/|$)/.test(relative) || (!relative.startsWith('assets/') && !relative.startsWith('downloads/') && relative !== 'video-studio/index.html' && !/^[a-z-]+\.(html|ico|svg|webmanifest)$/.test(relative))) {
+    if (relative.startsWith('..') || relative.split(path.sep).some(part => part.startsWith('.')) || /^(lib|data|scripts|tests|api)(\/|$)/.test(relative) || (!relative.startsWith('assets/') && !relative.startsWith('downloads/') && !relative.startsWith('video-studio/') && !/^[a-z-]+\.(html|ico|svg|webmanifest)$/.test(relative))) {
       res.writeHead(404); return res.end('Not found.');
     }
     const stat = await fs.promises.stat(file).catch(() => null);

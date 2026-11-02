@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict');
-const media=require('../assets/studio-media');
+const media=require('../video-studio/studio-media');
 const cues=media.captionCues('One two three four five six seven eight nine ten',6);
 assert.equal(cues.length,2);assert.equal(cues[1].start,3);assert.equal(cues[1].end,6);
 assert.deepEqual(media.captionCues('hello',6,'off'),[]);

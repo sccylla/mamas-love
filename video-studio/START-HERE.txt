@@ -1,0 +1,47 @@
+MAMA'S LOVE — FREE VIDEO STUDIO
+
+No account, paid API key, or GPU is needed for the free editing workflow.
+This makes videos from supplied images. It does not generate new AI photos or realistic moving characters.
+
+MACBOOK SETUP
+1. Unzip the complete folder. Keep its files together.
+2. Double-click Open Studio.command. If macOS blocks it, right-click the file and choose Open.
+3. The editor opens in your browser. Keep the Terminal window open while working.
+4. If Python 3 is missing, install it free from https://www.python.org/downloads/macos/.
+   You can also start manually from the folder with: python3 serve_studio.py
+
+PHONE ON THE SAME WI-FI
+Open Open on WiFi.command on your Mac. Open the phone address printed in Terminal.
+Your Mac must stay awake and connected. Local HTTP phone microphone recording may be unavailable;
+use the free computer voice, upload audio, or record on the Mac.
+Projects are saved per browser/device; they do not sync automatically.
+
+MAKE A VIDEO
+1. Click Try the baby essentials example to load realistic photos, captions and prerecorded natural narration.
+   Or write a title followed by one scene per line, then click Build scenes from my list.
+   Example:
+   My baby care video
+   Mealtimes | A high chair, soft spoons, a bowl and washable bibs.
+   Playtime | Sturdy books and large soft toys.
+2. Select each scene. Upload your own JPG, PNG or WebP picture and edit its caption/narration.
+3. Choose Free English computer voice and click Generate full voiceover.
+   This voice is deliberately basic and synthetic. For a natural voice, use Record voice or Upload audio.
+4. Preview the video and select Export video. Export prefers MP4 when your browser supports it;
+   otherwise it uses WebM. Keep the tab visible during the real-time export.
+5. The Mama's Love logo and mamaslove.ng are added to the frames when branding is enabled.
+   Brand kit lets you change the website text.
+6. Save project downloads a JSON backup. Audio and generated video clips are not included in that backup;
+   use the browser's local project library or reattach narration after importing a backup.
+
+PAID FEATURES
+Optional cloud AI controls are collapsed and are not needed for this free workflow.
+They remain optional, paid provider integrations. They do not become free by opening this editor.
+The default workflow makes no backend API requests.
+
+PRIVACY AND LICENSES
+Imported images and narration stay in your current browser's project storage.
+The example photography is AI-generated; its natural narration was generated offline.
+The free computer voice uses meSpeak/eSpeak (GPL); its license, notices and complete original source package
+are in vendor/mespeak/. The local fonts include their Open Font License files in fonts/.
+Kokoro model attribution/license for the example narration is in media/Kokoro-LICENSE.txt.
+Source: https://github.com/sccylla/mamas-love/tree/main/video-studio

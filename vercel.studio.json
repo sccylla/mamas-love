@@ -15,6 +15,30 @@
       "destination": "/video-studio/index.html"
     },
     {
+      "source": "/studio-media.js",
+      "destination": "/video-studio/studio-media.js"
+    },
+    {
+      "source": "/voice-worker.js",
+      "destination": "/video-studio/voice-worker.js"
+    },
+    {
+      "source": "/brand-logo.png",
+      "destination": "/video-studio/brand-logo.png"
+    },
+    {
+      "source": "/fonts/:path*",
+      "destination": "/video-studio/fonts/:path*"
+    },
+    {
+      "source": "/media/:path*",
+      "destination": "/video-studio/media/:path*"
+    },
+    {
+      "source": "/vendor/mespeak/:path*",
+      "destination": "/video-studio/vendor/mespeak/:path*"
+    },
+    {
       "source": "/lib/:path*",
       "destination": "/api/not-found"
     },

@@ -1,30 +1,140 @@
 {
   "cleanUrls": true,
-  "functions": { "api/studio.js": { "maxDuration": 120 }, "api/studio-video.js": { "maxDuration": 120 } },
+  "functions": {
+    "api/studio.js": {
+      "maxDuration": 120
+    },
+    "api/studio-video.js": {
+      "maxDuration": 120
+    }
+  },
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "has": [{ "type": "host", "value": "mamas-love-video-studio.vercel.app" }], "destination": "/video-studio/index.html" },
-    { "source": "/lib/:path*", "destination": "/api/not-found" },
-    { "source": "/data/:path*", "destination": "/api/not-found" },
-    { "source": "/scripts/:path*", "destination": "/api/not-found" },
-    { "source": "/tests/:path*", "destination": "/api/not-found" }
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "mamas-love-video-studio.vercel.app"
+        }
+      ],
+      "destination": "/video-studio/index.html"
+    },
+    {
+      "source": "/studio-media.js",
+      "destination": "/video-studio/studio-media.js",
+      "has": [
+        {
+          "type": "host",
+          "value": "mamas-love-video-studio.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/voice-worker.js",
+      "destination": "/video-studio/voice-worker.js",
+      "has": [
+        {
+          "type": "host",
+          "value": "mamas-love-video-studio.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/brand-logo.png",
+      "destination": "/video-studio/brand-logo.png",
+      "has": [
+        {
+          "type": "host",
+          "value": "mamas-love-video-studio.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/:path*",
+      "destination": "/video-studio/fonts/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mamas-love-video-studio.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/media/:path*",
+      "destination": "/video-studio/media/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mamas-love-video-studio.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/vendor/mespeak/:path*",
+      "destination": "/video-studio/vendor/mespeak/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mamas-love-video-studio.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/lib/:path*",
+      "destination": "/api/not-found"
+    },
+    {
+      "source": "/data/:path*",
+      "destination": "/api/not-found"
+    },
+    {
+      "source": "/scripts/:path*",
+      "destination": "/api/not-found"
+    },
+    {
+      "source": "/tests/:path*",
+      "destination": "/api/not-found"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
-      "headers": [{ "key": "Content-Security-Policy", "value": "upgrade-insecure-requests" }]
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "upgrade-insecure-requests"
+        }
+      ]
     },
     {
       "source": "/api/media",
-      "headers": [{ "key": "Content-Security-Policy", "value": "default-src 'none'; sandbox; upgrade-insecure-requests" }]
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; sandbox; upgrade-insecure-requests"
+        }
+      ]
     },
     {
       "source": "/admin(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store" },
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+        }
       ]
     }
   ]

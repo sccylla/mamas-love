@@ -1,0 +1,8 @@
+{
+  "package": "mespeak",
+  "version": "2.0.2",
+  "npm_integrity": "sha512-vrSqilK/IXXpgPqyFQjuJLqwO6TYgVXd84hGj76F1jQ/DEBna4wjSntyTz/zlaH/6oJm8cRj50AkpKcLzQiuxQ==",
+  "bundle_tool": "browserify 17.0.1",
+  "bundle_sha256": "cf3e803d627dc82dfa1b6c73127b7e64268a497490908f3b26ce209c78fb840e",
+  "speak_js_source_sha256": "1b63b6ad84dec8bfed55bdd44f1f5b8652d8a2ce80a9f4cdba710773390bc358"
+}
